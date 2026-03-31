@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grandangolo Regionale – Notizie dalla Sicilia</title>
+  <meta name="description" content="Le ultime notizie dalla Sicilia. Aggiornamenti da Agrigento e da tutta l'isola."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rosso: #C0392B; --rosso-scuro: #922B21; --oro: #D4A017;
+      --nero: #0D0D0D; --carta: #F8F4EF; --carta-scura: #EDE8E1;
+      --grigio: #6B6560; --testo: #1A1614;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--carta); color: var(--testo); min-height: 100vh; }
+    header { background: var(--nero); border-bottom: 4px solid var(--rosso); }
+    .header-top { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px 14px; gap: 20px; }
+    .testata { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #fff; line-height: 1; }
+    .testata span { color: var(--rosso); }
+    .sottotitolo { font-size: 0.78rem; color: var(--oro); letter-spacing: 3px; text-transform: uppercase; font-weight: 300; margin-top: 4px; }
+    .header-meta { text-align: right; font-size: 0.72rem; color: #888; line-height: 1.8; }
+    .header-meta .data { color: var(--oro); font-size: 0.8rem; }
+    .ruban { background: var(--rosso); padding: 6px 40px; display: flex; align-items: center; gap: 16px; overflow: hidden; }
+    .ruban-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 600; white-space: nowrap; background: var(--rosso-scuro); padding: 2px 8px; }
+    .ruban-ticker { font-size: 0.78rem; color: #ffe; white-space: nowrap; overflow: hidden; flex: 1; }
+    .ruban-ticker-inner { display: inline-block; animation: ticker 40s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    main { max-width: 1180px; margin: 0 auto; padding: 40px 24px 80px; }
+    .sezione-titolo { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; padding-bottom: 12px; border-bottom: 3px double var(--rosso); }
+    .sezione-titolo h2 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--rosso); }
+    .linea { flex: 1; height: 1px; background: var(--carta-scura); }
+    .badge { font-size: 0.68rem; color: var(--grigio); font-style: italic; }
+    #griglia { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--carta-scura); border: 2px solid var(--carta-scura); }
+    #griglia .card:first-child { grid-column: 1 / -1; }
+    .card { background: var(--carta); padding: 24px; text-decoration: none; color: inherit; display: block; transition: background 0.2s; }
+    .card:hover { background: #fff; }
+    .card:first-child { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 36px; }
+    .card-img { width: 100%; height: 200px; object-fit: cover; display: block; margin-bottom: 14px; }
+    .card:first-child .card-img { height: 320px; margin-bottom: 0; }
+    .card-categoria { font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rosso); font-weight: 600; margin-bottom: 8px; }
+    .card-titolo { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.35; margin-bottom: 10px; }
+    .card:first-child .card-titolo { font-size: 1.75rem; }
+    .card-excerpt { font-size: 0.88rem; line-height: 1.65; color: var(--grigio); font-weight: 300; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 12px; }
+    .card:first-child .card-excerpt { -webkit-line-clamp: 5; font-size: 0.95rem; }
+    .card-data { font-size: 0.72rem; color: #aaa; font-style: italic; }
+    .card-data::before { content: '— '; }
+    #stato { grid-column: 1/-1; text-align: center; padding: 80px 20px; }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--carta-scura); border-top-color: var(--rosso); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .stato-testo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--grigio); font-style: italic; }
+    #carica-altro { display: none; margin: 36px auto 0; padding: 12px 40px; background: transparent; border: 2px solid var(--rosso); color: var(--rosso); font-family: 'Source Serif 4', serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
+    #carica-altro:hover { background: var(--rosso); color: #fff; }
+    footer { background: var(--nero); border-top: 3px solid var(--rosso); padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer .brand { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; font-weight: 700; }
+    footer .brand span { color: var(--rosso); }
+    footer p { font-size: 0.72rem; color: #666; line-height: 1.8; }
+    footer a { color: var(--oro); text-decoration: none; }
+    @media (max-width: 900px) {
+      #griglia { grid-template-columns: 1fr 1fr; }
+      .card:first-child { grid-template-columns: 1fr; }
+      .header-top { padding: 14px 20px; }
+    }
+    @media (max-width: 580px) {
+      #griglia { grid-template-columns: 1fr; }
+      .testata { font-size: 1.9rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <div>
+      <div class="testata">Grandangolo<span>Regionale</span></div>
+      <div class="sottotitolo">Notizie dalla Sicilia &nbsp;·&nbsp; Aggiornamento continuo</div>
+    </div>
+    <div class="header-meta">
+      <div class="data" id="data-oggi"></div>
+      <div>regionale.grandangolosettimanale.it</div>
+      <div>Fonte: grandangoloagrigento.it</div>
+    </div>
+  </div>
+  <div class="ruban">
+    <span class="ruban-label">In diretta</span>
+    <div class="ruban-ticker"><span class="ruban-ticker-inner" id="ticker">Caricamento…&nbsp;&nbsp;&nbsp;&nbsp;Caricamento…</span></div>
+  </div>
+</header>
+<main>
+  <div class="sezione-titolo">
+    <h2>Ultime notizie</h2>
+    <div class="linea"></div>
+    <span class="badge" id="ultimo-agg"></span>
+  </div>
+  <div id="griglia">
+    <div id="stato"><div class="spinner"></div><p class="stato-testo">Caricamento notizie…</p></div>
+  </div>
+  <div style="text-align:center"><button id="carica-altro">Carica altre notizie</button></div>
+</main>
+<footer>
+  <div>
+    <div class="brand">Grandangolo<span>Regionale</span></div>
+    <p style="margin-top:6px">Edizione regionale Sicilia</p>
+  </div>
+  <p>
+    Contenuti forniti da <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a><br/>
+    Ospitato su <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> · Feed aggiornato ogni ora
+  </p>
+</footer>
+<script>
+  document.getElementById('data-oggi').textContent = new Date().toLocaleDateString('it-IT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  let tutti=[],mostrati=0;const PER_PAGINA=12;
+  function strip(h){const d=document.createElement('div');d.innerHTML=h;return d.textContent||'';}
+  function img(item){if(item.image)return item.image;const m=(item.content||item.description||'').match(/<img[^>]+src=["']([^"']+)["']/i);return m?m[1]:null;}
+  function data(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});}
+  function card(item,primo){
+    const a=document.createElement('a');
+    a.className='card';a.href=item.link||'#';a.target='_blank';a.rel='noopener noreferrer';
+    const src=img(item);
+    const imgTag=src?`<img class="card-img" src="${src}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:'';
+    const titolo=strip(item.title||'');
+    const excerpt=strip(item.description||item.content||'').replace(/\s+/g,' ').trim();
+    const cat=item.category||'Sicilia';
+    if(primo){
+      a.innerHTML=`${imgTag?`<div>${imgTag}</div>`:'<div></div>'}<div><div class="card-categoria">${cat}</div><div class="card-titolo">${titolo}</div><div class="card-excerpt">${excerpt}</div><div class="card-data">${data(item.pubDate)}</div></div>`;
+    } else {
+      a.innerHTML=`${imgTag}<div class="card-categoria">${cat}</div><div class="card-titolo">${titolo}</div><div class="card-excerpt">${excerpt}</div><div class="card-data">${data(item.pubDate)}</div>`;
+    }
+    return a;
+  }
+  function mostra(da,a){
+    const g=document.getElementById('griglia');
+    tutti.slice(da,a).forEach((item,i)=>g.appendChild(card(item,da===0&&i===0)));
+    mostrati=a;
+    document.getElementById('carica-altro').style.display=mostrati<tutti.length?'inline-block':'none';
+  }
+  async function carica(){
+    try{
+      const r=await fetch('feed.json',{cache:'no-cache'});
+      if(!r.ok)throw new Error();
+      const d=await r.json();
+      tutti=d.items||[];
+      if(!tutti.length)throw new Error('vuoto');
+      document.getElementById('griglia').innerHTML='';
+      const titoli=tutti.slice(0,8).map(i=>strip(i.title||'')).join(' · ');
+      document.getElementById('ticker').innerHTML=titoli+'&nbsp;&nbsp;&nbsp;&nbsp;'+titoli;
+      document.getElementById('ultimo-agg').textContent='Aggiornato: '+new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
+      mostra(0,PER_PAGINA);
+    }catch(e){
+      document.getElementById('griglia').innerHTML=`<div id="stato"><p clas
