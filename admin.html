@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin – Grandangolo Regionale</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--verde:#2d6a2d;--rosso:#c0392b;--nero:#111;--linea:#e5e5e5;--bg:#f7f7f5;--bianco:#fff;--giallo:#f5a623}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--nero);font-size:14px;min-height:100vh}
+    a{text-decoration:none;color:inherit}
+    input,textarea,select{font-family:'DM Sans',sans-serif;font-size:14px}
+
+    /* LOGIN */
+    #login-screen{position:fixed;inset:0;background:var(--nero);display:flex;align-items:center;justify-content:center;z-index:1000;flex-direction:column;gap:24px}
+    #login-screen.hidden{display:none}
+    .login-box{background:#1a1a1a;border:1px solid #2a2a2a;padding:40px;width:380px;max-width:90vw}
+    .login-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px}
+    .login-logo span{color:var(--verde)}
+    .login-sub{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;text-align:center;margin-bottom:28px}
+    .login-box label{display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#666;margin-bottom:6px}
+    .login-box input{width:100%;background:#111;border:1px solid #333;color:#eee;padding:10px 14px;font-size:13px;margin-bottom:16px;outline:none;transition:border-color .15s}
+    .login-box input:focus{border-color:var(--verde)}
+    .btn-login{width:100%;background:var(--verde);color:#fff;border:none;padding:12px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:4px}
+    .btn-login:hover{background:#245224}
+    .login-hint{font-size:11px;color:#444;text-align:center;margin-top:16px;line-height:1.7}
+    .login-hint a{color:#888}
+
+    /* LAYOUT */
+    .sidebar{position:fixed;top:0;left:0;bottom:0;width:220px;background:var(--nero);border-right:1px solid #1e1e1e;display:flex;flex-direction:column;z-index:100}
+    .sidebar-logo{padding:20px 20px 16px;border-bottom:1px solid #1e1e1e}
+    .sidebar-logo .brand{font-family:'Playfair Display',serif;font-size:16px;color:#fff;font-weight:700}
+    .sidebar-logo .brand span{color:var(--verde)}
+    .sidebar-logo .sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#555;margin-top:3px}
+    .sidebar-nav{flex:1;padding:12px 0;overflow-y:auto}
+    .nav-item{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:12px;font-weight:500;color:#777;cursor:pointer;transition:background .12s,color .12s;border-left:3px solid transparent;letter-spacing:.3px}
+    .nav-item:hover{background:#1a1a1a;color:#ccc}
+    .nav-item.active{background:#1a1a1a;color:#fff;border-left-color:var(--verde)}
+    .nav-item .icon{font-size:16px;width:20px;text-align:center}
+    .sidebar-footer{padding:16px 20px;border-top:1px solid #1e1e1e}
+    .sidebar-footer .user{font-size:11px;color:#444;line-height:1.7}
+    .sidebar-footer .user strong{color:#777;display:block}
+    .btn-logout{margin-top:10px;width:100%;background:transparent;border:1px solid #333;color:#666;padding:7px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s}
+    .btn-logout:hover{background:#333;color:#fff}
+
+    /* MAIN */
+    .main{margin-left:220px;min-height:100vh}
+    .topbar{background:var(--bianco);border-bottom:1px solid var(--linea);padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
+    .topbar h1{font-size:16px;font-weight:600;color:var(--nero)}
+    .topbar-right{font-size:11px;color:#aaa}
+    .content{padding:28px}
+
+    /* PANNELLI */
+    .panel{display:none}
+    .panel.active{display:block}
+
+    /* CARD */
+    .card{background:var(--bianco);border:1px solid var(--linea);padding:24px;margin-bottom:20px}
+    .card-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--linea)}
+
+    /* FORM */
+    .field{margin-bottom:18px}
+    .field label{display:block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:7px}
+    .field input,.field textarea,.field select{width:100%;border:1px solid var(--linea);padding:10px 14px;font-size:14px;color:var(--nero);outline:none;background:#fff;transition:border-color .15s;border-radius:0}
+    .field input:focus,.field textarea:focus{border-color:var(--verde)}
+    .field textarea{resize:vertical;min-height:160px;line-height:1.6}
+    .field select{cursor:pointer}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    /* BUTTONS */
+    .btn{display:inline-block;padding:10px 24px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s}
+    .btn-primary{background:var(--verde);color:#fff}
+    .btn-primary:hover{background:#245224}
+    .btn-danger{background:var(--rosso);color:#fff}
+    .btn-danger:hover{background:#a02020}
+    .btn-dark{background:var(--nero);color:#fff}
+    .btn-dark:hover{background:#333}
+    .btn-outline{background:transparent;border:1px solid var(--nero);color:var(--nero)}
+    .btn-outline:hover{background:var(--nero);color:#fff}
+    .btn-gold{background:var(--giallo);color:#fff}
+    .btn-gold:hover{background:#d4901e}
+    .btn-sm{padding:7px 16px;font-size:10px}
+
+    /* STATUS */
+    .status-bar{padding:12px 16px;font-size:12px;font-weight:500;margin-bottom:16px;display:none;align-items:center;gap:10px}
+    .status-bar.show{display:flex}
+    .status-bar.ok{background:#e8f5e8;border:1px solid #a8d5a8;color:#2d6a2d}
+    .status-bar.err{background:#fde8e8;border:1px solid #f5a8a8;color:#a02020}
+    .status-bar.info{background:#e8f0fe;border:1px solid #aac4f5;color:#1a4fa0}
+    .status-bar.loading{background:#fff8e8;border:1px solid #f5d88a;color:#7a5a00}
+
+    /* NOTIZIE LIST */
+    .notizie-list{display:flex;flex-direction:column;gap:1px}
+    .notizia-row{background:var(--bianco);border:1px solid var(--linea);padding:14px 18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;transition:background .12s}
+    .notizia-row:hover{background:#fafafa}
+    .notizia-row.apertura-sel{border-left:4px solid var(--verde);background:#f5faf5}
+    .notizia-row.pinned{border-left:4px solid var(--giallo)}
+    .notizia-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;margin-bottom:5px}
+    .badge-verde{background:#e8f5e8;color:var(--verde)}
+    .badge-giallo{background:#fff8e8;color:#7a5a00}
+    .badge-rosso{background:#fde8e8;color:var(--rosso)}
+    .notizia-titolo{font-size:14px;font-weight:500;line-height:1.4;color:var(--nero);margin-bottom:4px}
+    .notizia-meta{font-size:11px;color:#aaa}
+    .notizia-actions{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+
+    /* TITOLO EDIT */
+    .titolo-edit{width:100%;border:1px solid var(--verde);padding:6px 10px;font-size:13px;font-weight:500;color:var(--nero);outline:none;display:none;margin-bottom:6px}
+    .titolo-edit.show{display:block}
+
+    /* STATS */
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+    .stat-card{background:var(--bianco);border:1px solid var(--linea);padding:20px;text-align:center}
+    .stat-num{font-size:32px;font-weight:700;color:var(--verde);line-height:1}
+    .stat-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-top:6px}
+
+    /* ARTICOLO FORM */
+    .editor-toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+    .editor-btn{background:#f0f0f0;border:1px solid var(--linea);padding:5px 10px;font-size:11px;font-weight:600;cursor:pointer;transition:background .12s}
+    .editor-btn:hover{background:#e0e0e0}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .sidebar{width:180px}
+      .main{margin-left:180px}
+      .stats-grid{grid-template-columns:1fr 1fr}
+      .field-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">Grandangolo <span>Regionale</span></div>
+    <div class="login-sub">Pannello Amministrazione</div>
+    <label>GitHub Personal Access Token</label>
+    <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+    <label>Repository (owner/nome)</label>
+    <input type="text" id="gh-repo" placeholder="jgnewland/grandangolo-regionale"/>
+    <label>Password Admin</label>
+    <input type="password" id="admin-pass" placeholder="Password di accesso"/>
+    <button class="btn-login" onclick="doLogin()">Accedi al pannello →</button>
+    <div class="login-hint">
+      Token GitHub: <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a><br/>
+      Permessi necessari: <strong style="color:#888">repo</strong> e <strong style="color:#888">workflow</strong>
+    </div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand">Grandangolo <span>Regionale</span></div>
+    <div class="sub">Admin Panel</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-item active" onclick="showPanel('dashboard')">
+      <span class="icon">📊</span> Dashboard
+    </div>
+    <div class="nav-item" onclick="showPanel('feed')">
+      <span class="icon">🔄</span> Aggiorna Feed
+    </div>
+    <div class="nav-item" onclick="showPanel('notizie')">
+      <span class="icon">📰</span> Gestione Notizie
+    </div>
+    <div class="nav-item" onclick="showPanel('articolo')">
+      <span class="icon">✏️</span> Scrivi Articolo
+    </div>
+    <div class="nav-item" onclick="showPanel('apertura')">
+      <span class="icon">⭐</span> Imposta Apertura
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user">
+      <strong id="user-repo">—</strong>
+      Connesso a GitHub
+    </div>
+    <button class="btn-logout" onclick="doLogout()">Esci</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <h1 id="panel-title">Dashboard</h1>
+    <div class="topbar-right" id="last-update">—</div>
+  </div>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div class="panel active" id="panel-dashboard">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-totale">—</div>
+          <div class="stat-label">Articoli nel feed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-prioritari">—</div>
+          <div class="stat-label">PA/CT/AG prioritari</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-custom">—</div>
+          <div class="stat-label">Articoli scritti da te</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-apertura">—</div>
+          <div class="stat-label">Notizia in apertura</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Azioni rapide</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="showPanel('feed');triggerActions()">🔄 Aggiorna feed ora</button>
+          <button class="btn btn-dark" onclick="showPanel('articolo')">✏️ Scrivi articolo</button>
+          <button class="btn btn-outline" onclick="window.open('/','_blank')">🌐 Vedi sito</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Ultime notizie nel feed</div>
+        <div id="dash-preview" style="display:flex;flex-direction:column;gap:1px"></div>
+      </div>
+    </div>
+
+    <!-- FEED -->
+    <div class="panel" id="panel-feed">
+      <div id="feed-status" class="status-bar"></div>
+      <div class="card">
+        <div class="card-title">Aggiorna feed RSS manualmente</div>
+        <p style="color:#666;line-height:1.7;margin-bottom:20px">
+          Avvia il workflow GitHub Actions che scarica il feed RSS da <strong>grandangoloagrigento.it</strong>,
+          applica la priorità per Palermo, Catania e Agrigento, e aggiorna il file <code>feed.json</code> nel repository.
+        </p>
+        <button class="btn btn-primary" onclick="triggerActions()" id="btn-trigger">
+          🔄 Lancia aggiornamento feed
+        </button>
+      </div>
+      <div class="card">
+        <div class="card-title">Stato ultimo workflow</div>
+        <div id="workflow-status" style="color:#aaa;font-size:13px">Clicca "Lancia aggiornamento" per avviare.</div>
+        <button class="btn btn-outline btn-sm" style="margin-top:14px" onclick="checkWorkflow()">Controlla stato →</button>
+      </div>
+    </div>
+
+    <!-- NOTIZIE -->
+    <div class="panel" id="panel-notizie">
+      <div id="notizie-status" class="status-bar"></div>
+      <div class="card">
+        <div class="card-title">Notizie nel feed — modifica titoli e metti in evidenza</div>
+        <p style="color:#666;font-size:13px;margin-bottom:18px">
+          Clicca <strong>Modifica</strong> per cambiare il titolo · <strong>⭐ Apertura</strong> per metterlo come prima notizia · <strong>📌 Fissa</strong> per tenerlo in cima
+        </p>
+        <div id="notizie-list" style="color:#aaa;font-size:13px;padding:20px 0">Caricamento notizie…</div>
+        <div style="margin-top:16px;display:flex;gap:10px">
+          <button class="btn btn-primary" onclick="salvaNotizie()">💾 Salva modifiche</button>
+          <button class="btn btn-outline" onclick="loadNotizie()">↺ Ricarica</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTICOLO -->
+    <div class="panel" id="panel-articolo">
+      <div id="articolo-status" class="status-bar"></div>
+      <div class="card">
+        <div class="card-title">Scrivi un nuovo articolo</div>
+        <div class="field-row">
+          <div class="field">
+            <label>Categoria</label>
+            <select id="art-categoria">
+              <option>Palermo</option>
+              <option>Catania</option>
+              <option>Agrigento</option>
+              <option>Sicilia</option>
+              <option>Cronaca</option>
+              <option>Politica</option>
+              <option>Giudiziaria</option>
+              <option>Inchieste</option>
+              <option>Economia</option>
+              <option>Cultura</option>
+              <option>Sport</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Autore</label>
+            <input type="text" id="art-autore" placeholder="Es: Redazione Grandangolo"/>
+          </div>
+        </div>
+        <div class="field">
+          <label>Titolo</label>
+          <input type="text" id="art-titolo" placeholder="Scrivi il titolo dell'articolo…"/>
+        </div>
+        <div class="field">
+          <label>Sommario (anteprima)</label>
+          <input type="text" id="art-sommario" placeholder="Breve descrizione che appare nella homepage…"/>
+        </div>
+        <div class="field">
+          <label>URL Immagine (opzionale)</label>
+          <input type="url" id="art-immagine" placeholder="https://…"/>
+        </div>
+        <div class="field">
+          <label>Testo dell'articolo</label>
+          <div class="editor-toolbar">
+            <button class="editor-btn" onclick="wrapText('**','**')"><b>B</b></button>
+            <button class="editor-btn" onclick="wrapText('*','*')"><i>I</i></button>
+            <button class="editor-btn" onclick="insertText('\n\n## ')">H2</button>
+            <button class="editor-btn" onclick="insertText('\n\n### ')">H3</button>
+            <button class="editor-btn" onclick="insertText('\n\n> ')">❝</button>
+            <button class="editor-btn" onclick="insertText('\n\n---\n\n')">—</button>
+          </div>
+          <textarea id="art-testo" placeholder="Scrivi il testo completo dell'articolo. Puoi usare HTML o testo semplice…" style="min-height:300px"></textarea>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="pubblicaArticolo()">📤 Pubblica articolo</button>
+          <button class="btn btn-gold" onclick="pubblicaArticolo(true)">⭐ Pubblica come APERTURA</button>
+          <button class="btn btn-outline" onclick="anteprima()">👁 Anteprima</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- APERTURA -->
+    <div class="panel" id="panel-apertura">
+      <div id="apertura-status" class="status-bar"></div>
+      <div class="card">
+        <div class="card-title">Scegli la notizia di apertura</div>
+        <p style="color:#666;font-size:13px;margin-bottom:18px">
+          Seleziona quale notizia mostrare come apertura principale nella homepage.
+          La notizia selezionata apparirà con il titolo grande a sinistra e l'immagine a destra.
+        </p>
+        <div id="apertura-list" style="color:#aaa;font-size:13px">Caricamento…</div>
+        <button class="btn btn-primary" style="margin-top:16px" onclick="salvaApertura()">⭐ Imposta apertura selezionata</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── STATO ──
+let CFG = { token:'', repo:'', pass:'' };
+let feedData = null;
+let aperturaIdx = 0;
+let notizieMod = [];
+
+// ── LOGIN ──
+function doLogin(){
+  const token=document.getElementById('gh-token').value.trim();
+  const repo=document.getElementById('gh-repo').value.trim();
+  const pass=document.getElementById('admin-pass').value;
+  if(!token||!repo||!pass){ alert('Compila tutti i campi'); return; }
+  // Password locale semplice (cambia qui la tua password)
+  const ADMIN_PASS = 'grandangolo2024';
+  if(pass!==ADMIN_PASS){ alert('Password non corretta'); return; }
+  CFG={token,repo,pass};
+  sessionStorage.setItem('gn_cfg', JSON.stringify({token,repo}));
+  document.getElementById('login-screen').classList.add('hidden');
+  document.getElementById('user-repo').textContent=repo;
+  init();
+}
+
+function doLogout(){
+  sessionStorage.clear();
+  location.reload();
+}
+
+// ── INIT ──
+function init(){
+  const saved=sessionStorage.getItem('gn_cfg');
+  if(saved && !CFG.token){
+    // già loggato in sessione ma reload
+  }
+  loadFeed();
+}
+
+// Auto-restore sessione
+(function(){
+  const saved=sessionStorage.getItem('gn_cfg');
+  // Solo se arriva da login, non auto-restore senza password
+})();
+
+// ── NAVIGAZIONE ──
+const TITLES={dashboard:'Dashboard',feed:'Aggiorna Feed RSS',notizie:'Gestione Notizie',articolo:'Scrivi Articolo',apertura:'Imposta Apertura'};
+function showPanel(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>{ if(n.textContent.toLowerCase().includes(id.toLowerCase().slice(0,5))) n.classList.add('active'); });
+  document.getElementById('panel-title').textContent=TITLES[id]||id;
+  if(id==='notizie') loadNotizie();
+  if(id==='apertura') loadApertura();
+}
+
+// ── GITHUB API ──
+async function ghFetch(path, method='GET', body=null){
+  const url=`https://api.github.com/repos/${CFG.repo}/${path}`;
+  const opts={method, headers:{'Authorization':'token '+CFG.token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'}};
+  if(body) opts.body=JSON.stringify(body);
+  const r=await fetch(url,opts);
+  const d=await r.json();
+  if(!r.ok) throw new Error(d.message||'Errore API GitHub');
+  return d;
+}
+
+// ── CARICA FEED ──
+async function loadFeed(){
+  try{
+    const r=await fetch('feed.json?_='+Date.now());
+    if(!r.ok) throw new Error();
+    feedData=await r.json();
+    notizieMod=JSON.parse(JSON.stringify(feedData.items||[]));
+    updateDashboard();
+  }catch(e){
+    feedData=null;
+    document.getElementById('dash-preview').innerHTML='<span style="color:#aaa">Feed non caricato. Aggiorna prima il feed.</span>';
+  }
+}
+
+function updateDashboard(){
+  if(!feedData) return;
+  const items=feedData.items||[];
+  document.getElementById('stat-totale').textContent=items.length;
+  document.getElementById('stat-prioritari').textContent=feedData.prioritarie||'—';
+  const custom=items.filter(i=>i._custom).length;
+  document.getElementById('stat-custom').textContent=custom;
+  document.getElementById('stat-apertura').textContent=items[0]?truncate(strip(items[0].title),20):'—';
+  document.getElementById('last-update').textContent=feedData.generated?'Ultimo feed: '+new Date(feedData.generated).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'—';
+  const preview=document.getElementById('dash-preview');
+  preview.innerHTML=items.slice(0,5).map((a,i)=>`
+    <div style="padding:10px 0;border-bottom:1px solid var(--linea);display:flex;align-items:center;gap:12px">
+      <span style="font-size:10px;color:#bbb;width:20px;text-align:center">${i+1}</span>
+      <div style="flex:1">
+        <div style="font-size:13px;font-weight:500;color:var(--nero)">${strip(a.title)}</div>
+        <div style="font-size:10px;color:#aaa;margin-top:2px">${a.category||'—'} · ${fdata(a.pubDate)}</div>
+      </div>
+      ${i===0?'<span style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#e8f5e8;color:var(--verde);padding:2px 8px">APERTURA</span>':''}
+    </div>`).join('');
+}
+
+// ── TRIGGER ACTIONS ──
+async function triggerActions(){
+  const btn=document.getElementById('btn-trigger');
+  const st=document.getElementById('feed-status');
+  showStatus(st,'loading','⏳ Avvio workflow in corso…');
+  btn.disabled=true;
+  try{
+    await ghFetch(`actions/workflows/fetch-feed.yml/dispatches`,'POST',{ref:'main'});
+    showStatus(st,'ok','✅ Workflow avviato! Attendi 30-60 secondi poi ricarica il feed.');
+    setTimeout(checkWorkflow,5000);
+  }catch(e){
+    showStatus(st,'err','❌ Errore: '+e.message);
+  }
+  btn.disabled=false;
+}
+
+async function checkWorkflow(){
+  try{
+    const d=await ghFetch('actions/runs?per_page=1');
+    const run=d.workflow_runs&&d.workflow_runs[0];
+    if(!run){ document.getElementById('workflow-status').textContent='Nessun workflow trovato.'; return; }
+    const icona={completed:'✅',in_progress:'⏳',queued:'🔜',failure:'❌'}[run.status]||'●';
+    const conclusione=run.conclusion?` (${run.conclusion})`:'';
+    document.getElementById('workflow-status').innerHTML=`
+      <strong>${icona} ${run.name}</strong> — ${run.status}${conclusione}<br/>
+      <span style="color:#aaa;font-size:12px">Avviato: ${new Date(run.created_at).toLocaleString('it-IT')}</span><br/>
+      <a href="${run.html_url}" target="_blank" style="color:var(--verde);font-size:12px">Vedi su GitHub →</a>`;
+    if(run.status==='completed'&&run.conclusion==='success'){
+      setTimeout(()=>loadFeed(),2000);
+    }
+  }catch(e){
+    document.getElementById('workflow-status').textContent='Errore nel recupero stato: '+e.message;
+  }
+}
+
+// ── NOTIZIE ──
+function loadNotizie(){
+  if(!feedData){ document.getElementById('notizie-list').innerHTML='<span style="color:#aaa">Carica prima il feed dalla sezione "Aggiorna Feed".</span>'; return; }
+  notizieMod=JSON.parse(JSON.stringify(feedData.items||[]));
+  renderNotizie();
+}
+
+function renderNotizie(){
+  const list=document.getElementById('notizie-list');
+  if(!notizieMod.length){ list.innerHTML='<span style="color:#aaa">Nessuna notizia.</span>'; return; }
+  list.innerHTML=notizieMod.map((a,i)=>`
+    <div class="notizia-row ${i===0?'apertura-sel':''} ${a._pinned?'pinned':''}" id="row-${i}">
+      <div>
+        <div>
+          ${i===0?'<span class="notizia-badge badge-verde">APERTURA</span>':''}
+          ${a._pinned?'<span class="notizia-badge badge-giallo">FISSATO</span>':''}
+          ${a._custom?'<span class="notizia-badge badge-rosso">TUO ARTICOLO</span>':''}
+          <span class="notizia-badge" style="background:#f0f0f0;color:#888">${a.category||'—'}</span>
+        </div>
+        <input class="titolo-edit" id="edit-${i}" value="${escHtml(strip(a.title))}" onblur="salvaTitolo(${i})"/>
+        <div class="notizia-titolo" id="titolo-${i}">${strip(a.title)}</div>
+        <div class="notizia-meta">${fdata(a.pubDate)}${a.author?' · '+a.author:''}</div>
+      </div>
+      <div class="notizia-actions">
+        <button class="btn btn-outline btn-sm" onclick="toggleEdit(${i})">✏️ Modifica</button>
+        <button class="btn btn-primary btn-sm" onclick="setApertura(${i})">⭐ Apertura</button>
+        <button class="btn btn-gold btn-sm" onclick="togglePin(${i})">${a._pinned?'📌 Fissato':'📌 Fissa'}</button>
+      </div>
+    </div>`).join('');
+}
+
+function toggleEdit(i){
+  const inp=document.getElementById('edit-'+i);
+  inp.classList.toggle('show');
+  if(inp.classList.contains('show')) inp.focus();
+}
+
+function salvaTitolo(i){
+  const val=document.getElementById('edit-'+i).value.trim();
+  if(val){ notizieMod[i].title=val; document.getElementById('titolo-'+i).textContent=val; }
+  document.getElementById('edit-'+i).classList.remove('show');
+}
+
+function setApertura(i){
+  const item=notizieMod.splice(i,1)[0];
+  notizieMod.unshift(item);
+  renderNotizie();
+  showStatus(document.getElementById('notizie-status'),'info','⭐ "'+strip(item.title).slice(0,60)+'" spostato in apertura. Clicca "Salva modifiche" per pubblicare.');
+}
+
+function togglePin(i){
+  notizieMod[i]._pinned=!notizieMod[i]._pinned;
+  if(notizieMod[i]._pinned){
+    const item=notizieMod.splice(i,1)[0];
+    const firstUnpinned=notizieMod.findIndex(n=>!n._pinned);
+    notizieMod.splice(firstUnpinned>=0?firstUnpinned:0,0,item);
+  }
+  renderNotizie();
+}
+
+async function salvaNotizie(){
+  const st=document.getElementById('notizie-status');
+  showStatus(st,'loading','⏳ Salvataggio in corso…');
+  try{
+    const nuovoFeed={...feedData, items:notizieMod, generated:new Date().toISOString(), _modified:true};
+    await salvaFile('feed.json', JSON.stringify(nuovoFeed,null,2), 'admin: aggiorna feed.json manualmente');
+    feedData=nuovoFeed;
+    showStatus(st,'ok','✅ Modifiche salvate e pubblicate!');
+    updateDashboard();
+  }catch(e){
+    showStatus(st,'err','❌ '+e.message);
+  }
+}
+
+// ── APERTURA ──
+function loadApertura(){
+  if(!feedData){ document.getElementById('apertura-list').innerHTML='<span style="color:#aaa">Carica prima il feed.</span>'; return; }
+  const items=feedData.items||[];
+  document.getElementById('apertura-list').innerHTML=items.slice(0,20).map((a,i)=>`
+    <div class="notizia-row ${i===aperturaIdx?'apertura-sel':''}" onclick="selApertura(${i})" style="cursor:pointer" id="ap-row-${i}">
+      <div>
+        ${i===aperturaIdx?'<span class="notizia-badge badge-verde">APERTURA ATTUALE</span>':''}
+        <span class="notizia-badge" style="background:#f0f0f0;color:#888">${a.category||'—'}</span>
+        <div class="notizia-titolo">${strip(a.title)}</div>
+        <div class="notizia-meta">${fdata(a.pubDate)}</div>
+      </div>
+      <div class="notizia-actions">
+        ${i===aperturaIdx
+          ?'<span style="color:var(--verde);font-size:12px;font-weight:600">✓ Selezionata</span>'
+          :'<button class="btn btn-outline btn-sm">Seleziona</button>'}
+      </div>
+    </div>`).join('');
+}
+
+function selApertura(i){
+  aperturaIdx=i;
+  loadApertura();
+}
+
+async function salvaApertura(){
+  const st=document.getElementById('apertura-status');
+  if(!feedData){ showStatus(st,'err','Carica prima il feed.'); return; }
+  showStatus(st,'loading','⏳ Salvataggio apertura…');
+  try{
+    const items=[...feedData.items];
+    const selezionata=items.splice(aperturaIdx,1)[0];
+    items.unshift(selezionata);
+    const nuovoFeed={...feedData,items,generated:new Date().toISOString()};
+    await salvaFile('feed.json',JSON.stringify(nuovoFeed,null,2),'admin: imposta apertura manualmente');
+    feedData=nuovoFeed;
+    notizieMod=JSON.parse(JSON.stringify(items));
+    aperturaIdx=0;
+    showStatus(st,'ok','✅ Apertura aggiornata! La homepage mostrerà subito la nuova notizia.');
+    updateDashboard();
+  }catch(e){
+    showStatus(st,'err','❌ '+e.message);
+  }
+}
+
+// ── SCRIVI ARTICOLO ──
+function wrapText(a,b){
+  const ta=document.getElementById('art-testo');
+  const s=ta.selectionStart, e=ta.selectionEnd;
+  const sel=ta.value.slice(s,e)||'testo';
+  ta.value=ta.value.slice(0,s)+a+sel+b+ta.value.slice(e);
+  ta.focus();
+}
+function insertText(t){
+  const ta=document.getElementById('art-testo');
+  const s=ta.selectionStart;
+  ta.value=ta.value.slice(0,s)+t+ta.value.slice(s);
+  ta.selectionStart=ta.selectionEnd=s+t.length;
+  ta.focus();
+}
+
+function anteprima(){
+  const titolo=document.getElementById('art-titolo').value;
+  const testo=document.getElementById('art-testo').value;
+  if(!titolo){ alert('Inserisci almeno il titolo'); return; }
+  const w=window.open('','_blank');
+  w.document.write(`<html><body style="max-width:700px;margin:40px auto;font-family:Georgia,serif;font-size:18px;line-height:1.8">
+    <h1 style="font-size:36px;line-height:1.2;margin-bottom:20px">${titolo}</h1>
+    <div>${testo.replace(/\n/g,'<br/>')}</div></body></html>`);
+}
+
+async function pubblicaArticolo(comeApertura=false){
+  const st=document.getElementById('articolo-status');
+  const titolo=document.getElementById('art-titolo').value.trim();
+  const sommario=document.getElementById('art-sommario').value.trim();
+  const testo=document.getElementById('art-testo').value.trim();
+  const categoria=document.getElementById('art-categoria').value;
+  const autore=document.getElementById('art-autore').value.trim()||'Redazione';
+  const immagine=document.getElementById('art-immagine').value.trim();
+  if(!titolo||!testo){ showStatus(st,'err','Titolo e testo sono obbligatori.'); return; }
+  showStatus(st,'loading','⏳ Pubblicazione in corso…');
+  try{
+    const nuovoArt={
+      title:titolo,
+      link:'',
+      description:sommario||titolo,
+      content:`<p>${testo.replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br/>')}</p>`,
+      pubDate:new Date().toUTCString(),
+      category:categoria,
+      author:autore,
+      image:immagine||null,
+      _custom:true,
+    };
+    if(!feedData) feedData={items:[],generated:'',source:''};
+    const items=JSON.parse(JSON.stringify(feedData.items||[]));
+    if(comeApertura){
+      items.unshift(nuovoArt);
+    } else {
+      items.splice(1,0,nuovoArt);
+    }
+    const nuovoFeed={...feedData,items,generated:new Date().toISOString()};
+    await salvaFile('feed.json',JSON.stringify(nuovoFeed,null,2),'admin: pubblica nuovo articolo "'+titolo.slice(0,40)+'"');
+    feedData=nuovoFeed;
+    notizieMod=JSON.parse(JSON.stringify(items));
+    showStatus(st,'ok','✅ Articolo pubblicato'+(comeApertura?' come APERTURA':'')+' con successo!');
+    // Reset form
+    ['art-titolo','art-sommario','art-testo','art-immagine'].forEach(id=>document.getElementById(id).value='');
+    updateDashboard();
+  }catch(e){
+    showStatus(st,'err','❌ '+e.message);
+  }
+}
+
+// ── SALVA FILE SU GITHUB ──
+async function salvaFile(percorso, contenuto, messaggio){
+  // Ottieni SHA attuale del file
+  let sha='';
+  try{
+    const info=await ghFetch(`contents/${percorso}`);
+    sha=info.sha;
+  }catch(e){ /* file nuovo */ }
+  const encoded=btoa(unescape(encodeURIComponent(contenuto)));
+  await ghFetch(`contents/${percorso}`,'PUT',{message:messaggio,content:encoded,sha:sha||undefined});
+}
+
+// ── UTILS ──
+function strip(h){ const d=document.createElement('div'); d.innerHTML=h; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
+function fdata(s){ if(!s) return ''; const d=new Date(s); return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}); }
+function truncate(s,n){ return s.length>n?s.slice(0,n)+'…':s; }
+function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function showStatus(el,type,msg){
+  el.className='status-bar show '+type;
+  el.textContent=msg;
+  if(type==='ok') setTimeout(()=>el.classList.remove('show'),5000);
+}
+</script>
+</body>
+</html>
