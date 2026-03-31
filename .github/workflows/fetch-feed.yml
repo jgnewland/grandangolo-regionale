@@ -18,82 +18,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch feed RSS e converti in JSON
+      - name: Scarica feed RSS
         run: |
-          set -e
-          FEED_URL="https://www.grandangoloagrigento.it/feed"
-          echo "Scarico feed da: $FEED_URL"
           curl -s --max-time 30 \
                -A "Mozilla/5.0 (compatible; GrandangoloRegionale/1.0)" \
-               -L "$FEED_URL" -o feed_raw.xml
+               -L "https://www.grandangoloagrigento.it/feed" \
+               -o feed_raw.xml
           if [ ! -s feed_raw.xml ]; then
-            echo "ERRORE: feed vuoto o non raggiungibile"
+            echo "ERRORE: feed vuoto"
             exit 1
           fi
-          echo "Feed scaricato ($(wc -c < feed_raw.xml) bytes)"
-          python3 - <<'PYEOF'
-          import xml.etree.ElementTree as ET
-          import json, re, sys
-          from datetime import datetime
+          echo "Scaricato $(wc -c < feed_raw.xml) bytes"
 
-          NS = {
-              'content': 'http://purl.org/rss/1.0/modules/content/',
-              'media':   'http://search.yahoo.com/mrss/',
-              'dc':      'http://purl.org/dc/elements/1.1/',
-          }
-
-          def tag_text(el, tag, ns=None):
-              found = el.find(f'{{{NS[ns]}}}{tag}') if ns else el.find(tag)
-              return found.text.strip() if found is not None and found.text else ''
-
-          def first_img(text):
-              m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', text or '')
-              return m.group(1) if m else None
-
-          def get_img(el):
-              mc = el.find(f'{{{NS["media"]}}}content')
-              if mc is not None and mc.get('url'): return mc.get('url')
-              mt = el.find(f'{{{NS["media"]}}}thumbnail')
-              if mt is not None and mt.get('url'): return mt.get('url')
-              enc = el.find('enclosure')
-              if enc is not None and 'image' in enc.get('type','''): return enc.get('url','')
-              content = tag_text(el, 'encoded', 'content')
-              return first_img(content) or first_img(tag_text(el, 'description'))
-
-          try:
-              tree = ET.parse('feed_raw.xml')
-          except ET.ParseError as e:
-              print(f'Errore XML: {e}', file=sys.stderr); sys.exit(1)
-
-          channel = tree.getroot().find('channel')
-          if channel is None:
-              print('Nessun channel trovato', file=sys.stderr); sys.exit(1)
-
-          items = []
-          for item in channel.findall('item'):
-              content = tag_text(item, 'encoded', 'content')
-              description = tag_text(item, 'description')
-              items.append({
-                  'title':       tag_text(item, 'title'),
-                  'link':        tag_text(item, 'link'),
-                  'description': re.sub('<[^>]+>', '', description).strip(),
-                  'content':     content,
-                  'pubDate':     tag_text(item, 'pubDate'),
-                  'category':    tag_text(item, 'category'),
-                  'author':      tag_text(item, 'creator', 'dc'),
-                  'image':       get_img(item),
-              })
-
-          with open('feed.json', 'w', encoding='utf-8') as f:
-              json.dump({
-                  'generated': datetime.utcnow().isoformat() + 'Z',
-                  'source': 'https://www.grandangoloagrigento.it/feed',
-                  'count': len(items),
-                  'items': items,
-              }, f, ensure_ascii=False, indent=2)
-
-          print(f'OK: {len(items)} articoli salvati in feed.json')
-          PYEOF
+      - name: Converti XML in JSON
+        run: python3 parse_feed.py
 
       - name: Commit feed.json
         run: |
@@ -101,8 +39,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.json
           if git diff --cached --quiet; then
-            echo "Nessuna modifica, skip commit."
+            echo "Nessuna modifica."
           else
-            git commit -m "chore: aggiorna feed RSS [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git commit -m "chore: aggiorna feed [$(date -u '+%Y-%m-%d %H:%M UTC')]"
             git push
           fi
