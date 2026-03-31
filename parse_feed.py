@@ -8,6 +8,9 @@ NS_CONTENT = 'http://purl.org/rss/1.0/modules/content/'
 NS_MEDIA   = 'http://search.yahoo.com/mrss/'
 NS_DC      = 'http://purl.org/dc/elements/1.1/'
 
+# Città prioritarie — appaiono per prime
+PRIORITA = ['palermo', 'catania', 'agrigento']
+
 def tag_text(el, tag, ns=None):
     if ns:
         found = el.find('{' + ns + '}' + tag)
@@ -32,14 +35,25 @@ def get_img(el):
         return mt.get('url')
     enc = el.find('enclosure')
     if enc is not None:
-        tipo = enc.get('type', '')
-        if 'image' in tipo:
+        if 'image' in enc.get('type', ''):
             return enc.get('url', '')
     content = tag_text(el, 'encoded', NS_CONTENT)
     result = first_img(content)
     if result:
         return result
     return first_img(tag_text(el, 'description'))
+
+def is_prioritaria(item):
+    """Restituisce True se la notizia riguarda Palermo, Catania o Agrigento."""
+    testo = ' '.join([
+        item.get('title', ''),
+        item.get('category', ''),
+        item.get('description', ''),
+    ]).lower()
+    for citta in PRIORITA:
+        if citta in testo:
+            return True
+    return False
 
 try:
     tree = ET.parse('feed_raw.xml')
@@ -68,14 +82,21 @@ for item in channel.findall('item'):
         'image':       get_img(item),
     })
 
+# Ordina: prima le notizie prioritarie, poi le altre
+# Mantiene l'ordine cronologico all'interno di ciascun gruppo
+prioritarie = [i for i in items if is_prioritaria(i)]
+altre       = [i for i in items if not is_prioritaria(i)]
+items_ordinati = prioritarie + altre
+
 output = {
     'generated': datetime.utcnow().isoformat() + 'Z',
     'source':    'https://www.grandangoloagrigento.it/feed',
-    'count':     len(items),
-    'items':     items,
+    'count':     len(items_ordinati),
+    'prioritarie': len(prioritarie),
+    'items':     items_ordinati,
 }
 
 with open('feed.json', 'w', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
-print('OK: ' + str(len(items)) + ' articoli salvati in feed.json')
+print('OK: ' + str(len(items_ordinati)) + ' articoli (' + str(len(prioritarie)) + ' prioritari: Palermo/Catania/Agrigento)')
