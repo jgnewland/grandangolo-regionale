@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grandangolo Regionale</title>
+  <meta name="description" content="Grandangolo Regionale – Il quotidiano della Sicilia"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde: #2d6a2d;
+      --rosso: #c0392b;
+      --nero: #111;
+      --linea: #e8e8e8;
+      --testo: #1a1a1a;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f5f5f3; color: var(--testo); font-size: 16px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    /* TOPBAR */
+    .topbar { background: #fff; border-bottom: 1px solid var(--linea); padding: 6px 24px; display: flex; justify-content: space-between; font-size: 11px; color: #999; }
+    .topbar a { color: var(--verde); font-weight: 500; }
+
+    /* MASTHEAD */
+    .masthead { background: #fff; padding: 18px 24px 14px; border-bottom: 4px solid var(--verde); }
+    .masthead-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; }
+    .mast-logo img { height: 52px; width: auto; display: block; }
+    .mast-center { text-align: center; border-left: 1px solid var(--linea); border-right: 1px solid var(--linea); padding: 0 20px; }
+    .mast-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--nero); letter-spacing: -1.5px; line-height: 1; }
+    .mast-title span { color: var(--verde); }
+    .mast-sub { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #bbb; margin-top: 5px; }
+    .mast-right { text-align: right; font-size: 11px; color: #bbb; line-height: 1.9; }
+    .mast-right strong { color: #333; font-size: 12px; display: block; }
+
+    /* NAV */
+    .navbar { background: #fff; border-bottom: 2px solid var(--nero); }
+    .navbar-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; }
+    .navbar a { font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: #777; padding: 11px 13px; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; display: block; transition: color .15s, border-color .15s; }
+    .navbar a:hover { color: var(--verde); border-bottom-color: var(--verde); }
+    .navbar a.home-link { color: var(--verde); }
+
+    /* WRAP ARTICOLO */
+    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 11px; color: #bbb; margin-bottom: 28px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--verde); font-weight: 500; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #ddd; }
+
+    /* HEADER ARTICOLO */
+    .art-categoria { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--rosso); margin-bottom: 14px; }
+    .art-titolo { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.1; color: var(--nero); letter-spacing: -1px; margin-bottom: 20px; }
+    .art-sommario { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.7; color: #444; font-style: italic; border-left: 3px solid var(--verde); padding-left: 16px; margin-bottom: 24px; }
+    .art-meta { font-size: 11px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; padding: 16px 0; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .art-meta::before { content: ''; display: block; width: 28px; height: 1px; background: var(--verde); flex-shrink: 0; }
+    .art-meta .fonte { margin-left: auto; }
+    .art-meta .fonte a { color: var(--verde); font-weight: 700; border-bottom: 1px solid var(--verde); padding-bottom: 1px; }
+
+    /* IMMAGINE */
+    .art-img-wrap { margin-bottom: 32px; }
+    .art-img-wrap img { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+    .art-img-caption { font-size: 11px; color: #bbb; margin-top: 8px; font-style: italic; }
+
+    /* TESTO ARTICOLO */
+    .art-body { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.85; color: #222; }
+    .art-body p { margin-bottom: 22px; }
+    .art-body h2 { font-size: 24px; font-weight: 700; margin: 32px 0 14px; color: var(--nero); }
+    .art-body h3 { font-size: 20px; font-weight: 700; margin: 28px 0 12px; color: var(--nero); }
+    .art-body img { max-width: 100%; height: auto; display: block; margin: 28px auto; }
+    .art-body a { color: var(--verde); text-decoration: underline; }
+    .art-body strong { font-weight: 700; }
+    .art-body em { font-style: italic; }
+    .art-body blockquote { border-left: 3px solid var(--verde); padding-left: 20px; margin: 28px 0; color: #555; font-style: italic; }
+
+    /* FOOTER ARTICOLO */
+    .art-footer { margin-top: 48px; padding-top: 24px; border-top: 2px solid var(--nero); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .art-footer-leggi { display: inline-block; background: var(--nero); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; transition: background .2s; }
+    .art-footer-leggi:hover { background: var(--verde); }
+    .art-footer-back { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--verde); border-bottom: 1px solid var(--verde); padding-bottom: 1px; }
+
+    /* CORRELATI */
+    .correlati { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
+    .correlati-title { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--verde); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--verde); }
+    .correlati-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--linea); border: 1px solid var(--linea); }
+    .cor-card { background: #fff; padding: 18px; display: flex; flex-direction: column; gap: 7px; transition: background .12s; }
+    .cor-card:hover { background: #fafafa; }
+    .cor-card img { width: 100%; height: 130px; object-fit: cover; display: block; margin-bottom: 4px; }
+    .cor-cat { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--verde); }
+    .cor-card h4 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--nero); }
+    .cor-data { font-size: 10px; color: #bbb; text-transform: uppercase; margin-top: auto; }
+
+    /* SPINNER */
+    #stato { text-align: center; padding: 80px 20px; }
+    .spin { width: 36px; height: 36px; border: 2px solid #eee; border-top-color: var(--verde); border-radius: 50%; animation: sp .8s linear infinite; margin: 0 auto 16px; }
+    @keyframes sp { to { transform: rotate(360deg); } }
+    #stato p { font-family: 'Playfair Display', serif; font-size: 14px; color: #aaa; font-style: italic; }
+
+    /* FOOTER */
+    footer { background: var(--nero); border-top: 4px solid var(--verde); padding: 28px 24px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .fbrand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: #fff; }
+    .fbrand span { color: var(--verde); }
+    .fbrand small { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+    .footer-right { text-align: right; font-size: 11px; color: #444; line-height: 2; }
+    .footer-right a { color: #777; }
+
+    @media(max-width: 700px) {
+      .art-titolo { font-size: 28px; }
+      .art-body { font-size: 16px; }
+      .correlati-grid { grid-template-columns: 1fr; }
+      .masthead-inner { grid-template-columns: 1fr; text-align: center; }
+      .mast-center { border: none; padding: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span id="data-top"></span>
+  <span>Fonte: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a> · Aggiornato ogni ora</span>
+</div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="mast-logo">
+      <a href="/"><img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/></a>
+    </div>
+    <div class="mast-center">
+      <div class="mast-title">Grandangolo <span>Regionale</span></div>
+      <div class="mast-sub">Il quotidiano della Sicilia</div>
+    </div>
+    <div class="mast-right">
+      <strong>regionale.grandangolosettimanale.it</strong>
+      Notizie dalla Sicilia<br/>Aggiornamento continuo
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="home-link">← Prima pagina</a>
+    <a href="/">Cronaca</a>
+    <a href="/">Politica</a>
+    <a href="/">Giudiziaria</a>
+    <a href="/">Inchieste</a>
+    <a href="/">Economia</a>
+    <a href="/">Cultura</a>
+    <a href="/">Sport</a>
+    <a href="/">Agrigento</a>
+    <a href="/">Palermo</a>
+    <a href="/">Catania</a>
+  </div>
+</nav>
+
+<div id="stato" class="wrap">
+  <div class="spin"></div>
+  <p>Caricamento articolo…</p>
+</div>
+
+<div id="contenuto" style="display:none">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="/">Prima pagina</a>
+      <span>›</span>
+      <span id="bread-cat"></span>
+    </div>
+    <div class="art-categoria" id="art-cat"></div>
+    <h1 class="art-titolo" id="art-titolo"></h1>
+    <div class="art-sommario" id="art-sommario"></div>
+    <div class="art-meta">
+      <span id="art-data"></span>
+      <span id="art-autore"></span>
+      <span class="fonte"><a id="art-fonte-link" href="#" target="_blank" rel="noopener">Leggi la fonte originale →</a></span>
+    </div>
+    <div class="art-img-wrap" id="art-img-wrap"></div>
+    <div class="art-body" id="art-body"></div>
+    <div class="art-footer">
+      <a href="/" class="art-footer-back">← Torna alla prima pagina</a>
+      <a id="art-leggi-originale" href="#" target="_blank" rel="noopener" class="art-footer-leggi">Leggi sul sito originale →</a>
+    </div>
+  </div>
+
+  <div class="correlati">
+    <div class="correlati-title">Leggi anche</div>
+    <div class="correlati-grid" id="correlati"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="fbrand">Grandangolo <span>Regionale</span><small>Edizione Sicilia</small></div>
+    </div>
+    <div class="footer-right">
+      Contenuti: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a><br/>
+      Ospitato su <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('data-top').textContent =
+    new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+
+  function strip(h){ const d=document.createElement('div'); d.innerHTML=h; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
+  function fdata(s){ if(!s) return ''; const d=new Date(s); return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}); }
+
+  // Leggi ID dall'URL: articolo.html?id=3
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id')||'0', 10);
+
+  async function carica(){
+    let dati=null;
+    for(const url of ['feed.json','./feed.json']){
+      try{ const r=await fetch(url,{cache:'no-cache'}); if(r.ok){ dati=await r.json(); break; } }catch(e){}
+    }
+    if(!dati||!dati.items||!dati.items.length){
+      document.getElementById('stato').innerHTML=`<p style="color:var(--rosso)">Articolo non disponibile. <a href="/" style="color:var(--verde)">← Torna alla homepage</a></p>`;
+      return;
+    }
+
+    const items=dati.items;
+    const art=items[id] || items[0];
+
+    // Aggiorna title pagina
+    document.title = strip(art.title) + ' – Grandangolo Regionale';
+
+    // Popola pagina
+    const cat=art.category||'Sicilia';
+    document.getElementById('bread-cat').textContent=cat;
+    document.getElementById('art-cat').textContent=cat;
+    document.getElementById('art-titolo').textContent=strip(art.title);
+
+    // Sommario = prima frase del testo pulito
+    const descPulita=(art.description||'').trim();
+    document.getElementById('art-sommario').textContent=descPulita.slice(0,300)+(descPulita.length>300?'…':'');
+
+    // Meta
+    document.getElementById('art-data').textContent=fdata(art.pubDate);
+    if(art.author) document.getElementById('art-autore').textContent='di '+art.author;
+    document.getElementById('art-fonte-link').href=art.link||'#';
+    document.getElementById('art-leggi-originale').href=art.link||'#';
+
+    // Immagine
+    if(art.image){
+      document.getElementById('art-img-wrap').innerHTML=
+        `<img src="${art.image}" alt="${strip(art.title)}" onerror="this.parentElement.style.display='none'"/>
+         <div class="art-img-caption">${cat} · ${fdata(art.pubDate)}</div>`;
+    }
+
+    // Corpo articolo: usa content (HTML completo) o fallback su description
+    const corpo = art.content || art.description || '';
+    // Pulisci immagini duplicate (già mostrate sopra) e attr WordPress inutili
+    const corpoPulito = corpo
+      .replace(/<img[^>]+class="[^"]*size-post-thumbnail[^"]*"[^>]*>/gi,'')
+      .replace(/srcset="[^"]*"/gi,'')
+      .replace(/sizes="[^"]*"/gi,'')
+      .replace(/decoding="[^"]*"/gi,'')
+      .replace(/loading="[^"]*"/gi,'loading="lazy"')
+      .replace(/<p>\s*<\/p>/gi,'');
+
+    document.getElementById('art-body').innerHTML = corpoPulito || `<p>${descPulita}</p>`;
+
+    // Mostra
+    document.getElementById('stato').style.display='none';
+    document.getElementById('contenuto').style.display='block';
+
+    // CORRELATI: 3 articoli vicini (escludi corrente)
+    const correlati = items.filter((_,i)=>i!==id).slice(0,3);
+    document.getElementById('correlati').innerHTML=correlati.map((a,i)=>{
+      const idx=items.indexOf(a);
+      return `<a class="cor-card" href="articolo.html?id=${idx}">
+        ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
+        <div class="cor-cat">${a.category||'Sicilia'}</div>
+        <h4>${strip(a.title)}</h4>
+        <div class="cor-data">${fdata(a.pubDate)}</div>
+      </a>`;
+    }).join('');
+
+    // Scroll top
+    window.scrollTo(0,0);
+  }
+
+  carica();
+})();
+</script>
+</body>
+</html>
