@@ -3,152 +3,222 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grandangolo Regionale – Notizie dalla Sicilia</title>
-  <meta name="description" content="Le ultime notizie dalla Sicilia da Grandangolo."/>
+  <title>Grandangolo Regionale – Sicilia</title>
+  <meta name="description" content="Le ultime notizie dalla Sicilia – Grandangolo Regionale"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --r: #E8001D;
+      --r2: #b50017;
+      --nero: #0e0e0e;
+      --antracite: #1c1c1c;
+      --grigio: #f4f4f4;
+      --testo: #1a1a1a;
+      --sottile: #888;
+      --oro: #f5a623;
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Open Sans',Arial,sans-serif;background:#efefef;color:#111;font-size:14px;line-height:1.5}
-    .topbar{background:#111;color:#777;font-size:11px;padding:5px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
-    .topbar a{color:#d4a020;text-decoration:none}
-    #data-top{color:#aaa}
-    .masthead{background:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:4px solid #cc1f1f}
-    .masthead-logo{display:flex;align-items:center;gap:16px}
-    .masthead-logo img{height:64px;width:auto;display:block}
-    .masthead-logo .edition{border-left:2px solid #cc1f1f;padding-left:14px;margin-left:4px}
-    .masthead-logo .edition strong{display:block;font-size:18px;font-family:'Playfair Display',serif;font-weight:900;color:#cc1f1f;line-height:1.1;letter-spacing:-0.5px}
-    .masthead-logo .edition span{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#999;font-weight:600}
-    .masthead-right{text-align:right;font-size:10px;color:#aaa;line-height:2}
-    .masthead-right strong{color:#333;font-size:11px;display:block}
-    .navbar{background:#111;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.4)}
-    .navbar ul{list-style:none;display:flex;flex-wrap:wrap;max-width:1140px;margin:0 auto}
-    .navbar ul li a{display:block;color:#bbb;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;padding:11px 15px;border-right:1px solid #222;white-space:nowrap;transition:background .15s,color .15s}
-    .navbar ul li a:hover,.navbar ul li a.on{background:#cc1f1f;color:#fff}
-    .ticker{background:#cc1f1f;padding:6px 24px;display:flex;align-items:center;gap:12px;overflow:hidden}
-    .ticker-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:#991515;padding:3px 8px;white-space:nowrap;flex-shrink:0}
-    .ticker-track{overflow:hidden;flex:1;font-size:11px;color:#ffe;white-space:nowrap}
-    .ticker-inner{display:inline-block;animation:tick 50s linear infinite}
-    @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    .wrap{max-width:1140px;margin:0 auto;padding:20px 16px 80px}
-    .sh{display:flex;align-items:stretch;gap:0;margin-bottom:16px;border-bottom:3px solid #111}
-    .sh-label{background:#cc1f1f;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;white-space:nowrap}
-    .sh-line{flex:1}
-    .sh-ts{font-size:10px;color:#aaa;align-self:flex-end;padding-bottom:4px;font-style:italic;padding-right:2px}
-    .apertura{display:grid;grid-template-columns:3fr 1fr;gap:2px;background:#ccc;border:1px solid #ccc;margin-bottom:2px}
-    .ap-main{background:#fff;padding:22px}
-    .ap-main-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
-    .ap-img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}
-    .ap-body{display:flex;flex-direction:column}
-    .kicker{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#cc1f1f;margin-bottom:6px}
-    .ap-body h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;line-height:1.2;color:#0a0a0a;margin-bottom:12px}
-    .ap-body .sommario{font-size:14px;line-height:1.7;color:#444;font-style:italic;border-left:3px solid #cc1f1f;padding-left:12px;margin-bottom:14px;flex:1}
-    .ap-body .firma{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;padding-top:10px;border-top:1px solid #eee}
-    .ap-side{background:#f7f7f7;display:flex;flex-direction:column;gap:2px}
-    .ap-side-card{background:#fff;padding:14px;flex:1;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #eee;transition:background .12s}
-    .ap-side-card:hover{background:#fafafa}
-    .ap-side-card img{width:100%;height:90px;object-fit:cover;display:block}
-    .ap-side-card h3{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;line-height:1.35;color:#111}
-    .ap-side-card .meta{font-size:9px;color:#bbb;text-transform:uppercase;margin-top:auto}
-    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#ccc;border:1px solid #ccc;margin-bottom:2px}
-    .card3{background:#fff;padding:18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px;transition:background .12s}
-    .card3:hover{background:#fafafa}
-    .card3 img{width:100%;height:150px;object-fit:cover;display:block}
-    .card3 h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;color:#111}
-    .card3 p{font-size:12px;line-height:1.6;color:#555;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
-    .card3 .meta{font-size:9px;color:#bbb;text-transform:uppercase;padding-top:8px;border-top:1px solid #f0f0f0;margin-top:auto}
-    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#ccc;border:1px solid #ccc;margin-bottom:2px}
-    .card4{background:#fff;padding:16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:5px;border-left:3px solid transparent;transition:background .12s,border-color .12s}
-    .card4:hover{background:#fafafa;border-left-color:#cc1f1f}
-    .card4 h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.35;color:#111}
-    .card4 p{font-size:11px;line-height:1.55;color:#666;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
-    .card4 .meta{font-size:9px;color:#bbb;text-transform:uppercase;margin-top:auto}
-    .fascia4{display:grid;grid-template-columns:2fr 1fr;gap:2px;background:#ccc;border:1px solid #ccc;margin-bottom:2px}
-    .f4-main{background:#ccc;display:grid;grid-template-columns:1fr 1fr;gap:2px}
-    .f4-side{background:#111;padding:18px;display:flex;flex-direction:column;gap:12px}
-    .f4-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#cc1f1f;padding-bottom:8px;border-bottom:1px solid #333;margin-bottom:4px}
-    .f4-item{border-bottom:1px solid #222;padding-bottom:10px;text-decoration:none;display:block;transition:opacity .15s}
-    .f4-item:hover{opacity:.8}
-    .f4-item:last-child{border-bottom:none;padding-bottom:0}
-    .f4-item .kicker{color:#d4a020}
-    .f4-item h5{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;line-height:1.3;color:#eee;margin-top:3px}
-    .f4-item .meta{font-size:9px;color:#555;text-transform:uppercase;margin-top:4px}
-    #piu{display:none;margin:24px auto 0;padding:11px 40px;background:transparent;border:2px solid #111;color:#111;font-family:'Open Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s}
-    #piu:hover{background:#111;color:#fff}
-    #stato{text-align:center;padding:70px 20px;background:#fff;margin-bottom:20px}
-    .spin{width:38px;height:38px;border:3px solid #eee;border-top-color:#cc1f1f;border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 14px}
+    body{font-family:'Barlow',sans-serif;background:#f0f0f0;color:var(--testo);font-size:15px}
+    a{text-decoration:none;color:inherit}
+
+    /* ─── TOPBAR ─── */
+    .topbar{background:var(--nero);padding:6px 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .topbar-data{font-size:11px;color:#666;letter-spacing:.5px}
+    .topbar-fonte{font-size:11px;color:#555}
+    .topbar-fonte a{color:var(--oro);font-weight:600}
+
+    /* ─── TESTATA ─── */
+    .testata{background:#fff;padding:0;border-bottom:5px solid var(--r)}
+    .testata-inner{max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .testata-sinistra{display:flex;align-items:center;gap:20px}
+    .testata-logo img{height:72px;width:auto;display:block}
+    .testata-sep{width:3px;height:60px;background:var(--r)}
+    .testata-titolo h1{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:900;color:var(--r);letter-spacing:-1px;line-height:1;text-transform:uppercase}
+    .testata-titolo p{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#999;margin-top:3px;font-weight:600}
+    .testata-destra{text-align:right}
+    .testata-destra .url{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#333;letter-spacing:.5px}
+    .testata-destra .desc{font-size:10px;color:#aaa;margin-top:4px;line-height:1.8}
+
+    /* ─── NAV ─── */
+    .navbar{background:var(--antracite);position:sticky;top:0;z-index:200}
+    .navbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:stretch}
+    .navbar a{display:block;padding:12px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;border-right:1px solid #2a2a2a;transition:background .15s,color .15s;white-space:nowrap}
+    .navbar a:hover,.navbar a.on{background:var(--r);color:#fff}
+    .navbar a.on{background:var(--r)}
+
+    /* ─── TICKER ─── */
+    .breaking{background:var(--r);display:flex;align-items:center;overflow:hidden}
+    .breaking-tag{background:var(--nero);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;white-space:nowrap;flex-shrink:0}
+    .breaking-track{flex:1;overflow:hidden;padding:0 16px}
+    .breaking-scroll{display:inline-block;white-space:nowrap;font-size:12px;color:#fff;font-weight:500;letter-spacing:.3px;animation:scr 55s linear infinite}
+    @keyframes scr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* ─── WRAPPER ─── */
+    .wrap{max-width:1200px;margin:0 auto;padding:24px 20px 80px}
+
+    /* ─── SECTION HEADER ─── */
+    .sh{display:flex;align-items:center;gap:0;margin-bottom:18px}
+    .sh-tag{background:var(--r);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:5px 14px}
+    .sh-line{flex:1;height:3px;background:linear-gradient(90deg,var(--r) 0%,#e0e0e0 100%)}
+    .sh-ts{font-size:10px;color:var(--sottile);padding:0 8px;font-style:italic;white-space:nowrap}
+
+    /* ─── APERTURA ─── */
+    .apertura{display:grid;grid-template-columns:1fr 360px;gap:3px;margin-bottom:3px}
+    .ap-hero{position:relative;overflow:hidden;background:#111;min-height:480px;display:flex;flex-direction:column;justify-content:flex-end}
+    .ap-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;transition:opacity .3s}
+    .ap-hero:hover .ap-hero-img{opacity:.65}
+    .ap-hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 60%,transparent 100%)}
+    .ap-hero-body{position:relative;z-index:2;padding:28px 28px 24px}
+    .ap-hero-body .kicker{display:inline-block;background:var(--r);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;margin-bottom:10px}
+    .ap-hero-body h2{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:900;line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:10px}
+    .ap-hero-body .sommario{font-family:'Lora',serif;font-size:14px;line-height:1.65;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:14px;max-width:600px}
+    .ap-hero-body .meta{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+    .ap-hero-body .leggi{display:inline-block;background:var(--r);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;margin-top:10px;transition:background .15s}
+    .ap-hero-body .leggi:hover{background:var(--r2)}
+
+    .ap-stack{display:flex;flex-direction:column;gap:3px}
+    .ap-card{background:#fff;padding:16px;display:flex;flex-direction:column;gap:6px;flex:1;transition:background .12s;border-left:4px solid transparent}
+    .ap-card:hover{background:#fafafa;border-left-color:var(--r)}
+    .ap-card img{width:100%;height:100px;object-fit:cover;display:block}
+    .ap-card .kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--r)}
+    .ap-card h3{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;line-height:1.2;text-transform:uppercase;color:var(--testo)}
+    .ap-card p{font-family:'Lora',serif;font-size:12px;line-height:1.55;color:#555;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .ap-card .meta{font-size:9px;color:var(--sottile);text-transform:uppercase;letter-spacing:.5px;margin-top:auto}
+
+    /* ─── SEZIONE 3 COL ─── */
+    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:3px}
+    .c3{background:#fff;padding:0;display:flex;flex-direction:column;overflow:hidden;transition:transform .15s,box-shadow .15s}
+    .c3:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    .c3-img{width:100%;height:160px;object-fit:cover;display:block}
+    .c3-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .c3-body .kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--r)}
+    .c3-body h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;line-height:1.15;text-transform:uppercase;color:var(--testo)}
+    .c3-body p{font-family:'Lora',serif;font-size:12px;line-height:1.6;color:#555;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .c3-body .meta{font-size:9px;color:var(--sottile);text-transform:uppercase;padding-top:10px;border-top:1px solid #f0f0f0;margin-top:auto}
+
+    /* ─── FASCIA SCURA ─── */
+    .fascia-dark{display:grid;grid-template-columns:1fr 1fr 1fr 300px;gap:3px;margin-bottom:3px}
+    .fd-card{background:var(--antracite);padding:18px;display:flex;flex-direction:column;gap:8px;transition:background .15s}
+    .fd-card:hover{background:#252525}
+    .fd-card .kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--oro)}
+    .fd-card h3{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;line-height:1.15;text-transform:uppercase;color:#eee}
+    .fd-card p{font-family:'Lora',serif;font-size:12px;line-height:1.55;color:#888;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .fd-card .meta{font-size:9px;color:#555;text-transform:uppercase;margin-top:auto}
+    .fd-sidebar{background:var(--r);padding:18px;display:flex;flex-direction:column;gap:0}
+    .fd-sidebar-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+    .fd-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);display:block;transition:opacity .15s}
+    .fd-item:last-child{border-bottom:none}
+    .fd-item:hover{opacity:.8}
+    .fd-item .kicker{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:3px;font-family:'Barlow Condensed',sans-serif}
+    .fd-item h5{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;line-height:1.2;color:#fff;text-transform:uppercase}
+    .fd-item .meta{font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-top:3px}
+
+    /* ─── SEZIONE 4 COL ─── */
+    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:3px}
+    .c4{background:#fff;padding:16px;display:flex;flex-direction:column;gap:5px;border-top:3px solid transparent;transition:border-color .15s,background .15s}
+    .c4:hover{border-top-color:var(--r);background:#fafafa}
+    .c4 .kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--r)}
+    .c4 h4{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;line-height:1.2;text-transform:uppercase;color:var(--testo)}
+    .c4 p{font-family:'Lora',serif;font-size:11px;line-height:1.55;color:#666;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .c4 .meta{font-size:9px;color:var(--sottile);text-transform:uppercase;margin-top:auto;padding-top:8px;border-top:1px solid #f4f4f4}
+
+    /* ─── LOAD MORE ─── */
+    #piu{display:none;margin:28px auto 0;padding:12px 44px;background:var(--r);border:none;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+    #piu:hover{background:var(--r2)}
+
+    /* ─── SPINNER ─── */
+    #stato{text-align:center;padding:80px 20px;background:#fff}
+    .spin{width:40px;height:40px;border:3px solid #eee;border-top-color:var(--r);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 16px}
     @keyframes sp{to{transform:rotate(360deg)}}
-    #stato p{font-size:13px;color:#888;font-style:italic}
-    footer{background:#111;border-top:4px solid #cc1f1f;padding:24px}
-    .footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-    footer img{height:38px;width:auto;filter:brightness(0) invert(1);opacity:.75}
-    footer .fright{text-align:right;font-size:10px;color:#555;line-height:2}
-    footer a{color:#d4a020;text-decoration:none}
-    @media(max-width:900px){
+    #stato p{font-size:13px;color:#aaa;font-family:'Lora',serif;font-style:italic}
+
+    /* ─── FOOTER ─── */
+    footer{background:var(--nero);border-top:4px solid var(--r);padding:28px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+    footer img{height:42px;filter:brightness(0) invert(1);opacity:.7}
+    .footer-r{text-align:right;font-size:10px;color:#444;line-height:2}
+    .footer-r a{color:var(--oro)}
+    .footer-brand{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-1px}
+    .footer-brand span{color:var(--r)}
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:960px){
       .apertura{grid-template-columns:1fr}
-      .ap-main-inner{grid-template-columns:1fr}
-      .ap-img{min-height:200px;height:200px}
+      .ap-stack{flex-direction:row;flex-wrap:wrap}
+      .ap-card{flex:1;min-width:200px}
       .g3{grid-template-columns:1fr 1fr}
+      .fascia-dark{grid-template-columns:1fr 1fr}
       .g4{grid-template-columns:1fr 1fr}
-      .fascia4{grid-template-columns:1fr}
     }
-    @media(max-width:560px){
-      .g3,.g4,.f4-main{grid-template-columns:1fr}
-      .masthead{flex-direction:column;text-align:center}
-      .masthead-logo{flex-direction:column;align-items:center}
-      .masthead-logo .edition{border-left:none;border-top:2px solid #cc1f1f;padding:10px 0 0;margin:6px 0 0;text-align:center}
+    @media(max-width:600px){
+      .g3,.g4,.fascia-dark{grid-template-columns:1fr}
+      .testata-inner{flex-direction:column;text-align:center}
+      .testata-sinistra{flex-direction:column;align-items:center}
+      .testata-sep{display:none}
+      .ap-hero-body h2{font-size:28px}
     }
   </style>
 </head>
 <body>
 
+<!-- TOPBAR -->
 <div class="topbar">
-  <span id="data-top"></span>
-  <span>Fonte: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a> &nbsp;·&nbsp; Aggiornato ogni ora</span>
+  <span class="topbar-data" id="data-top"></span>
+  <span class="topbar-fonte">Fonte: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a> &nbsp;·&nbsp; Feed aggiornato ogni ora</span>
 </div>
 
-<div class="masthead">
-  <div class="masthead-logo">
-    <a href="/"><img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/></a>
-    <div class="edition">
-      <strong>Regionale</strong>
-      <span>Edizione Sicilia</span>
+<!-- TESTATA -->
+<div class="testata">
+  <div class="testata-inner">
+    <div class="testata-sinistra">
+      <div class="testata-logo">
+        <a href="/"><img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/></a>
+      </div>
+      <div class="testata-sep"></div>
+      <div class="testata-titolo">
+        <h1>Regionale</h1>
+        <p>Edizione Sicilia &nbsp;·&nbsp; Notizie in tempo reale</p>
+      </div>
+    </div>
+    <div class="testata-destra">
+      <div class="url">regionale.grandangolosettimanale.it</div>
+      <div class="desc">Il quotidiano della Sicilia<br/>Aggiornamento continuo</div>
     </div>
   </div>
-  <div class="masthead-right">
-    <strong>regionale.grandangolosettimanale.it</strong>
-    Il quotidiano della Sicilia<br/>
-    Notizie in tempo reale da tutta l'isola
-  </div>
 </div>
 
+<!-- NAV -->
 <nav class="navbar">
-  <ul>
-    <li><a href="#" class="on">Prima Pagina</a></li>
-    <li><a href="#">Cronaca</a></li>
-    <li><a href="#">Politica</a></li>
-    <li><a href="#">Giudiziaria</a></li>
-    <li><a href="#">Inchieste</a></li>
-    <li><a href="#">Economia</a></li>
-    <li><a href="#">Cultura</a></li>
-    <li><a href="#">Sport</a></li>
-    <li><a href="#">Agrigento</a></li>
-    <li><a href="#">Palermo</a></li>
-    <li><a href="#">Catania</a></li>
-  </ul>
+  <div class="navbar-inner">
+    <a href="#" class="on">Prima Pagina</a>
+    <a href="#">Cronaca</a>
+    <a href="#">Politica</a>
+    <a href="#">Giudiziaria</a>
+    <a href="#">Inchieste</a>
+    <a href="#">Economia</a>
+    <a href="#">Cultura</a>
+    <a href="#">Sport</a>
+    <a href="#">Agrigento</a>
+    <a href="#">Palermo</a>
+    <a href="#">Catania</a>
+  </div>
 </nav>
 
-<div class="ticker">
-  <span class="ticker-lbl">Breaking</span>
-  <div class="ticker-track">
-    <span class="ticker-inner" id="ticker">Caricamento…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Caricamento…</span>
+<!-- BREAKING -->
+<div class="breaking">
+  <div class="breaking-tag">Breaking</div>
+  <div class="breaking-track">
+    <span class="breaking-scroll" id="ticker">Caricamento…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Caricamento…</span>
   </div>
 </div>
 
+<!-- CONTENUTO -->
 <div class="wrap">
+
   <div class="sh">
-    <span class="sh-label">Apertura</span>
+    <span class="sh-tag">Apertura</span>
     <div class="sh-line"></div>
     <span class="sh-ts" id="agg-ts"></span>
   </div>
@@ -159,45 +229,77 @@
   </div>
 
   <div id="contenuto" style="display:none">
+
+    <!-- HERO APERTURA -->
     <div class="apertura" id="apertura"></div>
-    <div class="sh" style="margin-top:20px"><span class="sh-label">Primo Piano</span><div class="sh-line"></div></div>
+
+    <!-- PRIMO PIANO -->
+    <div class="sh" style="margin-top:24px">
+      <span class="sh-tag">Primo Piano</span>
+      <div class="sh-line"></div>
+    </div>
     <div class="g3" id="g3"></div>
-    <div class="sh" style="margin-top:20px"><span class="sh-label">Notizie</span><div class="sh-line"></div></div>
-    <div class="g4" id="g4"></div>
-    <div class="sh" style="margin-top:20px"><span class="sh-label">In evidenza</span><div class="sh-line"></div></div>
-    <div class="fascia4" id="fascia4"></div>
-    <div class="sh" style="margin-top:20px"><span class="sh-label">Altre notizie</span><div class="sh-line"></div></div>
+
+    <!-- CRONACA / NOTIZIE -->
+    <div class="sh" style="margin-top:24px">
+      <span class="sh-tag">Cronaca</span>
+      <div class="sh-line"></div>
+    </div>
+    <div class="g4" id="g4a"></div>
+
+    <!-- FASCIA SCURA -->
+    <div class="sh" style="margin-top:24px">
+      <span class="sh-tag">In evidenza</span>
+      <div class="sh-line"></div>
+    </div>
+    <div class="fascia-dark" id="fascia"></div>
+
+    <!-- POLITICA -->
+    <div class="sh" style="margin-top:24px">
+      <span class="sh-tag">Politica & Società</span>
+      <div class="sh-line"></div>
+    </div>
     <div class="g4" id="g4b"></div>
+
   </div>
 
-  <div style="text-align:center"><button id="piu">Carica altre notizie</button></div>
+  <div style="text-align:center">
+    <button id="piu">Carica altre notizie</button>
+  </div>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/>
-    <div class="fright">
+    <div>
+      <img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/>
+      <div class="footer-brand" style="margin-top:8px">Grandangolo<span>Regionale</span></div>
+    </div>
+    <div class="footer-r">
       Contenuti: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a><br/>
-      Ospitato su <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> · Feed RSS aggiornato ogni ora
+      Ospitato su <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a><br/>
+      Feed RSS aggiornato automaticamente ogni ora
     </div>
   </div>
 </footer>
 
 <script>
 (function(){
-  document.getElementById('data-top').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  let tutti=[],mostrati=0;
+  document.getElementById('data-top').textContent = new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+
+  let tutti=[], mostrati=0;
+
   function strip(h){const d=document.createElement('div');d.innerHTML=h;return(d.textContent||'').replace(/\s+/g,' ').trim();}
   function fdata(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});}
 
   async function carica(){
     let dati=null;
-    const urls=['feed.json','./feed.json','https://jgnewland.github.io/grandangolo-regionale/feed.json'];
-    for(const url of urls){
+    for(const url of ['feed.json','./feed.json']){
       try{const r=await fetch(url,{cache:'no-cache'});if(r.ok){dati=await r.json();break;}}catch(e){}
     }
     if(!dati||!dati.items||!dati.items.length){
-      document.getElementById('stato').innerHTML=`<p style="color:#cc1f1f;font-size:14px">Feed non disponibile.<br/><small style="color:#999">Vai su GitHub Actions e lancia il workflow "Aggiorna Feed RSS", poi ricarica.</small></p>`;
+      document.getElementById('stato').innerHTML=`<p style="color:var(--r)">Feed non disponibile.<br/><small>Vai su GitHub Actions → "Aggiorna Feed RSS" → Run workflow, poi ricarica.</small></p>`;
       return;
     }
     tutti=dati.items;
@@ -205,62 +307,69 @@
     document.getElementById('contenuto').style.display='block';
     document.getElementById('agg-ts').textContent='Aggiornato: '+new Date(dati.generated||Date.now()).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
 
-    const titoli=tutti.slice(0,10).map(i=>strip(i.title)).join(' · ');
-    document.getElementById('ticker').innerHTML=titoli+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+titoli;
+    // TICKER
+    const titoli=tutti.slice(0,10).map(i=>strip(i.title)).join('  ·  ');
+    document.getElementById('ticker').textContent=titoli+'      '+titoli;
 
-    // APERTURA
+    // APERTURA HERO
     const p=tutti[0];
     document.getElementById('apertura').innerHTML=`
-      <div class="ap-main">
-        <div class="kicker">${p.category||'Sicilia'}</div>
-        <div class="ap-main-inner">
-          <div>${p.image?`<img src="${p.image}" alt="" class="ap-img" onerror="this.style.display='none'"/>`:'<div style="background:#eee;min-height:260px"></div>'}</div>
-          <div class="ap-body">
-            <h1>${strip(p.title)}</h1>
-            <div class="sommario">${(p.description||'').slice(0,300)}…</div>
-            <div class="firma">${fdata(p.pubDate)}${p.author?' · '+p.author:''} &nbsp;<a href="${p.link||'#'}" target="_blank" rel="noopener" style="color:#cc1f1f;font-weight:700;text-decoration:none">Leggi →</a></div>
-          </div>
+      <a class="ap-hero" href="${p.link||'#'}" target="_blank" rel="noopener">
+        ${p.image?`<img class="ap-hero-img" src="${p.image}" alt="" onerror="this.style.opacity='.2'"/>`:''}
+        <div class="ap-hero-gradient"></div>
+        <div class="ap-hero-body">
+          <span class="kicker">${p.category||'Sicilia'}</span>
+          <h2>${strip(p.title)}</h2>
+          <div class="sommario">${(p.description||'').slice(0,260)}…</div>
+          <div class="meta">${fdata(p.pubDate)}${p.author?' &nbsp;·&nbsp; '+p.author:''}</div>
+          <span class="leggi">Leggi l'articolo →</span>
         </div>
-      </div>
-      <div class="ap-side">
+      </a>
+      <div class="ap-stack">
         ${tutti.slice(1,4).map(a=>`
-          <a class="ap-side-card" href="${a.link||'#'}" target="_blank" rel="noopener">
+          <a class="ap-card" href="${a.link||'#'}" target="_blank" rel="noopener">
             ${a.image?`<img src="${a.image}" alt="" onerror="this.style.display='none'"/>`:''}
             <div class="kicker">${a.category||'Sicilia'}</div>
             <h3>${strip(a.title)}</h3>
+            <p>${(a.description||'').slice(0,110)}…</p>
             <div class="meta">${fdata(a.pubDate)}</div>
           </a>`).join('')}
       </div>`;
 
-    // G3
+    // G3 PRIMO PIANO
     document.getElementById('g3').innerHTML=tutti.slice(4,7).map(a=>`
-      <a class="card3" href="${a.link||'#'}" target="_blank" rel="noopener">
-        ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
-        <div class="kicker">${a.category||'Sicilia'}</div>
-        <h3>${strip(a.title)}</h3>
-        <p>${(a.description||'').slice(0,160)}…</p>
-        <div class="meta">${fdata(a.pubDate)}${a.author?' · '+a.author:''}</div>
+      <a class="c3" href="${a.link||'#'}" target="_blank" rel="noopener">
+        ${a.image?`<img class="c3-img" src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
+        <div class="c3-body">
+          <div class="kicker">${a.category||'Sicilia'}</div>
+          <h3>${strip(a.title)}</h3>
+          <p>${(a.description||'').slice(0,160)}…</p>
+          <div class="meta">${fdata(a.pubDate)}${a.author?' · '+a.author:''}</div>
+        </div>
       </a>`).join('');
 
-    // G4
-    const m4=a=>`<a class="card4" href="${a.link||'#'}" target="_blank" rel="noopener"><div class="kicker">${a.category||'Sicilia'}</div><h4>${strip(a.title)}</h4><p>${(a.description||'').slice(0,120)}…</p><div class="meta">${fdata(a.pubDate)}</div></a>`;
-    document.getElementById('g4').innerHTML=tutti.slice(7,11).map(m4).join('');
+    // G4A CRONACA
+    const m4=a=>`<a class="c4" href="${a.link||'#'}" target="_blank" rel="noopener">
+      <div class="kicker">${a.category||'Sicilia'}</div>
+      <h4>${strip(a.title)}</h4>
+      <p>${(a.description||'').slice(0,120)}…</p>
+      <div class="meta">${fdata(a.pubDate)}</div>
+    </a>`;
+    document.getElementById('g4a').innerHTML=tutti.slice(7,11).map(m4).join('');
 
-    // FASCIA
-    document.getElementById('fascia4').innerHTML=`
-      <div class="f4-main">
-        ${tutti.slice(11,13).map(a=>`
-          <a class="card3" href="${a.link||'#'}" target="_blank" rel="noopener" style="background:#fff;padding:16px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px">
-            ${a.image?`<img src="${a.image}" alt="" loading="lazy" style="width:100%;height:130px;object-fit:cover;display:block" onerror="this.style.display='none'"/>`:''}
-            <div class="kicker">${a.category||'Sicilia'}</div>
-            <h3 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.3;color:#111">${strip(a.title)}</h3>
-            <div style="font-size:9px;color:#bbb;text-transform:uppercase;margin-top:auto">${fdata(a.pubDate)}</div>
-          </a>`).join('')}
-      </div>
-      <div class="f4-side">
-        <div class="f4-title">Da non perdere</div>
-        ${tutti.slice(13,17).map(a=>`
-          <a class="f4-item" href="${a.link||'#'}" target="_blank" rel="noopener">
+    // FASCIA SCURA
+    document.getElementById('fascia').innerHTML=`
+      ${tutti.slice(11,14).map(a=>`
+        <a class="fd-card" href="${a.link||'#'}" target="_blank" rel="noopener">
+          <div class="kicker">${a.category||'Sicilia'}</div>
+          <h3>${strip(a.title)}</h3>
+          <p>${(a.description||'').slice(0,130)}…</p>
+          <div class="meta">${fdata(a.pubDate)}</div>
+        </a>`).join('')}
+      <div class="fd-sidebar">
+        <div class="fd-sidebar-title">Da non perdere</div>
+        ${tutti.slice(14,18).map(a=>`
+          <a class="fd-item" href="${a.link||'#'}" target="_blank" rel="noopener">
             <div class="kicker">${a.category||'Sicilia'}</div>
             <h5>${strip(a.title)}</h5>
             <div class="meta">${fdata(a.pubDate)}</div>
@@ -268,22 +377,24 @@
       </div>`;
 
     // G4B
-    document.getElementById('g4b').innerHTML=tutti.slice(17,21).map(m4).join('');
-    mostrati=21;
+    document.getElementById('g4b').innerHTML=tutti.slice(18,22).map(m4).join('');
+
+    mostrati=22;
     document.getElementById('piu').style.display=mostrati<tutti.length?'inline-block':'none';
   }
 
   document.getElementById('piu').addEventListener('click',function(){
     const div=document.createElement('div');
-    div.className='g3';
-    div.style.cssText='margin-top:2px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#ccc;border:1px solid #ccc';
+    div.style.cssText='display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px';
     div.innerHTML=tutti.slice(mostrati,mostrati+6).map(a=>`
-      <a class="card3" href="${a.link||'#'}" target="_blank" rel="noopener">
-        ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
-        <div class="kicker">${a.category||'Sicilia'}</div>
-        <h3>${strip(a.title)}</h3>
-        <p>${(a.description||'').slice(0,160)}…</p>
-        <div class="meta">${fdata(a.pubDate)}</div>
+      <a class="c3" href="${a.link||'#'}" target="_blank" rel="noopener">
+        ${a.image?`<img class="c3-img" src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
+        <div class="c3-body">
+          <div class="kicker">${a.category||'Sicilia'}</div>
+          <h3>${strip(a.title)}</h3>
+          <p>${(a.description||'').slice(0,160)}…</p>
+          <div class="meta">${fdata(a.pubDate)}</div>
+        </div>
       </a>`).join('');
     document.getElementById('contenuto').appendChild(div);
     mostrati+=6;
