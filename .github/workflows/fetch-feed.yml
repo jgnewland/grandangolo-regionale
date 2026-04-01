@@ -18,6 +18,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Installa dipendenze Python
+        run: pip install beautifulsoup4 lxml --break-system-packages -q
+
       - name: Scarica feed e immagini
         run: |
           echo "Avvio raccolta feed e download immagini..."
