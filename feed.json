@@ -1,17 +1,18 @@
 {
-  "generated": "2026-04-01T20:11:48.247915Z",
-  "fonti": [
-    "Grandangolo Agrigento",
-    "PalermoToday",
-    "CataniaToday",
-    "La Sicilia",
-    "LiveSicilia",
-    "BlogSicilia",
-    "RagusaNews"
-  ],
+  "generated": "2026-04-01T20:14:42.694203Z",
   "count": 50,
-  "prioritarie": 50,
+  "prioritarie": 46,
   "items": [
+    {
+      "title": "Omicidio di Rosalba Dell’Albani. Confermati i 30 anni per il cognato Mariano Barresi",
+      "link": "https://www.ragusanews.com/omicidio-di-rosalba-dellalbani-confermati-i-30-anni-per-il-cognato-mariano-barresi/",
+      "description": "L'articolo Omicidio di Rosalba Dell&#8217;Albani. Confermati i 30 anni per il cognato Mariano Barresi proviene da Ragusa News.",
+      "content": "<p>L'articolo <a href=\"https://www.ragusanews.com/omicidio-di-rosalba-dellalbani-confermati-i-30-anni-per-il-cognato-mariano-barresi/\">Omicidio di Rosalba Dell&#8217;Albani. Confermati i 30 anni per il cognato Mariano Barresi</a> proviene da <a href=\"https://www.ragusanews.com\">Ragusa News</a>.</p>",
+      "pubDate": "Wed, 01 Apr 2026 20:13:39 +0000",
+      "category": "Giudiziaria",
+      "author": "Giuseppe Savà",
+      "image": null
+    },
     {
       "title": "Stellantis richiama 700.000 veicoli ibridi per potenziale rischio incendio",
       "link": "https://www.ragusanews.com/stellantis-richiama-700-000-veicoli-ibridi-per-potenziale-rischio-incendio/",
@@ -20,8 +21,7 @@
       "pubDate": "Wed, 01 Apr 2026 19:11:34 +0000",
       "category": "Auto e motori",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "La Cina dispone un inventario per mettere in sicurezza i reperti dei suoi musei",
@@ -29,10 +29,9 @@
       "description": "PECHINO (CINA) (XINHUA/ITALPRESS) - La Cina ha avviato una campagna nazionale della durata di un anno per rafforzare la gestione della sicurezza dei r..\nArticolo La Cina dispone un inventario per mettere in sicurezza i reperti dei suoi musei su LiveSicilia.it.",
       "content": "<img fetchpriority=\"high\" decoding=\"async\" width=\"300\" height=\"206\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2605-300x206-1.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" /><p>PECHINO (CINA) (XINHUA/ITALPRESS) - La Cina ha avviato una campagna nazionale della durata di un anno per rafforzare la gestione della sicurezza dei r..</p><p>Articolo <a href=\"https://livesicilia.it/la-cina-dispone-un-inventario-per-mettere-in-sicurezza-i-reperti-dei-suoi-musei/\">La Cina dispone un inventario per mettere in sicurezza i reperti dei suoi musei</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 19:03:57 +0000",
-      "category": "Italpress - Top News",
+      "category": "Sicilia",
       "author": "Italpress",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/20260401_2605-300x206-1.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0002.jpg"
     },
     {
       "title": "Superenalotto: ‘SiVinceTutto’, la combinazione vincente e le quote",
@@ -40,10 +39,9 @@
       "description": "Chi ha vinto\nArticolo Superenalotto: &#8216;SiVinceTutto&#8217;, la combinazione vincente e le quote su LiveSicilia.it.",
       "content": "<img decoding=\"async\" width=\"1024\" height=\"682\" src=\"https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"superenalotto\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg 2500w, https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg?resize=768,511 768w, https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg?resize=1536,1022 1536w, https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg?resize=2048,1363 2048w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /><p>\nROMA- Concorso 'SiVinceTutto' n.13 di oggi: Combinazione Vincente: 31, 43, 50, 74, 85, 90.\n\n\n\nQueste le quote del concorso 'SiVinceTutto' n.13 di ogg..</p><p>Articolo <a href=\"https://livesicilia.it/superenalotto-sivincetutto-la-combinazione-vincente-e-le-quote-1-aprile-2026/\">Superenalotto: &#8216;SiVinceTutto&#8217;, la combinazione vincente e le quote</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 18:47:09 +0000",
-      "category": "News Italia e Mondo",
+      "category": "News italia e mondo",
       "author": "Redazione",
-      "image": "https://livesicilia.it/wp-content/uploads/2024/11/Superenalotto.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0003.jpg"
     },
     {
       "title": "Fino a 50.000 nuovi beneficiari: cosa cambia per l’Assegno Unico",
@@ -53,8 +51,7 @@
       "pubDate": "Wed, 01 Apr 2026 18:47:01 +0000",
       "category": "Oltre lo stretto",
       "author": "Walter Giannò",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "In appalto la nuova scuola Lipparini-Miccichè, traguardo storico",
@@ -64,8 +61,7 @@
       "pubDate": "Wed, 01 Apr 2026 18:16:46 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": "https://www.ragusanews.com/wp-content/uploads/2026/04/Nuova-Lipparini-Miccihe-bis-scaled.jpg",
-      "fonte": "RagusaNews"
+      "image": "imgs/img_0005.jpg"
     },
     {
       "title": "Caltagirone, sit-in dei dipendenti comunali: la Cisl chiede il confronto",
@@ -75,8 +71,7 @@
       "pubDate": "Wed, 01 Apr 2026 17:56:59 +0000",
       "category": "Catania",
       "author": "Redazione CT",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/FP-Cisl.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0006.jpg"
     },
     {
       "title": "Direttrice di filiale trasferita e demansionata, tribunale ordina reintegro e risarcimento",
@@ -86,8 +81,7 @@
       "pubDate": "Wed, 01 Apr 2026 17:50:24 +0000",
       "category": "Apertura",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484477.jpg?w=800",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0007.jpg"
     },
     {
       "title": "Gara spazi pubblicitari e suolo pubblico, Schifani: “Serve trasparenza”, Lagalla: “Predisposto bando, spazi divisi in 16 lotti”",
@@ -97,8 +91,7 @@
       "pubDate": "Wed, 01 Apr 2026 17:33:05 +0000",
       "category": "Palermo",
       "author": "Manlio Viola",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Smarrito all’ospedale di Trapani il campione di un esame istologico",
@@ -108,8 +101,7 @@
       "pubDate": "Wed, 01 Apr 2026 17:30:08 +0000",
       "category": "Trapani",
       "author": "Redazione",
-      "image": "https://livesicilia.it/wp-content/uploads/2025/03/asp-trapani.jpeg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0009.jpg"
     },
     {
       "title": "Sanità in Sicilia: “Reinternalizzare i servizi in appalto al più presto”",
@@ -119,8 +111,7 @@
       "pubDate": "Wed, 01 Apr 2026 17:29:53 +0000",
       "category": "Palermo",
       "author": "Redazione",
-      "image": "https://livesicilia.it/wp-content/uploads/2025/06/sanita-foto-condor-1.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0010.jpg"
     },
     {
       "title": "Cos’è la ricina, il veleno invisibile che ha ucciso Antonella e Sara",
@@ -128,21 +119,19 @@
       "description": "Gli aggiornamenti sulla morte delle due donne\nArticolo Cos&#8217;è la ricina, il veleno invisibile che ha ucciso Antonella e Sara su LiveSicilia.it.",
       "content": "<img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"576\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/Antonella-Di-Jelsi-e-Sara-Di-Vita-Foto-da-video.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"Madre e figlie avvelenate\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/Antonella-Di-Jelsi-e-Sara-Di-Vita-Foto-da-video.jpg 1600w, https://livesicilia.it/wp-content/uploads/2026/04/Antonella-Di-Jelsi-e-Sara-Di-Vita-Foto-da-video.jpg?resize=768,432 768w, https://livesicilia.it/wp-content/uploads/2026/04/Antonella-Di-Jelsi-e-Sara-Di-Vita-Foto-da-video.jpg?resize=1536,864 1536w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /><p>\nLa morte di Antonella Di Jelsi, 50 anni, e della figlia 15enne Sara Di Vita ha assunto i contorni di un vero e proprio giallo. Martedì 31 marzo, la ..</p><p>Articolo <a href=\"https://livesicilia.it/madre-e-figlia-avvelenate-molise-ricina-cose/\">Cos&#8217;è la ricina, il veleno invisibile che ha ucciso Antonella e Sara</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 17:24:22 +0000",
-      "category": "News Italia e Mondo",
+      "category": "News italia e mondo",
       "author": "Daniela Vitello",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/Antonella-Di-Jelsi-e-Sara-Di-Vita-Foto-da-video.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0011.jpg"
     },
     {
       "title": "Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico",
       "link": "https://livesicilia.it/ambiente-e-stili-di-vita-presentato-volume-ail-sul-rischio-onco-ematologico/",
       "description": "Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico..\nArticolo Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico su LiveSicilia.it.",
-      "content": "<p><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"576\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg 1920w, https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg?resize=768,432 768w, https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg?resize=1536,864 1536w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>    <video-js id=\"videojs69cd78309be60\" class=\"vjs-big-play-centered\" controls preload=\"auto\" playsinline data-setup='{\"fluid\": true}'>\n        <source src=\"https://video.italpress.com/play/mp4/video/n90D\" type=\"video/mp4\" />\n    </video-js>\n           </p>\n<p>Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico..</p>\n<p>Articolo <a href=\"https://livesicilia.it/ambiente-e-stili-di-vita-presentato-volume-ail-sul-rischio-onco-ematologico/\">Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
+      "content": "<p><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"576\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg 1920w, https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg?resize=768,432 768w, https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg?resize=1536,864 1536w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>    <video-js id=\"videojs69cd7c8a208ca\" class=\"vjs-big-play-centered\" controls preload=\"auto\" playsinline data-setup='{\"fluid\": true}'>\n        <source src=\"https://video.italpress.com/play/mp4/video/n90D\" type=\"video/mp4\" />\n    </video-js>\n           </p>\n<p>Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico..</p>\n<p>Articolo <a href=\"https://livesicilia.it/ambiente-e-stili-di-vita-presentato-volume-ail-sul-rischio-onco-ematologico/\">Ambiente e stili di vita, presentato volume Ail sul rischio onco-ematologico</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 17:18:58 +0000",
-      "category": "Italpress - Video",
+      "category": "Sicilia",
       "author": "Italpress",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/n90D.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0012.jpg"
     },
     {
       "title": "NABA Future Talents: 20 borse di studio al 50% con tre brand italiani",
@@ -150,10 +139,9 @@
       "description": "MILANO (ITALPRESS) - NABA, Nuova Accademia di Belle Arti lancia le borse di studio \"NABA Future Talents - Made in Italy Program\" dedicate alle aspiran..\nArticolo NABA Future Talents: 20 borse di studio al 50% con tre brand italiani su LiveSicilia.it.",
       "content": "<p><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"734\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2526.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2526.jpg 1200w, https://livesicilia.it/wp-content/uploads/2026/04/20260401_2526.jpg?resize=768,550 768w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>MILANO (ITALPRESS) - NABA, Nuova Accademia di Belle Arti lancia le borse di studio \"NABA Future Talents - Made in Italy Program\" dedicate alle aspiran..</p>\n<p>Articolo <a href=\"https://livesicilia.it/naba-future-talents-20-borse-di-studio-al-50-con-tre-brand-italiani/\">NABA Future Talents: 20 borse di studio al 50% con tre brand italiani</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 17:04:54 +0000",
-      "category": "Italpress - Top News",
+      "category": "Sicilia",
       "author": "Italpress",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/20260401_2526.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0013.jpg"
     },
     {
       "title": "A marzo in crescita il mercato dell’auto, immatricolazioni +7,6% su base annua",
@@ -161,10 +149,9 @@
       "description": "ROMA (ITALPRESS) - A marzo sono state immatricolate 185.367 autovetture a fronte delle 172.271 iscrizioni registrate nello stesso mese dell'anno prece..\nArticolo A marzo in crescita il mercato dell’auto, immatricolazioni +7,6% su base annua su LiveSicilia.it.",
       "content": "<p><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"697\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2469.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2469.jpg 1200w, https://livesicilia.it/wp-content/uploads/2026/04/20260401_2469.jpg?resize=768,523 768w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>ROMA (ITALPRESS) - A marzo sono state immatricolate 185.367 autovetture a fronte delle 172.271 iscrizioni registrate nello stesso mese dell'anno prece..</p>\n<p>Articolo <a href=\"https://livesicilia.it/a-marzo-in-crescita-il-mercato-dellauto-immatricolazioni-76-su-base-annua/\">A marzo in crescita il mercato dell’auto, immatricolazioni +7,6% su base annua</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 17:04:46 +0000",
-      "category": "Italpress - Top News",
+      "category": "Sicilia",
       "author": "Italpress",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/20260401_2469.jpg",
-      "fonte": "LiveSicilia"
+      "image": "imgs/img_0014.jpg"
     },
     {
       "title": "“Operazione Batiscafo Trieste”, il docufilm di Finazzer Flory conquista gli Usa",
@@ -172,21 +159,9 @@
       "description": "ROMA (ITALPRESS) - Dopo il successo con sold out a New York City, alla presenza del direttore dell'Istituto Italiano di Cultura Claudio Pagliara, e os..\nArticolo “Operazione Batiscafo Trieste”, il docufilm di Finazzer Flory conquista gli Usa su LiveSicilia.it.",
       "content": "<p><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"683\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2468.jpg\" class=\"attachment-full size-full wp-post-image\" alt=\"\" style=\"float:right; margin:0 0 10px 10px;\" srcset=\"https://livesicilia.it/wp-content/uploads/2026/04/20260401_2468.jpg 1200w, https://livesicilia.it/wp-content/uploads/2026/04/20260401_2468.jpg?resize=768,512 768w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>ROMA (ITALPRESS) - Dopo il successo con sold out a New York City, alla presenza del direttore dell'Istituto Italiano di Cultura Claudio Pagliara, e os..</p>\n<p>Articolo <a href=\"https://livesicilia.it/operazione-batiscafo-trieste-il-docufilm-di-finazzer-flory-conquista-gli-usa/\">“Operazione Batiscafo Trieste”, il docufilm di Finazzer Flory conquista gli Usa</a> su <a href=\"https://livesicilia.it\">LiveSicilia.it</a>.</p>",
       "pubDate": "Wed, 01 Apr 2026 17:04:37 +0000",
-      "category": "Italpress - Top News",
+      "category": "Sicilia",
       "author": "Italpress",
-      "image": "https://livesicilia.it/wp-content/uploads/2026/04/20260401_2468.jpg",
-      "fonte": "LiveSicilia"
-    },
-    {
-      "title": "“Il mondo conoscerà le tue foto”, agrigentino condannato per ricatti sessuali a minorenne",
-      "link": "https://www.grandangoloagrigento.it/apertura/il-mondo-conoscera-le-tue-foto-agrigentino-condannato-per-ricatti-sessuali-a-minorenne",
-      "description": "Riconosciuto colpevole di avere perseguitato e ricattato una ragazza sedicenne con cui aveva avuto una relazione, costringendola a realizzare e inviargli foto e video a contenuto sessuale",
-      "content": "<p><img width=\"1024\" height=\"768\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"Aula Tribunale Agrigento\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg 1280w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=300,225 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=768,576 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=1024,768 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>Nove anni di reclusione e 70 mila euro di multa: e&#8217; la condanna inflitta dal tribunale di Agrigento a un ventiseienne riconosciuto colpevole di avere perseguitato e ricattato una ragazza sedicenne con cui aveva avuto una relazione, costringendola a realizzare e inviargli foto e video a contenuto sessuale. Secondo l&#8217;accusa, l&#8217;uomo &#8211; che all&#8217;epoca dei fatti aveva 19 anni &#8211; avrebbe creato diversi profili falsi fingendosi appartenente al gruppo di hacker &#8220;Anonymous&#8221; per minacciare la giovane e costringerla a riprendere la relazione interrotta. </p>\n\n\n\n<p>Attraverso questi account avrebbe inviato messaggi intimidatori e offensivi, arrivando a scrivere frasi come &#8220;puoi prepararti il coltello ma stavolta taglia la gola o le vene, non il braccio&#8221; o &#8220;tra cinque minuti tutto il mondo conoscera&#8217; le tue foto&#8221;. Le indagini della polizia postale hanno permesso di risalire con certezza all&#8217;autore dei messaggi: tutti i profili erano collegati a un&#8217;utenza telefonica intestata all&#8217;imputato. </p>\n\n\n\n<p>Il tribunale, presieduto da Agata Anna Genna, ha riconosciuto la responsabilità per produzione di materiale pedopornografico, stalking aggravato e diffamazione, disponendo anche l&#8217;interdizione perpetua dai pubblici uffici e da qualsiasi incarico di tutela o curatela. L&#8217;imputato dovrà risarcire i danni alle parti civili: 50 mila euro alla ragazza e 10 mila complessivi ai genitori.<br></p>",
-      "pubDate": "Wed, 01 Apr 2026 16:36:39 +0000",
-      "category": "Apertura",
-      "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0015.jpg"
     },
     {
       "title": "STMicroelectronics, via all’accordo di programma: piano da 5,8 miliardi per la crescita della Sicilia",
@@ -196,8 +171,7 @@
       "pubDate": "Wed, 01 Apr 2026 16:25:08 +0000",
       "category": "Palermo",
       "author": "Romina Ferrante",
-      "image": "https://www.blogsicilia.it/wp-content/uploads/sites/2/2026/04/tamajo-stmicroelectronics-2.jpeg?w=470",
-      "fonte": "BlogSicilia"
+      "image": "imgs/img_0016.jpg"
     },
     {
       "title": "Beni culturali: per Pasqua ingresso gratuito nei siti del Parco archeologico di Catania e della Valle dell’Aci",
@@ -207,19 +181,7 @@
       "pubDate": "Wed, 01 Apr 2026 15:56:18 +0000",
       "category": "Community",
       "author": "Redazione",
-      "image": "https://www.blogsicilia.it/wp-content/uploads/sites/2/2026/04/a19bbe8f5347db8ddba774a190ba96f380950c45ca72ee015b31589980bb722f.jpg",
-      "fonte": "BlogSicilia"
-    },
-    {
-      "title": "Amministrative a Casteltermini, Costantino Ripepe candidato a sindaco: “il futuro è adesso”",
-      "link": "https://www.grandangoloagrigento.it/casteltermini/amministrative-a-casteltermini-costantino-ripepe-candidato-a-sindaco-il-futuro-e-adesso",
-      "description": "Si scaldano i motori in vista delle elezioni che si svolgeranno il 24 e il 25 maggio",
-      "content": "<p><img width=\"376\" height=\"293\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg?w=376\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg 376w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg?resize=300,234 300w\" sizes=\"auto, (max-width: 376px) 100vw, 376px\" /></p>\n<p>&#8220;Dopo un lungo percorso di confronto, fatto con il cuore e con grande senso di responsabilità insieme a tante persone che amano questo paese, abbiamo deciso di proporre la mia candidatura a Sindaco. Non è una decisione personale, ma una scelta condivisa, nata all’interno di una coalizione che in questi mesi ha ascoltato cittadini, amici e realtà del territorio. Da questi confronti è emersa una convinzione forte: il nostro paese merita di più e possiamo costruirlo insieme. Nei prossimi giorni vi presenteremo la squadra che mi accompagnerà in questo percorso&#8221;. Con queste parole <strong>Costantino Ripepe</strong> ufficializza la sua candidatura <strong>a Sindaco di Casteltermini</strong>, e dovrà vedersela con l&#8217;uscente sindaco Gioacchino Nicastro. Ripepe 31anni, figlio di Arturo Ripepe già candidato sindaco nel 2020, è vicepresidente dell&#8217;ASD Casteltermini. </p>\n\n\n\n<p>&#8220;La nostra idea di amministrare è semplice ed è la stessa che abbiamo sempre applicato nelle nostre esperienze: presenza, costanza e lavoro di squadra&#8221;, continua Ripepe che si presenta con la lista civica &#8220;Il futuro è adesso&#8221;. &#8220;Siamo già al lavoro da subito, con impegno e determinazione, per costruire idee, ascoltare ancora e trasformare le proposte in azioni concrete. Ma questo percorso non può essere quello di una sola persona. Abbiamo bisogno del sostegno di tutti voi, senza nessuno escluso. Oggi vi chiedo di camminare insieme. Di costruire un progetto serio, credibile e condiviso. Di scegliere il “noi” al posto dell’“io”. Io ci sono. Sono pronto a fare la mia parte, nel ruolo che insieme riterremo più utile per Casteltermini.È arrivato il momento di passare dalle parole ai fatti. È arrivato il momento di costruire, insieme, il futuro di Casteltermini&#8221;; ha concluso il candidato sindaco Ripepe. </p>\n\n\n\n<p></p>",
-      "pubDate": "Wed, 01 Apr 2026 15:46:15 +0000",
-      "category": "Casteltermini",
-      "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg?w=376",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0017.jpg"
     },
     {
       "title": "Arte, Fondazione Brodbeck, Alfredo Pirri in mostra a Catania con “Fare cose”",
@@ -229,8 +191,7 @@
       "pubDate": "Wed, 01 Apr 2026 15:25:12 +0000",
       "category": "Community",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Niscemi , edilcassa sicilia finanzia progetto su impianto per giovani",
@@ -240,8 +201,7 @@
       "pubDate": "Wed, 01 Apr 2026 15:22:12 +0000",
       "category": "Community",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Niscemi, Filca Cisl Sicilia ed Edilcassa finanziano progetti per impianti per i giovani",
@@ -251,8 +211,7 @@
       "pubDate": "Wed, 01 Apr 2026 15:08:12 +0000",
       "category": "Community",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Assolta in appello dirigente regionale, annullata la confisca dei beni",
@@ -262,8 +221,7 @@
       "pubDate": "Wed, 01 Apr 2026 15:03:43 +0000",
       "category": "Palermo",
       "author": "Ignazio Marchese",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Una sorpresa in corsia: uova di Pasqua e doni dei carabinieri per i piccoli pazienti ISMETT",
@@ -273,8 +231,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:57:37 +0000",
       "category": "Palermo",
       "author": "Romina Ferrante",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Blitz dei carabinieri nel quartiere Uditore, scattano denunce e sequestri di droga",
@@ -284,8 +241,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:55:38 +0000",
       "category": "Palermo",
       "author": "Ignazio Marchese",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Schifani replica a Conte: “Nostri conti in ordine, pensi ai buchi di bilancio che ha lasciato il suo governo”",
@@ -295,8 +251,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:55:23 +0000",
       "category": "Palermo",
       "author": "Manlio Viola",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Comitato per la Difesa della bigenitorialità: “Situazione drammatica per i padri separati”",
@@ -306,19 +261,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:52:33 +0000",
       "category": "Agrigento",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/logo-Comitato.png?w=1024",
-      "fonte": "Grandangolo Agrigento"
-    },
-    {
-      "title": "“La droga del clan di Villaseta ai boss palermitani”, chiesti 6 anni di carcere per Capraro e Licata",
-      "link": "https://www.grandangoloagrigento.it/apertura/la-droga-del-clan-di-villaseta-ai-boss-palermitani-chiesti-6-anni-di-carcere-per-capraro-e-licata",
-      "description": "I vertici del clan di Villaseta sono accusati di aver ceduto diverse partite di stupefacenti per un importo di 384 mila euro ai boss del mandamento di San Lorenzo/Tommaso Natale",
-      "content": "<p><img width=\"1024\" height=\"568\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png 1416w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=300,167 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=768,426 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=1024,568 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>La Direzione distrettuale antimafia di Palermo ha avanzato la richiesta di condanna a sei anni di reclusione &#8211; e 60 mila euro di multa &#8211; nei confronti di Pietro Capraro, 40 anni, e Gaetano Licata, 41 anni, entrambi di Agrigento, accusati di detenzione ai fini di spaccio di sostanze stupefacenti aggravata dall’agevolazione mafiosa. I due agrigentini &#8211; finiti in carcere lo scorso anno con l’accusa di essere rispettivamente capo e vicecapo della famiglia mafiosa di Villaseta &#8211; sono attualmente a processo insieme ad altri 33 imputati davanti il gup Carmen Salustro poiché coinvolti nuovamente nella maxi operazione contro Cosa nostra palermitana che portò all’arresto di 181 persone. Per tutti i pm Giovanni Antoci, Felice De Benedittis e Andrea Fusco hanno chiesto condanne da 2 a 20 anni di reclusione. Un terzo agrigentino coinvolto &#8211; Gabriele Minio, 37 anni &#8211; ha scelto la via del rito ordinario. Ieri mattina la parola è passata alla difesa con gli avvocati Salvatore Cusumano e Teres’Alba Raguccia che hanno chiesto l’assoluzione per Licata e Capraro sostenendo la fragilità dell’impianto accusatorio. Secondo quanto contestato i vertici del clan di Villaseta avrebbero avuto costanti rapporti e interlocuzioni con esponenti del mandamento mafioso di San Lorenzo oggi guidato dai fratelli Serio, luogotenenti del boss Salvatore Lo Piccolo. Capraro, Licata e Minio sono accusati – nello specifico – di aver ceduto diverse partite di stupefacenti, <a href=\"https://www.grandangoloagrigento.it/mafia/il-debito-e-le-tensioni-tra-le-famiglie-mafiose-villaseta-e-porta-nuova-sono-una-cosa-sola\"><strong>per un ammontare complessivo di 384 mila euro, ai boss del mandamento mafioso di San Lorenzo/Tommaso Natale</strong></a>: i fratelli Domenico e Nunzio Serio, Francesco Stagno e Mario Ferrazzano.</p>\n\n\n\n<h2 class=\"wp-block-heading\"><strong>TUTTE LE RICHIESTE DI CONDANNA&nbsp;</strong></h2>\n\n\n\n<p>Pietro Capraro, 40 anni, di Agrigento (6 anni di reclusione); Marco Cernigliaro, 37 anni, di Palermo (2 anni e 6 mesi di reclusione); Domenico Ciaramitaro, 51 anni, di Palermo (12 anni di reclusione); Emanuele Cosentino, 39 anni, di Palmi (9 anni di reclusione) ; Giovanni Salvatore Cusimano, 77 anni, di Palermo (16 anni di reclusione) ; Antonino De Luca, 55 anni, di Palermo (6 anni di reclusione) ; Mario Ferrazzano, 40 anni, di Palermo (20 anni di reclusione); Salvatore Finocchio, 45 anni, di Palermo (8 anni e 6 mesi di reclusione) ; Rosario Gennaro, 60 anni, di Palermo (5 anni di reclusione) ; Francesco Iraci, 35 anni, di Palermo (12 anni di reclusione) ; Carmelo La Mattina, 45 anni, di Palermo (2 anni e 6 mesi di reclusione) ; Khemais Lausgi, 37 anni, di Palermo (14 anni di reclusione) ; Gaetano Licata, 42 anni, di Agrigento (6 anni di reclusione) ; Mariano Lo Iacono, 35 anni, di Palermo (10 anni e 8 mesi di reclusione) ; Mirko Lo Iacono, 29 anni, di Palermo (8 anni di reclusione); Paolo Lo Iacono, 58 anni, di Palermo (20 anni di reclusione); Salvatore Lombardo, 40 anni, di Palermo (14 anni e 9 mesi di reclusione); Angelo Maranzano, 21 anni, di Palermo (8 anni e 6 mesi di reclusione); Carmelo Maranzano, 32 anni, di Palermo (6 anni di reclusione); Antonino Mazza, 52 anni, di Palermo (20 anni di reclusione) ; Francesco Militano, 37 anni, di Palermo (20 anni di reclusione); Salvatore Randazzo, 58 anni, di Palermo (18 anni di reclusione); Amedeo Romeo, 49 anni, di Palermo (10 anni di reclusione); Guglielmo Rubino, 48 anni, di Palermo (6 anni di reclusione); Salvatore Ruvolo, 40 anni, di Palermo (4 anni di reclusione); Francesco Scarpisi, 45 anni, di Palermo (10 anni e 8 mesi di reclusione); Girolamo Alessio Semprecondio, 26 anni, di Palermo (3 anni di reclusione); Domenico Serio, 49 anni, di Palermo (20 anni di reclusione); Nunzio Serio, 48 anni, di Palermo (20 anni di reclusione); Salvatore Serio, 45 anni, di Palermo (10 anni e 8 mesi di reclusione); Gianluca Spanu, 38 anni, di Palermo (6 anni e 8 mesi di reclusione); Tommaso Spataro, 32 anni, di Palermo (10 anni e 8 mesi di reclusione); Francesco Stagno, 39 anni, di Palermo (20 anni di reclusione); Salvatore Varsalona, 58 anni, di Palermo (6 anni e 8 mesi di reclusione).</p>",
-      "pubDate": "Wed, 01 Apr 2026 14:27:05 +0000",
-      "category": "Apertura",
-      "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0025.png"
     },
     {
       "title": "Se hai la partita IVA e ti pignorano il conto, puoi restare senza un euro",
@@ -328,8 +271,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:15:39 +0000",
       "category": "Oltre lo stretto",
       "author": "Walter Giannò",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "De Luca avvia raccolta firme per chiudere legislatura Ars",
@@ -339,8 +281,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:05:28 +0000",
       "category": "Palermo",
       "author": "Piero Messina",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "“Geografie possibili: le bussole dei talenti”: A Caltagirone la mostra del progetto In viaggio con il KaltaBronte",
@@ -350,8 +291,7 @@
       "pubDate": "Wed, 01 Apr 2026 14:05:12 +0000",
       "category": "Community",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Accoltellamento a Gela, arrestato un ventiduenne per tentato omicidio",
@@ -361,8 +301,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:52:31 +0000",
       "category": "Caltanissetta",
       "author": "Ignazio Marchese",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Falsi attestati di residenza, arrestato il sindaco di Forza Agrò e quattro indagati",
@@ -372,8 +311,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:34:07 +0000",
       "category": "Messina",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Deve espiare oltre 5 anni per spaccio. Arrestato giovane ragusano",
@@ -383,8 +321,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:29:53 +0000",
       "category": "Cronaca",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "Tbilisi, dove la storia fuma ancora",
@@ -394,8 +331,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:22:47 +0000",
       "category": "Blog",
       "author": "Redazione",
-      "image": "https://www.blogsicilia.it/wp-content/uploads/sites/2/2026/04/d1d731ecf3364c1eb66d0e35d532160f679d8f1076b3832b1a5f250d1e070ec6.jpg",
-      "fonte": "BlogSicilia"
+      "image": "imgs/img_0032.jpg"
     },
     {
       "title": "Pasqua 2026 a Scicli, sarà Gioia, in sicurezza",
@@ -405,8 +341,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:22:09 +0000",
       "category": "Appuntamenti",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "I silenzi e ì linguaggi",
@@ -416,8 +351,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:22:02 +0000",
       "category": "Blog",
       "author": "Redazione",
-      "image": null,
-      "fonte": "BlogSicilia"
+      "image": null
     },
     {
       "title": "Un piano per la crescita da 57 miliardi, la strategia triennale del Gruppo Cassa Centrale",
@@ -427,8 +361,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:21:07 +0000",
       "category": "Palermo",
       "author": "Romina Ferrante",
-      "image": "https://www.blogsicilia.it/wp-content/uploads/sites/2/2026/04/Fracalossi-Giorgio_Gruppo-Cassa-Centrale-Banca.jpg?w=470",
-      "fonte": "BlogSicilia"
+      "image": "imgs/img_0035.jpg"
     },
     {
       "title": "Ospedale di Avola: la Rianimazione a mezzo servizio, la Cisl attacca l’Asp",
@@ -438,19 +371,7 @@
       "pubDate": "Wed, 01 Apr 2026 13:10:03 +0000",
       "category": "Siracusa",
       "author": "Gaetano Scariolo",
-      "image": null,
-      "fonte": "BlogSicilia"
-    },
-    {
-      "title": "Migranti, 19 morti portati a Lampedusa: bimbo tra gravissimi; Mannino: “Scene di pietà”",
-      "link": "https://www.grandangoloagrigento.it/lampedusa/migranti-18-morti-portati-a-lampedusa-bimbo-tra-gravissimi",
-      "description": "Sono in corso le operazioni di sbarco e identificazione delle vittime.",
-      "content": "<p><img width=\"1024\" height=\"555\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=300,163 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=768,416 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=1024,555 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>&nbsp;Sono <strong>19 i&nbsp;morti&nbsp;dell&#8217;ultimo naufragio a largo di Lampedusa</strong>. Stanotte, intorno alle 3, una motovedetta della Guardia costiera ha soccorso, a circa 85 miglia dall&#8217;isola, in area Sar libica, un barcone in difficoltà partito dalla Libia e carico di&nbsp;migranti. A bordo c&#8217;erano già alcuni corpi senza vita,&nbsp;morti&nbsp;per ipotermia e per le inalazioni di carburante, e altri sono deceduti durante il trasporto sull&#8217;isola. Sul Molo Favarolo sono arrivate 19 salme e 58 superstiti di cui 5 in gravi condizioni. Fra loro anche un bambino. I&nbsp;feriti sono stati ricoverati al Poliambulatorio di Lampedusa mentre gli altri superstiti sono stati trasferiti all&#8217;hotspot di contrada Imbriacola. I&nbsp;Migranti&nbsp;hanno dichiarato di essere originari di Sudan, Sierra Leone, Gambia, Nigeria, Ghana, Etiopia e d&#8217;aver pagato da 400 a 2 mila euro per la traversata.</p>\n\n\n\n<p><strong>Il sindaco di Lampedusa, Filippo Mannino</strong> dopo essersi recato al molo Favarolo: <em>&#8220;Scene di pietà, &#8211; ha dichiarato &#8211; Spero che un giorno tutto questo finirà, un conto è vedere questo strazio e un altro è raccontarlo. Il mare è in tempesta, si pensi che il traghetto di linea non è dato in partenza nei prossimi giorni. Non arriverà prima di sabato&#8221;. </em></p>\n\n\n\n<p>&#8220;Altre vittime innocenti, ancora un dramma nel mare di Lampedusa. Nell&#8217;indifferenza del governo Meloni che, dopo aver cavalcato cinicamente la &#8216;paura dei migranti&#8217; per l&#8217;intera campagna elettorale, dal giorno dell&#8217;insediamento ha pensato di risolvere il problema non parlandone più e abbandonando il controllo del Mediterraneo&#8221;. <strong>Lo dice Michele Catanzaro, capogruppo del Partito democratico all&#8217;Assemblea regionale siciliana,</strong> dopo la notizia dell&#8217;ennesima strage di migranti al largo di Lampedusa. &#8220;Oggi sul molo Favaloro arrivano altri cadaveri &#8211; aggiunge Catanzaro &#8211; e non sono &#8216;numeri&#8217;, sono vite umane spezzate per sempre. Il tema delle migrazioni e&#8217; serio e va affrontato seriamente, non certo con la bieca e spudorata propaganda della destra, averlo &#8216;silenziato&#8217; ha solo aggravato la situazione. Il Mediterraneo e&#8217; un mare senza controllo &#8211; conclude il capogruppo Pd &#8211; e i suoi fondali si stanno trasformando in un cimitero di esseri umani e di imbarcazioni alla deriva&#8221;.</p>\n\n\n\n<p> “Esprimiamo dolore profondo e sincero per l’ennesima tragedia avvenuta al largo di Lampedusa. Davanti a queste vite spezzate, ogni parola rischia di essere insufficiente. Ma il silenzio sarebbe ancora più colpevole”. <strong>Lo afferma il capogruppo del M5S all’ARS Antonio De Luca. </strong>“Non possiamo limitarci alla compassione &#8211; dice De Luca &#8211; queste morti interrogano direttamente la politica. E chiamano in causa le responsabilità di chi oggi ci governa. Il governo guidato da Giorgia Meloni continua a inseguire una propaganda fatta di slogan e misure inefficaci, mentre nel Mediterraneo si continua a morire. Non siamo di fronte a fatalità inevitabili: quando si preferisce la linea dura alla gestione razionale, il rischio è che queste tragedie si ripetano. Serve un cambio di rotta immediato: servono politiche serie, coordinate a livello europeo. Continuare così significa accettare che il Mediterraneo resti un cimitero”.</p>\n\n\n\n<figure class=\"wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex\">\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"799\" width=\"1024\" data-id=\"802504\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?w=1024\" alt=\"\" class=\"wp-image-802504\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=300,234 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=768,599 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=1024,799 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"676\" width=\"1024\" data-id=\"802505\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?w=1024\" alt=\"\" class=\"wp-image-802505\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=300,198 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=768,507 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=1024,676 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"820\" width=\"1024\" data-id=\"802506\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?w=1024\" alt=\"\" class=\"wp-image-802506\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=300,240 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=768,615 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=1024,820 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"785\" width=\"1024\" data-id=\"802507\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?w=1024\" alt=\"\" class=\"wp-image-802507\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=300,230 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=768,588 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=1024,785 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"555\" width=\"1024\" data-id=\"802500\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?w=1024\" alt=\"\" class=\"wp-image-802500\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=300,163 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=768,416 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=1024,555 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n</figure>\n\n\n\n<p></p>",
-      "pubDate": "Wed, 01 Apr 2026 12:37:42 +0000",
-      "category": "Lampedusa",
-      "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": null
     },
     {
       "title": "Si è allontanato da comunità, Teodoro Scaramuzza ritrovato a Palermo",
@@ -458,10 +379,9 @@
       "description": "L'uomo si è recato da amici del fratello",
       "content": "<p><img width=\"1024\" height=\"565\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg?resize=300,166 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg?resize=768,424 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg?resize=1024,565 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>E&#8217; stato ritrovato il 70enne <a href=\"https://www.grandangoloagrigento.it/ultime-notizie/raffadali-70enne-si-allontana-da-comunita-e-svanisce-nel-nulla-al-via-le-ricerche\">Teodoro Scaramuzza</a>, allontanatosi da una comunità dove era ospite a Raffadali. Per ore si è temuto il peggio. I Carabinieri avevano avviato le ricerche dell&#8217;uomo. L&#8217;uomo è stato  rintracciato, dalla Polizia municipale, a Palermo dove era andato da amici del fratello. A darne nota sono i Carabinieri del comando provinciale di Agrigento.</p>",
       "pubDate": "Wed, 01 Apr 2026 12:34:09 +0000",
-      "category": "PRIMO PIANO",
+      "category": "Sicilia",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/scaramuzza-scomparso-raffadali.jpeg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0037.jpg"
     },
     {
       "title": "Conte a Palermo “Se questa giunta regionale ha dignità politica deve andare a casa. Cittadini siciliani da 10 anni senza risposte”",
@@ -469,10 +389,9 @@
       "description": "Le parole del leader del M5S Giuseppe Conte nel corso di una conferenza stampa a Palazzo dei Normanni, a Palermo",
       "content": "<p><img width=\"1024\" height=\"768\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg 2048w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?resize=300,225 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?resize=768,576 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?resize=1024,768 1024w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?resize=1536,1152 1536w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p><em><strong>“Ho accettato subito di venire qui perché la questione siciliana è centrale per l’Italia intera</strong>: non possiamo pensare che quanto accade qui non abbia una rilevanza nazionale”.</em> A dirlo è il<strong> leader del M5S Giuseppe Conte nel corso di una conferenza stampa a Palazzo dei Normanni, a Palermo.</strong> <em>“C’è una questione sia morale che politica, <strong>non possiamo permettere che i siciliani rimangano senza risposte perché sono ormai dieci anni che mancano interventi strutturali per rispondere alle urgenze e ai bisogni reali della comunità </strong></em>– prosegue Conte,<em> – Ci sono però tantissime inchieste, notizie quotidiane di sistemazioni di amici e amichetti, indagini nelle cronache giudiziarie che si arricchiscono sempre più, da ultimo con Lillo Pisano. Ormai Fratelli d’Italia ha un problema grave e non solo in Sicilia: lo abbiamo visto a livello nazionale con le dimissioni di Delmastro, Bartolozzi e soprattutto Santanché, la cui questione si trascinava da tre anni”.</em></p>\n\n\n\n<p>“<em>In Sicilia ogni forza politica ha i suoi indagati e rinviati a giudizio, con accuse gravi e sempre collegate a condotte contrarie ai doveri istituzionali: dobbiamo far capire a tutti che non ci possiamo rassegnare e accettare che, ad esempio, gli appalti truccati in sanità siano una regola, che per un esame diagnostico passino mesi e nel frattempo la gente muore, che un’amministrazione non è efficiente perché piegata a un apparato di potere”</em></p>\n\n\n\n<p><em>“Tantissimi cittadini siciliani in occasione del referendum hanno espresso un voto che non era clientelare</em> – aggiunge Conte –<em> Nel 1981 Berlinguer aveva denunciato la degenerazione degli apparati di potere che alimentavano i i partiti, se adesso non rompiamo questo circolo vizioso non potremo più ottenere la fiducia dei cittadini.<strong> Invito le forze progressiste a combattere questa battaglia</strong>: la mozione di censura ad Amata sarà un primo passo rispetto a un’assunzione di responsabilità di <strong>una giunta che, se ha dignità politica, deve andare a casa e consentire ai siciliani di esprimersi nuovamente con il voto”.</strong></em></p>\n\n\n\n<p><em><strong>“Le primarie sono una soluzione per il campo progressista, ma non l’unica</strong>: del resto in Sicilia sono state già sperimentate nel 2022 con Barbara Floridia. Prima di me le avevano proposte, in altri tempi, anche le altre forze della coalizione: è importante darci un metodo</em> – aggiunge Conte –<em><strong> La candidatura di La Vardera in Sicilia è legittima</strong>: quando ci siederemo intorno a un tavolo spero che tutti siano disponibili a non rimanere ancorati alla tutela del proprio interesse, personale o di partito, ma cerchino una sintesi per convergere sul candidato che offre più chance di vittoria”.</em></p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>SUL PONTE SULLO STRETTO: “CHIEDERE DI IMPIEGARE FONDI COESIONE UNO SCHIAFFO ALLA COMUNITÀ”</strong></h3>\n\n\n\n<p><em><strong>“Mi colpisce che qualcuno parli di ponte sullo stretto quando le infrastrutture in questa regione non funzionino ancora</strong> e che si sia chiesto di impiegare per lo stesso ponte i Fondi di coesione: se questi fondi vengono dirottati su un progetto bocciato dalla Corte dei Conti si dà uno schiaffo a un’intera comunità. Combattiamo una battaglia che richiede massima determinazione e dedizione: tornerò qui ogni volta che mi sarà richiesto”</em>, spiega Conte.</p>\n\n\n\n<h3 class=\"wp-block-heading\"><strong>SULL’IRAN: “NESSUNA BASE ITALIANA DEVE ESSERE FORNITA AGLI USA”</strong></h3>\n\n\n\n<p><em><strong>“Il governo e Meloni hanno perso qualsiasi lucidità:</strong> ho visto gli attacchi di Bignami e sentire che aveva ancora da ridire sulle truffe per le mascherine Covid, su cui la posizione è già stata chiarita, diventa assolutamente ridicolo.</em> <em>Dovrebbero occuparsi delle truffe reali, come quelle di Santanchè che è rimasta per tre anni al suo posto prima di essere fatta dimettere</em> – continua Conte – <em>Aspettare il voto referendario è segno di vigliaccheria e scarso rispetto delle istituzioni pubbliche. Ieri <strong>ho incontrato un inviato speciale di Trump, al quale ho detto di riferire che riteniamo assolutamente illegali le azioni in Venezuela e in Iran e che nessuna base militare italiana deve essere mai fornita agli Stati Unit</strong>i: bisogna fare come la Spagna e non fornire alcun supporto diretto e indiretto. Chi ci governa oggi ha venduto l’interesse nazionale firmando patti di stabilità e riarmo e assumendosi la responsabilità di fronte al Paese”.</em></p>\n\n\n\n<p>– Foto IPA Agency –<br>(ITALPRESS).</p>",
       "pubDate": "Wed, 01 Apr 2026 12:24:55 +0000",
-      "category": "dalla Regione",
+      "category": "Dalla regione",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/658833741_1468566514634195_3766102761214665939_n.jpg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0038.jpg"
     },
     {
       "title": "Sciogliere l’Assemblea Siciliana: De Luca, Sciotto e Lombardo firmano le loro dimissioni",
@@ -480,10 +399,9 @@
       "description": "In tutto servono 36 firme per lo scioglimento del parlamento; tra i firmatari anche Ismaele La Vardera del movimento Controccorrente",
       "content": "<p><img width=\"1024\" height=\"574\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg?resize=300,168 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg?resize=768,430 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg?resize=1024,574 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>&nbsp;I deputati Cateno De Luca, Matteo Sciotto e Giuseppe Lombardo, del gruppo Sud chiama Nord, hanno firmato le loro dimissioni dall&#8217;Assemblea&nbsp;regionale siciliana, nel corso di una&nbsp;conferenza&nbsp;stampa a Palazzo dei Normanni a&nbsp;Palermo. Il loro intento è quello di raccogliere 36 firme in tutto, con le quali &#8220;<em>secondo l&#8217;articolo 8 bis dello Statuto della Regione Siciliana</em> &#8211; spiega Cateno De Luca, fondatore del progetto che porta il nome di Governo di Liberazione &#8211; <em>le contemporanee dimissioni della metà più uno dei deputati, determinano la conclusione anticipata della legislatura dell&#8217;Assemblea&nbsp;regionale&#8221;. &#8220;Siamo in una fase in Sicilia dove ci troviamo nel bel mezzo del vannamarchismo, dove impera chi si sa vendere meglio. Il centrosinistra sappia bene che io sono interessato oggi a fare perdere il centrodestra</em> &#8211; sottolinea De Luca &#8211; <em>stasera prenderò un volo per Roma, ma so già cosa accadrà: la Meloni, oltre a mandare i messaggi a La Vardera, non può più sentire parlare di Sicilia, dove ormai dal tiro al piccione si è passati al tiro al deputato. Lei ha l&#8217;interesse di staccare la spina e questo porta ad un ragionamento che riguarda anche le prossime elezioni regionali. Entro il 31 luglio bisogna depositare questo atto, che ho avvisato io oggi con le prime tre firme, ma servono tutte e 36. Però se noi non interloquiamo anche con quella parte di centrodestra che ha conclamato la chiusura di questa parte politica, non arriveremo a tutte le firme che servono per lo scioglimento del parlamento&#8221;</em>, ha concluso De Luca.&nbsp;</p>\n\n\n\n<p>A firmare le dimissioni anche Ismaele La Vardera leader del movimento Controccorrente.<em> &#8220;Non mi sono mai tirato indietro, proposi la mozione di sfiducia che fu bocciata, oggi firmo le dimissioni tutto purché si stacchi la spina al governo Schifani e si ridia voce ai siciliani</em>&#8220;; dichiara in un post La Vardera. </p>",
       "pubDate": "Wed, 01 Apr 2026 12:22:14 +0000",
-      "category": "dalla Regione",
+      "category": "Dalla regione",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.17.50.jpeg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0039.jpg"
     },
     {
       "title": "Scontro tra due auto ad Agrigento, un ferito lieve",
@@ -493,8 +411,7 @@
       "pubDate": "Wed, 01 Apr 2026 12:09:58 +0000",
       "category": "Agrigento",
       "author": "Redazione",
-      "image": "https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-14.01.32.jpeg?w=1024",
-      "fonte": "Grandangolo Agrigento"
+      "image": "imgs/img_0040.jpg"
     },
     {
       "title": "Asp Ragusa, indetto un concorso per 56 dirigenti medici e una procedura di stabilizzazione per 38 operatori",
@@ -504,8 +421,7 @@
       "pubDate": "Wed, 01 Apr 2026 09:11:47 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "Gianfranco Caliendo è morto, il frontman de “Il Giardino dei Semplici” aveva 70 anni",
@@ -515,8 +431,7 @@
       "pubDate": "Wed, 01 Apr 2026 07:47:27 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "Paola Bonomo, la studentessa modicana che sfida Giorgia Meloni: “Ho votato nonostante questo Paese”",
@@ -526,8 +441,7 @@
       "pubDate": "Wed, 01 Apr 2026 07:29:56 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
       "title": "Modica, via San Giuliano interdetta al traffico dopo il crollo del muro",
@@ -537,8 +451,7 @@
       "pubDate": "Wed, 01 Apr 2026 07:18:07 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": "https://www.ragusanews.com/wp-content/uploads/2026/04/Crollo-muraglione-scaled.png",
-      "fonte": "RagusaNews"
+      "image": "imgs/img_0044.png"
     },
     {
       "title": "Castello di Donnafugata, affidamento diretto a Integra Orienta",
@@ -548,19 +461,47 @@
       "pubDate": "Wed, 01 Apr 2026 07:08:55 +0000",
       "category": "Attualità",
       "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "image": null
     },
     {
-      "title": "Accumulatrice seriale muore soffocata dai suoi stessi pacchi",
-      "link": "https://www.ragusanews.com/accumulatrice-seriale-muore-soffocata-dai-suoi-stessi-pacchi/",
-      "description": "Verona &#8211; Per entrare hanno dovuto farsi spazio tra scatole, sacchetti e pacchi accatastati fino a ostruire i passaggi. Poi, a terra, il corpo della donna. Aveva 57 anni ed era rimasta intrappolata nel suo stesso appartamento, trasformato nel tempo in un deposito: una massa di oggetti accumulati che avrebbero finito per soffocarla. A far scattare [&#8230;]\nL'articolo Accumulatrice seriale muore soffocata dai suoi stessi pacchi proviene da Ragusa News.",
-      "content": "<p>Verona &#8211; Per entrare hanno dovuto farsi spazio tra scatole, sacchetti e pacchi accatastati fino a ostruire i passaggi. Poi, a terra, il corpo della donna. Aveva 57 anni ed era rimasta intrappolata nel suo stesso appartamento, trasformato nel tempo in un deposito: una massa di oggetti accumulati che avrebbero finito per soffocarla. A far scattare l’allarme è stato il compagno che da giorni non riusciva più a contattarla.</p>\n<p><strong>L&#8217;allarme e le ricerche</strong><br />\nSul posto sono intervenuti i carabinieri insieme ai vigili del fuoco. La tragedia si è consumata in un appartamento al primo piano in centro a Verona. L&#8217;allarme è scattato nella tarda serata del 26 marzo, intorno alle 23.30, quando la sala operativa dei vigili del fuoco è stata mobilitata dai carabinieri per fornire supporto tecnico. Il compagno della donna, preoccupato dal silenzio che durava ormai da un paio di giorni, aveva infatti segnalato la scomparsa facendo avviare le ricerche che hanno condotto i militari davanti alla porta sbarrata dell&#8217;abitazione.</p>\n<p>&nbsp;</p>\n<p><strong>L&#8217;ingresso forzato e le pile di scatoloni</strong><br />\nUna volta forzato l&#8217;ingresso i soccorritori si sono trovati di fronte a una scena surreale: l&#8217;intero appartamento era stato trasformato in un deposito impenetrabile. Pile di pacchi ancora sigillati, acquisti recenti e sacchetti colmi di oggetti mai usati formavano pareti di cartone così fitte da rendere l’abitazione quasi inagibile. Secondo le testimonianze di chi è intervenuto il volume dei materiali accumulati era tale da far dubitare che in quegli spazi si potesse ancora condurre una vita normale. È stato necessario un faticoso lavoro di rimozione per farsi strada verso l&#8217;interno, dove è stato infine individuato il corpo della cinquantasettenne ormai privo di vita.</p>\n<p><strong>Travolta dalle scatole</strong><br />\nSebbene l&#8217;esatta causa della morte resti al vaglio degli inquirenti l’ipotesi principale è che la donna sia rimasta travolta dal crollo improvviso di una parte dei suoi stessi acquisti. Inciampata o colpita dal cedimento delle pile di scatoloni sarebbe rimasta parzialmente sepolta, impossibilitata a liberarsi o a respirare, a causa del peso e dell&#8217;ingombro del materiale che le ha tolto ogni spazio vitale.</p>\n<p><strong>«Episodio estremo»</strong><br />\n«Siamo di fronte a un episodio di accumulo compulsivo portato all&#8217;estremo» spiega Giovanni Albertini, psicologo e psicoterapeuta. «In questi contesti si innesca un meccanismo tipico del disturbo ossessivo-compulsivo: per calmare un&#8217;ansia profonda o un rimuginio incessante, il soggetto compie atti irrinunciabili, come l&#8217;acquisto continuo di oggetti che spesso non vengono nemmeno scartati. È un modo per colmare un vuoto interiore ma in casi così gravi la patologia finisce per consumare letteralmente lo spazio fisico, trasformando il rifugio domestico in una trappola».<br />\nI rilievi dei carabinieri nell&#8217;abitazione mirano ora a ricostruire con esattezza la dinamica dell&#8217;incidente e la tempistica del decesso.</p>\n<p>L'articolo <a href=\"https://www.ragusanews.com/accumulatrice-seriale-muore-soffocata-dai-suoi-stessi-pacchi/\">Accumulatrice seriale muore soffocata dai suoi stessi pacchi</a> proviene da <a href=\"https://www.ragusanews.com\">Ragusa News</a>.</p>",
-      "pubDate": "Wed, 01 Apr 2026 06:27:51 +0000",
-      "category": "Cronaca",
-      "author": "Giuseppe Savà",
-      "image": null,
-      "fonte": "RagusaNews"
+      "title": "“Il mondo conoscerà le tue foto”, agrigentino condannato per ricatti sessuali a minorenne",
+      "link": "https://www.grandangoloagrigento.it/apertura/il-mondo-conoscera-le-tue-foto-agrigentino-condannato-per-ricatti-sessuali-a-minorenne",
+      "description": "Riconosciuto colpevole di avere perseguitato e ricattato una ragazza sedicenne con cui aveva avuto una relazione, costringendola a realizzare e inviargli foto e video a contenuto sessuale",
+      "content": "<p><img width=\"1024\" height=\"768\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"Aula Tribunale Agrigento\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg 1280w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=300,225 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=768,576 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/03/5913577381820484483.jpg?resize=1024,768 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>Nove anni di reclusione e 70 mila euro di multa: e&#8217; la condanna inflitta dal tribunale di Agrigento a un ventiseienne riconosciuto colpevole di avere perseguitato e ricattato una ragazza sedicenne con cui aveva avuto una relazione, costringendola a realizzare e inviargli foto e video a contenuto sessuale. Secondo l&#8217;accusa, l&#8217;uomo &#8211; che all&#8217;epoca dei fatti aveva 19 anni &#8211; avrebbe creato diversi profili falsi fingendosi appartenente al gruppo di hacker &#8220;Anonymous&#8221; per minacciare la giovane e costringerla a riprendere la relazione interrotta. </p>\n\n\n\n<p>Attraverso questi account avrebbe inviato messaggi intimidatori e offensivi, arrivando a scrivere frasi come &#8220;puoi prepararti il coltello ma stavolta taglia la gola o le vene, non il braccio&#8221; o &#8220;tra cinque minuti tutto il mondo conoscera&#8217; le tue foto&#8221;. Le indagini della polizia postale hanno permesso di risalire con certezza all&#8217;autore dei messaggi: tutti i profili erano collegati a un&#8217;utenza telefonica intestata all&#8217;imputato. </p>\n\n\n\n<p>Il tribunale, presieduto da Agata Anna Genna, ha riconosciuto la responsabilità per produzione di materiale pedopornografico, stalking aggravato e diffamazione, disponendo anche l&#8217;interdizione perpetua dai pubblici uffici e da qualsiasi incarico di tutela o curatela. L&#8217;imputato dovrà risarcire i danni alle parti civili: 50 mila euro alla ragazza e 10 mila complessivi ai genitori.<br></p>",
+      "pubDate": "Wed, 01 Apr 2026 16:36:39 +0000",
+      "category": "Apertura",
+      "author": "Redazione",
+      "image": "imgs/img_0046.jpg"
+    },
+    {
+      "title": "Amministrative a Casteltermini, Costantino Ripepe candidato a sindaco: “il futuro è adesso”",
+      "link": "https://www.grandangoloagrigento.it/casteltermini/amministrative-a-casteltermini-costantino-ripepe-candidato-a-sindaco-il-futuro-e-adesso",
+      "description": "Si scaldano i motori in vista delle elezioni che si svolgeranno il 24 e il 25 maggio",
+      "content": "<p><img width=\"376\" height=\"293\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg?w=376\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg 376w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/553209831_25070256642578723_2952708977159703776_n-e1775058271587.jpg?resize=300,234 300w\" sizes=\"auto, (max-width: 376px) 100vw, 376px\" /></p>\n<p>&#8220;Dopo un lungo percorso di confronto, fatto con il cuore e con grande senso di responsabilità insieme a tante persone che amano questo paese, abbiamo deciso di proporre la mia candidatura a Sindaco. Non è una decisione personale, ma una scelta condivisa, nata all’interno di una coalizione che in questi mesi ha ascoltato cittadini, amici e realtà del territorio. Da questi confronti è emersa una convinzione forte: il nostro paese merita di più e possiamo costruirlo insieme. Nei prossimi giorni vi presenteremo la squadra che mi accompagnerà in questo percorso&#8221;. Con queste parole <strong>Costantino Ripepe</strong> ufficializza la sua candidatura <strong>a Sindaco di Casteltermini</strong>, e dovrà vedersela con l&#8217;uscente sindaco Gioacchino Nicastro. Ripepe 31anni, figlio di Arturo Ripepe già candidato sindaco nel 2020, è vicepresidente dell&#8217;ASD Casteltermini. </p>\n\n\n\n<p>&#8220;La nostra idea di amministrare è semplice ed è la stessa che abbiamo sempre applicato nelle nostre esperienze: presenza, costanza e lavoro di squadra&#8221;, continua Ripepe che si presenta con la lista civica &#8220;Il futuro è adesso&#8221;. &#8220;Siamo già al lavoro da subito, con impegno e determinazione, per costruire idee, ascoltare ancora e trasformare le proposte in azioni concrete. Ma questo percorso non può essere quello di una sola persona. Abbiamo bisogno del sostegno di tutti voi, senza nessuno escluso. Oggi vi chiedo di camminare insieme. Di costruire un progetto serio, credibile e condiviso. Di scegliere il “noi” al posto dell’“io”. Io ci sono. Sono pronto a fare la mia parte, nel ruolo che insieme riterremo più utile per Casteltermini.È arrivato il momento di passare dalle parole ai fatti. È arrivato il momento di costruire, insieme, il futuro di Casteltermini&#8221;; ha concluso il candidato sindaco Ripepe. </p>\n\n\n\n<p></p>",
+      "pubDate": "Wed, 01 Apr 2026 15:46:15 +0000",
+      "category": "Casteltermini",
+      "author": "Redazione",
+      "image": "imgs/img_0047.jpg"
+    },
+    {
+      "title": "“La droga del clan di Villaseta ai boss palermitani”, chiesti 6 anni di carcere per Capraro e Licata",
+      "link": "https://www.grandangoloagrigento.it/apertura/la-droga-del-clan-di-villaseta-ai-boss-palermitani-chiesti-6-anni-di-carcere-per-capraro-e-licata",
+      "description": "I vertici del clan di Villaseta sono accusati di aver ceduto diverse partite di stupefacenti per un importo di 384 mila euro ai boss del mandamento di San Lorenzo/Tommaso Natale",
+      "content": "<p><img width=\"1024\" height=\"568\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png 1416w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=300,167 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=768,426 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/02/ice_screenshot_20250211-104532.png?resize=1024,568 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>La Direzione distrettuale antimafia di Palermo ha avanzato la richiesta di condanna a sei anni di reclusione &#8211; e 60 mila euro di multa &#8211; nei confronti di Pietro Capraro, 40 anni, e Gaetano Licata, 41 anni, entrambi di Agrigento, accusati di detenzione ai fini di spaccio di sostanze stupefacenti aggravata dall’agevolazione mafiosa. I due agrigentini &#8211; finiti in carcere lo scorso anno con l’accusa di essere rispettivamente capo e vicecapo della famiglia mafiosa di Villaseta &#8211; sono attualmente a processo insieme ad altri 33 imputati davanti il gup Carmen Salustro poiché coinvolti nuovamente nella maxi operazione contro Cosa nostra palermitana che portò all’arresto di 181 persone. Per tutti i pm Giovanni Antoci, Felice De Benedittis e Andrea Fusco hanno chiesto condanne da 2 a 20 anni di reclusione. Un terzo agrigentino coinvolto &#8211; Gabriele Minio, 37 anni &#8211; ha scelto la via del rito ordinario. Ieri mattina la parola è passata alla difesa con gli avvocati Salvatore Cusumano e Teres’Alba Raguccia che hanno chiesto l’assoluzione per Licata e Capraro sostenendo la fragilità dell’impianto accusatorio. Secondo quanto contestato i vertici del clan di Villaseta avrebbero avuto costanti rapporti e interlocuzioni con esponenti del mandamento mafioso di San Lorenzo oggi guidato dai fratelli Serio, luogotenenti del boss Salvatore Lo Piccolo. Capraro, Licata e Minio sono accusati – nello specifico – di aver ceduto diverse partite di stupefacenti, <a href=\"https://www.grandangoloagrigento.it/mafia/il-debito-e-le-tensioni-tra-le-famiglie-mafiose-villaseta-e-porta-nuova-sono-una-cosa-sola\"><strong>per un ammontare complessivo di 384 mila euro, ai boss del mandamento mafioso di San Lorenzo/Tommaso Natale</strong></a>: i fratelli Domenico e Nunzio Serio, Francesco Stagno e Mario Ferrazzano.</p>\n\n\n\n<h2 class=\"wp-block-heading\"><strong>TUTTE LE RICHIESTE DI CONDANNA&nbsp;</strong></h2>\n\n\n\n<p>Pietro Capraro, 40 anni, di Agrigento (6 anni di reclusione); Marco Cernigliaro, 37 anni, di Palermo (2 anni e 6 mesi di reclusione); Domenico Ciaramitaro, 51 anni, di Palermo (12 anni di reclusione); Emanuele Cosentino, 39 anni, di Palmi (9 anni di reclusione) ; Giovanni Salvatore Cusimano, 77 anni, di Palermo (16 anni di reclusione) ; Antonino De Luca, 55 anni, di Palermo (6 anni di reclusione) ; Mario Ferrazzano, 40 anni, di Palermo (20 anni di reclusione); Salvatore Finocchio, 45 anni, di Palermo (8 anni e 6 mesi di reclusione) ; Rosario Gennaro, 60 anni, di Palermo (5 anni di reclusione) ; Francesco Iraci, 35 anni, di Palermo (12 anni di reclusione) ; Carmelo La Mattina, 45 anni, di Palermo (2 anni e 6 mesi di reclusione) ; Khemais Lausgi, 37 anni, di Palermo (14 anni di reclusione) ; Gaetano Licata, 42 anni, di Agrigento (6 anni di reclusione) ; Mariano Lo Iacono, 35 anni, di Palermo (10 anni e 8 mesi di reclusione) ; Mirko Lo Iacono, 29 anni, di Palermo (8 anni di reclusione); Paolo Lo Iacono, 58 anni, di Palermo (20 anni di reclusione); Salvatore Lombardo, 40 anni, di Palermo (14 anni e 9 mesi di reclusione); Angelo Maranzano, 21 anni, di Palermo (8 anni e 6 mesi di reclusione); Carmelo Maranzano, 32 anni, di Palermo (6 anni di reclusione); Antonino Mazza, 52 anni, di Palermo (20 anni di reclusione) ; Francesco Militano, 37 anni, di Palermo (20 anni di reclusione); Salvatore Randazzo, 58 anni, di Palermo (18 anni di reclusione); Amedeo Romeo, 49 anni, di Palermo (10 anni di reclusione); Guglielmo Rubino, 48 anni, di Palermo (6 anni di reclusione); Salvatore Ruvolo, 40 anni, di Palermo (4 anni di reclusione); Francesco Scarpisi, 45 anni, di Palermo (10 anni e 8 mesi di reclusione); Girolamo Alessio Semprecondio, 26 anni, di Palermo (3 anni di reclusione); Domenico Serio, 49 anni, di Palermo (20 anni di reclusione); Nunzio Serio, 48 anni, di Palermo (20 anni di reclusione); Salvatore Serio, 45 anni, di Palermo (10 anni e 8 mesi di reclusione); Gianluca Spanu, 38 anni, di Palermo (6 anni e 8 mesi di reclusione); Tommaso Spataro, 32 anni, di Palermo (10 anni e 8 mesi di reclusione); Francesco Stagno, 39 anni, di Palermo (20 anni di reclusione); Salvatore Varsalona, 58 anni, di Palermo (6 anni e 8 mesi di reclusione).</p>",
+      "pubDate": "Wed, 01 Apr 2026 14:27:05 +0000",
+      "category": "Apertura",
+      "author": "Redazione",
+      "image": "imgs/img_0048.png"
+    },
+    {
+      "title": "Migranti, 19 morti portati a Lampedusa: bimbo tra gravissimi; Mannino: “Scene di pietà”",
+      "link": "https://www.grandangoloagrigento.it/lampedusa/migranti-18-morti-portati-a-lampedusa-bimbo-tra-gravissimi",
+      "description": "Sono in corso le operazioni di sbarco e identificazione delle vittime.",
+      "content": "<p><img width=\"1024\" height=\"555\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=300,163 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=768,416 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=1024,555 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></p>\n<p>&nbsp;Sono <strong>19 i&nbsp;morti&nbsp;dell&#8217;ultimo naufragio a largo di Lampedusa</strong>. Stanotte, intorno alle 3, una motovedetta della Guardia costiera ha soccorso, a circa 85 miglia dall&#8217;isola, in area Sar libica, un barcone in difficoltà partito dalla Libia e carico di&nbsp;migranti. A bordo c&#8217;erano già alcuni corpi senza vita,&nbsp;morti&nbsp;per ipotermia e per le inalazioni di carburante, e altri sono deceduti durante il trasporto sull&#8217;isola. Sul Molo Favarolo sono arrivate 19 salme e 58 superstiti di cui 5 in gravi condizioni. Fra loro anche un bambino. I&nbsp;feriti sono stati ricoverati al Poliambulatorio di Lampedusa mentre gli altri superstiti sono stati trasferiti all&#8217;hotspot di contrada Imbriacola. I&nbsp;Migranti&nbsp;hanno dichiarato di essere originari di Sudan, Sierra Leone, Gambia, Nigeria, Ghana, Etiopia e d&#8217;aver pagato da 400 a 2 mila euro per la traversata.</p>\n\n\n\n<p><strong>Il sindaco di Lampedusa, Filippo Mannino</strong> dopo essersi recato al molo Favarolo: <em>&#8220;Scene di pietà, &#8211; ha dichiarato &#8211; Spero che un giorno tutto questo finirà, un conto è vedere questo strazio e un altro è raccontarlo. Il mare è in tempesta, si pensi che il traghetto di linea non è dato in partenza nei prossimi giorni. Non arriverà prima di sabato&#8221;. </em></p>\n\n\n\n<p>&#8220;Altre vittime innocenti, ancora un dramma nel mare di Lampedusa. Nell&#8217;indifferenza del governo Meloni che, dopo aver cavalcato cinicamente la &#8216;paura dei migranti&#8217; per l&#8217;intera campagna elettorale, dal giorno dell&#8217;insediamento ha pensato di risolvere il problema non parlandone più e abbandonando il controllo del Mediterraneo&#8221;. <strong>Lo dice Michele Catanzaro, capogruppo del Partito democratico all&#8217;Assemblea regionale siciliana,</strong> dopo la notizia dell&#8217;ennesima strage di migranti al largo di Lampedusa. &#8220;Oggi sul molo Favaloro arrivano altri cadaveri &#8211; aggiunge Catanzaro &#8211; e non sono &#8216;numeri&#8217;, sono vite umane spezzate per sempre. Il tema delle migrazioni e&#8217; serio e va affrontato seriamente, non certo con la bieca e spudorata propaganda della destra, averlo &#8216;silenziato&#8217; ha solo aggravato la situazione. Il Mediterraneo e&#8217; un mare senza controllo &#8211; conclude il capogruppo Pd &#8211; e i suoi fondali si stanno trasformando in un cimitero di esseri umani e di imbarcazioni alla deriva&#8221;.</p>\n\n\n\n<p> “Esprimiamo dolore profondo e sincero per l’ennesima tragedia avvenuta al largo di Lampedusa. Davanti a queste vite spezzate, ogni parola rischia di essere insufficiente. Ma il silenzio sarebbe ancora più colpevole”. <strong>Lo afferma il capogruppo del M5S all’ARS Antonio De Luca. </strong>“Non possiamo limitarci alla compassione &#8211; dice De Luca &#8211; queste morti interrogano direttamente la politica. E chiamano in causa le responsabilità di chi oggi ci governa. Il governo guidato da Giorgia Meloni continua a inseguire una propaganda fatta di slogan e misure inefficaci, mentre nel Mediterraneo si continua a morire. Non siamo di fronte a fatalità inevitabili: quando si preferisce la linea dura alla gestione razionale, il rischio è che queste tragedie si ripetano. Serve un cambio di rotta immediato: servono politiche serie, coordinate a livello europeo. Continuare così significa accettare che il Mediterraneo resti un cimitero”.</p>\n\n\n\n<figure class=\"wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex\">\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"799\" width=\"1024\" data-id=\"802504\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?w=1024\" alt=\"\" class=\"wp-image-802504\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=300,234 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=768,599 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10-1.jpeg?resize=1024,799 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"676\" width=\"1024\" data-id=\"802505\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?w=1024\" alt=\"\" class=\"wp-image-802505\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=300,198 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=768,507 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.10.jpeg?resize=1024,676 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"820\" width=\"1024\" data-id=\"802506\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?w=1024\" alt=\"\" class=\"wp-image-802506\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=300,240 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=768,615 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11-1.jpeg?resize=1024,820 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"785\" width=\"1024\" data-id=\"802507\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?w=1024\" alt=\"\" class=\"wp-image-802507\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=300,230 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=768,588 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/WhatsApp-Image-2026-04-01-at-17.16.11.jpeg?resize=1024,785 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg\"><img loading=\"lazy\" decoding=\"async\" height=\"555\" width=\"1024\" data-id=\"802500\" src=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?w=1024\" alt=\"\" class=\"wp-image-802500\" srcset=\"https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg 1206w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=300,163 300w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=768,416 768w, https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/migranti-naufragio-1-aprile-2026.jpeg?resize=1024,555 1024w\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" /></a></figure>\n</figure>\n\n\n\n<p></p>",
+      "pubDate": "Wed, 01 Apr 2026 12:37:42 +0000",
+      "category": "Lampedusa",
+      "author": "Redazione",
+      "image": "imgs/img_0049.jpg"
     }
   ]
 }
