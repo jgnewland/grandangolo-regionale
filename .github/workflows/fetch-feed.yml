@@ -18,24 +18,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Scarica tutti i feed RSS
+      - name: Scarica feed e immagini
         run: |
-          echo "Avvio raccolta feed da tutte le fonti..."
+          echo "Avvio raccolta feed e download immagini..."
           python3 parse_feed.py
           if [ ! -s feed.json ]; then
-            echo "ERRORE: feed.json vuoto o non generato"
+            echo "ERRORE: feed.json vuoto"
             exit 1
           fi
-          echo "Feed generato: $(python3 -c "import json; d=json.load(open('feed.json')); print(str(d['count'])+' articoli da '+str(len(d['fonti']))+' fonti')")"
+          echo "Feed OK: $(python3 -c "import json; d=json.load(open('feed.json')); print(str(d['count'])+' articoli')")"
+          echo "Immagini scaricate: $(ls imgs/ 2>/dev/null | wc -l)"
 
-      - name: Commit feed.json aggiornato
+      - name: Commit feed.json e immagini
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Aggiungi feed.json e cartella imgs/
           git add feed.json
+          git add imgs/ 2>/dev/null || true
+
           if git diff --cached --quiet; then
-            echo "Nessuna modifica al feed."
+            echo "Nessuna modifica."
           else
-            git commit -m "chore: aggiorna feed RSS [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git commit -m "chore: aggiorna feed e immagini [$(date -u '+%Y-%m-%d %H:%M UTC')]"
             git push
           fi
