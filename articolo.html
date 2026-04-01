@@ -220,8 +220,13 @@
     document.getElementById('art-kat').textContent=categoria;
     document.getElementById('art-h').textContent=strip(art.title);
 
-    // Sommario
-    const desc=(art.description||'').trim();
+    // Sommario — pulisci riferimenti al sito sorgente
+    let desc=(art.description||'').trim();
+    // Rimuovi frasi tipo "Articolo X su LiveSicilia.it" o "Leggi su..."
+    desc=desc.replace(/\s*Articolo\s+[^\.]+su\s+[\w\.]+\.[a-z]+\.?\s*/gi,' ');
+    desc=desc.replace(/\s*su\s+[\w]+[\w\-]*\.[a-z]{2,}\.?\s*$/gi,'');
+    desc=desc.replace(/\s*Leggi (tutto|di più|l'articolo)\s*(su\s+[\w\.]+)?\s*\.?\s*$/gi,'');
+    desc=desc.replace(/\s{2,}/g,' ').trim();
     document.getElementById('art-s').textContent=desc.slice(0,300)+(desc.length>300?'…':'');
 
     // Meta
@@ -242,11 +247,15 @@
       .replace(/sizes="[^"]*"/gi,'')
       .replace(/decoding="[^"]*"/gi,'')
       .replace(/loading="[^"]*"/gi,'loading="lazy"')
+      // Rimuovi tag rotti tipo '"/> o "/> rimasti dopo pulizie
+      .replace(/^\s*['"]\s*\/>\s*$/gm,'')
+      .replace(/['"]\s*\/>\s*<\/p>/gi,'</p>')
+      .replace(/<p[^>]*>\s*['"]\s*\/?>\s*<\/p>/gi,'')
       .replace(/<p>\s*<\/p>/gi,'')
       .replace(/\n{3,}/g,'\n\n')
       // Rimuovi righe tipo "L'articolo proviene da..." o "Fonte: ..."
-      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|l'articolo|the post|appeared first|originally published)[^<]*<\/p>/gi,'')
-      .replace(/<p[^>]*><a[^>]*>(proviene da|fonte:|source:|l'articolo|the post|appeared first)[^<]*<\/a>[^<]*<\/p>/gi,'')
+      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|l'articolo|the post|appeared first|originally published|su livesicilia|su blogsicilia|su palermotoday|su cataniatoday|su lasicilia|su ragusanews)[^<]*<\/p>/gi,'')
+      .replace(/<p[^>]*><a[^>]*>[^<]*(proviene da|fonte:|the post|appeared first)[^<]*<\/a>[^<]*<\/p>/gi,'')
       .trim();
 
     if(corpoPulito.trim()){
