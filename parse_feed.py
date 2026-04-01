@@ -121,6 +121,46 @@ def get_img(el):
     # 4. prima img nella description
     return first_img(tag_text(el, 'description'))
 
+# ── SCARICA TESTO COMPLETO DALLA PAGINA ──
+def scarica_testo_completo(url):
+    """Scarica la pagina e estrae il testo dell'articolo."""
+    if not url:
+        return None
+    try:
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml',
+            'Accept-Language': 'it-IT,it;q=0.9',
+        })
+        with urllib.request.urlopen(req, timeout=15) as r:
+            html = r.read().decode('utf-8', errors='ignore')
+
+        # Selettori CSS per il corpo articolo nei vari siti
+        # Usa regex per estrarre il contenuto principale
+        selettori = [
+            # Classi tipiche dei CMS italiani
+            r'<article[^>]*>(.*?)</article>',
+            r'<div[^>]*class="[^"]*(?:entry-content|post-content|article-body|article__body|content-article|news-body|article-text|single-content|the-content)[^"]*"[^>]*>(.*?)</div>\s*(?:<div|</article)',
+        ]
+
+        testo = None
+        for pattern in selettori:
+            m = re.search(pattern, html, re.DOTALL | re.IGNORECASE)
+            if m:
+                raw = m.group(1)
+                # Pulisci elementi non necessari
+                raw = re.sub(r'<(script|style|nav|header|footer|aside|form|button|iframe|noscript)[^>]*>.*?</\1>', '', raw, flags=re.DOTALL|re.IGNORECASE)
+                raw = re.sub(r'<div[^>]*class="[^"]*(?:share|social|related|tag|comment|advertisement|pub|adv|banner|newsletter|sidebar)[^"]*"[^>]*>.*?</div>', '', raw, flags=re.DOTALL|re.IGNORECASE)
+                # Conta le parole — deve essere un testo vero
+                parole = len(re.sub('<[^>]+>', '', raw).split())
+                if parole > 80:
+                    testo = raw
+                    break
+
+        return testo
+    except Exception as e:
+        return None
+
 # ── SCARICA IMMAGINE LOCALMENTE ──
 IMG_DIR = 'imgs'
 os.makedirs(IMG_DIR, exist_ok=True)
@@ -248,17 +288,35 @@ for idx, item in enumerate(items_finali):
     if url_img:
         percorso = scarica_immagine(url_img, idx)
         if percorso:
-            item['image'] = percorso  # percorso relativo es: imgs/img_0001.jpg
+            item['image'] = percorso
             scaricate += 1
         else:
             item['image'] = None
     else:
         item['image'] = None
-    # Rimuovi URL originale (non serve nel JSON)
     item.pop('image_url', None)
     item.pop('fonte', None)
 
 print(f'Immagini scaricate: {scaricate}/{len(items_finali)}')
+
+# ── SCARICA TESTO COMPLETO per articoli con contenuto insufficiente ──
+print(f'\nControllo testo completo articoli...')
+arricchiti = 0
+for idx, item in enumerate(items_finali):
+    content = item.get('content', '')
+    # Conta parole nel content attuale
+    parole = len(re.sub('<[^>]+>', '', content).split())
+    if parole < 100 and item.get('link'):
+        print(f'  [{idx+1}] Scarico testo completo: {item["link"][:60]}...')
+        testo = scarica_testo_completo(item['link'])
+        if testo:
+            item['content'] = testo
+            arricchiti += 1
+            print(f'  OK: testo aggiunto ({len(re.sub("<[^>]+>","",testo).split())} parole)')
+        else:
+            print(f'  SKIP: impossibile scaricare')
+
+print(f'Articoli arricchiti con testo completo: {arricchiti}/{len(items_finali)}')
 
 # ── SALVA JSON ──
 output = {
