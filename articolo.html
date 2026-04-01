@@ -239,25 +239,60 @@
          <div class="art-cap">${categoria} · ${fdata(art.pubDate)}</div>`;
     }
 
-    // Corpo articolo
-    const corpo=art.content||art.description||'';
-    const corpoPulito=corpo
-      // Prima: riscrivi tutti i tag img tenendo solo src (evita frammenti rotti)
-      .replace(/<img[^>]*src=["']([^"']+)["'][^>]*\/?>/gi,(match,src)=>{
-        if(src.includes('pixel')||src.includes('1x1')||src.includes('tracker')) return '';
-        return `<img src="${src}" loading="lazy" style="max-width:100%;height:auto"/>`;
-      })
-      // Rimuovi eventuali img senza src o frammenti rimasti
-      .replace(/<img(?![^>]*src=)[^>]*\/?>/gi,'')
-      .replace(/['"]\s*\/>/g,'')
-      .replace(/<p[^>]*>\s*<\/p>/gi,'')
-      .replace(/\n{3,}/g,'\n\n')
-      // Rimuovi righe con riferimenti a siti sorgente
-      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|the post|appeared first|originally published|su livesicilia|su blogsicilia|su palermotoday|su cataniatoday|su lasicilia|su ragusanews)[^<]*<\/p>/gi,'')
-      .replace(/<p[^>]*><a[^>]*>[^<]*(proviene da|fonte:|the post|appeared first)[^<]*<\/a>[^<]*<\/p>/gi,'')
-      .trim();
+    // Corpo articolo — usa il DOM del browser per pulire (molto più robusto delle regex)
+    const corpo = art.content || art.description || '';
 
-    if(corpoPulito.trim()){
+    function pulisciHTML(html){
+      // Crea un documento temporaneo per parsare l'HTML
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+
+      // Rimuovi script e style
+      doc.querySelectorAll('script,style,noscript').forEach(el=>el.remove());
+
+      // Pulisci ogni immagine: tieni solo src, aggiungi loading=lazy
+      doc.querySelectorAll('img').forEach(img=>{
+        const src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+        if(!src || src.includes('pixel') || src.includes('1x1') || src.includes('tracker') || src.length < 10){
+          img.remove(); return;
+        }
+        // Ricrea img pulita
+        img.removeAttribute('srcset');
+        img.removeAttribute('sizes');
+        img.removeAttribute('decoding');
+        img.removeAttribute('class');
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+        img.removeAttribute('style');
+        img.setAttribute('src', src);
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('style', 'max-width:100%;height:auto;display:block;margin:24px auto');
+        img.removeAttribute('alt');
+        img.setAttribute('alt', '');
+      });
+
+      // Rimuovi link vuoti e span inutili
+      doc.querySelectorAll('a:empty').forEach(el=>el.remove());
+
+      // Rimuovi paragrafi con riferimenti a siti sorgente
+      const paroleFiltro = ['proviene da','appeared first','the post','su livesicilia','su blogsicilia',
+        'su palermotoday','su cataniatoday','su lasicilia','su ragusanews','su grandangolo'];
+      doc.querySelectorAll('p').forEach(p=>{
+        const testo = p.textContent.toLowerCase();
+        if(paroleFiltro.some(k=>testo.includes(k))) p.remove();
+      });
+
+      // Rimuovi paragrafi vuoti
+      doc.querySelectorAll('p').forEach(p=>{
+        if(!p.textContent.trim() && !p.querySelector('img')) p.remove();
+      });
+
+      // Restituisci solo il body
+      return doc.body.innerHTML;
+    }
+
+    const corpoPulito = pulisciHTML(corpo);
+
+    if(corpoPulito.trim().length > 100){
       document.getElementById('art-body').innerHTML=corpoPulito;
     } else {
       document.getElementById('art-body').innerHTML=`<p>${desc}</p>`;
