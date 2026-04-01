@@ -236,11 +236,11 @@
   function lnk(a){return'articolo.html?id='+tutti.indexOf(a);}
   function kat(a){return a.category&&a.category!==a.fonte?a.category:'Sicilia';}
 
-  // ── Proxy immagine per bypassare hotlink protection ──
+  // ── Immagine locale (scaricata da GitHub Actions) ──
   function proxyImg(src){
     if(!src) return null;
-    // Usa allorigins come proxy CORS/hotlink
-    return 'https://images.weserv.nl/?url='+encodeURIComponent(src.replace(/^https?:\/\//,''))+'&w=800&q=80&output=jpg';
+    // Le immagini sono salvate localmente nella cartella imgs/
+    return src;
   }
 
   // ── Render immagine con placeholder SVG come fallback ──
