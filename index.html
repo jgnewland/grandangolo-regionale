@@ -6,180 +6,167 @@
   <title>Grandangolo Regionale – Il quotidiano della Sicilia</title>
   <meta name="description" content="Le ultime notizie dalla Sicilia. Agrigento, Palermo, Catania e tutta l'isola."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root{--verde:#2d6a2d;--rosso:#c0392b;--nero:#0f0f0f;--ant:#1e1e1e;--testo:#1a1a1a;--linea:#e0e0e0;--muted:#888}
+    :root{--v:#2d6a2d;--r:#c0392b;--n:#111;--l:#eeeeee;--m:#aaa}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Source Sans 3',sans-serif;background:#f0f0ee;color:var(--testo);font-size:15px;line-height:1.6}
+    body{font-family:'Source Sans 3',sans-serif;background:#fff;color:var(--n);font-size:15px;line-height:1.6}
     a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
 
-    /* ── TOPBAR ── */
-    .topbar{background:var(--nero);padding:6px 20px;text-align:center}
-    .topbar span{font-size:11px;color:#555}
+    /* TOPBAR */
+    .tb{border-bottom:1px solid var(--l);padding:7px 24px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--m)}
 
-    /* ── TESTATA ── */
-    .testata{background:#fff;border-bottom:1px solid var(--linea);padding:18px 20px;text-align:center}
-    .testata-nome{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--nero);letter-spacing:-2px;line-height:1}
-    .testata-nome span{color:var(--verde)}
-    .testata-sub{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-top:6px;display:flex;align-items:center;justify-content:center;gap:12px}
-    .testata-sub::before,.testata-sub::after{content:'';display:block;width:40px;height:1px;background:var(--linea)}
+    /* TESTATA */
+    .mast{padding:22px 24px 16px;border-bottom:3px solid var(--n);text-align:center}
+    .mast-t{font-family:'Libre Baskerville',serif;font-size:48px;font-weight:700;color:var(--n);letter-spacing:-2px;line-height:1}
+    .mast-t span{color:var(--v)}
+    .mast-s{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--m);margin-top:6px;display:flex;align-items:center;justify-content:center;gap:10px}
+    .mast-s::before,.mast-s::after{content:'';display:block;width:32px;height:1px;background:var(--l)}
 
-    /* ── NAV ── */
-    .navbar{background:var(--ant);border-bottom:3px solid var(--verde);position:sticky;top:0;z-index:200}
-    .navbar-inner{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;justify-content:center;flex-wrap:wrap}
-    .navbar a{display:block;padding:10px 13px;font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#888;white-space:nowrap;transition:background .15s,color .15s}
-    .navbar a:hover{background:var(--verde);color:#fff}
-    .navbar a.on{background:var(--verde);color:#fff}
+    /* NAV */
+    .nav{border-bottom:1px solid var(--l);padding:0 24px;display:flex;justify-content:center;flex-wrap:wrap}
+    .nav a{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#888;padding:10px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .15s,border-color .15s}
+    .nav a:hover{color:var(--n);border-bottom-color:var(--n)}
+    .nav a.on{color:var(--v);border-bottom-color:var(--v);font-weight:700}
 
-    /* ── WRAP ── */
-    .wrap{max-width:1160px;margin:0 auto;padding:22px 20px 60px}
+    /* WRAP */
+    .wrap{max-width:960px;margin:0 auto;padding:36px 24px 60px}
 
-    /* ── SECTION LABEL ── */
-    .sl{display:flex;align-items:stretch;margin-bottom:14px;border-bottom:2px solid var(--ant)}
-    .sl-tag{background:var(--ant);color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px}
-    .sl-tag.v{background:var(--verde)}
-    .sl-tag.r{background:var(--rosso)}
-    .sl-sp{flex:1}
-    .sl-ts{font-size:10px;color:var(--muted);align-self:flex-end;padding-bottom:4px;font-style:italic}
+    /* SECTION LABEL */
+    .sl{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .sl-lbl{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--v);white-space:nowrap}
+    .sl-line{flex:1;height:1px;background:var(--l)}
+    .sl-bold{flex:1;height:2px;background:var(--v)}
+    .sl-ts{font-size:10px;color:var(--m);font-style:italic;white-space:nowrap}
 
-    /* ── PROXY IMMAGINI ──
-       Usa allorigins per bypassare hotlink protection
-       Fallback: immagine placeholder grigio scuro
-    ── */
+    /* APERTURA */
+    .apertura{display:grid;grid-template-columns:1fr 420px;gap:40px;padding-bottom:36px;margin-bottom:36px;border-bottom:1px solid var(--l);align-items:start}
+    .ap-kat{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--r);margin-bottom:14px}
+    .ap-h{font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;line-height:1.08;color:var(--n);letter-spacing:-1.5px;margin-bottom:18px;transition:color .15s}
+    .apertura:hover .ap-h{color:#333}
+    .ap-s{font-family:'Libre Baskerville',serif;font-size:16px;line-height:1.75;color:#444;font-style:italic;border-left:3px solid var(--v);padding-left:14px;margin-bottom:20px}
+    .ap-meta{font-size:11px;color:var(--m);text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .ap-meta::before{content:'';display:block;width:24px;height:1px;background:var(--v);flex-shrink:0}
+    .ap-leggi{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--r);border-bottom:1px solid var(--r);padding-bottom:1px}
+    .ap-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#f0f0f0}
+    .ap-cap{font-size:10px;color:var(--m);margin-top:6px;font-style:italic}
 
-    /* ── APERTURA ── */
-    .apertura{display:grid;grid-template-columns:1fr 320px;gap:3px;background:var(--linea);border:1px solid var(--linea);margin-bottom:3px}
-    .hero{position:relative;overflow:hidden;background:var(--ant);min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer}
-    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s,opacity .3s}
-    .hero:hover .hero-bg{transform:scale(1.03);opacity:.65}
-    .hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.1) 100%)}
-    .hero-body{position:relative;z-index:2;padding:28px}
-    .hero-kicker{display:inline-block;background:var(--rosso);color:#fff;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;margin-bottom:12px}
-    .hero-h{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;line-height:1.1;color:#fff;letter-spacing:-.5px;margin-bottom:12px}
-    .hero-s{font-family:'Playfair Display',serif;font-size:14px;line-height:1.65;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:14px;max-width:560px}
-    .hero-m{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
-    .hero-btn{display:inline-block;background:var(--verde);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;margin-top:14px;transition:background .15s}
-    .hero-btn:hover{background:#245224}
-    /* colonna lat */
-    .ap-col{display:flex;flex-direction:column;gap:3px}
-    .ap-card{background:#fff;flex:1;display:flex;flex-direction:column;overflow:hidden;transition:background .12s}
-    .ap-card:hover{background:#fafafa}
-    .ap-img{width:100%;height:110px;object-fit:cover;flex-shrink:0;display:block}
-    .ap-ph{width:100%;height:110px;background:#2a2a2a;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .ap-body{padding:13px;display:flex;flex-direction:column;gap:5px;flex:1}
-    .kat{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rosso)}
-    .ap-body h3{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;line-height:1.3;color:var(--nero)}
-    .ap-body .dt{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:auto}
+    /* SEP */
+    .sep{border:none;border-top:1px solid var(--l);margin:32px 0}
 
-    /* ── G3 ── */
-    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--linea);border:1px solid var(--linea);margin-bottom:3px}
-    .c3{background:#fff;display:flex;flex-direction:column;overflow:hidden;transition:background .12s}
+    /* G3 */
+    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--l);border:1px solid var(--l);margin-bottom:1px}
+    .c3{background:#fff;display:flex;flex-direction:column;transition:background .12s}
     .c3:hover{background:#fafafa}
-    .c3-img{width:100%;height:190px;object-fit:cover;flex-shrink:0;display:block}
-    .c3-ph{width:100%;height:190px;background:var(--ant);flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .c3-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
-    .c3-body h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.25;color:var(--nero)}
-    .c3-body p{font-size:13px;line-height:1.65;color:#555;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
-    .c3-body .dt{font-size:10px;color:var(--muted);text-transform:uppercase;padding-top:8px;border-top:1px solid var(--linea);margin-top:auto;display:flex;justify-content:space-between}
-    .lnk{color:var(--verde);font-weight:700;font-size:10px}
+    .c3-img{width:100%;height:190px;object-fit:cover;display:block;background:#f0f0f0;flex-shrink:0}
+    .c3-ph{width:100%;height:190px;background:#e8e8e8;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .c3-body{padding:18px;display:flex;flex-direction:column;gap:7px;flex:1}
+    .kat{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--v)}
+    .c3-body h3{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;line-height:1.3;color:var(--n)}
+    .c3-body p{font-size:13px;line-height:1.65;color:#666;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .dt{font-size:10px;color:var(--m);text-transform:uppercase;padding-top:10px;border-top:1px solid var(--l);margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+    .lk{color:var(--v);font-weight:700;font-size:10px}
 
-    /* ── G2 FOTO GRANDI ── */
-    .g2{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--linea);border:1px solid var(--linea);margin-bottom:3px}
-    .c2{position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--ant);cursor:pointer}
-    .c2-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;transition:opacity .3s,transform .4s}
-    .c2:hover .c2-bg{opacity:.58;transform:scale(1.03)}
-    .c2-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
+    /* G2 FOTO GRANDI */
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--l);border:1px solid var(--l);margin-bottom:1px}
+    .c2{position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;background:#111;cursor:pointer}
+    .c2-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s,transform .4s}
+    .c2:hover .c2-bg{opacity:.55;transform:scale(1.03)}
+    .c2-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
     .c2-body{position:relative;z-index:2;padding:20px}
-    .c2-body .kat{color:rgba(255,255,255,.55);margin-bottom:7px}
-    .c2-body h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;line-height:1.2;color:#fff;margin-bottom:7px}
-    .c2-body .dt{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase}
+    .c2-body .kat{color:rgba(255,255,255,.5);margin-bottom:7px}
+    .c2-body h3{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;line-height:1.2;color:#fff;margin-bottom:6px}
+    .c2-body .dt{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;border:none;padding:0;margin:0}
 
-    /* ── G4 FOTO ── */
-    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--linea);border:1px solid var(--linea);margin-bottom:3px}
+    /* G4 */
+    .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--l);border:1px solid var(--l);margin-bottom:1px}
     .c4{background:#fff;display:flex;flex-direction:column;overflow:hidden;transition:background .12s}
     .c4:hover{background:#fafafa}
-    .c4-img{width:100%;height:140px;object-fit:cover;flex-shrink:0;display:block}
-    .c4-ph{width:100%;height:140px;background:#2a2a2a;flex-shrink:0}
-    .c4-body{padding:13px;display:flex;flex-direction:column;gap:5px;flex:1}
-    .c4-body h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.3;color:var(--nero);flex:1}
-    .c4-body .dt{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:auto;padding-top:7px;border-top:1px solid var(--linea)}
+    .c4-img{width:100%;height:130px;object-fit:cover;display:block;background:#f0f0f0;flex-shrink:0}
+    .c4-ph{width:100%;height:130px;background:#e8e8e8;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .c4-body{padding:14px;display:flex;flex-direction:column;gap:5px;flex:1}
+    .c4-body h4{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;line-height:1.3;color:var(--n);flex:1}
+    .c4-body .dt{border-top:1px solid var(--l);padding-top:7px;margin-top:auto}
 
-    /* ── FASCIA SCURA ── */
-    .fascia{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--ant);border:1px solid var(--ant);margin-bottom:3px;padding:3px}
-    .fd{background:var(--ant);display:flex;flex-direction:column;overflow:hidden;transition:opacity .15s}
-    .fd:hover{opacity:.85}
-    .fd-img{width:100%;height:150px;object-fit:cover;flex-shrink:0;display:block}
-    .fd-ph{width:100%;height:150px;background:#2a2a2a;flex-shrink:0}
-    .fd-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
-    .fd-body .kat{color:#555}
-    .fd-body h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.3;color:#e8e8e8;flex:1}
-    .fd-body p{font-size:12px;line-height:1.6;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-    .fd-body .dt{font-size:10px;color:#444;text-transform:uppercase;margin-top:auto;padding-top:7px;border-top:1px solid #2a2a2a}
+    /* FASCIA NERA */
+    .fascia{background:var(--n);padding:28px 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-bottom:1px}
+    .fc{border-right:1px solid #222;padding:0 24px;display:flex;flex-direction:column;gap:8px;transition:opacity .15s}
+    .fc:hover{opacity:.8}
+    .fc:first-child{padding-left:0}
+    .fc:last-child{border-right:none;padding-right:0}
+    .fc .kat{color:#555}
+    .fc h3{font-family:'Libre Baskerville',serif;font-size:17px;font-weight:700;line-height:1.3;color:#ebebeb;flex:1}
+    .fc p{font-size:12px;line-height:1.6;color:#777;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .fc .dt{color:#444;border-top:1px solid #222;padding-top:7px;margin-top:auto;border-left:none;justify-content:flex-start}
 
-    /* ── SCROLL INFINITO ── */
+    /* SCROLL INFINITO */
     #sentinel{height:60px;display:flex;align-items:center;justify-content:center}
     .dots{display:none;gap:6px}
     .dots.show{display:flex}
-    .dots span{width:8px;height:8px;border-radius:50%;background:var(--verde);animation:dot 1s ease-in-out infinite}
+    .dots span{width:7px;height:7px;border-radius:50%;background:var(--v);animation:dot 1s ease-in-out infinite}
     .dots span:nth-child(2){animation-delay:.15s}
     .dots span:nth-child(3){animation-delay:.3s}
     @keyframes dot{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
 
-    /* ── SPINNER ── */
-    #stato{text-align:center;padding:80px 20px;background:#fff;border:1px solid var(--linea)}
-    .spin{width:38px;height:38px;border:2px solid var(--linea);border-top-color:var(--verde);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 16px}
+    /* SPINNER */
+    #stato{text-align:center;padding:80px 20px}
+    .spin{width:36px;height:36px;border:2px solid var(--l);border-top-color:var(--v);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 16px}
     @keyframes sp{to{transform:rotate(360deg)}}
-    #stato p{font-family:'Playfair Display',serif;font-size:15px;color:var(--muted);font-style:italic}
+    #stato p{font-family:'Libre Baskerville',serif;font-size:15px;color:var(--m);font-style:italic}
 
-    /* ── FOOTER ── */
-    footer{background:var(--ant);border-top:4px solid var(--verde);padding:28px 20px;text-align:center}
-    .footer-brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff}
-    .footer-brand span{color:var(--verde)}
-    .footer-sub{font-size:10px;color:#444;letter-spacing:2px;text-transform:uppercase;margin-top:6px}
-    .footer-sub a{color:#555}
+    /* FOOTER */
+    footer{border-top:3px solid var(--n);padding:24px;text-align:center;margin-top:40px}
+    .fb{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--n)}
+    .fb span{color:var(--v)}
+    .fs{font-size:10px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-top:5px}
 
-    /* ── RESPONSIVE ── */
-    @media(max-width:960px){
+    /* SVG placeholder */
+    .ph-svg{width:28px;height:28px;opacity:.25}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
       .apertura{grid-template-columns:1fr}
       .g3{grid-template-columns:1fr 1fr}
       .g2{grid-template-columns:1fr}
       .g4{grid-template-columns:1fr 1fr}
-      .fascia{grid-template-columns:1fr 1fr}
+      .fascia{grid-template-columns:1fr 1fr;gap:1px;background:var(--l)}
+      .fc{background:#111;padding:20px;border-right:none}
+      .mast-t{font-size:36px}
     }
-    @media(max-width:600px){
-      .testata-nome{font-size:34px}
+    @media(max-width:580px){
       .g3,.g4,.fascia{grid-template-columns:1fr}
-      .navbar-inner{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+      .mast-t{font-size:28px}
+      .nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
     }
   </style>
 </head>
 <body>
 
-<div class="topbar">
+<div class="tb">
   <span id="data-top"></span>
+  <span>regionale.grandangolosettimanale.it</span>
 </div>
 
-<div class="testata">
-  <div class="testata-nome">Grandangolo <span>Regionale</span></div>
-  <div class="testata-sub">Il quotidiano della Sicilia</div>
+<div class="mast">
+  <div class="mast-t">Grandangolo <span>Regionale</span></div>
+  <div class="mast-s">Il quotidiano della Sicilia</div>
 </div>
 
-<nav class="navbar">
-  <div class="navbar-inner">
-    <a href="#" class="on">Prima Pagina</a>
-    <a href="#">Cronaca</a>
-    <a href="#">Politica</a>
-    <a href="#">Giudiziaria</a>
-    <a href="#">Inchieste</a>
-    <a href="#">Economia</a>
-    <a href="#">Cultura</a>
-    <a href="#">Sport</a>
-    <a href="#">Agrigento</a>
-    <a href="#">Palermo</a>
-    <a href="#">Catania</a>
-    <a href="#">Ragusa</a>
-  </div>
+<nav class="nav">
+  <a href="#" class="on">Prima pagina</a>
+  <a href="#">Cronaca</a>
+  <a href="#">Politica</a>
+  <a href="#">Giudiziaria</a>
+  <a href="#">Inchieste</a>
+  <a href="#">Economia</a>
+  <a href="#">Cultura</a>
+  <a href="#">Sport</a>
+  <a href="#">Agrigento</a>
+  <a href="#">Palermo</a>
+  <a href="#">Catania</a>
+  <a href="#">Ragusa</a>
 </nav>
 
 <div class="wrap">
@@ -191,24 +178,47 @@
 
   <div id="contenuto" style="display:none">
 
-    <div class="sl"><span class="sl-tag">Apertura</span><div class="sl-sp"></div><span class="sl-ts" id="agg-ts"></span></div>
-    <div class="apertura" id="apertura"></div>
+    <div class="sl">
+      <span class="sl-lbl">Apertura</span>
+      <div class="sl-bold"></div>
+      <span class="sl-ts" id="agg-ts"></span>
+    </div>
+    <div id="apertura"></div>
 
-    <div class="sl" style="margin-top:22px"><span class="sl-tag v">Primo Piano</span><div class="sl-sp"></div></div>
+    <div class="sl" style="margin-top:0">
+      <span class="sl-lbl">Primo Piano</span>
+      <div class="sl-line"></div>
+    </div>
     <div class="g3" id="g3a"></div>
 
-    <div class="sl" style="margin-top:22px"><span class="sl-tag r">In Primo Piano</span><div class="sl-sp"></div></div>
+    <hr class="sep"/>
+    <div class="sl">
+      <span class="sl-lbl">In primo piano</span>
+      <div class="sl-line"></div>
+    </div>
     <div class="g2" id="g2"></div>
 
-    <div class="sl" style="margin-top:22px"><span class="sl-tag">Cronaca</span><div class="sl-sp"></div></div>
+    <hr class="sep"/>
+    <div class="sl">
+      <span class="sl-lbl">Cronaca</span>
+      <div class="sl-line"></div>
+    </div>
     <div class="g4" id="g4a"></div>
 
-    <div class="sl" style="margin-top:22px"><span class="sl-tag" style="background:#111">In Evidenza</span><div class="sl-sp"></div></div>
+    <hr class="sep"/>
+    <div class="sl">
+      <span class="sl-lbl">In evidenza</span>
+      <div class="sl-line"></div>
+    </div>
     <div class="fascia" id="fascia"></div>
 
-    <div class="sl" style="margin-top:22px"><span class="sl-tag">Notizie</span><div class="sl-sp"></div></div>
+    <hr class="sep"/>
+    <div class="sl">
+      <span class="sl-lbl">Notizie</span>
+      <div class="sl-line"></div>
+    </div>
     <div class="g3" id="g3b"></div>
-    <div class="g4" id="g4b" style="margin-top:3px"></div>
+    <div class="g4" id="g4b" style="margin-top:1px"></div>
 
     <div id="scroll-extra"></div>
 
@@ -221,8 +231,8 @@
 </div>
 
 <footer>
-  <div class="footer-brand">Grandangolo <span>Regionale</span></div>
-  <div class="footer-sub">Edizione Sicilia · <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> · Aggiornato ogni 10 minuti</div>
+  <div class="fb">Grandangolo <span>Regionale</span></div>
+  <div class="fs">Edizione Sicilia · Aggiornato ogni 10 minuti</div>
 </footer>
 
 <script>
@@ -231,90 +241,72 @@
 
   let tutti=[],mostrati=0,loading=false,done=false;
 
+  const PH='<svg class="ph-svg" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
+
   function strip(h){const d=document.createElement('div');d.innerHTML=h;return(d.textContent||'').replace(/\s+/g,' ').trim();}
   function fdata(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});}
   function lnk(a){return'articolo.html?id='+tutti.indexOf(a);}
   function kat(a){return a.category&&a.category!==a.fonte?a.category:'Sicilia';}
 
-  // ── Immagine locale (scaricata da GitHub Actions) ──
-  function proxyImg(src){
-    if(!src) return null;
-    // Le immagini sono salvate localmente nella cartella imgs/
-    return src;
-  }
-
-  // ── Render immagine con placeholder SVG come fallback ──
-  const PH=`<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`;
-
-  function img(src,h,cls,lazy){
-    const p=proxyImg(src);
-    if(p) return `<img class="${cls}" src="${p}" alt="" ${lazy?'loading="lazy"':''} style="height:${h}px" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="${cls.replace('-img','-ph')}" style="height:${h}px;display:none">${PH}</div>`;
+  function imgTag(src,h,cls,lazy){
+    if(src) return `<img class="${cls}" src="${src}" alt="" style="height:${h}px"${lazy?' loading="lazy"':''} onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="${cls.replace('-img','-ph')}" style="height:${h}px;display:none">${PH}</div>`;
     return `<div class="${cls.replace('-img','-ph')}" style="height:${h}px">${PH}</div>`;
   }
 
   // ── APERTURA ──
-  function mkApertura(p,side){
-    const pi=proxyImg(p.image);
-    return `
-      <a class="hero" href="${lnk(p)}">
-        ${pi?`<img class="hero-bg" src="${pi}" alt="" onerror="this.style.display='none'"/>`:''}
-        <div class="hero-grad"></div>
-        <div class="hero-body">
-          <span class="hero-kicker">${kat(p)}</span>
-          <div class="hero-h">${strip(p.title)}</div>
-          <div class="hero-s">${(p.description||'').slice(0,240)}…</div>
-          <div class="hero-m">${fdata(p.pubDate)}</div>
-          <span class="hero-btn">Leggi →</span>
+  function mkApertura(p){
+    return `<a class="apertura" href="${lnk(p)}" style="display:grid;grid-template-columns:1fr 420px;gap:40px;padding-bottom:36px;margin-bottom:36px;border-bottom:1px solid var(--l);align-items:start">
+      <div>
+        <div class="ap-kat">${kat(p)}</div>
+        <div class="ap-h">${strip(p.title)}</div>
+        <div class="ap-s">${(p.description||'').slice(0,280)}…</div>
+        <div class="ap-meta">
+          <span>${fdata(p.pubDate)}</span>
+          <span class="ap-leggi">Leggi l'articolo →</span>
         </div>
-      </a>
-      <div class="ap-col">
-        ${side.map(a=>`
-          <a class="ap-card" href="${lnk(a)}">
-            ${img(a.image,110,'ap-img',true)}
-            <div class="ap-body">
-              <div class="kat">${kat(a)}</div>
-              <h3>${strip(a.title)}</h3>
-              <div class="dt">${fdata(a.pubDate)}</div>
-            </div>
-          </a>`).join('')}
-      </div>`;
+      </div>
+      <div>
+        ${p.image
+          ?`<img class="ap-img" src="${p.image}" alt="" onerror="this.style.background='#e8e8e8'"/>`
+          :`<div class="ap-img" style="display:flex;align-items:center;justify-content:center">${PH}</div>`}
+        <div class="ap-cap">${kat(p)} · ${fdata(p.pubDate)}</div>
+      </div>
+    </a>`;
   }
 
   // ── G3 ──
   function mkG3(items){
     return items.map(a=>`
       <a class="c3" href="${lnk(a)}">
-        ${img(a.image,190,'c3-img',true)}
+        ${imgTag(a.image,190,'c3-img',true)}
         <div class="c3-body">
           <div class="kat">${kat(a)}</div>
           <h3>${strip(a.title)}</h3>
           <p>${(a.description||'').slice(0,150)}…</p>
-          <div class="dt"><span>${fdata(a.pubDate)}</span><span class="lnk">Leggi →</span></div>
+          <div class="dt"><span>${fdata(a.pubDate)}</span><span class="lk">Leggi →</span></div>
         </div>
       </a>`).join('');
   }
 
-  // ── G2 ──
+  // ── G2 FOTO GRANDI ──
   function mkG2(items){
-    return items.map(a=>{
-      const pi=proxyImg(a.image);
-      return `<a class="c2" href="${lnk(a)}">
-        ${pi?`<img class="c2-bg" src="${pi}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
+    return items.map(a=>`
+      <a class="c2" href="${lnk(a)}">
+        ${a.image?`<img class="c2-bg" src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
         <div class="c2-grad"></div>
         <div class="c2-body">
           <div class="kat">${kat(a)}</div>
           <h3>${strip(a.title)}</h3>
           <div class="dt">${fdata(a.pubDate)}</div>
         </div>
-      </a>`;
-    }).join('');
+      </a>`).join('');
   }
 
   // ── G4 ──
   function mkG4(items){
     return items.map(a=>`
       <a class="c4" href="${lnk(a)}">
-        ${img(a.image,140,'c4-img',true)}
+        ${imgTag(a.image,130,'c4-img',true)}
         <div class="c4-body">
           <div class="kat">${kat(a)}</div>
           <h4>${strip(a.title)}</h4>
@@ -323,32 +315,29 @@
       </a>`).join('');
   }
 
-  // ── FASCIA ──
+  // ── FASCIA NERA ──
   function mkFascia(items){
     return items.map(a=>`
-      <a class="fd" href="${lnk(a)}">
-        ${img(a.image,150,'fd-img',true)}
-        <div class="fd-body">
-          <div class="kat">${kat(a)}</div>
-          <h3>${strip(a.title)}</h3>
-          <p>${(a.description||'').slice(0,120)}…</p>
-          <div class="dt">${fdata(a.pubDate)}</div>
-        </div>
+      <a class="fc" href="${lnk(a)}">
+        <div class="kat">${kat(a)}</div>
+        <h3>${strip(a.title)}</h3>
+        <p>${(a.description||'').slice(0,130)}…</p>
+        <div class="dt">${fdata(a.pubDate)}</div>
       </a>`).join('');
   }
 
-  // ── BLOCCO INFINITO ──
+  // ── BLOCCO SCROLL ──
   function mkBlocco(items){
     const wrap=document.createElement('div');
     if(items.slice(0,3).length){
       const g=document.createElement('div');
-      g.className='g3';g.style.marginTop='3px';
+      g.className='g3';g.style.marginTop='1px';
       g.innerHTML=mkG3(items.slice(0,3));
       wrap.appendChild(g);
     }
-    if(items.slice(3).length){
+    if(items.slice(3,7).length){
       const g=document.createElement('div');
-      g.className='g4';g.style.marginTop='3px';
+      g.className='g4';g.style.marginTop='1px';
       g.innerHTML=mkG4(items.slice(3,7));
       wrap.appendChild(g);
     }
@@ -357,7 +346,7 @@
 
   // ── INFINITE SCROLL ──
   function caricaAltri(){
-    if(loading||done) return;
+    if(loading||done)return;
     const batch=tutti.slice(mostrati,mostrati+7);
     if(!batch.length){done=true;document.getElementById('dots').classList.remove('show');return;}
     loading=true;
@@ -368,7 +357,7 @@
       loading=false;
       if(mostrati>=tutti.length){done=true;document.getElementById('dots').classList.remove('show');}
       else document.getElementById('dots').classList.remove('show');
-    },350);
+    },400);
   }
 
   const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting)caricaAltri();},{rootMargin:'400px'});
@@ -385,7 +374,7 @@
       try{const r=await fetch(url);if(r.ok){dati=await r.json();break;}}catch(e){}
     }
     if(!dati||!dati.items||!dati.items.length){
-      document.getElementById('stato').innerHTML=`<p style="color:var(--rosso)">Feed non disponibile.<br/><small>Vai su GitHub Actions → "Aggiorna Feed RSS" → Run workflow</small></p>`;
+      document.getElementById('stato').innerHTML=`<p style="color:var(--r)">Feed non disponibile.<br/><small>Vai su GitHub Actions → "Aggiorna Feed RSS" → Run workflow</small></p>`;
       return;
     }
     tutti=dati.items;
@@ -393,14 +382,14 @@
     document.getElementById('contenuto').style.display='block';
     document.getElementById('agg-ts').textContent='Aggiornato: '+new Date(dati.generated||Date.now()).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
 
-    document.getElementById('apertura').innerHTML=mkApertura(tutti[0],tutti.slice(1,4));
-    document.getElementById('g3a').innerHTML=mkG3(tutti.slice(4,7));
-    document.getElementById('g2').innerHTML=mkG2(tutti.slice(7,9));
-    document.getElementById('g4a').innerHTML=mkG4(tutti.slice(9,13));
-    document.getElementById('fascia').innerHTML=mkFascia(tutti.slice(13,16));
-    document.getElementById('g3b').innerHTML=mkG3(tutti.slice(16,19));
-    document.getElementById('g4b').innerHTML=mkG4(tutti.slice(19,23));
-    mostrati=23;
+    document.getElementById('apertura').innerHTML=mkApertura(tutti[0]);
+    document.getElementById('g3a').innerHTML=mkG3(tutti.slice(1,4));
+    document.getElementById('g2').innerHTML=mkG2(tutti.slice(4,6));
+    document.getElementById('g4a').innerHTML=mkG4(tutti.slice(6,10));
+    document.getElementById('fascia').innerHTML=mkFascia(tutti.slice(10,13));
+    document.getElementById('g3b').innerHTML=mkG3(tutti.slice(13,16));
+    document.getElementById('g4b').innerHTML=mkG4(tutti.slice(16,20));
+    mostrati=20;
     caricaAltri();
   }
 
