@@ -18,29 +18,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Scarica feed RSS
+      - name: Scarica tutti i feed RSS
         run: |
-          curl -s --max-time 30 \
-               -A "Mozilla/5.0 (compatible; GrandangoloRegionale/1.0)" \
-               -L "https://www.grandangoloagrigento.it/feed" \
-               -o feed_raw.xml
-          if [ ! -s feed_raw.xml ]; then
-            echo "ERRORE: feed vuoto"
+          echo "Avvio raccolta feed da tutte le fonti..."
+          python3 parse_feed.py
+          if [ ! -s feed.json ]; then
+            echo "ERRORE: feed.json vuoto o non generato"
             exit 1
           fi
-          echo "Scaricato $(wc -c < feed_raw.xml) bytes"
+          echo "Feed generato: $(python3 -c "import json; d=json.load(open('feed.json')); print(str(d['count'])+' articoli da '+str(len(d['fonti']))+' fonti')")"
 
-      - name: Converti XML in JSON
-        run: python3 parse_feed.py
-
-      - name: Commit feed.json
+      - name: Commit feed.json aggiornato
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.json
           if git diff --cached --quiet; then
-            echo "Nessuna modifica."
+            echo "Nessuna modifica al feed."
           else
-            git commit -m "chore: aggiorna feed [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git commit -m "chore: aggiorna feed RSS [$(date -u '+%Y-%m-%d %H:%M UTC')]"
             git push
           fi
