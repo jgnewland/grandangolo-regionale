@@ -196,6 +196,11 @@ def scarica_feed(feed_info):
         content     = tag_text(item, 'encoded', NS_CONTENT)
         description = tag_text(item, 'description')
         clean_desc  = re.sub('<[^>]+>', '', description).strip()
+        # Rimuovi riferimenti al sito sorgente nel sommario
+        clean_desc  = re.sub(r'\s*Articolo\s+[^\.]+su\s+[\w\.]+\.[a-z]+\.?\s*', ' ', clean_desc, flags=re.IGNORECASE)
+        clean_desc  = re.sub(r'\s*su\s+\w[\w\-]*\.[a-z]{2,}\.?\s*$', '', clean_desc, flags=re.IGNORECASE)
+        clean_desc  = re.sub(r'\s*Leggi (tutto|di più|l\'articolo).*$', '', clean_desc, flags=re.IGNORECASE)
+        clean_desc  = re.sub(r'\s{2,}', ' ', clean_desc).strip()
         pub_date    = tag_text(item, 'pubDate')
         cat_raw     = tag_text(item, 'category')
         cat_norm    = normalizza_categoria(cat_raw, title, clean_desc)
