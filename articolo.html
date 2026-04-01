@@ -6,283 +6,275 @@
   <title>Grandangolo Regionale</title>
   <meta name="description" content="Grandangolo Regionale – Il quotidiano della Sicilia"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --verde: #2d6a2d;
-      --rosso: #c0392b;
-      --nero: #111;
-      --linea: #e8e8e8;
-      --testo: #1a1a1a;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: #f5f5f3; color: var(--testo); font-size: 16px; line-height: 1.7; }
-    a { text-decoration: none; color: inherit; }
+    :root{--v:#2d6a2d;--r:#c0392b;--n:#111;--l:#eeeeee;--m:#aaa}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Source Sans 3',sans-serif;background:#fff;color:var(--n);font-size:15px;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
 
     /* TOPBAR */
-    .topbar { background: #fff; border-bottom: 1px solid var(--linea); padding: 6px 24px; display: flex; justify-content: space-between; font-size: 11px; color: #999; }
-    .topbar a { color: var(--verde); font-weight: 500; }
+    .tb{border-bottom:1px solid var(--l);padding:7px 24px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--m)}
 
-    /* MASTHEAD */
-    .masthead { background: #fff; padding: 18px 24px 14px; border-bottom: 4px solid var(--verde); }
-    .masthead-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; }
-    .mast-logo img { height: 52px; width: auto; display: block; }
-    .mast-center { text-align: center; border-left: 1px solid var(--linea); border-right: 1px solid var(--linea); padding: 0 20px; }
-    .mast-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--nero); letter-spacing: -1.5px; line-height: 1; }
-    .mast-title span { color: var(--verde); }
-    .mast-sub { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #bbb; margin-top: 5px; }
-    .mast-right { text-align: right; font-size: 11px; color: #bbb; line-height: 1.9; }
-    .mast-right strong { color: #333; font-size: 12px; display: block; }
+    /* TESTATA */
+    .mast{padding:18px 24px 14px;border-bottom:3px solid var(--n);text-align:center}
+    .mast-t{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:var(--n);letter-spacing:-1.5px;line-height:1}
+    .mast-t span{color:var(--v)}
+    .mast-s{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--m);margin-top:5px;display:flex;align-items:center;justify-content:center;gap:10px}
+    .mast-s::before,.mast-s::after{content:'';display:block;width:28px;height:1px;background:var(--l)}
 
     /* NAV */
-    .navbar { background: #fff; border-bottom: 2px solid var(--nero); }
-    .navbar-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; }
-    .navbar a { font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: #777; padding: 11px 13px; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; display: block; transition: color .15s, border-color .15s; }
-    .navbar a:hover { color: var(--verde); border-bottom-color: var(--verde); }
-    .navbar a.home-link { color: var(--verde); }
+    .nav{border-bottom:1px solid var(--l);padding:0 24px;display:flex;justify-content:center;flex-wrap:wrap}
+    .nav a{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#888;padding:10px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .15s,border-color .15s}
+    .nav a:hover{color:var(--n);border-bottom-color:var(--n)}
+    .nav a.home{color:var(--v);font-weight:700}
+    .nav a.home:hover{border-bottom-color:var(--v)}
 
-    /* WRAP ARTICOLO */
-    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    /* WRAP ARTICOLO — colonna stretta centrata come Domani */
+    .wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
 
     /* BREADCRUMB */
-    .breadcrumb { font-size: 11px; color: #bbb; margin-bottom: 28px; display: flex; align-items: center; gap: 8px; }
-    .breadcrumb a { color: var(--verde); font-weight: 500; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { color: #ddd; }
+    .bread{font-size:11px;color:var(--m);margin-bottom:28px;display:flex;align-items:center;gap:8px}
+    .bread a{color:var(--v);font-weight:600}
+    .bread a:hover{text-decoration:underline}
+    .bread-sep{color:#ddd}
 
     /* HEADER ARTICOLO */
-    .art-categoria { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--rosso); margin-bottom: 14px; }
-    .art-titolo { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; line-height: 1.1; color: var(--nero); letter-spacing: -1px; margin-bottom: 20px; }
-    .art-sommario { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.7; color: #444; font-style: italic; border-left: 3px solid var(--verde); padding-left: 16px; margin-bottom: 24px; }
-    .art-meta { font-size: 11px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; padding: 16px 0; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); margin-bottom: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .art-meta::before { content: ''; display: block; width: 28px; height: 1px; background: var(--verde); flex-shrink: 0; }
-    .art-meta .fonte { margin-left: auto; }
-    .art-meta .fonte a { color: var(--verde); font-weight: 700; border-bottom: 1px solid var(--verde); padding-bottom: 1px; }
+    .art-kat{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--r);margin-bottom:14px}
+    .art-h{font-family:'Libre Baskerville',serif;font-size:38px;font-weight:700;line-height:1.1;color:var(--n);letter-spacing:-1px;margin-bottom:20px}
+    .art-s{font-family:'Libre Baskerville',serif;font-size:18px;line-height:1.75;color:#444;font-style:italic;border-left:3px solid var(--v);padding-left:16px;margin-bottom:24px}
+    .art-meta{font-size:11px;color:var(--m);text-transform:uppercase;letter-spacing:1px;padding:16px 0;border-top:1px solid var(--l);border-bottom:1px solid var(--l);margin-bottom:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .art-meta::before{content:'';display:block;width:24px;height:1px;background:var(--v);flex-shrink:0}
+    .art-fonte{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--v);border-bottom:1px solid var(--v);padding-bottom:1px}
 
     /* IMMAGINE */
-    .art-img-wrap { margin-bottom: 32px; }
-    .art-img-wrap img { width: 100%; max-height: 480px; object-fit: cover; display: block; }
-    .art-img-caption { font-size: 11px; color: #bbb; margin-top: 8px; font-style: italic; }
+    .art-img-wrap{margin-bottom:32px}
+    .art-img-wrap img{width:100%;max-height:460px;object-fit:cover;display:block;background:#f0f0f0}
+    .art-cap{font-size:11px;color:var(--m);margin-top:8px;font-style:italic}
 
-    /* TESTO ARTICOLO */
-    .art-body { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.85; color: #222; }
-    .art-body p { margin-bottom: 22px; }
-    .art-body h2 { font-size: 24px; font-weight: 700; margin: 32px 0 14px; color: var(--nero); }
-    .art-body h3 { font-size: 20px; font-weight: 700; margin: 28px 0 12px; color: var(--nero); }
-    .art-body img { max-width: 100%; height: auto; display: block; margin: 28px auto; }
-    .art-body a { color: var(--verde); text-decoration: underline; }
-    .art-body strong { font-weight: 700; }
-    .art-body em { font-style: italic; }
-    .art-body blockquote { border-left: 3px solid var(--verde); padding-left: 20px; margin: 28px 0; color: #555; font-style: italic; }
+    /* CORPO ARTICOLO */
+    .art-body{font-family:'Libre Baskerville',serif;font-size:18px;line-height:1.85;color:#222}
+    .art-body p{margin-bottom:22px}
+    .art-body h2{font-size:24px;font-weight:700;margin:36px 0 14px;color:var(--n);font-family:'Libre Baskerville',serif}
+    .art-body h3{font-size:20px;font-weight:700;margin:28px 0 12px;color:var(--n);font-family:'Libre Baskerville',serif}
+    .art-body img{max-width:100%;height:auto;margin:28px auto;display:block}
+    .art-body a{color:var(--v);text-decoration:underline}
+    .art-body strong{font-weight:700}
+    .art-body em{font-style:italic}
+    .art-body blockquote{border-left:3px solid var(--v);padding-left:20px;margin:28px 0;color:#555;font-style:italic}
+    .art-body ul,.art-body ol{padding-left:24px;margin-bottom:22px}
+    .art-body li{margin-bottom:8px}
 
     /* FOOTER ARTICOLO */
-    .art-footer { margin-top: 48px; padding-top: 24px; border-top: 2px solid var(--nero); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .art-footer-leggi { display: inline-block; background: var(--nero); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 12px 28px; transition: background .2s; }
-    .art-footer-leggi:hover { background: var(--verde); }
-    .art-footer-back { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--verde); border-bottom: 1px solid var(--verde); padding-bottom: 1px; }
+    .art-footer{margin-top:48px;padding-top:24px;border-top:2px solid var(--n);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .btn-back{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--v);border-bottom:1px solid var(--v);padding-bottom:1px}
+    .btn-originale{display:inline-block;background:var(--n);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:11px 28px;transition:background .2s}
+    .btn-originale:hover{background:var(--v)}
 
     /* CORRELATI */
-    .correlati { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
-    .correlati-title { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--verde); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--verde); }
-    .correlati-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--linea); border: 1px solid var(--linea); }
-    .cor-card { background: #fff; padding: 18px; display: flex; flex-direction: column; gap: 7px; transition: background .12s; }
-    .cor-card:hover { background: #fafafa; }
-    .cor-card img { width: 100%; height: 130px; object-fit: cover; display: block; margin-bottom: 4px; }
-    .cor-cat { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--verde); }
-    .cor-card h4 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--nero); }
-    .cor-data { font-size: 10px; color: #bbb; text-transform: uppercase; margin-top: auto; }
+    .correlati-wrap{max-width:960px;margin:0 auto;padding:0 24px 60px}
+    .correlati-sl{display:flex;align-items:center;gap:12px;margin-bottom:20px;border-bottom:2px solid var(--v);padding-bottom:8px}
+    .correlati-sl span{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--v)}
+    .correlati-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--l);border:1px solid var(--l)}
+    .cor{background:#fff;display:flex;flex-direction:column;overflow:hidden;transition:background .12s}
+    .cor:hover{background:#fafafa}
+    .cor img{width:100%;height:150px;object-fit:cover;display:block;background:#f0f0f0}
+    .cor-ph{width:100%;height:150px;background:#e8e8e8;display:flex;align-items:center;justify-content:center}
+    .cor-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .cor-kat{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--v)}
+    .cor-body h4{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;line-height:1.3;color:var(--n)}
+    .cor-dt{font-size:10px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:8px;border-top:1px solid var(--l)}
 
     /* SPINNER */
-    #stato { text-align: center; padding: 80px 20px; }
-    .spin { width: 36px; height: 36px; border: 2px solid #eee; border-top-color: var(--verde); border-radius: 50%; animation: sp .8s linear infinite; margin: 0 auto 16px; }
-    @keyframes sp { to { transform: rotate(360deg); } }
-    #stato p { font-family: 'Playfair Display', serif; font-size: 14px; color: #aaa; font-style: italic; }
+    #stato{text-align:center;padding:80px 24px}
+    .spin{width:36px;height:36px;border:2px solid var(--l);border-top-color:var(--v);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 16px}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    #stato p{font-family:'Libre Baskerville',serif;font-size:15px;color:var(--m);font-style:italic}
 
     /* FOOTER */
-    footer { background: var(--nero); border-top: 4px solid var(--verde); padding: 28px 24px; }
-    .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .fbrand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: #fff; }
-    .fbrand span { color: var(--verde); }
-    .fbrand small { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
-    .footer-right { text-align: right; font-size: 11px; color: #444; line-height: 2; }
-    .footer-right a { color: #777; }
+    footer{border-top:3px solid var(--n);padding:24px;text-align:center;margin-top:0}
+    .fb{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--n)}
+    .fb span{color:var(--v)}
+    .fs{font-size:10px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-top:5px}
 
-    @media(max-width: 700px) {
-      .art-titolo { font-size: 28px; }
-      .art-body { font-size: 16px; }
-      .correlati-grid { grid-template-columns: 1fr; }
-      .masthead-inner { grid-template-columns: 1fr; text-align: center; }
-      .mast-center { border: none; padding: 10px 0; }
+    /* RESPONSIVE */
+    @media(max-width:700px){
+      .art-h{font-size:28px}
+      .art-body{font-size:16px}
+      .correlati-grid{grid-template-columns:1fr}
+      .nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+      .mast-t{font-size:30px}
     }
   </style>
 </head>
 <body>
 
-<div class="topbar">
+<div class="tb">
   <span id="data-top"></span>
-  <span>Fonte: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a> · Aggiornato ogni ora</span>
+  <span>regionale.grandangolosettimanale.it</span>
 </div>
 
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="mast-logo">
-      <a href="/"><img src="https://www.grandangoloagrigento.it/wp-content/themes/grandangolo-agrigento/img/logo.png" alt="Grandangolo" onerror="this.style.display='none'"/></a>
-    </div>
-    <div class="mast-center">
-      <div class="mast-title">Grandangolo <span>Regionale</span></div>
-      <div class="mast-sub">Il quotidiano della Sicilia</div>
-    </div>
-    <div class="mast-right">
-      <strong>regionale.grandangolosettimanale.it</strong>
-      Notizie dalla Sicilia<br/>Aggiornamento continuo
-    </div>
-  </div>
+<div class="mast">
+  <a href="/"><div class="mast-t">Grandangolo <span>Regionale</span></div></a>
+  <div class="mast-s">Il quotidiano della Sicilia</div>
 </div>
 
-<nav class="navbar">
-  <div class="navbar-inner">
-    <a href="/" class="home-link">← Prima pagina</a>
-    <a href="/">Cronaca</a>
-    <a href="/">Politica</a>
-    <a href="/">Giudiziaria</a>
-    <a href="/">Inchieste</a>
-    <a href="/">Economia</a>
-    <a href="/">Cultura</a>
-    <a href="/">Sport</a>
-    <a href="/">Agrigento</a>
-    <a href="/">Palermo</a>
-    <a href="/">Catania</a>
-  </div>
+<nav class="nav">
+  <a href="/" class="home">← Prima pagina</a>
+  <a href="/">Cronaca</a>
+  <a href="/">Politica</a>
+  <a href="/">Giudiziaria</a>
+  <a href="/">Inchieste</a>
+  <a href="/">Economia</a>
+  <a href="/">Cultura</a>
+  <a href="/">Sport</a>
+  <a href="/">Agrigento</a>
+  <a href="/">Palermo</a>
+  <a href="/">Catania</a>
+  <a href="/">Ragusa</a>
 </nav>
 
+<!-- SPINNER -->
 <div id="stato" class="wrap">
   <div class="spin"></div>
   <p>Caricamento articolo…</p>
 </div>
 
+<!-- ARTICOLO -->
 <div id="contenuto" style="display:none">
   <div class="wrap">
-    <div class="breadcrumb">
+    <div class="bread">
       <a href="/">Prima pagina</a>
-      <span>›</span>
-      <span id="bread-cat"></span>
+      <span class="bread-sep">›</span>
+      <span id="bread-kat"></span>
     </div>
-    <div class="art-categoria" id="art-cat"></div>
-    <h1 class="art-titolo" id="art-titolo"></h1>
-    <div class="art-sommario" id="art-sommario"></div>
+
+    <div class="art-kat" id="art-kat"></div>
+    <h1 class="art-h" id="art-h"></h1>
+    <div class="art-s" id="art-s"></div>
+
     <div class="art-meta">
       <span id="art-data"></span>
-      <span id="art-autore"></span>
-      <span class="fonte"><a id="art-fonte-link" href="#" target="_blank" rel="noopener">Leggi la fonte originale →</a></span>
     </div>
+
     <div class="art-img-wrap" id="art-img-wrap"></div>
+
     <div class="art-body" id="art-body"></div>
+
     <div class="art-footer">
-      <a href="/" class="art-footer-back">← Torna alla prima pagina</a>
-      <a id="art-leggi-originale" href="#" target="_blank" rel="noopener" class="art-footer-leggi">Leggi sul sito originale →</a>
+      <a class="btn-back" href="/">← Torna alla prima pagina</a>
     </div>
   </div>
 
-  <div class="correlati">
-    <div class="correlati-title">Leggi anche</div>
+  <!-- CORRELATI -->
+  <div class="correlati-wrap">
+    <div class="correlati-sl"><span>Leggi anche</span></div>
     <div class="correlati-grid" id="correlati"></div>
   </div>
 </div>
 
 <footer>
-  <div class="footer-inner">
-    <div>
-      <div class="fbrand">Grandangolo <span>Regionale</span><small>Edizione Sicilia</small></div>
-    </div>
-    <div class="footer-right">
-      Contenuti: <a href="https://www.grandangoloagrigento.it" target="_blank" rel="noopener">grandangoloagrigento.it</a><br/>
-      Ospitato su <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
-    </div>
-  </div>
+  <div class="fb">Grandangolo <span>Regionale</span></div>
+  <div class="fs">Edizione Sicilia · Aggiornato ogni 10 minuti</div>
 </footer>
 
 <script>
 (function(){
-  document.getElementById('data-top').textContent =
-    new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('data-top').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 
-  function strip(h){ const d=document.createElement('div'); d.innerHTML=h; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
-  function fdata(s){ if(!s) return ''; const d=new Date(s); return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'}); }
+  function strip(h){const d=document.createElement('div');d.innerHTML=h;return(d.textContent||'').replace(/\s+/g,' ').trim();}
+  function fdata(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});}
+  function kat(a){return a.category&&a.category!==a.fonte?a.category:'Sicilia';}
 
-  // Leggi ID dall'URL: articolo.html?id=3
-  const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id')||'0', 10);
+  const PH='<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.2" style="opacity:.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
+
+  // Leggi id dall'URL
+  const params=new URLSearchParams(window.location.search);
+  const id=parseInt(params.get('id')||'0',10);
 
   async function carica(){
     let dati=null;
-    for(const url of ['feed.json','./feed.json']){
-      try{ const r=await fetch(url,{cache:'no-cache'}); if(r.ok){ dati=await r.json(); break; } }catch(e){}
+    const urls=[
+      'https://cdn.jsdelivr.net/gh/jgnewland/grandangolo-regionale@main/feed.json?_='+Date.now(),
+      'feed.json?_='+Date.now()
+    ];
+    for(const url of urls){
+      try{const r=await fetch(url);if(r.ok){dati=await r.json();break;}}catch(e){}
     }
     if(!dati||!dati.items||!dati.items.length){
-      document.getElementById('stato').innerHTML=`<p style="color:var(--rosso)">Articolo non disponibile. <a href="/" style="color:var(--verde)">← Torna alla homepage</a></p>`;
+      document.getElementById('stato').innerHTML=`<p style="color:var(--r)">Articolo non disponibile. <a href="/" style="color:var(--v)">← Torna alla homepage</a></p>`;
       return;
     }
 
     const items=dati.items;
-    const art=items[id] || items[0];
+    const art=items[id]||items[0];
 
-    // Aggiorna title pagina
-    document.title = strip(art.title) + ' – Grandangolo Regionale';
+    // Meta pagina
+    document.title=strip(art.title)+' – Grandangolo Regionale';
 
-    // Popola pagina
-    const cat=art.category||'Sicilia';
-    document.getElementById('bread-cat').textContent=cat;
-    document.getElementById('art-cat').textContent=cat;
-    document.getElementById('art-titolo').textContent=strip(art.title);
+    // Popola
+    const categoria=kat(art);
+    document.getElementById('bread-kat').textContent=categoria;
+    document.getElementById('art-kat').textContent=categoria;
+    document.getElementById('art-h').textContent=strip(art.title);
 
-    // Sommario = prima frase del testo pulito
-    const descPulita=(art.description||'').trim();
-    document.getElementById('art-sommario').textContent=descPulita.slice(0,300)+(descPulita.length>300?'…':'');
+    // Sommario
+    const desc=(art.description||'').trim();
+    document.getElementById('art-s').textContent=desc.slice(0,300)+(desc.length>300?'…':'');
 
     // Meta
     document.getElementById('art-data').textContent=fdata(art.pubDate);
-    if(art.author) document.getElementById('art-autore').textContent='di '+art.author;
-    document.getElementById('art-fonte-link').href=art.link||'#';
-    document.getElementById('art-leggi-originale').href=art.link||'#';
 
     // Immagine
     if(art.image){
       document.getElementById('art-img-wrap').innerHTML=
-        `<img src="${art.image}" alt="${strip(art.title)}" onerror="this.parentElement.style.display='none'"/>
-         <div class="art-img-caption">${cat} · ${fdata(art.pubDate)}</div>`;
+        `<img src="${art.image}" alt="${strip(art.title)}" onerror="this.parentElement.innerHTML='<div class=cor-ph>${PH}</div>'"/>
+         <div class="art-cap">${categoria} · ${fdata(art.pubDate)}</div>`;
     }
 
-    // Corpo articolo: usa content (HTML completo) o fallback su description
-    const corpo = art.content || art.description || '';
-    // Pulisci immagini duplicate (già mostrate sopra) e attr WordPress inutili
-    const corpoPulito = corpo
+    // Corpo articolo
+    const corpo=art.content||art.description||'';
+    const corpoPulito=corpo
       .replace(/<img[^>]+class="[^"]*size-post-thumbnail[^"]*"[^>]*>/gi,'')
       .replace(/srcset="[^"]*"/gi,'')
       .replace(/sizes="[^"]*"/gi,'')
       .replace(/decoding="[^"]*"/gi,'')
       .replace(/loading="[^"]*"/gi,'loading="lazy"')
-      .replace(/<p>\s*<\/p>/gi,'');
+      .replace(/<p>\s*<\/p>/gi,'')
+      .replace(/\n{3,}/g,'\n\n')
+      // Rimuovi righe tipo "L'articolo proviene da..." o "Fonte: ..."
+      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|l'articolo|the post|appeared first|originally published)[^<]*<\/p>/gi,'')
+      .replace(/<p[^>]*><a[^>]*>(proviene da|fonte:|source:|l'articolo|the post|appeared first)[^<]*<\/a>[^<]*<\/p>/gi,'')
+      .trim();
 
-    document.getElementById('art-body').innerHTML = corpoPulito || `<p>${descPulita}</p>`;
+    if(corpoPulito.trim()){
+      document.getElementById('art-body').innerHTML=corpoPulito;
+    } else {
+      document.getElementById('art-body').innerHTML=`<p>${desc}</p>`;
+    }
 
     // Mostra
     document.getElementById('stato').style.display='none';
     document.getElementById('contenuto').style.display='block';
+    window.scrollTo(0,0);
 
-    // CORRELATI: 3 articoli vicini (escludi corrente)
-    const correlati = items.filter((_,i)=>i!==id).slice(0,3);
-    document.getElementById('correlati').innerHTML=correlati.map((a,i)=>{
+    // CORRELATI — 3 articoli vicini
+    const correlati=items.filter((_,i)=>i!==id).slice(0,3);
+    document.getElementById('correlati').innerHTML=correlati.map(a=>{
       const idx=items.indexOf(a);
-      return `<a class="cor-card" href="articolo.html?id=${idx}">
-        ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'"/>`:''}
-        <div class="cor-cat">${a.category||'Sicilia'}</div>
-        <h4>${strip(a.title)}</h4>
-        <div class="cor-data">${fdata(a.pubDate)}</div>
+      return `<a class="cor" href="articolo.html?id=${idx}">
+        ${a.image
+          ?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cor-ph" style="display:none">${PH}</div>`
+          :`<div class="cor-ph">${PH}</div>`}
+        <div class="cor-body">
+          <div class="cor-kat">${kat(a)}</div>
+          <h4>${strip(a.title)}</h4>
+          <div class="cor-dt">${fdata(a.pubDate)}</div>
+        </div>
       </a>`;
     }).join('');
-
-    // Scroll top
-    window.scrollTo(0,0);
   }
 
   carica();
