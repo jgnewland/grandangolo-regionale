@@ -242,19 +242,18 @@
     // Corpo articolo
     const corpo=art.content||art.description||'';
     const corpoPulito=corpo
-      .replace(/<img[^>]+class="[^"]*size-post-thumbnail[^"]*"[^>]*>/gi,'')
-      .replace(/srcset="[^"]*"/gi,'')
-      .replace(/sizes="[^"]*"/gi,'')
-      .replace(/decoding="[^"]*"/gi,'')
-      .replace(/loading="[^"]*"/gi,'loading="lazy"')
-      // Rimuovi tag rotti tipo '"/> o "/> rimasti dopo pulizie
-      .replace(/^\s*['"]\s*\/>\s*$/gm,'')
-      .replace(/['"]\s*\/>\s*<\/p>/gi,'</p>')
-      .replace(/<p[^>]*>\s*['"]\s*\/?>\s*<\/p>/gi,'')
-      .replace(/<p>\s*<\/p>/gi,'')
+      // Prima: riscrivi tutti i tag img tenendo solo src (evita frammenti rotti)
+      .replace(/<img[^>]*src=["']([^"']+)["'][^>]*\/?>/gi,(match,src)=>{
+        if(src.includes('pixel')||src.includes('1x1')||src.includes('tracker')) return '';
+        return `<img src="${src}" loading="lazy" style="max-width:100%;height:auto"/>`;
+      })
+      // Rimuovi eventuali img senza src o frammenti rimasti
+      .replace(/<img(?![^>]*src=)[^>]*\/?>/gi,'')
+      .replace(/['"]\s*\/>/g,'')
+      .replace(/<p[^>]*>\s*<\/p>/gi,'')
       .replace(/\n{3,}/g,'\n\n')
-      // Rimuovi righe tipo "L'articolo proviene da..." o "Fonte: ..."
-      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|l'articolo|the post|appeared first|originally published|su livesicilia|su blogsicilia|su palermotoday|su cataniatoday|su lasicilia|su ragusanews)[^<]*<\/p>/gi,'')
+      // Rimuovi righe con riferimenti a siti sorgente
+      .replace(/<p[^>]*>[^<]*(proviene da|fonte:|source:|the post|appeared first|originally published|su livesicilia|su blogsicilia|su palermotoday|su cataniatoday|su lasicilia|su ragusanews)[^<]*<\/p>/gi,'')
       .replace(/<p[^>]*><a[^>]*>[^<]*(proviene da|fonte:|the post|appeared first)[^<]*<\/a>[^<]*<\/p>/gi,'')
       .trim();
 
