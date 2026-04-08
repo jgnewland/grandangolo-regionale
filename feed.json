@@ -1,52 +1,97 @@
 {
-  "generated": "2026-04-08T17:46:55.198577Z",
+  "generated": "2026-04-08T18:52:24.430193Z",
   "count": 50,
   "prioritarie": 44,
   "items": [
     {
+      "title": "Campobello, l’avvocato e gli affari di Messina Denaro: disposta perizia",
+      "link": "https://livesicilia.it/campobello-avvocato-affari-messina-denaro-disposta-perizia/",
+      "description": "Il Pm si è opposto, i particolariArticoloCampobello, l’avvocato e gli affari di Messina Denaro: disposta periziasuLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2022/05/tribunale-marsala.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>\nMARSALA - Sarà una perizia medico-legale, chiesta dalla difesa dell'imputato e accordata dal tribunale, a stabilire se l'80enne ex avvocato di Campo..</p>",
+      "pubDate": "Wed, 08 Apr 2026 18:38:28 +0000",
+      "category": "Cronaca",
+      "image": "imgs/img_0000.jpg"
+    },
+    {
+      "title": "Sicilia, contributi per il caro carburante:  Commissione accoglie le richieste",
+      "link": "https://livesicilia.it/sicilia-contributi-caro-carburante-la-commissione-accoglie-le-richieste/",
+      "description": "I presidenti dei consorzi della pesca sono stati ascoltati. I particolariArticoloSicilia, contributi per il caro carburante: Commissione accoglie le richiestesuLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2022/06/ARS_ANTONIO-PECORELLI.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>\nPALERMO - La commissione attività produttive dell'Ars, presieduta da Gaspare Vitrano (Fi), ha accolto alcune delle principali richieste avanzate dai..</p>",
+      "pubDate": "Wed, 08 Apr 2026 18:14:52 +0000",
+      "category": "Politica",
+      "image": "imgs/img_0001.jpg"
+    },
+    {
+      "title": "Mattarella “Sport è civiltà che non si arrende a violenze”",
+      "link": "https://livesicilia.it/mattarella-sport-e-civilta-che-non-si-arrende-a-violenze/",
+      "description": "Mattarella \"Sport è civiltà che non si arrende a violenze\"..Articolo<div>Mattarella “Sport è civiltà che non si arrende a violenze”</div>suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/n93p-1.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Mattarella \"Sport è civiltà che non si arrende a violenze\"..</p>",
+      "pubDate": "Wed, 08 Apr 2026 18:04:03 +0000",
+      "category": "Sicilia",
+      "image": "imgs/img_0002.jpg"
+    },
+    {
+      "title": "Mattarella “Milano Cortina ha trasmesso immagine Italia efficiente”",
+      "link": "https://livesicilia.it/mattarella-milano-cortina-ha-trasmesso-immagine-italia-efficiente/",
+      "description": "Mattarella \"Milano Cortina ha trasmesso immagine Italia efficiente\"..Articolo<div>Mattarella “Milano Cortina ha trasmesso immagine Italia efficiente”</div>suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/m933.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Mattarella \"Milano Cortina ha trasmesso immagine Italia efficiente\"..</p>",
+      "pubDate": "Wed, 08 Apr 2026 18:03:54 +0000",
+      "category": "Sicilia",
+      "image": "imgs/img_0003.jpg"
+    },
+    {
+      "title": "Mattarella “Giochi Milano Cortina hanno scritto pagina indimenticabile”",
+      "link": "https://livesicilia.it/mattarella-giochi-milano-cortina-hanno-scritto-pagina-indimenticabile/",
+      "description": "Mattarella \"Giochi Milano Cortina hanno scritto pagina indimenticabile\"..Articolo<div>Mattarella “Giochi Milano Cortina hanno scritto pagina indimenticabile”</div>suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/l931.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Mattarella \"Giochi Milano Cortina hanno scritto pagina indimenticabile\"..</p>",
+      "pubDate": "Wed, 08 Apr 2026 17:58:55 +0000",
+      "category": "Sicilia",
+      "image": "imgs/img_0004.jpg"
+    },
+    {
+      "title": "Lollobrigida “Noi dilettanti? Sappiamo il lavoro che c’è dietro”",
+      "link": "https://livesicilia.it/lollobrigida-noi-dilettanti-sappiamo-il-lavoro-che-ce-dietro/",
+      "description": "Lollobrigida \"Noi dilettanti? Sappiamo il lavoro che c'è dietro\"..Articolo<div>Lollobrigida “Noi dilettanti? Sappiamo il lavoro che c’è dietro”</div>suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/vp3M.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Lollobrigida \"Noi dilettanti? Sappiamo il lavoro che c'è dietro\"..</p>",
+      "pubDate": "Wed, 08 Apr 2026 17:54:18 +0000",
+      "category": "Sicilia",
+      "image": "imgs/img_0005.jpg"
+    },
+    {
+      "title": "Lollobrigida “Mattarella mi ha detto di voler conoscere mio figlio”",
+      "link": "https://livesicilia.it/lollobrigida-mattarella-mi-ha-detto-di-voler-conoscere-mio-figlio/",
+      "description": "Lollobrigida \"Mattarella mi ha detto di voler conoscere mio figlio\"..Articolo<div>Lollobrigida “Mattarella mi ha detto di voler conoscere mio figlio”</div>suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/wq3z.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Lollobrigida \"Mattarella mi ha detto di voler conoscere mio figlio\"..</p>",
+      "pubDate": "Wed, 08 Apr 2026 17:54:09 +0000",
+      "category": "Sicilia",
+      "image": "imgs/img_0006.jpg"
+    },
+    {
+      "title": "Catania, chiosco chiuso per 7 giorni: “Ritrovo abituale di pregiudicati”",
+      "link": "https://livesicilia.it/catania-chiuso-chioso-ritrovo-pregiudicato/",
+      "description": "Provvedimento del questore dopo i controlli della PoliziaArticoloCatania, chiosco chiuso per 7 giorni: “Ritrovo abituale di pregiudicati”suLiveSicilia.it",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/chiuso-chiosco-a-san-giorgio-catania.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>\nCATANIA – Sospesa per sette giorni l’attività di un chiosco nel quartiere San Giorgio, ritenuto abituale punto di ritrovo di soggetti pregiudica..</p>",
+      "pubDate": "Wed, 08 Apr 2026 17:49:45 +0000",
+      "category": "Catania",
+      "image": "imgs/img_0007.jpg"
+    },
+    {
       "title": "Regina “Importanti rassicurazioni Ue su ostacoli a mercato unico dell’energia”",
       "link": "https://livesicilia.it/regina-importanti-rassicurazioni-ue-su-ostacoli-a-mercato-unico-dellenergia/",
       "description": "Regina \"Importanti rassicurazioni Ue su ostacoli a mercato unico dell'energia..Articolo<div>Regina “Importanti rassicurazioni Ue su ostacoli a mercato unico dell’energia”</div>suLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/k03v.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p> <video-js class=\"vjs-big-play-centered\" controls=\"\" data-setup='{\"fluid\": true}' id=\"videojs69d6947e6fd60\" playsinline=\"\" preload=\"auto\">\n<source src=\"https://video.italpress.com/play/mp4/video/k03v\" type=\"video/mp4\"/>\n</video-js>\n           \n\nRegina \"Importanti rassicurazioni Ue su ostacoli a mercato unico dell'energia..</p>",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/k03v.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Regina \"Importanti rassicurazioni Ue su ostacoli a mercato unico dell'energia..</p>",
       "pubDate": "Wed, 08 Apr 2026 17:43:51 +0000",
       "category": "Sicilia",
-      "image": "imgs/img_0000.jpg"
+      "image": "imgs/img_0008.jpg"
     },
     {
       "title": "Orsini “Servono misure che rendano subito competitive industrie italiane e Ue”",
       "link": "https://livesicilia.it/orsini-servono-misure-che-rendano-subito-competitive-industrie-italiane-e-ue/",
       "description": "Orsini \"Servono misure che rendano subito competitive industrie italiane e Ue..Articolo<div>Orsini “Servono misure che rendano subito competitive industrie italiane e Ue”</div>suLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/j934.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p> <video-js class=\"vjs-big-play-centered\" controls=\"\" data-setup='{\"fluid\": true}' id=\"videojs69d6947e71733\" playsinline=\"\" preload=\"auto\">\n<source src=\"https://video.italpress.com/play/mp4/video/j934\" type=\"video/mp4\"/>\n</video-js>\n           \n\nOrsini \"Servono misure che rendano subito competitive industrie italiane e Ue..</p>",
+      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/j934.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Orsini \"Servono misure che rendano subito competitive industrie italiane e Ue..</p>",
       "pubDate": "Wed, 08 Apr 2026 17:38:55 +0000",
       "category": "Sicilia",
-      "image": "imgs/img_0001.jpg"
-    },
-    {
-      "title": "Camisa (Confapi) “Su politiche industriali Ue servono tempi certi”",
-      "link": "https://livesicilia.it/camisa-confapi-su-politiche-industriali-ue-servono-tempi-certi/",
-      "description": "Camisa (Confapi) \"Su politiche industriali Ue servono tempi certi\"..Articolo<div>Camisa (Confapi) “Su politiche industriali Ue servono tempi certi”</div>suLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/g93j.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p> <video-js class=\"vjs-big-play-centered\" controls=\"\" data-setup='{\"fluid\": true}' id=\"videojs69d6947e73050\" playsinline=\"\" preload=\"auto\">\n<source src=\"https://video.italpress.com/play/mp4/video/g93j\" type=\"video/mp4\"/>\n</video-js>\n           \n\nCamisa (Confapi) \"Su politiche industriali Ue servono tempi certi\"..</p>",
-      "pubDate": "Wed, 08 Apr 2026 17:33:52 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0002.jpg"
-    },
-    {
-      "title": "Palermo, la Italo Belga ricorre al Tar contro i bandi della spiaggia di Mondello",
-      "link": "https://livesicilia.it/palermo-italo-belga-ricorre-tar-contro-bandi-spiaggia-mondello/",
-      "description": "Fissata l'udienzaArticoloPalermo, la Italo Belga ricorre al Tar contro i bandi della spiaggia di MondellosuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2025/12/Screenshot-2025-12-06-alle-12.51.40.png\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>\nPALERMO - La società Italo Belga ha presentato ricorso al Tar contro i bandi dell'assessorato regionale al Territorio per l'assegnazione con concess..</p>",
-      "pubDate": "Wed, 08 Apr 2026 17:24:19 +0000",
-      "category": "Cronaca",
-      "image": "imgs/img_0003.png"
-    },
-    {
-      "title": "Cina, a Qingdao un polo per la cantieristica a basse emissioni",
-      "link": "https://livesicilia.it/cina-a-qingdao-un-polo-per-la-cantieristica-a-basse-emissioni/",
-      "description": "Cina, a Qingdao un polo per la cantieristica a basse emissioni..ArticoloCina, a Qingdao un polo per la cantieristica a basse emissionisuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/og5k.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>Cina, a Qingdao un polo per la cantieristica a basse emissioni..</p>",
-      "pubDate": "Wed, 08 Apr 2026 17:13:56 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0004.jpg"
+      "image": "imgs/img_0009.jpg"
     },
     {
       "title": "Caldo anomalo sull’Italia: quando cambierà il meteo?",
@@ -65,51 +110,6 @@
       "pubDate": "Wed, 08 Apr 2026 17:01:05 +0000",
       "category": "Palermo",
       "image": null
-    },
-    {
-      "title": "Banca Generali, due nuove opere nella collezione di BG ArTalent a Milano",
-      "link": "https://livesicilia.it/banca-generali-due-nuove-opere-nella-collezione-di-bg-artalent-a-milano/",
-      "description": "MILANO (ITALPRESS) - Banca Generali conferma per l'ottavo anno il sostegno alla Milano Art Week 2026 in qualità di main sponsor. La manifestazione, p..ArticoloBanca Generali, due nuove opere nella collezione di BG ArTalent a MilanosuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260408_2205.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>MILANO (ITALPRESS) - Banca Generali conferma per l'ottavo anno il sostegno alla Milano Art Week 2026 in qualità di main sponsor. La manifestazione, p..</p>",
-      "pubDate": "Wed, 08 Apr 2026 16:59:36 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0007.jpg"
-    },
-    {
-      "title": "Urso “Adeguare subito prezzi carburanti, ho convocato le compagnie per domani”",
-      "link": "https://livesicilia.it/urso-adeguare-subito-prezzi-carburanti-ho-convocato-le-compagnie-per-domani/",
-      "description": "ROMA (ITALPRESS) - \"Ho convocato per domani pomeriggio le quattro grandi aziende fornitrici di carburanti perchè ci sia la consapevolezza che l'adegu..ArticoloUrso “Adeguare subito prezzi carburanti, ho convocato le compagnie per domani”suLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260408_2161.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>ROMA (ITALPRESS) - \"Ho convocato per domani pomeriggio le quattro grandi aziende fornitrici di carburanti perchè ci sia la consapevolezza che l'adegu..</p>",
-      "pubDate": "Wed, 08 Apr 2026 16:59:26 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0008.jpg"
-    },
-    {
-      "title": "Il Palermo per la prima volta in Australia, l’11 agosto test con la Juventus",
-      "link": "https://livesicilia.it/il-palermo-per-la-prima-volta-in-australia-l11-agosto-test-con-la-juventus/",
-      "description": "PALERMO (ITALPRESS) - Per la prima volta nella sua storia, il Palermo FC sbarca in Australia. Una tappa speciale della prossima preparazione pre-seaso..ArticoloIl Palermo per la prima volta in Australia, l’11 agosto test con la JuventussuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260408_2118.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>PALERMO (ITALPRESS) - Per la prima volta nella sua storia, il Palermo FC sbarca in Australia. Una tappa speciale della prossima preparazione pre-seaso..</p>",
-      "pubDate": "Wed, 08 Apr 2026 16:59:17 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0009.jpg"
-    },
-    {
-      "title": "Via libera del Senato al Dl Bollette, è legge",
-      "link": "https://livesicilia.it/via-libera-del-senato-al-dl-bollette-e-legge/",
-      "description": "ROMA (ITALPRESS) - Con 102 voti favorevoli, 64 contrari e 2astensioni, il Senato rinnova la fiducia al Governo approvando invia definitiva il Dl Bolle..ArticoloVia libera del Senato al Dl Bollette, è leggesuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260408_2102.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>ROMA (ITALPRESS) - Con 102 voti favorevoli, 64 contrari e 2astensioni, il Senato rinnova la fiducia al Governo approvando invia definitiva il Dl Bolle..</p>",
-      "pubDate": "Wed, 08 Apr 2026 16:59:08 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0010.jpg"
-    },
-    {
-      "title": "Salone del Mobile, Intesa Sanpaolo supporta design e filiera Made in Italy",
-      "link": "https://livesicilia.it/salone-del-mobile-intesa-sanpaolo-supporta-design-e-filiera-made-in-italy/",
-      "description": "MILANO (ITALPRESS) - Intesa Sanpaolo, partner istituzionale del Salone del Mobile.Milano, rinnova il proprio impegno a fianco delle imprese del design..ArticoloSalone del Mobile, Intesa Sanpaolo supporta design e filiera Made in ItalysuLiveSicilia.it",
-      "content": "<img loading=\"lazy\" src=\"https://livesicilia.it/wp-content/uploads/2026/04/20260408_2074.jpg\" style=\"max-width:100%;height:auto;display:block;margin:20px auto\"/>\n<p>MILANO (ITALPRESS) - Intesa Sanpaolo, partner istituzionale del Salone del Mobile.Milano, rinnova il proprio impegno a fianco delle imprese del design..</p>",
-      "pubDate": "Wed, 08 Apr 2026 16:58:59 +0000",
-      "category": "Sicilia",
-      "image": "imgs/img_0011.jpg"
     },
     {
       "title": "A Travelexpo il turismo torna protagonista  tra open forum, seminari, business",
