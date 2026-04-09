@@ -216,14 +216,144 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
 .adl{background:#e8e4df;padding:8px 0;text-align:center;border-bottom:1px solid #ddd}
 .adbox{display:inline-flex;align-items:center;justify-content:center;background:#e0dbd4;border:1px dashed #c0bcb5;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;position:relative;gap:8px}
 .adpub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE ARTICOLO — Tablet ≤900px e Mobile ≤600px
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Tablet ≤900px ── */
+@media(max-width:900px){
+  .sl,.sr{display:none}
+  #page{padding:0 14px}
+  #art-layout{grid-template-columns:1fr}
+  #article{padding-right:0;border-right:none}
+  /* Ad float-right: diventa full-width */
+  .ad-float-right{float:none;width:100%;margin:20px 0}
+  .ad-float-right .ad-inner{width:100%;height:90px}
+  /* Sidebar va sotto */
+  #sidebar{width:100%;padding-left:0;margin-top:28px;padding-top:22px;border-top:3px solid #141215;position:static!important}
+  /* Correlati 2col */
+  .corr-grid{grid-template-columns:1fr 1fr}
+  /* Bottoni share */
+  .art-share{margin-left:0;margin-top:8px;width:100%}
+  /* Logo */
+  .logo{font-size:38px}
+  .abn{position:static;transform:none;display:block;text-align:center;margin:8px auto 0;width:fit-content}
+  #mast{padding:14px 12px 10px}
+  /* Commenti grid */
+  .comm-grid{grid-template-columns:1fr}
+}
+
+/* ── Mobile ≤600px ── */
+@media(max-width:600px){
+  /* TOPBAR */
+  #topbar .tb{flex-direction:column;gap:5px;padding:6px 10px;align-items:flex-start}
+  #tdate{display:none}
+
+  /* MASTHEAD */
+  .logo{font-size:26px;letter-spacing:-1px}
+  .sub{display:none}
+  .abn{font-size:11px;padding:7px 12px;position:static;transform:none;display:block;text-align:center;margin:6px auto 0;width:fit-content}
+  #mast{padding:12px 10px 8px}
+
+  /* NAVBAR */
+  .na:not(.on):not(.ned){display:none}
+  #nav .ni span.na:first-child{display:flex!important}
+  #nav .ni{padding:0 4px}
+  .na{padding:9px 7px;font-size:11px}
+  .ned{padding:9px 10px;font-size:11px}
+
+  /* PAGE */
+  #page{padding:0 10px}
+
+  /* AD leaderboard nascosto */
+  .adl{display:none}
+
+  /* BREADCRUMB */
+  .breadcrumb{font-size:11px}
+  .breadcrumb .cur{display:none} /* troppo lungo */
+
+  /* TITOLO articolo */
+  .art-title{font-size:24px;line-height:1.15}
+  .art-deck{font-size:14px}
+
+  /* META */
+  .art-meta{flex-direction:column;align-items:flex-start;gap:10px}
+  .art-share{width:100%;justify-content:flex-start;flex-wrap:wrap;gap:6px}
+  .share-btn{font-size:11px;padding:5px 10px}
+
+  /* IMMAGINE HERO */
+  .art-hero-img{aspect-ratio:4/3}
+
+  /* CORPO TESTO */
+  .art-body{font-size:15px;line-height:1.65}
+  .art-body p{margin-bottom:16px}
+
+  /* AD FLOAT → full-width */
+  .ad-float-right{float:none;width:100%;margin:16px 0}
+  .ad-float-right .ad-inner{width:100%;height:80px}
+
+  /* AD INLINE */
+  .ad-inline-full .ad-inner{width:100%;height:60px;font-size:9px}
+  .ad-inline-mid .ad-inner{width:100%;height:50px;font-size:9px}
+
+  /* TAGS */
+  .art-tags{flex-wrap:wrap}
+  .tag{font-size:10px;padding:2px 8px}
+
+  /* AUTORE BOX */
+  .author-box{flex-direction:column;gap:10px}
+
+  /* CORRELATI → colonna unica */
+  .corr-grid{grid-template-columns:1fr}
+
+  /* COMMENTI */
+  .comm-grid{grid-template-columns:1fr}
+  .comm-form input,.comm-form textarea{font-size:16px} /* previene zoom iOS */
+
+  /* SIDEBAR */
+  #sidebar{width:100%;padding-left:0;margin-top:22px;padding-top:20px}
+  /* Nascondi alcuni sidebar items su mobile per snellire */
+  .adBIG{height:180px}
+  .adSB{height:180px}
+
+  /* FOOTER */
+  .fi{flex-direction:column;gap:10px}
+  .flinks{gap:8px}
+  .flogo{font-size:18px}
+  .flinks a{font-size:10px}
+}
 </style>
 </head>
 <body>
 
+<!-- MENU MOBILE OVERLAY -->
+<div id="mob-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999" onclick="toggleMenu()">
+  <div style="background:#fff;width:80%;max-width:320px;height:100%;overflow-y:auto" onclick="event.stopPropagation()">
+    <div style="background:#141215;padding:16px 18px;display:flex;align-items:center;justify-content:space-between">
+      <span style="font-family:Georgia,serif;font-size:18px;font-weight:900;font-style:italic;color:#fff">Grandangolo</span>
+      <span style="font-size:22px;color:#fff;cursor:pointer" onclick="toggleMenu()">✕</span>
+    </div>
+    <div style="padding:8px 0">
+      <a href="grandangolo.html" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">🏠 Home</a>
+      <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Agrigento</a>
+      <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#c1001f;border-bottom:1px solid #f0ede8">Giudiziaria</a>
+      <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Mafia</a>
+      <a href="https://www.grandangoloagrigento.it/politica" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Politica</a>
+      <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Inchieste</a>
+      <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Cultura</a>
+      <a href="https://www.grandangoloagrigento.it/sport" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Sport</a>
+      <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">🎙 Podcast</a>
+      <a href="https://www.grandangoloagrigento.it/video" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">📺 Video</a>
+      <a href="https://grandangolosettimanale.it" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;background:#141215;color:#fff;margin:12px 18px;border-radius:3px">📰 Edicola Digitale</a>
+    </div>
+  </div>
+</div>
+
 <!-- TOPBAR -->
 <div id="topbar"><div class="tb">
   <div style="display:flex;align-items:center;gap:10px">
-    <span style="font-size:19px;cursor:pointer;color:#666">☰</span>
+    <span style="font-size:19px;cursor:pointer;color:#666" onclick="toggleMenu()">☰</span>
     <span style="color:#aaa">Seguici su</span>
     <div class="soc">
       <a href="https://www.facebook.com/GrandangoloAgrigento" target="_blank">f</a>
@@ -628,6 +758,12 @@ async function loadImg(url, elId) {
 
 loadImg('https://www.grandangoloagrigento.it/giudiziaria/morta-a-43-anni-dopo-ricovero-per-ischemia-intestinale-chiesto-processo-per-3-medici','corr3');
 setTimeout(()=>loadImg('https://www.grandangoloagrigento.it/agrigento-notizie/aica-si-riunisce-il-consiglio-di-amministrazione-in-arrivo-8-nuove-assunzioni','sb5'),400);
+
+function toggleMenu(){
+  const m=document.getElementById('mob-menu');
+  m.style.display=m.style.display==='none'?'block':'none';
+  document.body.style.overflow=m.style.display==='block'?'hidden':'';
+}
 </script>
 </body>
 </html>
