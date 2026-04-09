@@ -14,13 +14,7 @@ NS_DC      = 'http://purl.org/dc/elements/1.1/'
 
 # ── FONTI RSS ──
 FEEDS = [
-    {'url': 'https://www.grandangoloagrigento.it/feed',      'fonte': 'Grandangolo Agrigento'},
-    {'url': 'https://www.palermotoday.it/rss/homepage.rss',  'fonte': 'PalermoToday'},
-    {'url': 'https://www.cataniatoday.it/rss/homepage.rss',  'fonte': 'CataniaToday'},
-    {'url': 'https://www.lasicilia.it/rss',                  'fonte': 'La Sicilia'},
-    {'url': 'https://livesicilia.it/feed',                   'fonte': 'LiveSicilia'},
-    {'url': 'https://www.blogsicilia.it/feed',               'fonte': 'BlogSicilia'},
-    {'url': 'https://www.ragusanews.com/feed',               'fonte': 'RagusaNews'},
+    {'url': 'https://www.grandangoloagrigento.it/feed', 'fonte': 'Grandangolo Agrigento'},
 ]
 
 PRIORITA = ['palermo','catania','agrigento','sicilia','regione siciliana',
