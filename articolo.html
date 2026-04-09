@@ -3,34 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Caricamento articolo… – Grandangolo Regionale</title>
+<title>Articolo – Grandangolo Regionale</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,Helvetica,sans-serif;background:#f0ede8;color:#141215;font-size:14px}
-a{text-decoration:none;color:inherit}
+a{text-decoration:none;color:inherit;cursor:pointer}
 img{display:block;max-width:100%}
+.ph{background:#1a1a2a;display:flex;align-items:center;justify-content:center;color:#555;font-size:22px;width:100%;height:100%}
 
 /* TOPBAR */
 #topbar{background:#fff;border-bottom:1px solid #ddd;padding:5px 0;font-size:12px}
 .tb{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
 .soc a{width:20px;height:20px;border:1px solid #ccc;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#555;margin:0 2px}
-.soc a:hover{background:#141215;color:#fff;border-color:#141215}
+.soc a:hover{background:#141215;color:#fff}
 
 /* MASTHEAD */
 #mast{background:#fff;text-align:center;padding:14px 16px 0;border-bottom:1px solid #ddd;position:relative}
-.logo{font-family:'Georgia',serif;font-size:46px;font-weight:900;font-style:italic;letter-spacing:-2px;color:#141215;line-height:1;text-transform:uppercase;display:block;margin-bottom:3px}
+.logo{font-family:'Georgia',serif;font-size:46px;font-weight:900;font-style:italic;letter-spacing:-2px;color:#141215;line-height:1;text-transform:uppercase;display:block;margin-bottom:3px;cursor:pointer}
 .sub{font-size:11px;color:#999;padding-bottom:10px;display:block}
 .abn{position:absolute;right:16px;top:50%;transform:translateY(-60%);background:#1a62b7;color:#fff;font-size:12px;font-weight:700;padding:8px 16px}
 .abn:hover{background:#c1001f}
 
 /* NAVBAR */
 #nav{background:#fff;border-bottom:2px solid #141215;position:sticky;top:0;z-index:200;box-shadow:0 1px 3px rgba(0,0,0,.07)}
-#nav .ni{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:stretch}
-.na{font-size:12px;font-weight:700;color:#141215;padding:10px 12px;white-space:nowrap;border-right:1px solid #eee;display:flex;align-items:center;gap:3px}
+#nav .ni{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:stretch;overflow-x:auto}
+#nav .ni::-webkit-scrollbar{display:none}
+.na{font-size:12px;font-weight:700;color:#141215;padding:10px 12px;white-space:nowrap;border-right:1px solid #eee;display:flex;align-items:center;gap:3px;cursor:pointer}
 .na:hover,.na.on{color:#c1001f}
 .na svg{width:8px;height:8px;fill:currentColor}
-.ned{background:#141215;color:#fff!important;padding:10px 18px;margin-left:auto;font-size:12px;font-weight:700;display:flex;align-items:center}
+.ned{background:#141215;color:#fff!important;padding:10px 18px;margin-left:auto;font-size:12px;font-weight:700;display:flex;align-items:center;white-space:nowrap;cursor:pointer}
 .ned:hover{background:#c1001f!important}
+
+/* AD */
+.adl{background:#e8e4df;padding:8px 0;text-align:center;border-bottom:1px solid #ddd}
+.adbox{display:inline-flex;align-items:center;justify-content:center;background:#e0dbd4;border:1px dashed #c0bcb5;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;position:relative;gap:8px}
+.adpub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
 
 /* SKIN */
 #skin{position:relative;background:#e8e4df}
@@ -42,85 +49,72 @@ img{display:block;max-width:100%}
 /* PAGE */
 #page{max-width:1300px;margin:0 auto;padding:0 166px;background:#fff}
 
-/* AD */
-.adl{background:#e8e4df;padding:8px 0;text-align:center;border-bottom:1px solid #ddd}
-.adbox{display:inline-flex;align-items:center;justify-content:center;background:#e0dbd4;border:1px dashed #c0bcb5;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;position:relative;gap:8px}
-.adpub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
-
 /* BREADCRUMB */
 .breadcrumb{padding:10px 0 8px;font-size:12px;color:#888;border-bottom:1px solid #eee;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.breadcrumb a{color:#0a5278}.breadcrumb a:hover{color:#c1001f}
+.breadcrumb span.link{color:#0a5278;cursor:pointer}
+.breadcrumb span.link:hover{color:#c1001f}
 .breadcrumb .sep{color:#ccc}
 
 /* LAYOUT */
 #art-layout{display:grid;grid-template-columns:1fr 300px;gap:0;padding-top:14px;align-items:start}
 #article{padding-right:28px;border-right:1px solid #ddd;min-width:0}
 
-/* CATEGORIA */
+/* SKELETON */
+.sk{background:linear-gradient(90deg,#f0ede8 25%,#e8e4df 50%,#f0ede8 75%);background-size:200% 100%;animation:shi 1.4s infinite;border-radius:3px}
+@keyframes shi{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ARTICOLO */
 .art-cat{font-size:11px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
-
-/* TITOLO */
 .art-title{font-family:'Georgia',serif;font-size:34px;font-weight:700;line-height:1.14;color:#141215;margin-bottom:12px}
-
-/* SOMMARIO */
 .art-deck{font-size:16px;color:#555;line-height:1.55;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #eee;font-family:'Georgia',serif;font-style:italic}
-
-/* META */
 .art-meta{display:flex;align-items:center;gap:14px;padding:10px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:16px;flex-wrap:wrap}
-.art-author{display:flex;align-items:center;gap:8px}
-.art-author-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
-.art-author-name{font-size:13px;font-weight:700;color:#141215}
-.art-author-name a{color:#0a5278}
+.art-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.art-author-name{font-size:13px;font-weight:700;color:#0a5278}
 .art-date{font-size:12px;color:#999}
 .art-share{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.share-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:4px;cursor:pointer;border:none}
-.share-fb{background:#1877f2;color:#fff}
-.share-tw{background:#141215;color:#fff}
-.share-wa{background:#25d366;color:#fff}
-.share-btn:hover{opacity:.88}
+.sbtn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:4px;cursor:pointer;border:none;color:#fff}
+.s-fb{background:#1877f2}.s-tw{background:#141215}.s-wa{background:#25d366}
+.sbtn:hover{opacity:.88}
+.art-hero{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px}
+.art-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.art-caption{font-size:11px;color:#999;margin-bottom:18px;font-style:italic;padding-bottom:10px;border-bottom:1px solid #f0ede8}
 
-/* HERO IMG */
-.art-hero-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px}
-.art-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
-.art-img-caption{font-size:11px;color:#999;margin-bottom:18px;font-style:italic;padding-bottom:10px;border-bottom:1px solid #f0ede8}
-
-/* CORPO */
-.art-body{font-size:16px;line-height:1.72;color:#333}
+/* BODY */
+.art-body{font-size:16px;line-height:1.75;color:#333}
 .art-body p{margin-bottom:20px}
 .art-body a{color:#0a5278;text-decoration:underline}
 .art-body a:hover{color:#c1001f}
 .art-body strong,.art-body b{font-weight:700;color:#141215}
 .art-body h2,.art-body h3{font-family:'Georgia',serif;font-weight:700;color:#141215;margin:24px 0 10px}
-.art-body h2{font-size:22px}
-.art-body h3{font-size:18px}
+.art-body h2{font-size:22px}.art-body h3{font-size:18px}
 .art-body blockquote{border-left:4px solid #c1001f;padding:10px 16px;margin:20px 0;background:#f9f7f5;font-style:italic;color:#555}
 
-/* ADS INLINE — non invasivi */
-.ad-inline-full{background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:10px 14px;margin:28px 0;text-align:center;position:relative;clear:both}
-.ad-inline-full .adpub{position:absolute;top:4px;left:10px}
-.ad-inline-full .adbox{width:100%;max-width:600px;height:90px}
+/* ADS INLINE — 3 tipi discreti */
+.ad-float{float:right;margin:0 0 18px 24px;background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:8px;position:relative;width:280px}
+.ad-float .adpub{position:absolute;top:4px;left:8px}
+.ad-float .adbox{width:264px;height:220px;flex-direction:column;gap:5px;background:#ede9e3;border:1px dashed #c5c0b8}
 
-.ad-float-right{float:right;margin:0 0 16px 24px;background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:8px;position:relative;width:300px}
-.ad-float-right .adpub{position:absolute;top:4px;left:8px}
-.ad-float-right .adbox{width:284px;height:250px;flex-direction:column;gap:6px}
+.ad-full{background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:10px;margin:28px 0;text-align:center;position:relative;clear:both}
+.ad-full .adpub{position:absolute;top:4px;left:10px}
+.ad-full .adbox{width:100%;max-width:560px;height:80px;background:#ede9e3;border:1px dashed #c5c0b8}
 
-.ad-inline-mid{background:#f5f3f0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin:28px 0;padding:10px 0;text-align:center;position:relative;clear:both}
-.ad-inline-mid .adpub{position:absolute;top:4px;left:14px}
-.ad-inline-mid .adbox{width:468px;height:60px}
+.ad-mid{background:#f5f3f0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin:28px 0;padding:10px 0;text-align:center;position:relative;clear:both}
+.ad-mid .adpub{position:absolute;top:4px;left:14px}
+.ad-mid .adbox{width:100%;max-width:450px;height:55px;background:#ede9e3;border:1px dashed #c5c0b8}
 
 .clearfix::after{content:'';display:table;clear:both}
 
 /* TAGS */
 .art-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0;padding:14px 0;border-top:1px solid #eee;border-bottom:1px solid #eee}
-.art-tags-label{font-size:12px;font-weight:700;color:#141215;text-transform:uppercase;letter-spacing:.07em}
-.tag{font-size:11px;font-weight:700;color:#0a5278;border:1px solid #dde8f0;padding:3px 10px;border-radius:12px;background:#f0f5fa}
+.art-tags-lbl{font-size:12px;font-weight:700;color:#141215;text-transform:uppercase;letter-spacing:.07em}
+.tag{font-size:11px;font-weight:700;color:#0a5278;border:1px solid #dde8f0;padding:3px 10px;border-radius:12px;background:#f0f5fa;cursor:pointer}
 .tag:hover{background:#0a5278;color:#fff}
 
 /* SHARE BOTTOM */
-.art-share-bottom{display:flex;align-items:center;gap:10px;margin:16px 0;padding:14px 0;border-top:1px solid #eee;flex-wrap:wrap}
-.art-share-bottom .lbl{font-size:13px;font-weight:700;color:#141215}
+.art-share-btm{display:flex;align-items:center;gap:10px;margin:16px 0;padding:14px 0;border-top:1px solid #eee;flex-wrap:wrap}
+.art-share-btm .lbl{font-size:13px;font-weight:700}
 
-/* AUTORE BOX */
+/* AUTORE */
 .author-box{background:#f5f3f0;border:1px solid #e0ddd8;border-left:4px solid #141215;padding:16px 18px;margin:20px 0;display:flex;gap:14px;align-items:flex-start}
 .author-av-big{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:20px;font-weight:700;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,.6);box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .author-name{font-family:'Georgia',serif;font-size:16px;font-weight:700;color:#141215;margin-bottom:3px}
@@ -128,25 +122,24 @@ img{display:block;max-width:100%}
 .author-bio{font-size:13px;color:#555;line-height:1.5}
 
 /* CORRELATI */
-.correlati{margin:24px 0 0;border-top:3px solid #141215;padding-top:10px}
+.corr-section{margin:24px 0 0;border-top:3px solid #141215;padding-top:10px}
 .corr-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;margin-bottom:14px}
 .corr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.corr-card{cursor:pointer}
 .corr-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:8px}
-.corr-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
+.corr-img img{width:100%;height:100%;object-fit:cover;display:block}
 .corr-img img:hover{opacity:.9}
 .corr-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
 .corr-tit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
 .corr-tit:hover{color:#c1001f}
 .corr-firma{font-size:11px;font-weight:700;color:#141215;margin-top:3px}
-.corr-firma a{color:#0a5278;font-weight:700}
 
 /* COMMENTI */
-.commenti{margin:28px 0 0;border-top:3px solid #141215;padding-top:10px}
+.comm-section{margin:28px 0 0;border-top:3px solid #141215;padding-top:10px}
 .comm-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;margin-bottom:16px}
 .comm-form{background:#f9f7f5;border:1px solid #e0ddd8;padding:18px;border-radius:3px}
 .comm-form label{display:block;font-size:12px;font-weight:700;color:#141215;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
 .comm-form input,.comm-form textarea{width:100%;border:1px solid #ddd;padding:9px 12px;font-size:16px;font-family:inherit;background:#fff;border-radius:2px;margin-bottom:14px;color:#141215}
-.comm-form input:focus,.comm-form textarea:focus{outline:none;border-color:#0a5278}
 .comm-form textarea{height:100px;resize:vertical}
 .comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .comm-submit{background:#141215;color:#fff;border:none;padding:10px 28px;font-size:13px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.07em;border-radius:2px}
@@ -155,15 +148,13 @@ img{display:block;max-width:100%}
 
 /* SIDEBAR */
 #sidebar{padding-left:22px;width:300px;flex-shrink:0}
-.sbh{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:0 0 10px;color:#141215;display:flex;align-items:center;gap:6px}
+.sbh{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:0 0 10px;color:#141215}
 .sbh2{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:14px 0 9px}
-.adSB{width:100%;height:250px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:0 0 14px;position:relative}
+.adSB{width:100%;height:250px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:0 0 14px}
 .adSB .ap{font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
 .adSB .sz{font-size:14px;color:#ccc;font-weight:700}
 .adSB .nt{font-size:9px;color:#c1001f;font-style:italic}
 .adBIG{width:100%;height:300px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:14px 0}
-
-/* Articoli sidebar */
 .sb-art{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ede8;align-items:flex-start;cursor:pointer}
 .sb-art:last-child{border-bottom:none}
 .sb-art-img{width:78px;height:56px;overflow:hidden;flex-shrink:0;background:#1a1a2a}
@@ -171,17 +162,17 @@ img{display:block;max-width:100%}
 .sb-cat{font-size:9px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
 .sb-tit{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.28;color:#141215}
 .sb-tit:hover{color:#c1001f}
-.sb-firma{font-size:10px;font-weight:700;color:#555;margin-top:2px}
-
-/* Podcast */
+.pvi{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0ede8;align-items:baseline;cursor:pointer}
+.pvi:last-child{border-bottom:none}
+.pvn{font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#e0ddd8;min-width:24px;line-height:1}
+.pvt{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.3;color:#141215}
+.pvt:hover{color:#c1001f}
 .pod{border:1px solid #ddd;background:#fafaf8;margin-bottom:10px}
 .pdt{padding:6px 9px 3px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0ede8}
 .bsp{background:#1DB954;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
 .ptt{font-family:'Georgia',serif;font-size:12px;font-weight:700;color:#141215;padding:5px 9px 1px}
 .ptd{font-size:10px;color:#888;padding:0 9px 6px;line-height:1.35}
 .pod iframe{display:block;border:none;width:100%}
-
-/* Edicola */
 .edic{background:#f5f3f0;border:1px solid #ddd;padding:10px;margin-bottom:14px;text-align:center}
 .edt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #ddd;padding-bottom:5px;margin-bottom:8px}
 .edc{width:100%;aspect-ratio:3/4;overflow:hidden;background:#f0ede8;margin-bottom:8px}
@@ -189,18 +180,6 @@ img{display:block;max-width:100%}
 .edb{display:block;background:#141215;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:8px}
 .edb:hover{background:#c1001f}
 
-/* Più letti */
-.pvi{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0ede8;align-items:baseline;cursor:pointer}
-.pvi:last-child{border-bottom:none}
-.pvn{font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#e0ddd8;min-width:24px;line-height:1}
-.pvt{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.3;color:#141215}
-.pvt:hover{color:#c1001f}
-
-/* SKELETON LOADING */
-.sk{background:linear-gradient(90deg,#f0ede8 25%,#e8e4df 50%,#f0ede8 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:3px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-/* FOOTER */
 footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
 .fi{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
 .flogo{font-family:'Georgia',serif;font-size:22px;font-weight:900;font-style:italic}
@@ -209,14 +188,14 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
 .flinks a:hover{color:#fff}
 .fcopy{width:100%;font-size:10px;color:#555;border-top:1px solid #2a2a2a;padding-top:8px;margin-top:6px}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .sl,.sr{display:none}
   #page{padding:0 14px}
   #art-layout{grid-template-columns:1fr}
   #article{padding-right:0;border-right:none}
-  .ad-float-right{float:none;width:100%;margin:20px 0}
-  .ad-float-right .adbox{width:100%;height:90px}
+  .ad-float{float:none;width:100%;margin:20px 0}
+  .ad-float .adbox{width:100%;height:80px}
   #sidebar{width:100%;padding-left:0;margin-top:28px;padding-top:22px;border-top:3px solid #141215;position:static!important}
   .corr-grid{grid-template-columns:1fr 1fr}
   .art-share{margin-left:0;margin-top:8px;width:100%}
@@ -226,65 +205,59 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
   .comm-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-  #topbar .tb{flex-direction:column;gap:5px;padding:6px 10px;align-items:flex-start}
+  #topbar .tb{flex-direction:column;gap:4px;padding:6px 10px;align-items:flex-start}
   #tdate{display:none}
-  .logo{font-size:26px;letter-spacing:-1px}
+  .logo{font-size:24px;letter-spacing:-1px}
   .sub{display:none}
-  .abn{font-size:11px;padding:7px 12px;position:static;transform:none;display:block;text-align:center;margin:6px auto 0;width:fit-content}
-  #mast{padding:12px 10px 8px}
+  .abn{font-size:11px;padding:6px 12px;position:static;transform:none;display:block;text-align:center;margin:6px auto 0;width:fit-content}
+  #mast{padding:10px 10px 8px}
   .na:not(.on):not(.ned){display:none}
-  #nav .ni span.na:first-child{display:flex!important}
+  #nav .ni span:first-child{display:flex!important}
   #nav .ni{padding:0 4px}
-  .na{padding:9px 7px;font-size:11px}
-  .ned{padding:9px 10px;font-size:11px}
+  .na{padding:9px 8px;font-size:11px}
+  .ned{padding:9px 12px;font-size:11px}
   #page{padding:0 10px}
   .adl{display:none}
-  .breadcrumb{font-size:11px}
   .art-title{font-size:22px;line-height:1.15}
   .art-deck{font-size:14px}
-  .art-meta{flex-direction:column;align-items:flex-start;gap:10px}
-  .art-share{width:100%;justify-content:flex-start;flex-wrap:wrap;gap:6px}
-  .share-btn{font-size:11px;padding:5px 10px}
-  .art-hero-img{aspect-ratio:4/3}
+  .art-meta{flex-direction:column;align-items:flex-start;gap:8px}
+  .art-share{width:100%;flex-wrap:wrap;gap:6px;margin-left:0}
+  .sbtn{font-size:11px;padding:5px 10px}
+  .art-hero{aspect-ratio:4/3}
   .art-body{font-size:15px;line-height:1.65}
-  .art-body p{margin-bottom:16px}
-  .ad-float-right{float:none;width:100%;margin:16px 0}
-  .ad-float-right .adbox{width:100%;height:70px}
-  .ad-inline-full .adbox{width:100%;height:60px;font-size:9px}
-  .ad-inline-mid .adbox{width:100%;height:50px;font-size:9px}
+  .ad-float{float:none;width:100%;margin:16px 0}
+  .ad-float .adbox{width:100%;height:70px}
+  .ad-full .adbox{width:100%;height:60px;font-size:9px}
+  .ad-mid .adbox{width:100%;height:50px;font-size:9px}
   .corr-grid{grid-template-columns:1fr}
-  .comm-grid{grid-template-columns:1fr}
   .author-box{flex-direction:column;gap:10px}
-  .adBIG{height:180px}
-  .adSB{height:180px}
+  .comm-grid{grid-template-columns:1fr}
+  .adBIG,.adSB{height:180px}
   .fi{flex-direction:column;gap:10px}
-  .flinks{gap:8px}
-  .flogo{font-size:18px}
   .flinks a{font-size:10px}
+  .flogo{font-size:18px}
 }
 </style>
 </head>
 <body>
 
 <!-- MENU MOBILE -->
-<div id="mob-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999" onclick="toggleMenu()">
-  <div style="background:#fff;width:80%;max-width:320px;height:100%;overflow-y:auto" onclick="event.stopPropagation()">
+<div id="mob-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:999" onclick="toggleMenu()">
+  <div style="background:#fff;width:82%;max-width:320px;height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch" onclick="event.stopPropagation()">
     <div style="background:#141215;padding:16px 18px;display:flex;align-items:center;justify-content:space-between">
       <span style="font-family:Georgia,serif;font-size:18px;font-weight:900;font-style:italic;color:#fff">Grandangolo</span>
-      <span style="font-size:22px;color:#fff;cursor:pointer" onclick="toggleMenu()">✕</span>
+      <span style="font-size:24px;color:#fff;cursor:pointer;line-height:1;padding:4px" onclick="toggleMenu()">✕</span>
     </div>
     <div style="padding:8px 0">
-      <a href="grandangolo.html" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">🏠 Home</a>
-      <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Agrigento</a>
-      <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#c1001f;border-bottom:1px solid #f0ede8">Giudiziaria</a>
-      <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Mafia</a>
-      <a href="https://www.grandangoloagrigento.it/politica" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Politica</a>
-      <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Inchieste</a>
-      <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Cultura</a>
-      <a href="https://www.grandangoloagrigento.it/sport" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">Sport</a>
-      <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">🎙 Podcast</a>
-      <a href="https://www.grandangoloagrigento.it/video" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8">📺 Video</a>
-      <a href="https://grandangolosettimanale.it" target="_blank" style="display:flex;align-items:center;padding:13px 18px;font-size:14px;font-weight:700;background:#141215;color:#fff;margin:12px 18px;border-radius:3px">📰 Edicola Digitale</a>
+      <span onclick="goHome()" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">🏠 Home</span>
+      <span onclick="goSection('agrigento-notizie')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Agrigento</span>
+      <span onclick="goSection('giudiziaria')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#c1001f;border-bottom:1px solid #f0ede8;cursor:pointer">Giudiziaria</span>
+      <span onclick="goSection('mafia')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Mafia</span>
+      <span onclick="goSection('politica')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Politica</span>
+      <span onclick="goSection('inchieste')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Inchieste</span>
+      <span onclick="goSection('spettacoli')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Cultura</span>
+      <span onclick="goSection('sport')" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;color:#141215;border-bottom:1px solid #f0ede8;cursor:pointer">Sport</span>
+      <a href="https://grandangolosettimanale.it" target="_blank" style="display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:700;background:#141215;color:#fff;margin:12px 18px;border-radius:3px">📰 Edicola Digitale</a>
     </div>
   </div>
 </div>
@@ -293,7 +266,7 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
 <div id="topbar"><div class="tb">
   <div style="display:flex;align-items:center;gap:10px">
     <span style="font-size:19px;cursor:pointer;color:#666" onclick="toggleMenu()">☰</span>
-    <span style="color:#aaa">Seguici su</span>
+    <span style="color:#aaa;font-size:11px">Seguici su</span>
     <div class="soc">
       <a href="https://www.facebook.com/GrandangoloAgrigento" target="_blank">f</a>
       <a href="https://www.instagram.com" target="_blank">ig</a>
@@ -301,79 +274,74 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
       <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">yt</a>
     </div>
     <span style="color:#ddd">|</span>
-    <span id="tdate" style="color:#666"></span>
+    <span id="tdate" style="color:#666;font-size:11px"></span>
     <span style="color:#ddd">|</span>
-    <span style="color:#666">⛅ 20°C Agrigento</span>
+    <span style="color:#666;font-size:11px">⛅ 20°C Agrigento</span>
   </div>
   <a href="#" style="font-size:12px;font-weight:600;color:#141215">Accedi 👤</a>
 </div></div>
 
 <!-- MASTHEAD -->
 <div id="mast">
-  <a href="grandangolo.html" class="logo">Grandangolo Regionale</a>
+  <span class="logo" onclick="goHome()">Grandangolo Regionale</span>
   <span class="sub">Da 21 anni la voce del territorio · Dir. Franco Castaldo · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907</span>
   <a href="https://grandangolosettimanale.it" target="_blank" class="abn">Abbonati a €1,50/sett.</a>
 </div>
 
 <!-- NAVBAR -->
 <nav id="nav"><div class="ni">
-  <span class="na" style="padding:10px 12px;border-right:1px solid #eee;cursor:pointer;color:#666;font-size:15px" onclick="toggleMenu()">☰</span>
-  <a href="grandangolo.html" class="na">Home</a>
-  <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" class="na">Agrigento <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" class="na on">Giudiziaria <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" class="na">Mafia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/politica" target="_blank" class="na">Politica <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" class="na">Inchieste</a>
-  <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" class="na">Cultura <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/sport" target="_blank" class="na">Sport <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/sicilia" target="_blank" class="na">Sicilia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-  <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" class="na">Podcast</a>
-  <a href="https://www.grandangoloagrigento.it/video" target="_blank" class="na">Video</a>
-  <a href="https://grandangolosettimanale.it" target="_blank" class="ned">Edicola →</a>
+  <span class="na" onclick="toggleMenu()">☰</span>
+  <span class="na" onclick="goHome()">Home</span>
+  <span class="na" onclick="goSection('agrigento-notizie')">Agrigento <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na on" onclick="goSection('giudiziaria')">Giudiziaria <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('mafia')">Mafia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('politica')">Politica <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('inchieste')">Inchieste</span>
+  <span class="na" onclick="goSection('spettacoli')">Cultura <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('sport')">Sport <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('sicilia')">Sicilia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></span>
+  <span class="na" onclick="goSection('news-on-radio')">Podcast</span>
+  <span class="ned" onclick="window.open('https://grandangolosettimanale.it','_blank')">Edicola →</span>
 </div></nav>
 
-<!-- AD LEADERBOARD -->
+<!-- AD -->
 <div class="adl"><div class="adbox" style="width:728px;height:90px"><span class="adpub">Pubblicità</span>Google AdSense — Leaderboard 728×90</div></div>
 
 <!-- SKIN + PAGE -->
 <div id="skin">
   <div class="sl"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
   <div class="sr"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
-  <div id="page">
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb" id="breadcrumb">
-      <a href="grandangolo.html">Home</a>
+  <div id="page">
+    <div class="breadcrumb">
+      <span class="link" onclick="goHome()">Home</span>
       <span class="sep">›</span>
-      <span id="bc-cat" style="color:#888">Caricamento…</span>
+      <span id="bc-cat" style="color:#888">…</span>
       <span class="sep">›</span>
-      <span id="bc-title" style="color:#141215;font-weight:600"></span>
+      <span id="bc-title" style="color:#141215;font-weight:600;font-size:11px"></span>
     </div>
 
-    <!-- LAYOUT -->
     <div id="art-layout">
+      <!-- ARTICOLO -->
       <div id="article">
-
-        <!-- SKELETON mentre carica -->
-        <div id="art-skeleton">
-          <div class="sk" style="height:14px;width:160px;margin-bottom:12px"></div>
-          <div class="sk" style="height:38px;width:100%;margin-bottom:8px"></div>
-          <div class="sk" style="height:38px;width:80%;margin-bottom:14px"></div>
-          <div class="sk" style="height:18px;width:100%;margin-bottom:6px"></div>
-          <div class="sk" style="height:18px;width:90%;margin-bottom:20px"></div>
+        <!-- SKELETON -->
+        <div id="art-skel">
+          <div class="sk" style="height:14px;width:140px;margin-bottom:12px"></div>
+          <div class="sk" style="height:36px;width:100%;margin-bottom:7px"></div>
+          <div class="sk" style="height:36px;width:78%;margin-bottom:14px"></div>
+          <div class="sk" style="height:17px;width:100%;margin-bottom:7px"></div>
+          <div class="sk" style="height:17px;width:88%;margin-bottom:20px"></div>
           <div class="sk" style="width:100%;aspect-ratio:16/9;margin-bottom:20px"></div>
-          <div class="sk" style="height:16px;width:100%;margin-bottom:10px"></div>
-          <div class="sk" style="height:16px;width:100%;margin-bottom:10px"></div>
-          <div class="sk" style="height:16px;width:75%;margin-bottom:20px"></div>
-          <div class="sk" style="height:16px;width:100%;margin-bottom:10px"></div>
-          <div class="sk" style="height:16px;width:85%;margin-bottom:10px"></div>
-          <div class="sk" style="height:16px;width:60%;margin-bottom:10px"></div>
+          <div class="sk" style="height:15px;width:100%;margin-bottom:10px"></div>
+          <div class="sk" style="height:15px;width:100%;margin-bottom:10px"></div>
+          <div class="sk" style="height:15px;width:70%;margin-bottom:20px"></div>
+          <div class="sk" style="height:15px;width:100%;margin-bottom:10px"></div>
+          <div class="sk" style="height:15px;width:85%;margin-bottom:10px"></div>
+          <div class="sk" style="height:15px;width:60%"></div>
         </div>
-
-        <!-- CONTENUTO ARTICOLO (popolato da JS) -->
+        <!-- CONTENUTO -->
         <div id="art-content" style="display:none"></div>
-
-      </div><!-- /article -->
+      </div>
 
       <!-- SIDEBAR -->
       <div id="sidebar">
@@ -385,33 +353,28 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
         </div>
 
         <div class="sbh">Ultime notizie</div>
-        <div id="sb-feed">
-          <!-- Skeleton sidebar -->
+        <div id="sb-ultime">
           <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ede8">
             <div class="sk" style="width:78px;height:56px;flex-shrink:0;border-radius:2px"></div>
-            <div style="flex:1"><div class="sk" style="height:10px;width:60%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:32px;border-radius:2px"></div></div>
+            <div style="flex:1"><div class="sk" style="height:10px;width:55%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:30px;border-radius:2px"></div></div>
           </div>
           <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ede8">
             <div class="sk" style="width:78px;height:56px;flex-shrink:0;border-radius:2px"></div>
-            <div style="flex:1"><div class="sk" style="height:10px;width:60%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:32px;border-radius:2px"></div></div>
+            <div style="flex:1"><div class="sk" style="height:10px;width:55%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:30px;border-radius:2px"></div></div>
           </div>
           <div style="display:flex;gap:10px;padding:9px 0">
             <div class="sk" style="width:78px;height:56px;flex-shrink:0;border-radius:2px"></div>
-            <div style="flex:1"><div class="sk" style="height:10px;width:60%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:32px;border-radius:2px"></div></div>
+            <div style="flex:1"><div class="sk" style="height:10px;width:55%;margin-bottom:6px;border-radius:2px"></div><div class="sk" style="height:30px;border-radius:2px"></div></div>
           </div>
         </div>
 
-        <div class="adSB">
-          <span class="ap">Pubblicità</span>
-          <span class="sz">300 × 250</span>
-          <span style="font-size:10px;color:#bbb">Google AdSense · mid</span>
-        </div>
+        <div class="adSB"><span class="ap">Pubblicità</span><span class="sz">300 × 250</span><span style="font-size:10px;color:#bbb">Google AdSense · mid</span></div>
 
         <div class="sbh">📻 Podcast</div>
         <div class="pod">
-          <div class="pdt"><span class="bsp">Spotify</span><span style="font-size:10px;color:#888">3 edizioni/giorno · FM 104.8</span></div>
+          <div class="pdt"><span class="bsp">Spotify</span><span style="font-size:10px;color:#888">3 edizioni/giorno</span></div>
           <div class="ptt">Grandangolo News on Radio</div>
-          <div class="ptd">Le notizie del giorno in podcast</div>
+          <div class="ptd">Le notizie del giorno</div>
           <iframe height="152" src="https://open.spotify.com/embed/show/2XLvo0bhvvv25TulG7ilMk?utm_source=generator&theme=0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
         </div>
 
@@ -422,310 +385,274 @@ footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
         </div>
 
         <div class="sbh2">I più letti</div>
-        <div id="sb-piu-letti"></div>
+        <div id="sb-letti">
+          <div class="sk" style="height:12px;margin-bottom:10px"></div>
+          <div class="sk" style="height:12px;margin-bottom:10px"></div>
+          <div class="sk" style="height:12px;margin-bottom:10px"></div>
+          <div class="sk" style="height:12px;margin-bottom:10px"></div>
+          <div class="sk" style="height:12px"></div>
+        </div>
 
         <div class="adBIG">
           <span style="font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em">Pubblicità</span>
           <span style="font-size:18px;color:#ccc;font-weight:700">300 × 600</span>
           <span style="font-size:10px;color:#bbb">Google AdSense · Half Page</span>
-          <span style="font-size:9px;color:#c1001f;font-style:italic">formato premium · CPM alto</span>
+          <span style="font-size:9px;color:#c1001f;font-style:italic">formato premium</span>
         </div>
       </div>
-
-    </div><!-- /art-layout -->
-  </div><!-- /page -->
-</div><!-- /skin -->
+    </div>
+  </div>
+</div>
 
 <footer><div class="fi">
   <div class="flogo"><em>Grandangolo</em> Regionale</div>
   <div class="flinks">
-    <a href="grandangolo.html">Home</a>
+    <span onclick="goHome()" style="cursor:pointer;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em">Home</span>
     <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank">Agrigento</a>
     <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
     <a href="https://www.grandangoloagrigento.it/mafia" target="_blank">Mafia</a>
-    <a href="https://www.grandangoloagrigento.it/politica" target="_blank">Politica</a>
-    <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank">Cultura</a>
-    <a href="https://www.grandangoloagrigento.it/sport" target="_blank">Sport</a>
     <a href="https://grandangolosettimanale.it" target="_blank">Edicola</a>
     <a href="https://open.spotify.com/show/2XLvo0bhvvv25TulG7ilMk" target="_blank">Podcast</a>
-    <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">YouTube</a>
     <a href="https://www.grandangoloagrigento.it/privacy-policy" target="_blank">Privacy</a>
   </div>
-  <div class="fcopy">© 2026 Edizioni Grandangolo · Via Mazzini 187 · 92100 Agrigento · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907 · Direttore responsabile Franco Castaldo</div>
+  <div class="fcopy">© 2026 Edizioni Grandangolo · Via Mazzini 187 · 92100 Agrigento · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907 · Dir. Franco Castaldo</div>
 </div></footer>
 
 <script>
-// ── UTILS ────────────────────────────────────────────────
-const PX = u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`;
+// ═══════════════════════════════════════════════
+//  CONFIG
+// ═══════════════════════════════════════════════
+const FEED = 'https://www.grandangoloagrigento.it/feed';
+const ART  = 'grandangolo-articolo.html';
+const HOME = 'grandangolo.html';
 
-function toggleMenu(){
-  const m=document.getElementById('mob-menu');
-  m.style.display=m.style.display==='none'?'block':'none';
-  document.body.style.overflow=m.style.display==='block'?'hidden':'';
+// ── Leggi URL articolo dai parametri ────────────
+const params  = new URLSearchParams(location.search);
+const ART_URL = params.get('url') || '';
+
+// ── Navigazione ──────────────────────────────────
+function goHome() { window.location.href = HOME; }
+function goArticle(url) { window.location.href = ART + '?url=' + encodeURIComponent(url); }
+function goSection(s) { window.open('https://www.grandangoloagrigento.it/' + s, '_blank'); }
+function toggleMenu() {
+  var m = document.getElementById('mob-menu');
+  var show = m.style.display === 'none';
+  m.style.display = show ? 'block' : 'none';
+  document.body.style.overflow = show ? 'hidden' : '';
+}
+function share(type) {
+  var url = ART_URL || location.href;
+  var t = document.title;
+  if (type === 'fb') window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url));
+  if (type === 'tw') window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(t));
+  if (type === 'wa') window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(t + ' ' + url));
 }
 
-// DATA
-const d=new Date();
-const DA=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
-const MO=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-document.getElementById('tdate').textContent=`${DA[d.getDay()]} ${d.getDate()} ${MO[d.getMonth()]} ${d.getFullYear()} – ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+// ── Data ─────────────────────────────────────────
+var now = new Date();
+var DAYS=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+var MONTHS=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+document.getElementById('tdate').textContent = DAYS[now.getDay()] + ' ' + now.getDate() + ' ' + MONTHS[now.getMonth()] + ' ' + now.getFullYear() + ' – ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
 
-// ── LEGGI URL PARAMETRO ──────────────────────────────────
-const params = new URLSearchParams(location.search);
-const articleUrl = params.get('url') || 'https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne';
+// ── Helpers ───────────────────────────────────────
+function imgOf(item) {
+  if (item.thumbnail && item.thumbnail !== 'false' && item.thumbnail !== '') return item.thumbnail;
+  if (item.enclosure && item.enclosure.link) return item.enclosure.link;
+  var m = (item.content || item.description || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+  return m ? m[1] : '';
+}
+function catOf(item) {
+  var cats = item.categories || [];
+  return cats.find(function(c){ return c && !c.toLowerCase().includes('senza') && c.length < 40; }) || cats[0] || 'Notizie';
+}
+function authOf(item) { return item.author || 'Redazione'; }
+function deckOf(item, n) {
+  n = n || 130;
+  var t = (item.description || '').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+  return t.length > n ? t.slice(0, n-1) + '…' : t;
+}
+function imgTag(src) {
+  if (!src) return '<div class="ph">📰</div>';
+  return '<img src="' + src + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML=\'<div class=ph>📰</div>\'">';
+}
+function initials(name) {
+  var parts = (name||'Redazione').split(' ');
+  return ((parts[0]||'')[0]||'') + ((parts[1]||'')[0]||'');
+}
 
-// ── CARICA ARTICOLO DAL SITO REALE ──────────────────────
-async function loadArticle(url) {
-  try {
-    const r = await fetch(PX(url), {cache:'no-cache'});
-    const data = await r.json();
-    const html = data.contents || '';
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
+// ── Renderizza articolo dal feed ──────────────────
+function renderArticle(item, allItems) {
+  var t    = item.title || '';
+  var lnk  = item.link  || ART_URL;
+  var auth = authOf(item);
+  var c    = catOf(item);
+  var hero = imgOf(item);
+  var dk   = deckOf(item, 300);
+  var ini  = initials(auth).toUpperCase();
 
-    // Estrai metadati
-    const ogTitle    = doc.querySelector('meta[property="og:title"]')?.content
-                    || doc.querySelector('title')?.textContent?.split('–')[0]?.trim() || '';
-    const ogImg      = doc.querySelector('meta[property="og:image"]')?.content || '';
-    const ogDesc     = doc.querySelector('meta[property="og:description"]')?.content || '';
-    const cat        = doc.querySelector('.entry-category, .cat-links a, .post-cat, h6')?.textContent?.trim()
-                    || url.split('/')[3]?.replace(/-/g,' ') || 'Notizie';
-
-    // Estrai testo articolo dal DOM
-    const contentEl = doc.querySelector('.entry-content, .post-content, article .content, .post-body, #post-content')
-                   || doc.querySelector('article');
-    let bodyHtml = '';
-    if (contentEl) {
-      // Rimuovi elementi inutili
-      contentEl.querySelectorAll('script,style,.sharedaddy,.post-navigation,.wp-block-button,.newsletter-box,form,.related-posts,[class*="banner"],[class*="ad-"],[id*="ad-"]').forEach(el=>el.remove());
-      bodyHtml = contentEl.innerHTML;
-    } else {
-      // Fallback: prendi tutti i paragrafi dal body
-      bodyHtml = [...doc.querySelectorAll('p')].slice(3,20).map(p=>p.outerHTML).join('');
-    }
-
-    // Estrai autore
-    const author = doc.querySelector('.author-name a, .entry-author a, .byline a, [rel="author"]')?.textContent?.trim()
-                || doc.querySelector('.author-name, .entry-author, .byline')?.textContent?.replace(/^di\s*/i,'')?.trim()
-                || 'Redazione';
-
-    // Estrai data
-    const dateEl = doc.querySelector('time, .entry-date, .post-date, .published');
-    const dateStr = dateEl?.getAttribute('datetime') || dateEl?.textContent?.trim() || '';
-
-    // Estrai tags
-    const tags = [...doc.querySelectorAll('.tags-links a, .post-tags a, .entry-tags a')]
-                  .map(t=>t.textContent.trim()).filter(Boolean).slice(0,6);
-
-    // Iniziali autore per avatar
-    const initials = author.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase() || 'GR';
-
-    // Aggiorna title + meta
-    document.title = ogTitle + ' – Grandangolo Regionale';
-    document.getElementById('bc-cat').textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-    document.getElementById('bc-title').textContent = ogTitle.slice(0,60) + (ogTitle.length>60?'…':'');
-
-    // Navlink attivo in base alla categoria
-    document.querySelectorAll('.na').forEach(a=>{
-      a.classList.remove('on');
-      if(a.href && a.href.includes(url.split('/')[3])) a.classList.add('on');
-    });
-
-    // ── INSERISCI ADS INLINE nel testo ─────────────────
-    // Dividi il body in paragrafi e inserisci ads ogni ~3 paragrafi
-    const tmpDiv = document.createElement('div');
-    tmpDiv.innerHTML = bodyHtml;
-    const paragraphs = [...tmpDiv.querySelectorAll('p,h2,h3,blockquote,ul,ol')];
-    let bodyWithAds = '';
-    const adFloat = `<div class="ad-float-right"><span class="adpub">Pubblicità</span><div class="adbox" style="width:284px;height:250px;flex-direction:column;gap:6px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>AdSense 300×250</span></div></div>`;
-    const adFull = `<div class="ad-inline-full"><span class="adpub">Pubblicità</span><div class="adbox" style="width:100%;height:90px">Google AdSense — Banner 600×90</div></div><div class="clearfix"></div>`;
-    const adMid  = `<div class="ad-inline-mid"><span class="adpub">Pubblicità</span><div class="adbox" style="width:468px;height:60px">AdSense — Native In-Feed</div></div>`;
-
-    paragraphs.forEach((p,i) => {
-      bodyWithAds += p.outerHTML;
-      if(i===1) bodyWithAds += adFloat;       // dopo §2: float right
-      if(i===4) bodyWithAds += adFull;         // dopo §5: banner full
-      if(i===7) bodyWithAds += adMid;          // dopo §8: native mid
-    });
-    if(!paragraphs.length) bodyWithAds = bodyHtml;
-
-    // ── COSTRUISCI HTML ARTICOLO ─────────────────────────
-    const artHtml = `
-      <div class="art-cat">${cat.charAt(0).toUpperCase()+cat.slice(1)}</div>
-      <h1 class="art-title">${ogTitle}</h1>
-      ${ogDesc ? `<p class="art-deck">${ogDesc}</p>` : ''}
-      <div class="art-meta">
-        <div class="art-author">
-          <div class="art-author-av">${initials}</div>
-          <div>
-            <div class="art-author-name">di <a href="#">${author}</a></div>
-            <div class="art-date">${dateStr || d.getDate()+' '+MO[d.getMonth()]+' '+d.getFullYear()}</div>
-          </div>
-        </div>
-        <div class="art-share">
-          <button class="share-btn share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${url}'))">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg> Facebook
-          </button>
-          <button class="share-btn share-tw" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent('${url}'))">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg> X
-          </button>
-          <button class="share-btn share-wa" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent('${ogTitle} ${url}'))">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> WhatsApp
-          </button>
-        </div>
-      </div>
-      ${ogImg ? `<div class="art-hero-img"><img src="${ogImg}" alt="${ogTitle}" onerror="this.parentElement.style.background='#1a1a2a'"></div><p class="art-img-caption">${ogTitle}</p>` : ''}
-      <div class="art-body">${bodyWithAds}</div>
-      ${tags.length ? `<div class="art-tags"><span class="art-tags-label">Tag:</span>${tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : ''}
-      <div class="art-share-bottom">
-        <span class="lbl">Condividi:</span>
-        <button class="share-btn share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('${url}'))"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg> Facebook</button>
-        <button class="share-btn share-tw" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent('${url}'))"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg> X</button>
-        <button class="share-btn share-wa" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent('${ogTitle} ${url}'))"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> WhatsApp</button>
-      </div>
-      <div class="author-box">
-        <div class="author-av-big">${initials}</div>
-        <div>
-          <div class="author-name">${author}</div>
-          <div class="author-role">Giornalista · Grandangolo Regionale</div>
-          <p class="author-bio">Redattore di Grandangolo Regionale, si occupa di cronaca, giudiziaria e attualità nella provincia di Agrigento e in Sicilia.</p>
-        </div>
-      </div>
-      <div id="correlati-wrap"></div>
-      <div class="commenti">
-        <div class="comm-title">Lascia un commento</div>
-        <p class="comm-note">Il tuo indirizzo email non sarà pubblicato. I campi obbligatori sono contrassegnati *</p>
-        <div class="comm-form">
-          <label>Commento *</label>
-          <textarea placeholder="Scrivi il tuo commento…"></textarea>
-          <div class="comm-grid">
-            <div><label>Nome *</label><input type="text" placeholder="Il tuo nome"></div>
-            <div><label>Email *</label><input type="email" placeholder="La tua email"></div>
-          </div>
-          <button class="comm-submit">Invia commento</button>
-        </div>
-      </div>
-    `;
-
-    // Mostra
-    document.getElementById('art-skeleton').style.display = 'none';
-    const ac = document.getElementById('art-content');
-    ac.innerHTML = artHtml;
-    ac.style.display = 'block';
-
-    // Carica correlati
-    loadCorrelati(url);
-
-  } catch(err) {
-    console.warn('Errore caricamento articolo:', err);
-    document.getElementById('art-skeleton').innerHTML = `
-      <div style="padding:40px 0;text-align:center;color:#888">
-        <div style="font-size:48px;margin-bottom:16px">📰</div>
-        <p style="font-size:16px;margin-bottom:12px">Articolo non caricabile in anteprima.</p>
-        <a href="${articleUrl}" target="_blank" style="background:#141215;color:#fff;padding:10px 24px;font-size:13px;font-weight:700;display:inline-block">Leggi su Grandangolo →</a>
-      </div>`;
+  // Data formattata
+  var dStr = '';
+  if (item.pubDate) {
+    var dt = new Date(item.pubDate);
+    dStr = dt.getDate() + ' ' + MONTHS[dt.getMonth()] + ' ' + dt.getFullYear();
   }
-}
 
-// ── CORRELATI: prende altri articoli dal feed ────────────
-async function loadCorrelati(currentUrl) {
-  try {
-    const feedUrl = 'https://www.grandangoloagrigento.it/feed';
-    const r = await fetch(PX(feedUrl), {cache:'force-cache'});
-    const data = await r.json();
-    const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
-    const items = [...xml.querySelectorAll('item')]
-                    .filter(i => (i.querySelector('link')?.textContent||'').trim() !== currentUrl)
-                    .slice(0, 3);
+  // Corpo testo con ads inseriti
+  var raw = item.content || item.description || '';
+  // Rimuovi immagini già presenti (evita duplicati con hero)
+  raw = raw.replace(/<figure[^>]*>[\s\S]*?<\/figure>/gi, '');
+  // Estrai paragrafi
+  var tmp = document.createElement('div');
+  tmp.innerHTML = raw;
+  var paras = Array.from(tmp.querySelectorAll('p,h2,h3,blockquote,ul,ol'));
+  if (!paras.length) {
+    // fallback: usa descrizione come unico paragrafo
+    paras = [{ outerHTML: '<p>' + raw.replace(/<[^>]*>/g,' ').trim() + '</p>' }];
+  }
 
-    if(!items.length) return;
-    const wrap = document.getElementById('correlati-wrap');
-    if(!wrap) return;
+  var AD_FLOAT = '<div class="ad-float"><span class="adpub">Pubblicità</span><div class="adbox"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span style="font-size:10px;color:#bbb">AdSense 300×250</span></div></div>';
+  var AD_FULL  = '<div class="clearfix"></div><div class="ad-full"><span class="adpub">Pubblicità</span><div class="adbox">Google AdSense — Banner 560×80</div></div>';
+  var AD_MID   = '<div class="ad-mid"><span class="adpub">Pubblicità</span><div class="adbox">AdSense — Native In-Feed</div></div>';
 
-    const cards = items.map(item => {
-      const t = item.querySelector('title')?.textContent?.trim() || '';
-      const l = item.querySelector('link')?.textContent?.trim() || '#';
-      const cat = [...item.querySelectorAll('category')].map(c=>c.textContent.trim()).filter(c=>c&&!c.includes('Senza'))[0]||'Notizie';
-      const auth = item.querySelector('creator')?.textContent?.trim() || 'Redazione';
-      // Immagine dal feed
-      const mc = item.querySelector('content[url],media\\:content');
-      const imgUrl = mc?.getAttribute('url') || '';
-      const raw = item.querySelector('encoded')?.textContent || item.querySelector('description')?.textContent || '';
-      const mI = raw.match(/<img[^>]+src=["']([^"']+)["']/i);
-      const src = imgUrl || (mI ? mI[1] : '');
-      const img = src ? `<img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML='<div style=width:100%;height:100%;background:#1a1a2a></div>'">` : '';
-      // Link alla pagina articolo locale
-      const localLink = `grandangolo-articolo.html?url=${encodeURIComponent(l)}`;
-      return `<div class="corr-card">
-        <a href="${localLink}">
-          <div class="corr-img">${img}</div>
-          <div class="corr-cat">${cat}</div>
-          <div class="corr-tit">${t}</div>
-        </a>
-        <div class="corr-firma">di <a href="${localLink}">${auth}</a></div>
-      </div>`;
-    }).join('');
+  var bodyHtml = '';
+  paras.forEach(function(p, i) {
+    bodyHtml += p.outerHTML;
+    if (i === 1) bodyHtml += AD_FLOAT;
+    if (i === 4) bodyHtml += AD_FULL;
+    if (i === 7) bodyHtml += AD_MID;
+  });
+  if (!bodyHtml) bodyHtml = '<p>' + deckOf(item, 1000) + '</p>';
 
-    wrap.innerHTML = `<div class="correlati"><div class="corr-title">Leggi anche</div><div class="corr-grid">${cards}</div></div>`;
+  // Tags
+  var tags = (item.categories || []).filter(function(x){ return x && !x.toLowerCase().includes('senza'); });
+  var tagsHtml = tags.length ? '<div class="art-tags"><span class="art-tags-lbl">Tag:</span>' + tags.slice(0,6).map(function(tg){ return '<span class="tag">' + tg + '</span>'; }).join('') + '</div>' : '';
 
-    // Popola anche la sidebar
-    loadSidebar(items);
-    loadPiuLetti(items);
+  // Correlati: prossimi 3 dal feed
+  var corrItems = allItems.filter(function(x){ return x.link !== lnk; }).slice(0, 3);
+  var corrHtml = corrItems.length ? '<div class="corr-section"><div class="corr-title">Leggi anche</div><div class="corr-grid">' +
+    corrItems.map(function(ci) {
+      var oc = "goArticle('" + (ci.link||'').replace(/'/g,"\\'") + "')";
+      return '<div class="corr-card" onclick="' + oc + '">' +
+        '<div class="corr-img">' + imgTag(imgOf(ci)) + '</div>' +
+        '<div class="corr-cat">' + catOf(ci) + '</div>' +
+        '<div class="corr-tit">' + (ci.title||'') + '</div>' +
+        '<div class="corr-firma">di ' + authOf(ci) + '</div>' +
+      '</div>';
+    }).join('') + '</div></div>' : '';
 
-  } catch(e) {}
-}
+  // Pulsanti share
+  var shareBtn = function(type, cls, label) {
+    return '<button class="sbtn ' + cls + '" onclick="share(\'' + type + '\')">' + label + '</button>';
+  };
 
-// ── SIDEBAR ULTIME NOTIZIE ───────────────────────────────
-async function loadSidebar(itemsFromCorrelati) {
-  try {
-    let items = itemsFromCorrelati;
-    if(!items || !items.length) {
-      const r = await fetch(PX('https://www.grandangoloagrigento.it/feed'), {cache:'force-cache'});
-      const data = await r.json();
-      const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
-      items = [...xml.querySelectorAll('item')].slice(0,5);
-    }
-    const html = items.slice(0,5).map(item => {
-      const t = item.querySelector('title')?.textContent?.trim() || '';
-      const l = item.querySelector('link')?.textContent?.trim() || '#';
-      const cat = [...item.querySelectorAll('category')].map(c=>c.textContent.trim()).filter(c=>c&&!c.includes('Senza'))[0]||'Notizie';
-      const auth = item.querySelector('creator')?.textContent?.trim() || 'Redazione';
-      const mc = item.querySelector('content[url],media\\:content');
-      const imgUrl = mc?.getAttribute('url') || '';
-      const raw = item.querySelector('encoded')?.textContent || item.querySelector('description')?.textContent || '';
-      const mI = raw.match(/<img[^>]+src=["']([^"']+)["']/i);
-      const src = imgUrl || (mI ? mI[1] : '');
-      const localLink = `grandangolo-articolo.html?url=${encodeURIComponent(l)}`;
-      return `<a href="${localLink}">
-        <div class="sb-art">
-          <div class="sb-art-img">${src ? `<img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.background='#1a1a2a'">` : ''}</div>
-          <div><div class="sb-cat">${cat}</div><div class="sb-tit">${t}</div><div class="sb-firma">${auth}</div></div>
-        </div>
-      </a>`;
-    }).join('');
-    document.getElementById('sb-feed').innerHTML = html;
-  } catch(e) {}
-}
+  var html =
+    '<div class="art-cat">' + c + '</div>' +
+    '<h1 class="art-title">' + t + '</h1>' +
+    (dk ? '<p class="art-deck">' + dk + '</p>' : '') +
+    '<div class="art-meta">' +
+      '<div style="display:flex;align-items:center;gap:8px">' +
+        '<div class="art-av">' + ini + '</div>' +
+        '<div><div class="art-author-name">' + auth + '</div><div class="art-date">' + dStr + '</div></div>' +
+      '</div>' +
+      '<div class="art-share">' +
+        shareBtn('fb','s-fb','<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg> Facebook') +
+        shareBtn('tw','s-tw','<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg> X') +
+        shareBtn('wa','s-wa','<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> WhatsApp') +
+      '</div>' +
+    '</div>' +
+    (hero ? '<div class="art-hero"><img src="' + hero + '" alt="' + t.replace(/"/g,'') + '" onerror="this.parentElement.style.background=\'#1a1a2a\'"></div><p class="art-caption">' + t + '</p>' : '') +
+    '<div class="art-body">' + bodyHtml + '</div>' +
+    tagsHtml +
+    '<div class="art-share-btm"><span class="lbl">Condividi:</span>' +
+      shareBtn('fb','s-fb','Facebook') + shareBtn('tw','s-tw','X / Twitter') + shareBtn('wa','s-wa','WhatsApp') +
+    '</div>' +
+    '<div class="author-box">' +
+      '<div class="author-av-big">' + ini + '</div>' +
+      '<div><div class="author-name">' + auth + '</div><div class="author-role">Giornalista · Grandangolo Regionale</div><p class="author-bio">Redattore di Grandangolo Regionale. Si occupa di cronaca, giudiziaria e attualità nella provincia di Agrigento e in Sicilia.</p></div>' +
+    '</div>' +
+    corrHtml +
+    '<div class="comm-section"><div class="comm-title">Lascia un commento</div>' +
+      '<p class="comm-note">Il tuo indirizzo email non sarà pubblicato. I campi obbligatori sono contrassegnati *</p>' +
+      '<div class="comm-form">' +
+        '<label>Commento *</label><textarea placeholder="Scrivi il tuo commento…"></textarea>' +
+        '<div class="comm-grid"><div><label>Nome *</label><input type="text" placeholder="Il tuo nome"></div><div><label>Email *</label><input type="email" placeholder="La tua email"></div></div>' +
+        '<button class="comm-submit">Invia commento</button>' +
+      '</div></div>';
 
-function loadPiuLetti(items) {
-  const piu = document.getElementById('sb-piu-letti');
-  if(!piu || !items?.length) return;
-  piu.innerHTML = items.slice(0,7).map((item,i) => {
-    const t = item.querySelector('title')?.textContent?.trim() || '';
-    const l = item.querySelector('link')?.textContent?.trim() || '#';
-    const localLink = `grandangolo-articolo.html?url=${encodeURIComponent(l)}`;
-    return `<a href="${localLink}"><div class="pvi"><span class="pvn">${i+1}</span><div class="pvt">${t}</div></div></a>`;
+  document.getElementById('art-skel').style.display = 'none';
+  document.getElementById('art-content').innerHTML = html;
+  document.getElementById('art-content').style.display = 'block';
+
+  // Aggiorna breadcrumb e titolo pagina
+  document.title = t + ' – Grandangolo Regionale';
+  document.getElementById('bc-cat').textContent = c;
+  document.getElementById('bc-title').textContent = t.slice(0,55) + (t.length > 55 ? '…' : '');
+
+  // Sidebar ultime notizie
+  var others = allItems.filter(function(x){ return x.link !== lnk; }).slice(0,5);
+  document.getElementById('sb-ultime').innerHTML = others.map(function(oi) {
+    var oc = "goArticle('" + (oi.link||'').replace(/'/g,"\\'") + "')";
+    return '<div class="sb-art" onclick="' + oc + '">' +
+      '<div class="sb-art-img">' + imgTag(imgOf(oi)) + '</div>' +
+      '<div><div class="sb-cat">' + catOf(oi) + '</div><div class="sb-tit">' + (oi.title||'') + '</div><div style="font-size:10px;font-weight:700;color:#555;margin-top:2px">' + authOf(oi) + '</div></div>' +
+    '</div>';
+  }).join('');
+
+  // Sidebar più letti
+  document.getElementById('sb-letti').innerHTML = allItems.slice(0,7).map(function(li, i) {
+    var oc = "goArticle('" + (li.link||'').replace(/'/g,"\\'") + "')";
+    return '<div class="pvi" onclick="' + oc + '"><span class="pvn">' + (i+1) + '</span><div class="pvt">' + (li.title||'') + '</div></div>';
   }).join('');
 }
 
-// ── AGGIORNAMENTO AUTOMATICO ogni 5 minuti ───────────────
-// Ricarica i dati del feed (sidebar + correlati) ogni 5 min
-setInterval(() => {
-  loadSidebar(null);
-}, 5 * 60 * 1000);
+// ── Mostra errore ─────────────────────────────────
+function showError(url) {
+  document.getElementById('art-skel').innerHTML =
+    '<div style="padding:50px 20px;text-align:center;color:#888">' +
+    '<div style="font-size:48px;margin-bottom:16px">📰</div>' +
+    '<p style="font-size:16px;font-weight:700;margin-bottom:8px">Articolo non disponibile in anteprima</p>' +
+    '<p style="font-size:13px;margin-bottom:20px;color:#aaa">Il feed RSS non contiene il testo completo di questo articolo.</p>' +
+    '<a href="' + (url||'#') + '" target="_blank" style="background:#c1001f;color:#fff;padding:10px 28px;font-size:14px;font-weight:700;display:inline-block;border-radius:2px">Leggi l\'articolo originale →</a>' +
+    '<div style="margin-top:14px"><span onclick="goHome()" style="color:#0a5278;font-size:13px;text-decoration:underline;cursor:pointer">← Torna alla home</span></div>' +
+    '</div>';
+}
 
-// ── AVVIA ────────────────────────────────────────────────
-loadArticle(articleUrl);
+// ═══════════════════════════════════════════════
+//  CARICA FEED + TROVA ARTICOLO
+// ═══════════════════════════════════════════════
+if (!ART_URL) {
+  showError('');
+} else {
+  fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED) + '&count=50')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.status !== 'ok' || !data.items || !data.items.length) throw new Error('Feed non disponibile');
+
+      var items = data.items;
+      // Cerca l'articolo per URL esatto
+      var found = items.find(function(i) { return i.link === ART_URL; });
+
+      if (found) {
+        renderArticle(found, items);
+      } else {
+        // Non trovato nel feed: crea un item minimo con i dati che abbiamo
+        // e prova a caricare l'og:image via proxy
+        var minItem = {
+          title: decodeURIComponent(ART_URL.split('/').pop().replace(/-/g,' ')),
+          link: ART_URL,
+          author: 'Redazione',
+          categories: [ART_URL.split('/')[3] || 'Notizie'],
+          description: '',
+          content: '',
+          thumbnail: ''
+        };
+        renderArticle(minItem, items);
+      }
+    })
+    .catch(function() {
+      showError(ART_URL);
+    });
+}
 </script>
 </body>
 </html>
