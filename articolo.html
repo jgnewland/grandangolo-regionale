@@ -1,327 +1,633 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grandangolo Regionale</title>
-  <meta name="description" content="Grandangolo Regionale – Il quotidiano della Sicilia"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    :root{--v:#2d6a2d;--r:#c0392b;--n:#111;--l:#eeeeee;--m:#aaa}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Source Sans 3',sans-serif;background:#fff;color:var(--n);font-size:15px;line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Duplice femminicidio a Naro: chiesta la conferma dell'ergastolo – Grandangolo Regionale</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f0ede8;color:#141215;font-size:14px}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
 
-    /* TOPBAR */
-    .tb{border-bottom:1px solid var(--l);padding:7px 24px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--m)}
+/* ── TOPBAR ── */
+#topbar{background:#fff;border-bottom:1px solid #ddd;padding:5px 0;font-size:12px}
+.tb{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.soc a{width:20px;height:20px;border:1px solid #ccc;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#555;margin:0 2px}
+.soc a:hover{background:#141215;color:#fff;border-color:#141215}
 
-    /* TESTATA */
-    .mast{padding:18px 24px 14px;border-bottom:3px solid var(--n);text-align:center}
-    .mast-t{font-family:'Libre Baskerville',serif;font-size:40px;font-weight:700;color:var(--n);letter-spacing:-1.5px;line-height:1}
-    .mast-t span{color:var(--v)}
-    .mast-s{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--m);margin-top:5px;display:flex;align-items:center;justify-content:center;gap:10px}
-    .mast-s::before,.mast-s::after{content:'';display:block;width:28px;height:1px;background:var(--l)}
+/* ── MASTHEAD ── */
+#mast{background:#fff;text-align:center;padding:14px 16px 0;border-bottom:1px solid #ddd;position:relative}
+.logo{font-family:'Georgia',serif;font-size:46px;font-weight:900;font-style:italic;letter-spacing:-2px;color:#141215;line-height:1;text-transform:uppercase;display:block;margin-bottom:3px}
+.sub{font-size:11px;color:#999;padding-bottom:10px;display:block}
+.abn{position:absolute;right:16px;top:50%;transform:translateY(-60%);background:#1a62b7;color:#fff;font-size:12px;font-weight:700;padding:8px 16px}
+.abn:hover{background:#c1001f}
 
-    /* NAV */
-    .nav{border-bottom:1px solid var(--l);padding:0 24px;display:flex;justify-content:center;flex-wrap:wrap}
-    .nav a{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#888;padding:10px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .15s,border-color .15s}
-    .nav a:hover{color:var(--n);border-bottom-color:var(--n)}
-    .nav a.home{color:var(--v);font-weight:700}
-    .nav a.home:hover{border-bottom-color:var(--v)}
+/* ── NAVBAR ── */
+#nav{background:#fff;border-bottom:2px solid #141215;position:sticky;top:0;z-index:200;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+#nav .ni{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:stretch}
+.na{font-size:12px;font-weight:700;color:#141215;padding:10px 12px;white-space:nowrap;border-right:1px solid #eee;display:flex;align-items:center;gap:3px}
+.na:hover,.na.on{color:#c1001f}
+.na svg{width:8px;height:8px;fill:currentColor}
+.ned{background:#141215;color:#fff!important;padding:10px 18px;margin-left:auto;font-size:12px;font-weight:700;display:flex;align-items:center}
+.ned:hover{background:#c1001f!important}
 
-    /* WRAP ARTICOLO — colonna stretta centrata come Domani */
-    .wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+/* ── SKIN ── */
+#skin{position:relative;background:#e8e4df}
+.sl,.sr{position:absolute;top:0;width:155px;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:10px}
+.sl{left:0}.sr{right:0}
+.sslot{width:142px;height:580px;background:#e0dbd4;border:1px dashed #c0bcb5;display:flex;align-items:center;justify-content:center}
+.sslot span{font-size:9px;color:#ccc;text-transform:uppercase;writing-mode:vertical-rl}
 
-    /* BREADCRUMB */
-    .bread{font-size:11px;color:var(--m);margin-bottom:28px;display:flex;align-items:center;gap:8px}
-    .bread a{color:var(--v);font-weight:600}
-    .bread a:hover{text-decoration:underline}
-    .bread-sep{color:#ddd}
+/* ── PAGE ── */
+#page{max-width:1300px;margin:0 auto;padding:0 166px;background:#fff}
 
-    /* HEADER ARTICOLO */
-    .art-kat{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--r);margin-bottom:14px}
-    .art-h{font-family:'Libre Baskerville',serif;font-size:38px;font-weight:700;line-height:1.1;color:var(--n);letter-spacing:-1px;margin-bottom:20px}
-    .art-s{font-family:'Libre Baskerville',serif;font-size:18px;line-height:1.75;color:#444;font-style:italic;border-left:3px solid var(--v);padding-left:16px;margin-bottom:24px}
-    .art-meta{font-size:11px;color:var(--m);text-transform:uppercase;letter-spacing:1px;padding:16px 0;border-top:1px solid var(--l);border-bottom:1px solid var(--l);margin-bottom:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .art-meta::before{content:'';display:block;width:24px;height:1px;background:var(--v);flex-shrink:0}
-    .art-fonte{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--v);border-bottom:1px solid var(--v);padding-bottom:1px}
+/* ── BREADCRUMB ── */
+.breadcrumb{padding:10px 0 8px;font-size:12px;color:#888;border-bottom:1px solid #eee;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.breadcrumb a{color:#0a5278}
+.breadcrumb a:hover{color:#c1001f}
+.breadcrumb .sep{color:#ccc}
+.breadcrumb .cur{color:#141215;font-weight:600}
 
-    /* IMMAGINE */
-    .art-img-wrap{margin-bottom:32px}
-    .art-img-wrap img{width:100%;max-height:460px;object-fit:cover;display:block;background:#f0f0f0}
-    .art-cap{font-size:11px;color:var(--m);margin-top:8px;font-style:italic}
+/* ── MAIN LAYOUT: articolo + sidebar ── */
+#art-layout{display:grid;grid-template-columns:1fr 300px;gap:0;padding-top:14px;align-items:start}
 
-    /* CORPO ARTICOLO */
-    .art-body{font-family:'Libre Baskerville',serif;font-size:18px;line-height:1.85;color:#222}
-    .art-body p{margin-bottom:22px}
-    .art-body h2{font-size:24px;font-weight:700;margin:36px 0 14px;color:var(--n);font-family:'Libre Baskerville',serif}
-    .art-body h3{font-size:20px;font-weight:700;margin:28px 0 12px;color:var(--n);font-family:'Libre Baskerville',serif}
-    .art-body img{max-width:100%;height:auto;margin:28px auto;display:block}
-    .art-body a{color:var(--v);text-decoration:underline}
-    .art-body strong{font-weight:700}
-    .art-body em{font-style:italic}
-    .art-body blockquote{border-left:3px solid var(--v);padding-left:20px;margin:28px 0;color:#555;font-style:italic}
-    .art-body ul,.art-body ol{padding-left:24px;margin-bottom:22px}
-    .art-body li{margin-bottom:8px}
+/* ══ ARTICOLO ══ */
+#article{padding-right:28px;border-right:1px solid #ddd;min-width:0}
 
-    /* FOOTER ARTICOLO */
-    .art-footer{margin-top:48px;padding-top:24px;border-top:2px solid var(--n);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    .btn-back{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--v);border-bottom:1px solid var(--v);padding-bottom:1px}
-    .btn-originale{display:inline-block;background:var(--n);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:11px 28px;transition:background .2s}
-    .btn-originale:hover{background:var(--v)}
+/* categoria */
+.art-cat{font-size:11px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.art-cat-sep{color:#ddd}
 
-    /* CORRELATI */
-    .correlati-wrap{max-width:960px;margin:0 auto;padding:0 24px 60px}
-    .correlati-sl{display:flex;align-items:center;gap:12px;margin-bottom:20px;border-bottom:2px solid var(--v);padding-bottom:8px}
-    .correlati-sl span{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--v)}
-    .correlati-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--l);border:1px solid var(--l)}
-    .cor{background:#fff;display:flex;flex-direction:column;overflow:hidden;transition:background .12s}
-    .cor:hover{background:#fafafa}
-    .cor img{width:100%;height:150px;object-fit:cover;display:block;background:#f0f0f0}
-    .cor-ph{width:100%;height:150px;background:#e8e8e8;display:flex;align-items:center;justify-content:center}
-    .cor-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
-    .cor-kat{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--v)}
-    .cor-body h4{font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;line-height:1.3;color:var(--n)}
-    .cor-dt{font-size:10px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:8px;border-top:1px solid var(--l)}
+/* TITOLO */
+.art-title{font-family:'Georgia',serif;font-size:34px;font-weight:700;line-height:1.14;color:#141215;margin-bottom:12px}
 
-    /* SPINNER */
-    #stato{text-align:center;padding:80px 24px}
-    .spin{width:36px;height:36px;border:2px solid var(--l);border-top-color:var(--v);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 16px}
-    @keyframes sp{to{transform:rotate(360deg)}}
-    #stato p{font-family:'Libre Baskerville',serif;font-size:15px;color:var(--m);font-style:italic}
+/* SOMMARIO (occhiello) */
+.art-deck{font-size:16px;color:#555;line-height:1.55;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #eee;font-family:'Georgia',serif;font-style:italic}
 
-    /* FOOTER */
-    footer{border-top:3px solid var(--n);padding:24px;text-align:center;margin-top:0}
-    .fb{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--n)}
-    .fb span{color:var(--v)}
-    .fs{font-size:10px;color:var(--m);letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+/* META: data + autore */
+.art-meta{display:flex;align-items:center;gap:14px;padding:10px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:16px;flex-wrap:wrap}
+.art-author{display:flex;align-items:center;gap:8px}
+.art-author-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+.art-author-name{font-size:13px;font-weight:700;color:#141215}
+.art-author-name a{color:#0a5278}
+.art-author-name a:hover{color:#c1001f}
+.art-date{font-size:12px;color:#999}
+.art-share{margin-left:auto;display:flex;align-items:center;gap:8px}
+.share-btn{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:4px;cursor:pointer;border:none}
+.share-fb{background:#1877f2;color:#fff}
+.share-tw{background:#141215;color:#fff}
+.share-wa{background:#25d366;color:#fff}
+.share-btn:hover{opacity:.88}
 
-    /* RESPONSIVE */
-    @media(max-width:700px){
-      .art-h{font-size:28px}
-      .art-body{font-size:16px}
-      .correlati-grid{grid-template-columns:1fr}
-      .nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
-      .mast-t{font-size:30px}
-    }
-  </style>
+/* IMMAGINE HERO articolo */
+.art-hero-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px}
+.art-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.art-img-caption{font-size:11px;color:#999;margin-bottom:18px;font-style:italic;padding-bottom:10px;border-bottom:1px solid #f0ede8}
+
+/* TESTO ARTICOLO */
+.art-body{font-size:16px;line-height:1.72;color:#333;max-width:100%}
+.art-body p{margin-bottom:20px}
+.art-body p:last-child{margin-bottom:0}
+.art-body a{color:#0a5278;text-decoration:underline}
+.art-body a:hover{color:#c1001f}
+.art-body strong,.art-body b{font-weight:700;color:#141215}
+
+/* ── AD IN-CONTENT: floated e in-flow ── */
+
+/* Tipo 1: banner full-width tra paragrafi — discreto, con label */
+.ad-inline-full{background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:10px 14px;margin:24px 0;text-align:center;position:relative}
+.ad-inline-full .ad-lbl{position:absolute;top:4px;left:10px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+.ad-inline-full .ad-inner{display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:600px;height:90px;background:#ede9e3;border:1px dashed #c5c0b8;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;gap:6px}
+
+/* Tipo 2: banner float-right — galleggia accanto al testo */
+.ad-float-right{float:right;margin:0 0 16px 24px;background:#f5f3f0;border:1px solid #e8e5e0;border-radius:3px;padding:8px;position:relative;width:300px}
+.ad-float-right .ad-lbl{position:absolute;top:4px;left:8px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+.ad-float-right .ad-inner{display:flex;align-items:center;justify-content:center;width:284px;height:250px;background:#ede9e3;border:1px dashed #c5c0b8;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;flex-direction:column;gap:6px}
+
+/* Tipo 3: banner mid-content fullwidth alto */
+.ad-inline-mid{background:#f5f3f0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8;margin:28px -0px;padding:10px 0;text-align:center;position:relative;clear:both}
+.ad-inline-mid .ad-lbl{position:absolute;top:4px;left:14px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+.ad-inline-mid .ad-inner{display:inline-flex;align-items:center;justify-content:center;width:468px;height:60px;background:#ede9e3;border:1px dashed #c5c0b8;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;gap:6px}
+
+/* clearfix dopo float */
+.clearfix::after{content:'';display:table;clear:both}
+
+/* TAGS */
+.art-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0;padding:14px 0;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.art-tags-label{font-size:12px;font-weight:700;color:#141215;text-transform:uppercase;letter-spacing:.07em}
+.tag{font-size:11px;font-weight:700;color:#0a5278;border:1px solid #dde8f0;padding:3px 10px;border-radius:12px;background:#f0f5fa}
+.tag:hover{background:#0a5278;color:#fff;border-color:#0a5278}
+
+/* CONDIVISIONE BOTTOM */
+.art-share-bottom{display:flex;align-items:center;gap:10px;margin:16px 0;padding:14px 0;border-top:1px solid #eee;flex-wrap:wrap}
+.art-share-bottom .label{font-size:13px;font-weight:700;color:#141215}
+
+/* AUTORE BOX */
+.author-box{background:#f5f3f0;border:1px solid #e0ddd8;border-left:4px solid #141215;padding:16px 18px;margin:20px 0;display:flex;gap:14px;align-items:flex-start}
+.author-av-big{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1a3a6a,#2a5a9a);display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:20px;font-weight:700;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,.6);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.author-name{font-family:'Georgia',serif;font-size:16px;font-weight:700;color:#141215;margin-bottom:3px}
+.author-role{font-size:11px;color:#888;margin-bottom:6px}
+.author-bio{font-size:13px;color:#555;line-height:1.5}
+
+/* CORRELATI */
+.correlati{margin:24px 0 0;border-top:3px solid #141215;padding-top:10px}
+.corr-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;margin-bottom:14px}
+.corr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.corr-card{}
+.corr-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:8px}
+.corr-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
+.corr-img img:hover{opacity:.9}
+.corr-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.corr-tit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
+.corr-tit:hover{color:#c1001f}
+.corr-firma{font-size:11px;font-weight:700;color:#141215;margin-top:3px}
+.corr-firma a{color:#0a5278;font-weight:700}
+
+/* COMMENTI */
+.commenti{margin:28px 0 0;border-top:3px solid #141215;padding-top:10px}
+.comm-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;margin-bottom:16px}
+.comm-form{background:#f9f7f5;border:1px solid #e0ddd8;padding:18px;border-radius:3px}
+.comm-form label{display:block;font-size:12px;font-weight:700;color:#141215;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+.comm-form input,.comm-form textarea{width:100%;border:1px solid #ddd;padding:9px 12px;font-size:13px;font-family:inherit;background:#fff;border-radius:2px;margin-bottom:14px;color:#141215}
+.comm-form input:focus,.comm-form textarea:focus{outline:none;border-color:#0a5278}
+.comm-form textarea{height:100px;resize:vertical}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.comm-submit{background:#141215;color:#fff;border:none;padding:10px 28px;font-size:13px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.07em;border-radius:2px}
+.comm-submit:hover{background:#c1001f}
+.comm-note{font-size:11px;color:#999;margin-bottom:14px}
+
+/* ══ SIDEBAR ══ */
+#sidebar{padding-left:22px;width:300px;flex-shrink:0}
+
+.sbh{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:0 0 10px;color:#141215;display:flex;align-items:center;gap:6px}
+.sbh2{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:14px 0 9px}
+
+/* AD sidebar */
+.adSB{width:100%;height:250px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:0 0 14px;position:relative}
+.adSB .ap{font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+.adSB .sz{font-size:14px;color:#ccc;font-weight:700}
+.adSB .nt{font-size:9px;color:#c1001f;font-style:italic}
+.adBIG{width:100%;height:300px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:14px 0}
+
+/* Ultimi articoli sidebar */
+.sb-art{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0ede8;align-items:flex-start}
+.sb-art:last-child{border-bottom:none}
+.sb-art-img{width:78px;height:56px;overflow:hidden;flex-shrink:0;background:#1a1a2a}
+.sb-art-img img{width:100%;height:100%;object-fit:cover;display:block}
+.sb-cat{font-size:9px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.sb-tit{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.28;color:#141215}
+.sb-tit:hover{color:#c1001f}
+.sb-firma{font-size:10px;font-weight:700;color:#555;margin-top:2px}
+
+/* Podcast sidebar */
+.pod{border:1px solid #ddd;background:#fafaf8;margin-bottom:10px}
+.pdt{padding:6px 9px 3px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0ede8}
+.bsp{background:#1DB954;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
+.ptt{font-family:'Georgia',serif;font-size:12px;font-weight:700;color:#141215;padding:5px 9px 1px}
+.ptd{font-size:10px;color:#888;padding:0 9px 6px;line-height:1.35}
+.pod iframe{display:block;border:none;width:100%}
+
+/* Edicola */
+.edic{background:#f5f3f0;border:1px solid #ddd;padding:10px;margin-bottom:14px;text-align:center}
+.edt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #ddd;padding-bottom:5px;margin-bottom:8px}
+.edc{width:100%;aspect-ratio:3/4;overflow:hidden;background:#f0ede8;margin-bottom:8px}
+.edc img{width:100%;height:100%;object-fit:contain;display:block}
+.edb{display:block;background:#141215;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:8px}
+.edb:hover{background:#c1001f}
+
+/* Più letti */
+.pvi{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0ede8;align-items:baseline}
+.pvi:last-child{border-bottom:none}
+.pvn{font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#e0ddd8;min-width:24px;line-height:1}
+.pvt{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.3;color:#141215}
+.pvt:hover{color:#c1001f}
+
+/* FOOTER */
+footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
+.fi{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.flogo{font-family:'Georgia',serif;font-size:22px;font-weight:900;font-style:italic}
+.flinks{display:flex;gap:14px;flex-wrap:wrap}
+.flinks a{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.flinks a:hover{color:#fff}
+.fcopy{width:100%;font-size:10px;color:#555;border-top:1px solid #2a2a2a;padding-top:8px;margin-top:6px}
+
+/* AD leaderboard */
+.adl{background:#e8e4df;padding:8px 0;text-align:center;border-bottom:1px solid #ddd}
+.adbox{display:inline-flex;align-items:center;justify-content:center;background:#e0dbd4;border:1px dashed #c0bcb5;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;position:relative;gap:8px}
+.adpub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+</style>
 </head>
 <body>
 
-<div class="tb">
-  <span id="data-top"></span>
-  <span>regionale.grandangolosettimanale.it</span>
-</div>
-
-<div class="mast">
-  <a href="/"><div class="mast-t">Grandangolo <span>Regionale</span></div></a>
-  <div class="mast-s">Il quotidiano della Sicilia</div>
-</div>
-
-<nav class="nav">
-  <a href="/" class="home">← Prima pagina</a>
-  <a href="/">Cronaca</a>
-  <a href="/">Politica</a>
-  <a href="/">Giudiziaria</a>
-  <a href="/">Inchieste</a>
-  <a href="/">Economia</a>
-  <a href="/">Cultura</a>
-  <a href="/">Sport</a>
-  <a href="/">Agrigento</a>
-  <a href="/">Palermo</a>
-  <a href="/">Catania</a>
-  <a href="/">Ragusa</a>
-</nav>
-
-<!-- SPINNER -->
-<div id="stato" class="wrap">
-  <div class="spin"></div>
-  <p>Caricamento articolo…</p>
-</div>
-
-<!-- ARTICOLO -->
-<div id="contenuto" style="display:none">
-  <div class="wrap">
-    <div class="bread">
-      <a href="/">Prima pagina</a>
-      <span class="bread-sep">›</span>
-      <span id="bread-kat"></span>
+<!-- TOPBAR -->
+<div id="topbar"><div class="tb">
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="font-size:19px;cursor:pointer;color:#666">☰</span>
+    <span style="color:#aaa">Seguici su</span>
+    <div class="soc">
+      <a href="https://www.facebook.com/GrandangoloAgrigento" target="_blank">f</a>
+      <a href="https://www.instagram.com" target="_blank">ig</a>
+      <a href="https://x.com/GrandangoloAg" target="_blank">𝕏</a>
+      <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">yt</a>
     </div>
-
-    <div class="art-kat" id="art-kat"></div>
-    <h1 class="art-h" id="art-h"></h1>
-    <div class="art-s" id="art-s"></div>
-
-    <div class="art-meta">
-      <span id="art-data"></span>
-    </div>
-
-    <div class="art-img-wrap" id="art-img-wrap"></div>
-
-    <div class="art-body" id="art-body"></div>
-
-    <div class="art-footer">
-      <a class="btn-back" href="/">← Torna alla prima pagina</a>
-    </div>
+    <span style="color:#ddd">|</span>
+    <span id="tdate" style="color:#666"></span>
+    <span style="color:#ddd">|</span>
+    <span style="color:#666">⛅ 20°C Agrigento</span>
   </div>
+  <a href="#" style="font-size:12px;font-weight:600;color:#141215">Accedi 👤</a>
+</div></div>
 
-  <!-- CORRELATI -->
-  <div class="correlati-wrap">
-    <div class="correlati-sl"><span>Leggi anche</span></div>
-    <div class="correlati-grid" id="correlati"></div>
-  </div>
+<!-- MASTHEAD -->
+<div id="mast">
+  <a href="grandangolo.html" class="logo">Grandangolo Regionale</a>
+  <span class="sub">Da 21 anni la voce del territorio · Dir. Franco Castaldo · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907</span>
+  <a href="https://grandangolosettimanale.it" target="_blank" class="abn">Abbonati a €1,50/sett.</a>
 </div>
 
-<footer>
-  <div class="fb">Grandangolo <span>Regionale</span></div>
-  <div class="fs">Edizione Sicilia · Aggiornato ogni 10 minuti</div>
-</footer>
+<!-- NAVBAR -->
+<nav id="nav"><div class="ni">
+  <span class="na" style="padding:10px 12px;border-right:1px solid #eee;cursor:pointer;color:#666;font-size:15px">🔍</span>
+  <a href="grandangolo.html" class="na">Home</a>
+  <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" class="na">Agrigento <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" class="na on">Giudiziaria <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" class="na">Mafia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/politica" target="_blank" class="na">Politica <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" class="na">Inchieste</a>
+  <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" class="na">Cultura <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/sport" target="_blank" class="na">Sport <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/sicilia" target="_blank" class="na">Sicilia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" class="na">Podcast</a>
+  <a href="https://www.grandangoloagrigento.it/video" target="_blank" class="na">Video</a>
+  <a href="https://grandangolosettimanale.it" target="_blank" class="ned">Edicola →</a>
+</div></nav>
+
+<!-- AD LEADERBOARD -->
+<div class="adl"><div class="adbox" style="width:728px;height:90px"><span class="adpub">Pubblicità</span>Google AdSense — Leaderboard 728×90</div></div>
+
+<!-- SKIN + PAGE -->
+<div id="skin">
+  <div class="sl"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
+  <div class="sr"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
+
+  <div id="page">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="grandangolo.html">Home</a>
+      <span class="sep">›</span>
+      <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
+      <span class="sep">›</span>
+      <a href="https://www.grandangoloagrigento.it/apertura" target="_blank">Apertura</a>
+      <span class="sep">›</span>
+      <span class="cur">Duplice femminicidio a Naro: chiesta la conferma dell'ergastolo</span>
+    </div>
+
+    <!-- LAYOUT ARTICOLO + SIDEBAR -->
+    <div id="art-layout">
+
+      <!-- ══════════════════════════════
+           ARTICOLO
+           ══════════════════════════════ -->
+      <div id="article">
+
+        <!-- Categoria -->
+        <div class="art-cat">
+          <a href="https://www.grandangoloagrigento.it/apertura" target="_blank">Apertura</a>
+          <span class="art-cat-sep">·</span>
+          <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
+        </div>
+
+        <!-- TITOLO -->
+        <h1 class="art-title">Duplice femminicidio a Naro, chiesta la conferma dell'ergastolo per il 28enne Omar Edgar Nedelcov</h1>
+
+        <!-- SOMMARIO -->
+        <p class="art-deck">Era la notte tra il 4 e il 5 gennaio 2024 quando Maria Rus e Delia Zarnescu vennero brutalmente uccise nel centro storico di Naro. Il movente sarebbe riconducibile al rifiuto di una delle due vittime alle avance sessuali del ragazzo.</p>
+
+        <!-- META: autore + data + condivisione -->
+        <div class="art-meta">
+          <div class="art-author">
+            <div class="art-author-av">GC</div>
+            <div>
+              <div class="art-author-name">di <a href="#">Giuseppe Castaldo</a></div>
+              <div class="art-date">9 aprile 2026 · Aggiornato alle 09:51</div>
+            </div>
+          </div>
+          <div class="art-share">
+            <button class="share-btn share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href))">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Condividi
+            </button>
+            <button class="share-btn share-tw" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href))">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+              Tweet
+            </button>
+            <button class="share-btn share-wa" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href))">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- IMMAGINE HERO -->
+        <div class="art-hero-img">
+          <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/01/ice_screenshot_20240110-123133.png"
+            alt="Maria Rus e Delia Zarnescu, le due vittime del duplice femminicidio di Naro"
+            onerror="this.style.background='#1a1a2a';this.style.minHeight='320px'">
+        </div>
+        <p class="art-img-caption">Maria Rus e Delia Zarnescu, le due vittime del duplice femminicidio di Naro (gennaio 2024)</p>
+
+        <!-- ══ CORPO DEL TESTO CON ADS INLINE ══ -->
+        <div class="art-body">
+
+          <!-- § 1 -->
+          <p>La procura generale di Palermo ha chiesto la conferma della condanna all'ergastolo nei confronti di <strong>Omar Edgar Nedelcov</strong>, il ventottenne ritenuto l'autore del duplice femminicidio di Maria Rus e Delia Zarnescu, brutalmente uccise il 5 gennaio 2024 nel centro storico di Naro. La Corte di assise di Agrigento — nel giudizio di primo grado — ha inflitto il carcere a vita all'imputato disponendo anche l'isolamento diurno per tre anni e il risarcimento ai familiari delle vittime per importi pari a quasi <strong>100 mila euro</strong>.</p>
+
+          <!-- ① AD FLOAT-RIGHT — galleggia accanto al testo, non rompe la lettura -->
+          <div class="ad-float-right">
+            <span class="ad-lbl">Pubblicità</span>
+            <div class="ad-inner">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <span>AdSense<br>300×250</span>
+            </div>
+          </div>
+
+          <!-- § 2 -->
+          <p>Il processo di secondo grado, che si celebra davanti la seconda sezione della Corte di assise di appello di Palermo, è stato aggiornato al prossimo <strong>14 maggio</strong> per le discussioni delle parti civili, della difesa (rappresentata dall'avvocato Diego Giarratana) e per la sentenza. Il movente, così come accertato nel processo di primo grado, è riconducibile al rifiuto di una delle due vittime alle avance sessuali del ragazzo. Subito dopo il ventiseienne ha scatenato la sua furia omicida. <a href="https://www.grandangoloagrigento.it/giudiziaria/il-duplice-femminicidio-a-naro-non-si-e-limitato-ad-uccidere-ma-ha-agito-con-ferocia-e-malvagita" target="_blank"><strong>Un vero e proprio racconto dell'orrore, un delitto che ha sconvolto non soltanto la piccola cittadina ma l'intera provincia di Agrigento.</strong></a></p>
+
+          <!-- § 3 -->
+          <p>I fatti sono noti. Nella notte tra il 4 e il 5 gennaio 2024 Maria Rus e Delia Zarnescu vengono brutalmente uccise. Il cadavere della prima è stato rinvenuto quasi completamente carbonizzato nel soggiorno della sua abitazione in vicolo Avenia. La seconda vittima, invece, è stata ritrovata poco più avanti in un lago di sangue nel suo appartamento in via Vinci. Evidenti i segni di colluttazione così come chiare le ferite da arma da taglio.</p>
+
+          <!-- § 4 -->
+          <p>L'imputato era stato, in compagnia di un amico, a casa di Delia poco prima. Poi le avance, il rifiuto e la furia omicida. Come scritto nella sentenza di primo grado, Nedelcov non si è limitato ad uccidere ma ha compiuto un vero e proprio massacro accanendosi finanche sui cadaveri delle vittime, uno dei quali dato alle fiamme.</p>
+
+          <!-- clearfix dopo il float -->
+          <div class="clearfix"></div>
+
+          <!-- ② AD INLINE FULL — separatore tra blocchi di testo, largo e basso -->
+          <div class="ad-inline-full">
+            <span class="ad-lbl">Pubblicità</span>
+            <div class="ad-inner">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+              Google AdSense — Banner 600×90 in-content
+            </div>
+          </div>
+
+          <!-- § 5 -->
+          <p>Fin dall'inizio tutti gli elementi portano a lui: effettua una chiamata alle forze dell'ordine con il cellulare di una delle vittime, le telecamere di alcuni residenti della zona lo immortalano sui luoghi del delitto, la testimonianza dell'amico con cui era stato poco prima e con il quale ha avuto una colluttazione. A blindare il caso ulteriori e incontrovertibili elementi di prova: gli accertamenti tecnici di natura dattiloscopica e biomolecolare, gli indumenti sequestrati, l'aver costretto l'ex fidanzata a costruire un <strong>falso alibi</strong> e anche le dichiarazioni sostanzialmente confessorie avvenute sia durante le indagini che nel corso del processo.</p>
+
+          <!-- § 6 -->
+          <p>Processualmente un caso "facile", blindato da plurimi elementi a carico dell'imputato e da un impianto accusatorio solido e granitico. I giudici di primo grado, però, sono andati oltre l'evidente e inequivocabile ricostruzione dei fatti descrivendo l'imputato come un soggetto <strong>feroce e malvagio</strong> e riconoscendo anche l'aggravante della crudeltà che gli è costato il carcere a vita per "il contegno inumano serbato dal Nedelcov nei confronti di due donne e il contesto in cui ha agito."</p>
+
+          <!-- ③ AD INLINE MID — bordi top/bottom, altezza minima, quasi invisibile -->
+          <div class="ad-inline-mid">
+            <span class="ad-lbl">Pubblicità</span>
+            <div class="ad-inner">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              AdSense — Native / Responsive In-Feed
+            </div>
+          </div>
+
+          <!-- § 7 -->
+          <p>"Le gravissime e scioccanti condizioni in cui sono stati trovati i corpi delle due donne appaiono indicative della inaudita violenza, della ferocia e della malvagità con cui ha agito l'imputato che evidentemente non si è limitato ad uccidere ma ha compiuto un vero e proprio massacro mostrando incontenibile crudeltà."</p>
+
+          <!-- § 8 -->
+          <p><a href="https://www.grandangoloagrigento.it/giudiziaria/il-massacro-di-naro-ok-alla-perizia-per-stabilire-capacita-di-intendere-e-volere-dellimputato" target="_blank"><strong>Inaudita ferocia e gratuita malvagità nella piena capacità di intendere e volere.</strong></a> Questo il responso della perizia psichiatrica effettuata sull'assassino che ha esclusivamente rilevato modi "costanti di percepire, rapportarsi e pensare nei confronti dell'ambiente e di se stessi che caratterizzano l'esistenza dell'individuo" — atteggiamenti intolleranti, scarsa tolleranza alle frustrazioni, instabilità emotiva, tendenza a reagire a eventi stressanti, precedenti giudiziari e condotte di abuso di sostanze — che tuttavia non configuravano una vera e propria patologia psichiatrica strutturata e quindi non incidevano sulla sua <strong>capacità di intendere e volere</strong>.</p>
+
+          <!-- § 9 finale -->
+          <p>La prossima udienza è fissata per il 14 maggio 2026. La Corte d'Assise d'Appello di Palermo dovrà pronunciarsi sulla richiesta della Procura generale di confermare la condanna all'ergastolo emessa in primo grado dal Tribunale di Agrigento, decisione che segnò un verdetto unanimemente considerato inevitabile alla luce della solidità delle prove raccolte dagli inquirenti.</p>
+
+        </div><!-- /art-body -->
+
+        <!-- TAGS -->
+        <div class="art-tags">
+          <span class="art-tags-label">Tag:</span>
+          <a href="#" class="tag">Naro</a>
+          <a href="#" class="tag">Femminicidio</a>
+          <a href="#" class="tag">Omar Nedelcov</a>
+          <a href="#" class="tag">Ergastolo</a>
+          <a href="#" class="tag">Tribunale Agrigento</a>
+          <a href="#" class="tag">Corte d'Appello Palermo</a>
+        </div>
+
+        <!-- CONDIVISIONE BOTTOM -->
+        <div class="art-share-bottom">
+          <span class="label">Condividi:</span>
+          <button class="share-btn share-fb" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href))">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </button>
+          <button class="share-btn share-tw" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title))">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            X / Twitter
+          </button>
+          <button class="share-btn share-wa" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href))">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            WhatsApp
+          </button>
+        </div>
+
+        <!-- BOX AUTORE -->
+        <div class="author-box">
+          <div class="author-av-big">GC</div>
+          <div>
+            <div class="author-name">Giuseppe Castaldo</div>
+            <div class="author-role">Giornalista · Cronaca Giudiziaria e Mafia</div>
+            <p class="author-bio">Redattore di Grandangolo Regionale, si occupa da anni di cronaca giudiziaria, mafia e fatti di cronaca nella provincia di Agrigento. Collabora anche con le testate del gruppo.</p>
+          </div>
+        </div>
+
+        <!-- ARTICOLI CORRELATI -->
+        <div class="correlati">
+          <div class="corr-title">Leggi anche</div>
+          <div class="corr-grid">
+            <div class="corr-card">
+              <a href="https://www.grandangoloagrigento.it/giudiziaria/il-duplice-femminicidio-a-naro-non-si-e-limitato-ad-uccidere-ma-ha-agito-con-ferocia-e-malvagita" target="_blank">
+                <div class="corr-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/01/ice_screenshot_20240110-123133.png" alt="Naro" onerror="this.style.background='#1a1a2a'"></div>
+                <div class="corr-cat">Giudiziaria · Naro</div>
+                <div class="corr-tit">«Non si è limitato ad uccidere, ha agito con ferocia e malvagità»: la sentenza di primo grado</div>
+              </a>
+              <div class="corr-firma">di <a href="#">Giuseppe Castaldo</a></div>
+            </div>
+            <div class="corr-card">
+              <a href="https://www.grandangoloagrigento.it/apertura/il-pentito-gioacchino-amico-e-i-rapporti-con-la-politica-report-rivela-aveva-un-pass-alla-camera" target="_blank">
+                <div class="corr-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/02/WhatsApp-Image-2024-02-19-at-18.16.05.jpeg" alt="Iachino Amico" onerror="this.style.background='#1a1a2a'"></div>
+                <div class="corr-cat">Mafia · Canicattì</div>
+                <div class="corr-tit">Il pentito Amico e i rapporti con la politica: «Aveva un pass alla Camera dei deputati»</div>
+              </a>
+              <div class="corr-firma">di <a href="#">Redazione</a></div>
+            </div>
+            <div class="corr-card">
+              <a href="https://www.grandangoloagrigento.it/giudiziaria/morta-a-43-anni-dopo-ricovero-per-ischemia-intestinale-chiesto-processo-per-3-medici" target="_blank">
+                <div class="corr-img" id="corr3"><div style="width:100%;height:100%;background:#1a2a3a;display:flex;align-items:center;justify-content:center;color:#444;font-size:24px">📰</div></div>
+                <div class="corr-cat">Giudiziaria · Sanità</div>
+                <div class="corr-tit">Morta a 43 anni per ischemia intestinale: chiesto processo per 3 medici dell'ASP</div>
+              </a>
+              <div class="corr-firma">di <a href="#">Redazione</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMMENTI -->
+        <div class="commenti">
+          <div class="comm-title">Lascia un commento</div>
+          <p class="comm-note">Il tuo indirizzo email non sarà pubblicato. I campi obbligatori sono contrassegnati *</p>
+          <div class="comm-form">
+            <label>Commento *</label>
+            <textarea placeholder="Scrivi il tuo commento..."></textarea>
+            <div class="comm-grid">
+              <div>
+                <label>Nome *</label>
+                <input type="text" placeholder="Il tuo nome">
+              </div>
+              <div>
+                <label>Email *</label>
+                <input type="email" placeholder="La tua email">
+              </div>
+            </div>
+            <button class="comm-submit">Invia commento</button>
+          </div>
+        </div>
+
+      </div><!-- /article -->
+
+      <!-- ══════════════════════════════
+           SIDEBAR
+           ══════════════════════════════ -->
+      <div id="sidebar">
+
+        <!-- AD 300×250 TOP sticky -->
+        <div class="adSB" style="position:sticky;top:70px">
+          <span class="ap">Pubblicità</span>
+          <span class="sz">300 × 250</span>
+          <span style="font-size:10px;color:#bbb">Google AdSense</span>
+          <span class="nt">posizione premium · RPM max</span>
+        </div>
+
+        <!-- ULTIMI ARTICOLI -->
+        <div class="sbh">Ultime notizie</div>
+
+        <a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank">
+          <div class="sb-art">
+            <div class="sb-art-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/IMG-20260407-WA0032-e1775675617363.jpg" alt="Giusy" onerror="this.style.background='#1a1a2a'"></div>
+            <div><div class="sb-cat">Cronaca · Calamonaci</div><div class="sb-tit">«Sono io che devo ammazzare la malattia»: il lascito di Giusy</div><div class="sb-firma">Gabriele Terranova</div></div>
+          </div>
+        </a>
+        <a href="https://www.grandangoloagrigento.it/ultime-notizie/amministrative-2026-sbardella-fdi-tutti-i-nomi-sul-tavolo-sono-stati-bocciati-cerchiamo-lunita" target="_blank">
+          <div class="sb-art">
+            <div class="sb-art-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/Luca-Sbardella.jpg" alt="Sbardella" onerror="this.style.background='#1a1a2a'"></div>
+            <div><div class="sb-cat">Politica · Agrigento</div><div class="sb-tit">Sbardella (FdI): «Tutti i nomi bocciati, cerchiamo l'unità del centrodestra»</div><div class="sb-firma">G. Schicchi</div></div>
+          </div>
+        </a>
+        <a href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank">
+          <div class="sb-art">
+            <div class="sb-art-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/02/WhatsApp-Image-2024-02-19-at-18.16.05.jpeg" alt="Iachino" onerror="this.style.background='#1a1a2a'"></div>
+            <div><div class="sb-cat">Mafia · Canicattì</div><div class="sb-tit">«Iachino» Amico: dalle truffe ai clan, il pentito con pass alla Camera</div><div class="sb-firma">Redazione</div></div>
+          </div>
+        </a>
+        <a href="https://www.grandangoloagrigento.it/caltanisetta/droga-sponsorizzata-sui-social-e-spedita-per-posta-due-arresti" target="_blank">
+          <div class="sb-art">
+            <div class="sb-art-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/08042026_114834_Foto4-Napoli.jpg" alt="Droga" onerror="this.style.background='#1a1a2a'"></div>
+            <div><div class="sb-cat">Caltanissetta · Giudiziaria</div><div class="sb-tit">Droga sui social e per posta: 2 arresti, 10 kg sequestrati</div><div class="sb-firma">Redazione</div></div>
+          </div>
+        </a>
+        <a href="https://www.grandangoloagrigento.it/agrigento-notizie/aica-si-riunisce-il-consiglio-di-amministrazione-in-arrivo-8-nuove-assunzioni" target="_blank">
+          <div class="sb-art">
+            <div class="sb-art-img" id="sb5"><div style="width:100%;height:100%;background:#1a2a1a;display:flex;align-items:center;justify-content:center;color:#444;font-size:16px">📰</div></div>
+            <div><div class="sb-cat">Agrigento · Lavoro</div><div class="sb-tit">AICA: in arrivo 8 nuove assunzioni a tempo indeterminato</div><div class="sb-firma">Redazione</div></div>
+          </div>
+        </a>
+
+        <!-- AD 300×250 MID -->
+        <div class="adSB">
+          <span class="ap">Pubblicità</span>
+          <span class="sz">300 × 250</span>
+          <span style="font-size:10px;color:#bbb">Google AdSense · mid</span>
+        </div>
+
+        <!-- PODCAST -->
+        <div class="sbh">📻 Podcast</div>
+        <div class="pod">
+          <div class="pdt"><span class="bsp">Spotify</span><span style="font-size:10px;color:#888">3 edizioni/giorno · FM 104.8</span></div>
+          <div class="ptt">Grandangolo News on Radio</div>
+          <div class="ptd">Le notizie del giorno in podcast</div>
+          <iframe height="152" src="https://open.spotify.com/embed/show/2XLvo0bhvvv25TulG7ilMk?utm_source=generator&theme=0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- EDICOLA -->
+        <div class="edic">
+          <div class="edt">Edicola Digitale · N.12/2026</div>
+          <div class="edc"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/1_99f439.jpg" alt="Settimanale" onerror="this.style.display='none'"></div>
+          <a href="https://grandangolosettimanale.it" target="_blank" class="edb">Acquista l'edizione digitale →</a>
+        </div>
+
+        <!-- PIÙ LETTI -->
+        <div class="sbh2">I più letti</div>
+        <a href="#"><div class="pvi"><span class="pvn">1</span><div class="pvt">Femminicidio Naro: ergastolo confermato per Omar Nedelcov</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank"><div class="pvi"><span class="pvn">2</span><div class="pvt">«Sono io che devo ammazzare la malattia»: il lascito di Giusy</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank"><div class="pvi"><span class="pvn">3</span><div class="pvt">«Iachino» Amico: dai clan alla politica con pass alla Camera</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/agrigento-notizie/amministrative-2026-il-duopolio-tende-la-mano-al-resto-del-centrodestra-sostenete-daniela-catalano" target="_blank"><div class="pvi"><span class="pvn">4</span><div class="pvt">Amministrative 2026: «Sostenete Daniela Catalano»</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/caltanisetta/droga-sponsorizzata-sui-social-e-spedita-per-posta-due-arresti" target="_blank"><div class="pvi"><span class="pvn">5</span><div class="pvt">Droga sui social e per posta: 2 arresti, 10 kg sequestrati</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio" target="_blank"><div class="pvi"><span class="pvn">6</span><div class="pvt">Strage di Monreale: tre imputati rinviati a giudizio</div></div></a>
+
+        <!-- AD 300×600 -->
+        <div class="adBIG">
+          <span style="font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em">Pubblicità</span>
+          <span style="font-size:18px;color:#ccc;font-weight:700">300 × 600</span>
+          <span style="font-size:10px;color:#bbb">Google AdSense · Half Page</span>
+          <span style="font-size:9px;color:#c1001f;font-style:italic">formato premium · CPM alto</span>
+        </div>
+
+      </div><!-- /sidebar -->
+
+    </div><!-- /art-layout -->
+  </div><!-- /page -->
+</div><!-- /skin -->
+
+<footer><div class="fi">
+  <div class="flogo"><em>Grandangolo</em> Regionale</div>
+  <div class="flinks">
+    <a href="grandangolo.html">Home</a>
+    <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank">Agrigento</a>
+    <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
+    <a href="https://www.grandangoloagrigento.it/mafia" target="_blank">Mafia</a>
+    <a href="https://www.grandangoloagrigento.it/politica" target="_blank">Politica</a>
+    <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank">Cultura</a>
+    <a href="https://www.grandangoloagrigento.it/sport" target="_blank">Sport</a>
+    <a href="https://grandangolosettimanale.it" target="_blank">Edicola</a>
+    <a href="https://open.spotify.com/show/2XLvo0bhvvv25TulG7ilMk" target="_blank">Podcast</a>
+    <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">YouTube</a>
+    <a href="https://www.grandangoloagrigento.it/privacy-policy" target="_blank">Privacy</a>
+  </div>
+  <div class="fcopy">© 2026 Edizioni Grandangolo · Via Mazzini 187 · 92100 Agrigento · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907 · Direttore responsabile Franco Castaldo</div>
+</div></footer>
 
 <script>
-(function(){
-  document.getElementById('data-top').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+// Data
+const d=new Date();
+const DA=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+const MO=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+document.getElementById('tdate').textContent=`${DA[d.getDay()]} ${d.getDate()} ${MO[d.getMonth()]} ${d.getFullYear()} – ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
 
-  function strip(h){const d=document.createElement('div');d.innerHTML=h;return(d.textContent||'').replace(/\s+/g,' ').trim();}
-  function fdata(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});}
-  function kat(a){return a.category&&a.category!==a.fonte?a.category:'Sicilia';}
+// Carica og:image per articolo correlato 3 e sidebar 5
+async function loadImg(url, elId) {
+  try {
+    const PX = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+    const r = await fetch(PX, {cache:'force-cache'});
+    const data = await r.json();
+    const c = data.contents || '';
+    const m = c.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i)
+           || c.match(/content=["']([^"']+)["'][^>]*property=["']og:image["']/i);
+    if (!m) return;
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.innerHTML = `<img src="${m[1]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">`;
+  } catch(e) {}
+}
 
-  const PH='<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.2" style="opacity:.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
-
-  // Leggi id dall'URL
-  const params=new URLSearchParams(window.location.search);
-  const id=parseInt(params.get('id')||'0',10);
-
-  async function carica(){
-    let dati=null;
-    const urls=[
-      'https://cdn.jsdelivr.net/gh/jgnewland/grandangolo-regionale@main/feed.json?_='+Date.now(),
-      'feed.json?_='+Date.now()
-    ];
-    for(const url of urls){
-      try{const r=await fetch(url);if(r.ok){dati=await r.json();break;}}catch(e){}
-    }
-    if(!dati||!dati.items||!dati.items.length){
-      document.getElementById('stato').innerHTML=`<p style="color:var(--r)">Articolo non disponibile. <a href="/" style="color:var(--v)">← Torna alla homepage</a></p>`;
-      return;
-    }
-
-    const items=dati.items;
-    const art=items[id]||items[0];
-
-    // Meta pagina
-    document.title=strip(art.title)+' – Grandangolo Regionale';
-
-    // Popola
-    const categoria=kat(art);
-    document.getElementById('bread-kat').textContent=categoria;
-    document.getElementById('art-kat').textContent=categoria;
-    document.getElementById('art-h').textContent=strip(art.title);
-
-    // Sommario — pulisci riferimenti al sito sorgente
-    let desc=(art.description||'').trim();
-    // Rimuovi frasi tipo "Articolo X su LiveSicilia.it" o "Leggi su..."
-    desc=desc.replace(/\s*Articolo\s+[^\.]+su\s+[\w\.]+\.[a-z]+\.?\s*/gi,' ');
-    desc=desc.replace(/\s*su\s+[\w]+[\w\-]*\.[a-z]{2,}\.?\s*$/gi,'');
-    desc=desc.replace(/\s*Leggi (tutto|di più|l'articolo)\s*(su\s+[\w\.]+)?\s*\.?\s*$/gi,'');
-    desc=desc.replace(/\s{2,}/g,' ').trim();
-    document.getElementById('art-s').textContent=desc.slice(0,300)+(desc.length>300?'…':'');
-
-    // Meta
-    document.getElementById('art-data').textContent=fdata(art.pubDate);
-
-    // Immagine
-    if(art.image){
-      document.getElementById('art-img-wrap').innerHTML=
-        `<img src="${art.image}" alt="${strip(art.title)}" onerror="this.parentElement.innerHTML='<div class=cor-ph>${PH}</div>'"/>
-         <div class="art-cap">${categoria} · ${fdata(art.pubDate)}</div>`;
-    }
-
-    // Corpo articolo — usa il DOM del browser per pulire (molto più robusto delle regex)
-    const corpo = art.content || art.description || '';
-
-    function pulisciHTML(html){
-      // Crea un documento temporaneo per parsare l'HTML
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-
-      // Rimuovi script e style
-      doc.querySelectorAll('script,style,noscript').forEach(el=>el.remove());
-
-      // Pulisci ogni immagine: tieni solo src, aggiungi loading=lazy
-      doc.querySelectorAll('img').forEach(img=>{
-        const src = img.getAttribute('src') || img.getAttribute('data-src') || '';
-        if(!src || src.includes('pixel') || src.includes('1x1') || src.includes('tracker') || src.length < 10){
-          img.remove(); return;
-        }
-        // Ricrea img pulita
-        img.removeAttribute('srcset');
-        img.removeAttribute('sizes');
-        img.removeAttribute('decoding');
-        img.removeAttribute('class');
-        img.removeAttribute('width');
-        img.removeAttribute('height');
-        img.removeAttribute('style');
-        img.setAttribute('src', src);
-        img.setAttribute('loading', 'lazy');
-        img.setAttribute('style', 'max-width:100%;height:auto;display:block;margin:24px auto');
-        img.removeAttribute('alt');
-        img.setAttribute('alt', '');
-      });
-
-      // Rimuovi link vuoti e span inutili
-      doc.querySelectorAll('a:empty').forEach(el=>el.remove());
-
-      // Rimuovi paragrafi con riferimenti a siti sorgente
-      const paroleFiltro = ['proviene da','appeared first','the post','su livesicilia','su blogsicilia',
-        'su palermotoday','su cataniatoday','su lasicilia','su ragusanews','su grandangolo'];
-      doc.querySelectorAll('p').forEach(p=>{
-        const testo = p.textContent.toLowerCase();
-        if(paroleFiltro.some(k=>testo.includes(k))) p.remove();
-      });
-
-      // Rimuovi paragrafi vuoti
-      doc.querySelectorAll('p').forEach(p=>{
-        if(!p.textContent.trim() && !p.querySelector('img')) p.remove();
-      });
-
-      // Restituisci solo il body
-      return doc.body.innerHTML;
-    }
-
-    const corpoPulito = pulisciHTML(corpo);
-
-    if(corpoPulito.trim().length > 100){
-      document.getElementById('art-body').innerHTML=corpoPulito;
-    } else {
-      document.getElementById('art-body').innerHTML=`<p>${desc}</p>`;
-    }
-
-    // Mostra
-    document.getElementById('stato').style.display='none';
-    document.getElementById('contenuto').style.display='block';
-    window.scrollTo(0,0);
-
-    // CORRELATI — 3 articoli vicini
-    const correlati=items.filter((_,i)=>i!==id).slice(0,3);
-    document.getElementById('correlati').innerHTML=correlati.map(a=>{
-      const idx=items.indexOf(a);
-      return `<a class="cor" href="articolo.html?id=${idx}">
-        ${a.image
-          ?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="cor-ph" style="display:none">${PH}</div>`
-          :`<div class="cor-ph">${PH}</div>`}
-        <div class="cor-body">
-          <div class="cor-kat">${kat(a)}</div>
-          <h4>${strip(a.title)}</h4>
-          <div class="cor-dt">${fdata(a.pubDate)}</div>
-        </div>
-      </a>`;
-    }).join('');
-  }
-
-  carica();
-})();
+loadImg('https://www.grandangoloagrigento.it/giudiziaria/morta-a-43-anni-dopo-ricovero-per-ischemia-intestinale-chiesto-processo-per-3-medici','corr3');
+setTimeout(()=>loadImg('https://www.grandangoloagrigento.it/agrigento-notizie/aica-si-riunisce-il-consiglio-di-amministrazione-in-arrivo-8-nuove-assunzioni','sb5'),400);
 </script>
 </body>
 </html>
