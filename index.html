@@ -4,28 +4,22 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grandangolo Regionale – Il quotidiano della Sicilia</title>
-  <meta name="description" content="Notizie in tempo reale dalla Sicilia: cronaca, politica, giudiziaria, economia. Agrigento, Palermo, Catania, Caltanissetta e tutta l'isola."/>
-  <meta name="keywords" content="notizie sicilia, grandangolo, agrigento, palermo, catania, caltanissetta, cronaca sicilia"/>
+  <meta name="description" content="Notizie in tempo reale dalla Sicilia: cronaca, politica, giudiziaria, economia. Agrigento, Palermo, Catania e tutta l'isola."/>
+  <meta name="keywords" content="notizie sicilia, grandangolo, agrigento, palermo, catania, cronaca sicilia"/>
   <meta property="og:title" content="Grandangolo Regionale – Il quotidiano della Sicilia"/>
   <meta property="og:description" content="Notizie in tempo reale dalla Sicilia"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://regionale.grandangolosettimanale.it"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-
-  <!-- Google AdSense — sostituisci con il tuo publisher ID -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
   <style>
     :root{
-      --v:#2d6a2d;      /* verde Grandangolo */
-      --v2:#1e4d1e;     /* verde scuro */
-      --v3:#e8f5e8;     /* verde chiarissimo */
-      --n:#111111;      /* nero testo */
-      --n2:#000000;     /* nero puro loghi */
-      --b:#e0e0e0;      /* bordo */
-      --bg:#f5f5f3;     /* sfondo pagina */
-      --m:#777;         /* muted */
+      --v:#2d6a2d;
+      --v2:#1e4d1e;
+      --v3:#e8f5e8;
+      --n:#111;
+      --b:#e0e0e0;
+      --bg:#f5f5f3;
+      --m:#777;
       --w:#fff;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -34,167 +28,161 @@
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
 
-    /* ══ AD SLOT GENERICO ══ */
-    .ad-slot{background:#f0f0ee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:10px;color:#bbb;letter-spacing:1px;text-transform:uppercase;overflow:hidden}
-    .ad-slot ins{display:block;width:100%}
+    /* ── AD SLOT ── */
+    .ad-slot{background:#f0f0ee;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;font-size:9px;color:#ccc;letter-spacing:1px;text-transform:uppercase}
 
     /* ── TOPBAR ── */
-    .tb{background:var(--n2);padding:5px 0;border-bottom:1px solid #222}
-    .tb-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#666}
+    .tb{background:#000;padding:5px 0}
+    .tb-inner{max-width:920px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;font-size:10px;color:#555}
 
-    /* ── AD LEADERBOARD TOP (728×90) ── */
+    /* ── AD TOP LEADERBOARD ── */
     .ad-top{background:#f0f0ee;border-bottom:1px solid var(--b);padding:8px 0;display:flex;justify-content:center}
-    .ad-top .ad-slot{width:728px;height:90px;max-width:100%}
 
     /* ── TESTATA CENTRATA ── */
-    .mast{background:var(--w);border-bottom:3px solid var(--n2);padding:14px 0 0}
-    .mast-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;align-items:center;gap:4px}
-    .logo{font-family:'Noto Serif',Georgia,serif;font-size:42px;font-weight:700;color:var(--n2);letter-spacing:-1px;line-height:1}
+    .mast{background:var(--w);padding:18px 0 0;border-bottom:3px solid #000}
+    .mast-inner{max-width:920px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;align-items:center}
+    .logo{font-family:'Noto Serif',Georgia,serif;font-size:46px;font-weight:700;color:#000;letter-spacing:-1.5px;line-height:1}
     .logo span{color:var(--v)}
-    .logo-sub{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--m);margin-bottom:8px}
+    .logo-sub{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#aaa;margin-top:4px;margin-bottom:12px}
 
-    /* ── NAV ── */
+    /* ── NAV CENTRATA ── */
     .navbar{background:var(--w);border-bottom:1px solid var(--b)}
-    .navbar-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap}
-    .navbar a{display:block;padding:9px 12px;font-size:11px;font-weight:700;color:#444;white-space:nowrap;border-bottom:3px solid transparent;transition:color .12s,border-color .12s}
+    .navbar-inner{max-width:920px;margin:0 auto;padding:0 16px;display:flex;justify-content:center;flex-wrap:wrap}
+    .navbar a{display:block;padding:9px 11px;font-size:11px;font-weight:700;color:#444;white-space:nowrap;border-bottom:3px solid transparent;transition:color .12s,border-color .12s}
     .navbar a:hover,.navbar a.on{color:var(--v);border-bottom-color:var(--v)}
 
-    /* ── IN AGGIORNAMENTO ── */
-    .breaking{background:var(--w);border-bottom:2px solid var(--n2);padding:6px 0}
-    .breaking-inner{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:0;flex-wrap:wrap}
-    .breaking-label{font-size:10px;font-weight:700;color:var(--n);margin-right:10px;white-space:nowrap;display:flex;align-items:center;gap:6px}
-    .live-dot{width:8px;height:8px;background:#c00;border-radius:50%;flex-shrink:0;animation:blink 1s ease-in-out infinite}
+    /* ── 4 TEMI CALDI ── */
+    .temi{background:var(--w);border-bottom:2px solid #000;padding:8px 0}
+    .temi-inner{max-width:920px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+    .temi-label{font-size:10px;font-weight:700;color:#000;margin-right:8px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+    .live-dot{width:7px;height:7px;background:#c00;border-radius:50%;animation:blink 1s ease-in-out infinite;flex-shrink:0}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-    .breaking-items{display:flex;flex-wrap:wrap;gap:0}
-    .breaking-items a{font-size:10px;font-weight:700;color:#111;padding:3px 10px;border-right:1px solid var(--b);text-transform:uppercase;letter-spacing:.3px;transition:color .12s}
-    .breaking-items a:hover{color:var(--v);text-decoration:underline}
-    .breaking-items a:last-child{border-right:none}
+    .tema{font-size:10px;font-weight:700;color:var(--n);background:#f0f0f0;padding:4px 12px;border:1px solid var(--b);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;transition:background .12s,color .12s}
+    .tema:hover{background:var(--v);color:#fff;border-color:var(--v)}
 
-    /* ── BADGE IN AGGIORNAMENTO su notizia ── */
-    .badge-live{display:inline-flex;align-items:center;gap:5px;background:#c00;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
-    .badge-live .dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1s ease-in-out infinite}
+    /* ── COLONNA CENTRALE ── */
+    .page{max-width:920px;margin:0 auto;padding:0 16px}
+    .layout{display:grid;grid-template-columns:1fr 280px;gap:20px;padding-top:16px}
 
-    /* ── TITOLETTO (label argomento attivabile dal backend) ── */
-    .titoletto{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--v);background:var(--v3);padding:2px 8px;display:inline-block;margin-bottom:5px}
-
-    /* ── MAIN WRAP ── */
-    .page{max-width:1200px;margin:0 auto;padding:0 16px}
-    .layout{display:grid;grid-template-columns:1fr 300px;gap:20px;padding-top:16px}
-
-    /* ── AD MID-PAGE (970×90) — tra hero e sezioni ── */
-    .ad-mid{padding:12px 0;display:flex;justify-content:center}
-    .ad-mid .ad-slot{width:970px;height:90px;max-width:100%}
-
-    /* ── HERO COMPATTO ── */
-    .hero-block{display:grid;grid-template-columns:1fr 260px;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--b);margin-bottom:0}
-    .hero-main{display:flex;flex-direction:column;gap:7px}
-    .hero-img{width:100%;height:260px;object-fit:cover;display:block;background:#1a2530}
-    .hero-kat{font-size:10px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
-    .hero-h{font-family:'Noto Serif',Georgia,serif;font-size:24px;font-weight:700;line-height:1.2;color:var(--n2)}
-    .hero-h:hover{color:var(--v)}
-    .hero-occhiello{font-size:13px;line-height:1.6;color:#555}
-    .hero-dt{font-size:10px;color:var(--m);text-transform:uppercase}
-
-    .hero-col{display:flex;flex-direction:column;gap:0}
-    .hcol-item{padding:9px 0;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:4px;transition:opacity .12s}
-    .hcol-item:hover{opacity:.8}
-    .hcol-item:first-child{padding-top:0}
-    .hcol-item:last-child{border-bottom:none}
-    .hcol-item img{width:100%;height:85px;object-fit:cover;background:#e0e0e0;margin-bottom:4px}
-    .hcol-item .kat{font-size:9px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
-    .hcol-item h3{font-family:'Noto Serif',Georgia,serif;font-size:13px;font-weight:700;line-height:1.3;color:var(--n2)}
-    .hcol-item .dt{font-size:9px;color:var(--m);text-transform:uppercase}
-
-    /* ── BARRA 3 ARTICOLI APPROFONDIMENTO ── */
-    .bar3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--n2);border-bottom:1px solid var(--b);margin-bottom:0}
-    .bar3-item{padding:10px 14px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:4px;transition:background .12s}
-    .bar3-item:hover{background:#fafafa}
-    .bar3-item:first-child{padding-left:0}
-    .bar3-item:last-child{border-right:none;padding-right:0}
-    .bar3-item .label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);margin-bottom:2px}
-    .bar3-item h4{font-family:'Noto Serif',Georgia,serif;font-size:14px;font-weight:700;line-height:1.3;color:var(--n2)}
-    .bar3-item .occhiello{font-size:11px;line-height:1.5;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-    .bar3-item .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto}
-
-    /* ── SECTION LABEL ── */
-    .sl{display:flex;align-items:center;gap:8px;margin:16px 0 12px;border-bottom:2px solid var(--n2);padding-bottom:6px}
-    .sl-t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--n2);white-space:nowrap}
-    .sl-badge{background:var(--v);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:1px;text-transform:uppercase}
+    /* ── SEZIONE LABEL ── */
+    .sl{display:flex;align-items:center;gap:8px;margin:16px 0 10px;border-bottom:2px solid #000;padding-bottom:6px}
+    .sl-t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#000}
     .sl-line{flex:1}
     .sl-ts{font-size:10px;color:var(--m);font-style:italic}
 
-    /* ── GRIGLIA 3 COL ── */
+    /* ── BADGE LIVE ── */
+    .badge-live{display:inline-flex;align-items:center;gap:5px;background:#c00;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}
+    .badge-live .dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 1s ease-in-out infinite}
+
+    /* ── TITOLETTO ── */
+    .titoletto{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);background:var(--v3);padding:2px 7px;display:inline-block;margin-bottom:4px}
+
+    /* ── HERO (foto grande sx + colonna dx) ── */
+    .hero-block{display:grid;grid-template-columns:1fr 220px;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--b)}
+    .hero-left{display:flex;flex-direction:column;gap:7px}
+    .hero-left img{width:100%;height:250px;object-fit:cover;display:block;background:#1a2530}
+    .hero-kat{font-size:10px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
+    .hero-h{font-family:'Noto Serif',Georgia,serif;font-size:23px;font-weight:700;line-height:1.2;color:#000}
+    .hero-h:hover{color:var(--v)}
+    .hero-s{font-size:13px;line-height:1.6;color:#555}
+    .hero-dt{font-size:10px;color:var(--m);text-transform:uppercase}
+
+    .hero-col{display:flex;flex-direction:column;gap:0}
+    .hcol-item{padding:8px 0;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:4px;transition:opacity .12s}
+    .hcol-item:hover{opacity:.75}
+    .hcol-item:first-child{padding-top:0}
+    .hcol-item:last-child{border-bottom:none}
+    .hcol-item img{width:100%;height:78px;object-fit:cover;background:#e0e0e0;margin-bottom:3px}
+    .hcol-item .kat{font-size:9px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
+    .hcol-item h3{font-family:'Noto Serif',Georgia,serif;font-size:12px;font-weight:700;line-height:1.3;color:#000}
+    .hcol-item .dt{font-size:9px;color:var(--m);text-transform:uppercase}
+
+    /* ── BARRA 3 APPROFONDIMENTI ── */
+    .bar3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin-bottom:0}
+    .bar3-item{padding:10px 12px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:4px;background:var(--w);transition:background .12s}
+    .bar3-item:hover{background:#fafafa}
+    .bar3-item:first-child{padding-left:0}
+    .bar3-item:last-child{border-right:none;padding-right:0}
+    .bar3-item .label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--v)}
+    .bar3-item h4{font-family:'Noto Serif',Georgia,serif;font-size:13px;font-weight:700;line-height:1.3;color:#000}
+    .bar3-item .s{font-size:11px;line-height:1.5;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .bar3-item .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto}
+
+    /* ── G3 CON IMMAGINI SEMPRE ── */
     .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--b);margin-bottom:0}
-    .c3{padding:12px 14px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:5px;background:var(--w);transition:background .12s}
+    .c3{padding:12px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:5px;background:var(--w);transition:background .12s}
     .c3:hover{background:#fafafa}
     .c3:first-child{padding-left:0}
     .c3:last-child{border-right:none;padding-right:0}
-    .c3 img{width:100%;height:130px;object-fit:cover;background:#e8e8e8;margin-bottom:4px}
-    .c3-ph{width:100%;height:130px;background:#eee;margin-bottom:4px;display:flex;align-items:center;justify-content:center}
+    .c3-img-wrap{width:100%;height:120px;overflow:hidden;background:#eee;margin-bottom:4px;flex-shrink:0}
+    .c3-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .c3:hover .c3-img-wrap img{transform:scale(1.03)}
     .c3 .kat{font-size:9px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
-    .c3 h3{font-family:'Noto Serif',Georgia,serif;font-size:15px;font-weight:700;line-height:1.3;color:var(--n2);flex:1}
-    .c3 .occhiello{font-size:12px;line-height:1.55;color:#555;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-    .c3 .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:6px;border-top:1px solid var(--b)}
+    .c3 h3{font-family:'Noto Serif',Georgia,serif;font-size:14px;font-weight:700;line-height:1.3;color:#000;flex:1}
+    .c3 .s{font-size:11px;line-height:1.55;color:#555;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .c3 .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:5px;border-top:1px solid var(--b)}
 
-    /* ── GRIGLIA 4 COL ── */
+    /* ── G2 FOTO GRANDI ── */
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--b);margin-bottom:0}
+    .c2{position:relative;overflow:hidden;height:220px;background:#111;cursor:pointer}
+    .c2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;transition:opacity .3s,transform .4s}
+    .c2:hover img{opacity:.58;transform:scale(1.03)}
+    .c2-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.15) 60%,transparent 100%)}
+    .c2-body{position:absolute;bottom:0;left:0;right:0;padding:14px;z-index:2}
+    .c2-body .kat{font-size:9px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+    .c2-body h3{font-family:'Noto Serif',Georgia,serif;font-size:16px;font-weight:700;line-height:1.25;color:#fff}
+    .c2-body .dt{font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:5px}
+    .c2:first-child{border-right:2px solid var(--bg)}
+
+    /* ── G4 CON IMMAGINI ── */
     .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--b);margin-bottom:0}
-    .c4{padding:11px 12px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:4px;background:var(--w);transition:background .12s}
+    .c4{padding:10px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:4px;background:var(--w);transition:background .12s}
     .c4:hover{background:#fafafa}
     .c4:first-child{padding-left:0}
     .c4:last-child{border-right:none;padding-right:0}
-    .c4 img{width:100%;height:95px;object-fit:cover;background:#e8e8e8;margin-bottom:4px}
-    .c4-ph{width:100%;height:95px;background:#eee;margin-bottom:4px}
+    .c4-img-wrap{width:100%;height:90px;overflow:hidden;background:#eee;margin-bottom:3px;flex-shrink:0}
+    .c4-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .c4:hover .c4-img-wrap img{transform:scale(1.03)}
     .c4 .kat{font-size:9px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
-    .c4 h4{font-family:'Noto Serif',Georgia,serif;font-size:13px;font-weight:700;line-height:1.3;color:var(--n2);flex:1}
-    .c4 .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:5px;border-top:1px solid var(--b)}
+    .c4 h4{font-family:'Noto Serif',Georgia,serif;font-size:12px;font-weight:700;line-height:1.3;color:#000;flex:1}
+    .c4 .dt{font-size:9px;color:var(--m);text-transform:uppercase;margin-top:auto;padding-top:4px;border-top:1px solid var(--b)}
 
-    /* ── AD IN-CONTENT (300×250) nella sidebar ── */
-    .ad-sidebar{margin-top:16px}
-    .ad-sidebar .ad-slot{width:300px;height:250px}
+    /* ── AD IN-CONTENT ── */
+    .ad-strip{padding:10px 0;display:flex;justify-content:center}
 
-    /* ── SEZIONE VIDEO YOUTUBE ── */
-    .yt-section{border-top:2px solid var(--n2);padding-top:12px;margin-top:16px;margin-bottom:4px}
-    .yt-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .yt-header svg{flex-shrink:0}
-    .yt-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--n2)}
-    .yt-sub{font-size:10px;color:var(--m);margin-left:auto}
+    /* ── VIDEO YOUTUBE ── */
+    .yt-section{border-top:2px solid #000;padding-top:12px;margin-top:4px}
+    .yt-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .yt-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#000}
+    .yt-link{margin-left:auto;font-size:10px;color:var(--v);font-weight:600}
+    .yt-link:hover{text-decoration:underline}
     .yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-    .yt-card{padding:0 14px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:7px}
+    .yt-card{padding:0 12px;border-right:1px solid var(--b);display:flex;flex-direction:column;gap:6px}
     .yt-card:first-child{padding-left:0}
     .yt-card:last-child{border-right:none;padding-right:0}
     .yt-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a1a;cursor:pointer}
     .yt-thumb img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
-    .yt-card:hover .yt-thumb img{opacity:.85}
-    .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-    .yt-play-btn{width:48px;height:48px;background:rgba(0,0,0,.75);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .yt-card:hover .yt-thumb img{opacity:.8}
+    .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .yt-play-btn{width:44px;height:44px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
     .yt-card:hover .yt-play-btn{background:rgba(45,106,45,.9)}
-    .yt-card h4{font-family:'Noto Serif',Georgia,serif;font-size:13px;font-weight:700;line-height:1.3;color:var(--n2)}
+    .yt-card h4{font-family:'Noto Serif',Georgia,serif;font-size:12px;font-weight:700;line-height:1.3;color:#000}
     .yt-card .dt{font-size:9px;color:var(--m);text-transform:uppercase}
 
     /* ── SIDEBAR ── */
-    .sidebar{display:flex;flex-direction:column;gap:0}
-
-    /* Spotify */
-    .spotify-box{border-top:2px solid var(--n2);padding-top:12px;margin-bottom:16px}
-    .spotify-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--n2);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-
-    /* Ultime notizie sidebar */
-    .sb-box{border-top:2px solid var(--n2);padding-top:12px}
-    .sb-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--n2);margin-bottom:10px}
-    .sb-item{padding:8px 0;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:3px}
+    .sidebar{display:flex;flex-direction:column;gap:16px}
+    .spotify-box{border-top:2px solid #000;padding-top:12px}
+    .spotify-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#000;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+    .sb-box{border-top:2px solid #000;padding-top:12px}
+    .sb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#000;margin-bottom:10px}
+    .sb-item{padding:7px 0;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:3px}
     .sb-item:last-child{border-bottom:none}
     .sb-item:hover h4{color:var(--v)}
     .sb-item .kat{font-size:9px;font-weight:700;color:var(--v);text-transform:uppercase;letter-spacing:.5px}
-    .sb-item h4{font-family:'Noto Serif',Georgia,serif;font-size:12px;font-weight:700;line-height:1.3;color:var(--n2);transition:color .12s}
+    .sb-item h4{font-family:'Noto Serif',Georgia,serif;font-size:12px;font-weight:700;line-height:1.3;color:#000;transition:color .12s}
     .sb-item .dt{font-size:9px;color:var(--m);text-transform:uppercase}
 
-    /* ── SPINNER ── */
-    #stato{text-align:center;padding:60px 20px}
-    .spin{width:32px;height:32px;border:2px solid var(--b);border-top-color:var(--v);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 12px}
-    @keyframes sp{to{transform:rotate(360deg)}}
-    #stato p{font-size:13px;color:var(--m)}
-
-    /* ── SCROLL INFINITO ── */
+    /* ── SCROLL ── */
     .dots{display:none;gap:5px;justify-content:center;padding:20px 0}
     .dots.show{display:flex}
     .dots span{width:6px;height:6px;border-radius:50%;background:var(--v);animation:dot 1s ease-in-out infinite}
@@ -202,30 +190,35 @@
     .dots span:nth-child(3){animation-delay:.3s}
     @keyframes dot{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
 
+    /* ── SPINNER ── */
+    #stato{text-align:center;padding:60px 0}
+    .spin{width:32px;height:32px;border:2px solid var(--b);border-top-color:var(--v);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 12px}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    #stato p{font-size:13px;color:var(--m)}
+
+    /* placeholder */
+    .ph{width:100%;height:100%;background:#eee;display:flex;align-items:center;justify-content:center}
+    .ph svg{opacity:.2}
+
     /* ── FOOTER ── */
-    .ad-footer{padding:12px 0;display:flex;justify-content:center;background:var(--bg);border-top:1px solid var(--b)}
-    .ad-footer .ad-slot{width:728px;height:90px;max-width:100%}
-    footer{background:var(--n2);border-top:3px solid var(--v);padding:20px 16px;text-align:center}
+    .ad-footer-wrap{padding:12px 0;display:flex;justify-content:center;background:var(--bg);border-top:1px solid var(--b)}
+    footer{background:#000;border-top:3px solid var(--v);padding:20px 16px;text-align:center}
     .fb{font-family:'Noto Serif',Georgia,serif;font-size:22px;font-weight:700;color:#fff}
     .fb span{color:var(--v)}
     .fs{font-size:9px;color:#444;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
 
-    /* PH icon */
-    .ph-ico{opacity:.2}
-
     /* ── RESPONSIVE ── */
-    @media(max-width:960px){
+    @media(max-width:860px){
       .layout{grid-template-columns:1fr}
       .hero-block{grid-template-columns:1fr}
       .bar3{grid-template-columns:1fr 1fr}
       .g3{grid-template-columns:1fr 1fr}
       .g4{grid-template-columns:1fr 1fr}
       .yt-grid{grid-template-columns:1fr 1fr}
-      .ad-slot{max-width:100%}
     }
-    @media(max-width:580px){
-      .bar3,.g3,.g4,.yt-grid{grid-template-columns:1fr}
-      .logo{font-size:30px}
+    @media(max-width:520px){
+      .bar3,.g3,.g4,.yt-grid,.g2{grid-template-columns:1fr}
+      .logo{font-size:32px}
       .navbar-inner{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}
     }
   </style>
@@ -240,11 +233,10 @@
   </div>
 </div>
 
-<!-- AD LEADERBOARD TOP — Google AdSense 728×90 -->
+<!-- AD LEADERBOARD 728×90 -->
 <div class="ad-top">
-  <div class="ad-slot">
-    <!-- <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-    SPAZIO PUBBLICITARIO — 728×90
+  <div class="ad-slot" style="width:728px;height:90px;max-width:100%">
+    <!-- AdSense 728×90 -->SPAZIO PUBBLICITARIO
   </div>
 </div>
 
@@ -274,16 +266,14 @@
   </div>
 </nav>
 
-<!-- IN AGGIORNAMENTO -->
-<div class="breaking">
-  <div class="breaking-inner">
-    <div class="breaking-label">
+<!-- 4 TEMI CALDI -->
+<div class="temi">
+  <div class="temi-inner">
+    <div class="temi-label">
       <span class="live-dot"></span>
       In aggiornamento:
     </div>
-    <div class="breaking-items" id="breaking-items">
-      <a href="#">Caricamento…</a>
-    </div>
+    <div id="temi-box" style="display:flex;gap:4px;flex-wrap:wrap"></div>
   </div>
 </div>
 
@@ -291,128 +281,107 @@
 <div class="page">
   <div class="layout">
 
-    <!-- COLONNA SX -->
-    <div id="contenuto-sx">
+    <!-- CONTENUTO PRINCIPALE -->
+    <div id="sx">
       <div id="stato">
         <div class="spin"></div>
         <p>Caricamento notizie…</p>
       </div>
     </div>
 
-    <!-- SIDEBAR DX -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
 
       <!-- SPOTIFY -->
       <div class="spotify-box">
         <div class="spotify-label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           Podcast
         </div>
         <iframe src="https://open.spotify.com/embed/show/5Y3V7NEUPSSBZVbFhKwj6X?utm_source=generator&theme=0"
           width="100%" height="352" frameborder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy" style="border-radius:4px"></iframe>
+          loading="lazy" style="border-radius:4px;display:block"></iframe>
       </div>
 
-      <!-- AD 300×250 sidebar -->
-      <div class="ad-sidebar">
-        <div class="ad-slot" style="width:300px;height:250px">
-          <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-          BANNER 300×250
-        </div>
-      </div>
+      <!-- AD 300×250 -->
+      <div class="ad-slot" style="width:280px;height:250px"><!-- AdSense 300×250 -->BANNER</div>
 
       <!-- ULTIME NOTIZIE -->
-      <div class="sb-box" style="margin-top:16px">
+      <div class="sb-box">
         <div class="sb-label">Ultime notizie</div>
-        <div id="sb-list"><div style="font-size:12px;color:var(--m);font-style:italic">Caricamento…</div></div>
+        <div id="sb-list"><div style="font-size:11px;color:var(--m);font-style:italic">Caricamento…</div></div>
       </div>
 
-      <!-- AD 300×250 sidebar bassa -->
-      <div class="ad-sidebar">
-        <div class="ad-slot" style="width:300px;height:250px">
-          <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-          BANNER 300×250
-        </div>
-      </div>
+      <!-- AD 300×250 bassa -->
+      <div class="ad-slot" style="width:280px;height:250px"><!-- AdSense 300×250 -->BANNER</div>
 
     </div>
   </div>
 </div>
 
-<!-- SCROLL DOTS -->
+<!-- DOTS SCROLL -->
 <div class="page">
   <div class="dots" id="dots"><span></span><span></span><span></span></div>
   <div id="sentinel" style="height:40px"></div>
 </div>
 
-<!-- AD FOOTER 728×90 -->
-<div class="ad-footer">
-  <div class="ad-slot">
-    <!-- <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-    SPAZIO PUBBLICITARIO — 728×90
-  </div>
+<!-- AD FOOTER -->
+<div class="ad-footer-wrap">
+  <div class="ad-slot" style="width:728px;height:90px;max-width:100%"><!-- AdSense 728×90 -->SPAZIO PUBBLICITARIO</div>
 </div>
 
 <footer>
   <div class="fb">Grandangolo<span>Regionale</span></div>
-  <div class="fs">Edizione Sicilia · Aggiornato ogni 10 minuti · © 2026 Grandangolo Settimanale</div>
+  <div class="fs">Edizione Sicilia · Aggiornato ogni 10 minuti · © 2026</div>
 </footer>
 
 <script>
 (function(){
-  const YT_CH = 'UCS_DYWdvdXj5eCpEYBIkVQg';
-  // Video placeholder — thumbnail ufficiali dal canale
-  // Verranno sostituiti dai video reali via RSS
-  const YT_PLACEHOLDERS = [
-    {id:'dQw4w9WgXcQ', title:'Grandangolo News on Video — Edizione di oggi', data:''},
-    {id:'dQw4w9WgXcQ', title:'Le notizie della giornata dalla Sicilia', data:''},
-    {id:'dQw4w9WgXcQ', title:'Grandangolo Agrigento — Approfondimento', data:''},
-  ];
+  const YT_CH='UCS_DYWdvdXj5eCpEYBIkVQg';
 
-  document.getElementById('data-top').textContent =
+  document.getElementById('data-top').textContent=
     new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 
-  let tutti=[], mostrati=0, loading=false, done=false;
+  let tutti=[],mostrati=0,loading=false,done=false;
 
-  const PH=`<svg class="ph-ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`;
+  const PH_SVG=`<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`;
 
   function strip(h){const d=document.createElement('div');d.innerHTML=h;return(d.textContent||'').replace(/\s+/g,' ').trim();}
   function fdata(s){if(!s)return'';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'numeric'});}
   function lnk(a){return'articolo.html?id='+tutti.indexOf(a);}
   function kat(a){return a.category&&a.category!==a.fonte?a.category:'Sicilia';}
+  function liveBadge(a){return a._live?`<span class="badge-live"><span class="dot"></span>In aggiornamento</span>`:''}
+  function titoletto(a){return a._titoletto?`<span class="titoletto">${a._titoletto}</span>`:''}
 
-  // Badge IN AGGIORNAMENTO (controllabile dal feed — campo _live)
-  function liveBadge(a){
-    return a._live ? `<span class="badge-live"><span class="dot"></span>In aggiornamento</span>` : '';
-  }
-  // Titoletto argomento (controllabile dal feed — campo _titoletto)
-  function titoletto(a){
-    return a._titoletto ? `<span class="titoletto">${a._titoletto}</span>` : '';
-  }
-
-  function imgEl(src,h,lazy){
-    if(src) return `<img src="${src}" alt="" style="width:100%;height:${h}px;object-fit:cover;display:block;background:#e0e0e0"${lazy?' loading="lazy"':''} onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div style="width:100%;height:${h}px;background:#eee;display:none;align-items:center;justify-content:center">${PH}</div>`;
-    return `<div style="width:100%;height:${h}px;background:#eee;display:flex;align-items:center;justify-content:center">${PH}</div>`;
+  // Immagine con placeholder sempre visibile
+  function imgWrap(src,cls,h){
+    return `<div class="${cls}" style="height:${h}px">${
+      src
+        ?`<img src="${src}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="ph" style="display:none">${PH_SVG}</div>`
+        :`<div class="ph">${PH_SVG}</div>`
+    }</div>`;
   }
 
-  // ── HERO COMPATTO ──
-  function mkHero(p, side){
+  // ── HERO ──
+  function mkHero(p,side){
     return `
     <div class="hero-block">
-      <a class="hero-main" href="${lnk(p)}">
+      <a class="hero-left" href="${lnk(p)}" style="display:flex;flex-direction:column;gap:7px">
         ${liveBadge(p)}
-        ${imgEl(p.image,260,false)}
+        <div style="width:100%;height:250px;overflow:hidden;background:#1a2530;flex-shrink:0">
+          ${p.image?`<img src="${p.image}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">`:`<div class="ph">${PH_SVG}</div>`}
+        </div>
         ${titoletto(p)}
         <div class="hero-kat">${kat(p)}</div>
         <div class="hero-h">${strip(p.title)}</div>
-        <div class="hero-occhiello">${(p.description||'').slice(0,200)}…</div>
+        <div class="hero-s">${(p.description||'').slice(0,200)}…</div>
         <div class="hero-dt">${fdata(p.pubDate)}</div>
       </a>
       <div class="hero-col">
         ${side.map(a=>`
           <a class="hcol-item" href="${lnk(a)}">
-            ${a.image?`<img src="${a.image}" alt="" style="width:100%;height:85px;object-fit:cover;background:#e0e0e0" loading="lazy" onerror="this.style.display='none'"/>`:''}
+            ${a.image?`<img src="${a.image}" alt="" style="width:100%;height:78px;object-fit:cover;background:#e0e0e0" loading="lazy" onerror="this.style.display='none'"/>`:`<div style="width:100%;height:78px;background:#eee;display:flex;align-items:center;justify-content:center;margin-bottom:3px">${PH_SVG}</div>`}
             ${liveBadge(a)}
             <div class="kat">${kat(a)}</div>
             <h3>${strip(a.title)}</h3>
@@ -422,38 +391,56 @@
     </div>`;
   }
 
-  // ── BARRA 3 APPROFONDIMENTI (Palermo/Catania/Caltanissetta prioritari) ──
+  // ── BARRA 3 ──
   function mkBar3(items){
     return `<div class="bar3">${items.map(a=>`
       <a class="bar3-item" href="${lnk(a)}">
-        ${liveBadge(a)}
+        ${liveBadge(a)}${titoletto(a)}
         <div class="label">${kat(a)}</div>
         <h4>${strip(a.title)}</h4>
-        <div class="occhiello">${(a.description||'').slice(0,100)}…</div>
+        <div class="s">${(a.description||'').slice(0,90)}…</div>
         <div class="dt">${fdata(a.pubDate)}</div>
       </a>`).join('')}</div>`;
   }
 
-  // ── G3 ──
+  // ── G3 con immagini sempre ──
   function mkG3(items){
     return `<div class="g3">${items.map(a=>`
       <a class="c3" href="${lnk(a)}">
         ${liveBadge(a)}
-        ${imgEl(a.image,130,true)}
+        <div class="c3-img-wrap">
+          ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="ph" style="display:none">${PH_SVG}</div>`:`<div class="ph">${PH_SVG}</div>`}
+        </div>
         ${titoletto(a)}
         <div class="kat">${kat(a)}</div>
         <h3>${strip(a.title)}</h3>
-        <div class="occhiello">${(a.description||'').slice(0,110)}…</div>
+        <div class="s">${(a.description||'').slice(0,100)}…</div>
         <div class="dt">${fdata(a.pubDate)}</div>
       </a>`).join('')}</div>`;
   }
 
-  // ── G4 ──
+  // ── G2 FOTO GRANDI ──
+  function mkG2(items){
+    return `<div class="g2">${items.map(a=>`
+      <a class="c2" href="${lnk(a)}">
+        ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none'">`:''}
+        <div class="c2-grad"></div>
+        <div class="c2-body">
+          <div class="kat">${kat(a)}</div>
+          <h3>${strip(a.title)}</h3>
+          <div class="dt">${fdata(a.pubDate)}</div>
+        </div>
+      </a>`).join('')}</div>`;
+  }
+
+  // ── G4 con immagini ──
   function mkG4(items){
     return `<div class="g4">${items.map(a=>`
       <a class="c4" href="${lnk(a)}">
         ${liveBadge(a)}
-        ${imgEl(a.image,95,true)}
+        <div class="c4-img-wrap">
+          ${a.image?`<img src="${a.image}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="ph" style="display:none">${PH_SVG}</div>`:`<div class="ph">${PH_SVG}</div>`}
+        </div>
         ${titoletto(a)}
         <div class="kat">${kat(a)}</div>
         <h4>${strip(a.title)}</h4>
@@ -461,51 +448,66 @@
       </a>`).join('')}</div>`;
   }
 
-  // ── SEZIONE VIDEO YOUTUBE ──
-  function mkYT(videos){
-    return `
-    <div class="yt-section">
-      <div class="yt-header">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#2d6a2d"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-        <span class="yt-title">Video — Grandangolo News on Video</span>
-        <a class="yt-sub" href="https://www.youtube.com/channel/${YT_CH}" target="_blank" rel="noopener">Vai al canale →</a>
-      </div>
-      <div class="yt-grid">
-        ${videos.map(v=>`
-          <a class="yt-card" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${v.id}/default.jpg'"/>
-              <div class="yt-play">
-                <div class="yt-play-btn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-            </div>
-            <h4>${v.title}</h4>
-            ${v.data?`<div class="dt">${v.data}</div>`:''}
-          </a>`).join('')}
-      </div>
-    </div>`;
+  // ── AD STRIP ──
+  function adStrip(w,h,label){
+    return `<div class="ad-strip"><div class="ad-slot" style="width:${w}px;height:${h}px;max-width:100%">${label||'SPAZIO PUBBLICITARIO'}</div></div>`;
   }
 
-  // ── CARICA VIDEO YOUTUBE ──
+  // ── YOUTUBE ──
   async function caricaYT(){
+    const slot=document.getElementById('yt-slot');
+    if(!slot) return;
     try{
-      const r = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id='+YT_CH)}`);
-      const j = await r.json();
-      const doc = new DOMParser().parseFromString(j.contents,'application/xml');
-      const entries = Array.from(doc.querySelectorAll('entry')).slice(0,3);
+      const r=await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id='+YT_CH)}`);
+      const j=await r.json();
+      const doc=new DOMParser().parseFromString(j.contents,'application/xml');
+      const entries=Array.from(doc.querySelectorAll('entry')).slice(0,3);
       if(!entries.length) throw new Error();
-      const videos = entries.map(e=>({
-        id: e.querySelector('videoId')?.textContent||'',
-        title: e.querySelector('title')?.textContent||'',
-        data: (()=>{const d=new Date(e.querySelector('published')?.textContent||'');return isNaN(d)?'':d.toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'numeric'});})()
-      })).filter(v=>v.id);
-      document.getElementById('yt-slot').innerHTML = mkYT(videos);
+      slot.innerHTML=`
+        <div class="yt-section">
+          <div class="yt-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--v)"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            <span class="yt-title">Video — Grandangolo News on Video</span>
+            <a class="yt-link" href="https://www.youtube.com/channel/${YT_CH}" target="_blank" rel="noopener">Vai al canale →</a>
+          </div>
+          <div class="yt-grid">
+            ${entries.map(e=>{
+              const id=e.querySelector('videoId')?.textContent||'';
+              const title=e.querySelector('title')?.textContent||'';
+              const pub=e.querySelector('published')?.textContent||'';
+              const d=new Date(pub);
+              const data=isNaN(d)?'':d.toLocaleDateString('it-IT',{day:'numeric',month:'short',year:'numeric'});
+              return `<a class="yt-card" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">
+                <div class="yt-thumb">
+                  <img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" alt="${title}" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${id}/hqdefault.jpg'"/>
+                  <div class="yt-play"><div class="yt-play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
+                </div>
+                <h4>${title}</h4>
+                <div class="dt">${data}</div>
+              </a>`;
+            }).join('')}
+          </div>
+        </div>`;
     }catch(e){
-      // Fallback: usa i placeholder con thumbnail reali del canale
-      // I thumbnail sono generati da YouTube — mostrano video reali anche senza API
-      document.getElementById('yt-slot').innerHTML = mkYT(YT_PLACEHOLDERS);
+      // Fallback: 3 card placeholder con link al canale
+      slot.innerHTML=`
+        <div class="yt-section">
+          <div class="yt-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--v)"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            <span class="yt-title">Video — Grandangolo News on Video</span>
+            <a class="yt-link" href="https://www.youtube.com/channel/${YT_CH}" target="_blank" rel="noopener">Vai al canale →</a>
+          </div>
+          <div class="yt-grid">
+            ${[0,1,2].map(i=>`
+              <a class="yt-card" href="https://www.youtube.com/channel/${YT_CH}" target="_blank" rel="noopener">
+                <div class="yt-thumb" style="background:#1a1a1a">
+                  <img src="https://img.youtube.com/vi/placeholder/mqdefault.jpg" alt="Grandangolo Video" loading="lazy" onerror="this.style.display='none'"/>
+                  <div class="yt-play"><div class="yt-play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
+                </div>
+                <h4>Grandangolo News on Video${i>0?' — Edizione precedente':''}</h4>
+              </a>`).join('')}
+          </div>
+        </div>`;
     }
   }
 
@@ -525,99 +527,96 @@
     }
 
     tutti=dati.items;
-    const sx=document.getElementById('contenuto-sx');
-    sx.innerHTML='';
+    document.getElementById('stato').remove();
 
-    // BREAKING — titoli tagliati
-    document.getElementById('breaking-items').innerHTML=
-      tutti.slice(0,7).map(a=>`<a href="${lnk(a)}">${strip(a.title).slice(0,35).toUpperCase()}</a>`).join('');
+    // 4 TEMI CALDI — prime 4 notizie
+    document.getElementById('temi-box').innerHTML=
+      tutti.slice(0,4).map(a=>`<a class="tema" href="${lnk(a)}">${strip(a.title).slice(0,28).toUpperCase()}</a>`).join('');
 
-    // SIDEBAR ultime notizie (prime 12)
+    // SIDEBAR
     document.getElementById('sb-list').innerHTML=
-      tutti.slice(0,12).map(a=>`
+      tutti.slice(0,14).map(a=>`
         <a class="sb-item" href="${lnk(a)}">
           <div class="kat">${kat(a)}</div>
           <h4>${strip(a.title)}</h4>
           <div class="dt">${fdata(a.pubDate)}</div>
         </a>`).join('');
 
-    // HERO COMPATTO (art 0 + laterali 1-4)
+    const sx=document.getElementById('sx');
+
+    // SL APERTURA
+    sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Apertura</span><div class="sl-line"></div><span class="sl-ts" id="agg-ts"></span></div>`);
+
+    // HERO (0 + laterali 1-4)
     sx.insertAdjacentHTML('beforeend', mkHero(tutti[0], tutti.slice(1,5)));
 
-    // BARRA 3 ARTICOLI — priorità Palermo/Catania/Caltanissetta
-    const citta = ['palermo','catania','caltanissetta','agrigento','messina','ragusa'];
-    const barItems = [];
-    const usati = new Set([0,1,2,3,4]);
+    // BARRA 3 APPROFONDIMENTI — priorità città
+    const citta=['palermo','catania','caltanissetta','agrigento','messina','ragusa'];
+    const usati=new Set([0,1,2,3,4]);
+    const barItems=[];
     for(const c of citta){
       if(barItems.length>=3) break;
-      const idx = tutti.findIndex((a,i)=>!usati.has(i) && (a.category||'').toLowerCase().includes(c));
-      if(idx>=0){ barItems.push(tutti[idx]); usati.add(idx); }
+      const idx=tutti.findIndex((a,i)=>!usati.has(i)&&(kat(a).toLowerCase().includes(c)||(a.description||'').toLowerCase().includes(c)));
+      if(idx>=0){barItems.push(tutti[idx]);usati.add(idx);}
     }
-    // Completa con articoli generici se non bastano
     for(let i=5;barItems.length<3&&i<tutti.length;i++){
-      if(!usati.has(i)){ barItems.push(tutti[i]); usati.add(i); }
+      if(!usati.has(i)){barItems.push(tutti[i]);usati.add(i);}
     }
     sx.insertAdjacentHTML('beforeend', mkBar3(barItems));
 
-    // AD MID-PAGE
-    sx.insertAdjacentHTML('beforeend',`
-      <div class="ad-mid" style="padding:12px 0;display:flex;justify-content:center">
-        <div class="ad-slot" style="width:970px;height:90px;max-width:100%">
-          <!-- <ins class="adsbygoogle" ...></ins> -->
-          SPAZIO PUBBLICITARIO — 970×90
-        </div>
-      </div>`);
+    // AD 970×90
+    sx.insertAdjacentHTML('beforeend', adStrip(970,90));
 
-    // SL + G3 (prossimi 3)
-    const g3start = Math.max(...usati)+1;
-    sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Primo Piano</span><div class="sl-line"></div><span class="sl-ts" id="agg-ts"></span></div>`);
-    sx.insertAdjacentHTML('beforeend', mkG3(tutti.slice(g3start, g3start+3)));
+    // SL + G3
+    const n1=Math.max(...usati)+1;
+    sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Primo Piano</span><div class="sl-line"></div></div>`);
+    sx.insertAdjacentHTML('beforeend', mkG3(tutti.slice(n1,n1+3)));
+
+    // G2 FOTO GRANDI
+    sx.insertAdjacentHTML('beforeend', mkG2(tutti.slice(n1+3,n1+5)));
 
     // SL + G4
     sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Cronaca</span><div class="sl-line"></div></div>`);
-    sx.insertAdjacentHTML('beforeend', mkG4(tutti.slice(g3start+3, g3start+7)));
+    sx.insertAdjacentHTML('beforeend', mkG4(tutti.slice(n1+5,n1+9)));
 
-    // SEZIONE VIDEO YOUTUBE
+    // YOUTUBE
     sx.insertAdjacentHTML('beforeend',`<div id="yt-slot"></div>`);
     caricaYT();
 
-    // AD IN-CONTENT 728×90
-    sx.insertAdjacentHTML('beforeend',`
-      <div class="ad-mid" style="padding:12px 0;display:flex;justify-content:center">
-        <div class="ad-slot" style="width:728px;height:90px;max-width:100%">
-          <!-- <ins class="adsbygoogle" ...></ins> -->
-          SPAZIO PUBBLICITARIO — 728×90
-        </div>
-      </div>`);
+    // AD 728×90
+    sx.insertAdjacentHTML('beforeend', adStrip(728,90));
 
     // SL + G3
     sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">In evidenza</span><div class="sl-line"></div></div>`);
-    sx.insertAdjacentHTML('beforeend', mkG3(tutti.slice(g3start+7, g3start+10)));
+    sx.insertAdjacentHTML('beforeend', mkG3(tutti.slice(n1+9,n1+12)));
+
+    // G2 FOTO GRANDI
+    sx.insertAdjacentHTML('beforeend', mkG2(tutti.slice(n1+12,n1+14)));
 
     // SL + G4
     sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Altre notizie</span><div class="sl-line"></div></div>`);
-    sx.insertAdjacentHTML('beforeend', mkG4(tutti.slice(g3start+10, g3start+14)));
+    sx.insertAdjacentHTML('beforeend', mkG4(tutti.slice(n1+14,n1+18)));
 
-    // Timestamp
     document.getElementById('agg-ts').textContent=
       'Aggiornato: '+new Date(dati.generated||Date.now()).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
 
-    mostrati = g3start+14;
+    mostrati=n1+18;
     caricaAltri();
   }
 
   // ── INFINITE SCROLL ──
   function caricaAltri(){
     if(loading||done) return;
-    const batch=tutti.slice(mostrati,mostrati+7);
+    const batch=tutti.slice(mostrati,mostrati+9);
     if(!batch.length){done=true;document.getElementById('dots').classList.remove('show');return;}
     loading=true;
     document.getElementById('dots').classList.add('show');
     setTimeout(()=>{
-      const sx=document.getElementById('contenuto-sx');
+      const sx=document.getElementById('sx');
       sx.insertAdjacentHTML('beforeend',`<div class="sl"><span class="sl-t">Notizie</span><div class="sl-line"></div></div>`);
       sx.insertAdjacentHTML('beforeend', mkG3(batch.slice(0,3)));
       sx.insertAdjacentHTML('beforeend', mkG4(batch.slice(3,7)));
+      sx.insertAdjacentHTML('beforeend', mkG2(batch.slice(7,9)));
       mostrati+=batch.length;
       loading=false;
       if(mostrati>=tutti.length){done=true;document.getElementById('dots').classList.remove('show');}
