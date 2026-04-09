@@ -874,6 +874,27 @@ function toggleMenu(){
   m.style.display=m.style.display==='none'?'block':'none';
   document.body.style.overflow=m.style.display==='block'?'hidden':'';
 }
+// Intercetta TUTTI i click su link articoli → apre pagina articolo locale
+document.addEventListener('click', function(e) {
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  // Solo link a grandangoloagrigento.it che non siano social/edicola/radio/video
+  if (href && href.includes('grandangoloagrigento.it') &&
+      !href.includes('/feed') &&
+      !href.includes('facebook') &&
+      !href.includes('instagram') &&
+      !href.includes('twitter') &&
+      !href.match(/\.(jpg|png|gif|pdf|mp4)/i)) {
+    // Non intercettare navbar e menu (sezioni generiche senza slug articolo)
+    const pathParts = new URL(href).pathname.split('/').filter(Boolean);
+    if (pathParts.length >= 2) { // ha categoria + slug → è un articolo
+      e.preventDefault();
+      window.location.href = `grandangolo-articolo.html?url=${encodeURIComponent(href)}`;
+    }
+  }
+});
+
 // DATA
 const d=new Date();
 const DA=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
