@@ -5,896 +5,868 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Grandangolo Regionale</title>
 <style>
-/* ─── RESET & BASE ─────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#141215;font-size:14px;line-height:1.4}
-a{text-decoration:none;color:inherit;cursor:pointer}
+body{font-family:Arial,Helvetica,sans-serif;background:#f0ede8;color:#141215;font-size:14px}
+a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
-/* ─── TOPBAR ────────────────────────────────────────── */
+/* ── TOPBAR ── */
 #topbar{background:#fff;border-bottom:1px solid #ddd;padding:5px 0;font-size:12px}
-#topbar .inner{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
-.tb-left{display:flex;align-items:center;gap:10px;color:#666}
-.tb-soc{display:flex;gap:5px}
-.tb-soc a{width:22px;height:22px;border:1px solid #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#555;transition:.15s}
-.tb-soc a:hover{background:#141215;color:#fff;border-color:#141215}
-.tb-sep{color:#ddd}
-.tb-right{display:flex;align-items:center;gap:12px}
-.tb-accedi{font-size:12px;font-weight:600;color:#141215;display:flex;align-items:center;gap:4px}
+.tb{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.soc a{width:20px;height:20px;border:1px solid #ccc;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#555;margin:0 2px}
+.soc a:hover{background:#141215;color:#fff;border-color:#141215}
 
-/* ─── MASTHEAD ──────────────────────────────────────── */
-#masthead{background:#fff;padding:14px 0 0;position:relative;text-align:center;border-bottom:1px solid #ddd}
-.mast-inner{max-width:1300px;margin:0 auto;padding:0 16px;position:relative;display:flex;flex-direction:column;align-items:center}
-.mast-logo{font-family:'Georgia',serif;font-size:58px;font-weight:900;font-style:italic;letter-spacing:-2px;color:#141215;line-height:1;text-transform:uppercase;margin-bottom:4px}
-.mast-tagline{font-size:11px;color:#999;letter-spacing:.04em;padding-bottom:10px}
-.mast-abb{position:absolute;right:16px;top:14px;background:#1a62b7;color:#fff;font-size:12px;font-weight:700;padding:9px 18px;letter-spacing:.02em;border:none;cursor:pointer}
-.mast-abb:hover{background:#c1001f}
-.mast-accedi{position:absolute;right:16px;top:52px;font-size:11px;font-weight:600;color:#141215;display:flex;align-items:center;gap:3px}
+/* ── MASTHEAD ── */
+#mast{background:#fff;text-align:center;padding:14px 16px 0;border-bottom:1px solid #ddd;position:relative}
+.logo{font-family:'Georgia',serif;font-size:52px;font-weight:900;font-style:italic;letter-spacing:-2px;color:#141215;line-height:1;text-transform:uppercase;display:block;margin-bottom:4px}
+.sub{font-size:11px;color:#999;padding-bottom:11px;display:block}
+.abn{position:absolute;right:16px;top:50%;transform:translateY(-60%);background:#1a62b7;color:#fff;font-size:12px;font-weight:700;padding:9px 18px}
+.abn:hover{background:#c1001f}
 
-/* ─── NAVBAR ────────────────────────────────────────── */
-#navbar{background:#fff;border-bottom:2px solid #141215;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-#navbar .inner{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:center}
-.nav-menu{display:flex;align-items:stretch;overflow-x:auto;flex:1}
-.nav-menu::-webkit-scrollbar{display:none}
-.nav-item{font-size:12px;font-weight:700;color:#141215;padding:11px 14px;white-space:nowrap;border-right:1px solid #f0f0f0;display:flex;align-items:center;gap:3px;cursor:pointer;transition:.15s}
-.nav-item:hover,.nav-item.active{color:#c1001f}
-.nav-item svg{width:8px;height:8px;fill:currentColor;flex-shrink:0}
-.nav-edicola{background:#141215;color:#fff!important;padding:11px 18px;margin-left:auto;flex-shrink:0}
-.nav-edicola:hover{background:#c1001f!important}
-.nav-search{padding:11px 14px;border-right:1px solid #f0f0f0;cursor:pointer;color:#555}
+/* ── NAVBAR ── */
+#nav{background:#fff;border-bottom:2px solid #141215;position:sticky;top:0;z-index:200;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+#nav .ni{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:stretch}
+.na{font-size:12px;font-weight:700;color:#141215;padding:10px 12px;white-space:nowrap;border-right:1px solid #eee;display:flex;align-items:center;gap:3px}
+.na:hover,.na.on{color:#c1001f}
+.na svg{width:8px;height:8px;fill:currentColor}
+.ned{background:#141215;color:#fff!important;padding:10px 18px;margin-left:auto;font-size:12px;font-weight:700;display:flex;align-items:center}
+.ned:hover{background:#c1001f!important}
 
-/* ─── AD LEADERBOARD ────────────────────────────────── */
-.ad-leader{background:#f0ede8;padding:10px 0;text-align:center;border-bottom:1px solid #e0ddd8}
-.ad-box{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#e8e4df;border:1px dashed #c8c4bf;font-size:11px;color:#bbb;text-transform:uppercase;letter-spacing:.06em;position:relative}
-.ad-pub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+/* ── AD ── */
+.adl{background:#e8e4df;padding:8px 0;text-align:center;border-bottom:1px solid #ddd}
+.adbox{display:inline-flex;align-items:center;justify-content:center;background:#e0dbd4;border:1px dashed #c0bcb5;font-size:10px;color:#bbb;text-transform:uppercase;letter-spacing:.07em;position:relative;gap:8px}
+.adpub{position:absolute;top:3px;left:7px;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
 
-/* ─── SKIN CONTAINER ────────────────────────────────── */
-#skin{position:relative;background:#f0ede8;overflow:visible}
-.skin-side{position:absolute;top:0;bottom:0;width:160px;display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:8px}
-.skin-left{left:0}
-.skin-right{right:0}
-.skin-ad-block{width:148px;height:600px;background:#e4e0db;border:1px dashed #c0bcb5;display:flex;align-items:center;justify-content:center}
-.skin-ad-block span{font-size:9px;color:#ccc;text-transform:uppercase;writing-mode:vertical-rl;letter-spacing:.1em}
+/* ── SKIN ── */
+#skin{position:relative;background:#e8e4df}
+.sl,.sr{position:absolute;top:0;width:155px;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:10px}
+.sl{left:0}.sr{right:0}
+.sslot{width:142px;height:580px;background:#e0dbd4;border:1px dashed #c0bcb5;display:flex;align-items:center;justify-content:center}
+.sslot span{font-size:9px;color:#ccc;text-transform:uppercase;writing-mode:vertical-rl}
 
-/* ─── PAGE CONTENT ──────────────────────────────────── */
-#page{max-width:1300px;margin:0 auto;padding:0 172px;background:#fff}
+/* ── PAGE ── */
+#page{max-width:1300px;margin:0 auto;padding:0 166px;background:#fff}
 
-/* ─── TEMI CALDI BAR ────────────────────────────────── */
-#temi-bar{padding:7px 0;border-bottom:1px solid #e0ddd8;display:flex;align-items:center;gap:0;font-size:11px;background:#fff;flex-wrap:nowrap;overflow-x:auto}
-#temi-bar::-webkit-scrollbar{display:none}
-.temi-label{font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding-right:10px;border-right:2px solid #141215;margin-right:10px;white-space:nowrap;display:flex;align-items:center;gap:3px;font-size:11px}
-.temi-label::before{content:'↗';font-size:10px}
-.tema{font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-right:1px solid #e0ddd8;color:#141215;white-space:nowrap;font-size:11px;transition:.15s}
-.tema:hover{color:#c1001f}
+/* ── TEMI CALDI: testo semplice, non bottoni ── */
+#temi{background:#fff;border-bottom:1px solid #ddd;padding:8px 0;display:flex;align-items:center;gap:0;overflow-x:auto}
+#temi::-webkit-scrollbar{display:none}
+.tlbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding-right:10px;border-right:2px solid #141215;margin-right:12px;white-space:nowrap;flex-shrink:0}
+.tlbl::before{content:'↗ '}
+/* temi: solo testo rosso grassetto, separati da pipe */
+.tema{font-size:12px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.06em;padding:0 12px;border-right:1px solid #ddd;white-space:nowrap}
+.tema:hover{text-decoration:underline}
+.tema:last-child{border-right:none}
 
-/* ─── MAIN LAYOUT: hero-wide + sidebar ─────────────── */
-#main-layout{display:grid;grid-template-columns:1fr 210px;gap:0;padding-top:12px;align-items:start;background:#fff}
+/* ── MAIN GRID ── */
+#main{display:grid;grid-template-columns:1fr 320px;gap:0;padding-top:14px;align-items:start}
+#cnt{padding-right:24px;border-right:1px solid #ddd;min-width:0}
 
-/* ─── HERO AREA (sinistra) ──────────────────────────── */
-#hero-area{padding-right:16px;border-right:1px solid #e0ddd8}
+/* ── HERO ── */
+.hg{display:grid;grid-template-columns:1fr 200px;gap:16px;padding-bottom:14px;border-bottom:1px solid #ddd}
+.himg{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:9px}
+.himg img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+.ph{width:100%;height:100%;background:#1a1a2a;display:flex;align-items:center;justify-content:center;color:#444;font-size:24px}
+.hcat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.09em;margin-bottom:4px}
+.htit{font-family:'Georgia',serif;font-size:26px;font-weight:700;line-height:1.17;color:#141215;margin-bottom:7px}
+.htit:hover{color:#c1001f}
+/* firma: SEMPRE A SINISTRA, grassetto */
+.firma{font-size:12px;font-weight:700;color:#141215;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.firma a{color:#0a5278;font-weight:700}
+.sav{font-size:10px;color:#aaa;border:1px solid #ddd;padding:2px 7px;font-weight:400;margin-left:auto;flex-shrink:0}
+.hdk{font-size:13px;color:#555;line-height:1.52;padding-top:7px;border-top:1px solid #eee}
+.kw{font-weight:700;color:#141215}
 
-/* Hero top: immagine grande + sidebar articolo affiancata */
-.hero-top{display:grid;grid-template-columns:1fr 200px;gap:14px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #e0ddd8}
+/* hero aside */
+.ha{display:flex;flex-direction:column;gap:0}
+.hai{padding-bottom:11px;border-bottom:1px solid #ddd;margin-bottom:11px}
+.hai:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hai-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:7px}
+.hai-img img{width:100%;height:100%;object-fit:cover;display:block}
+.hai-tit{font-family:'Georgia',serif;font-size:14px;font-weight:700;line-height:1.26;color:#141215;margin-bottom:4px}
+.hai-tit:hover{color:#c1001f}
+.hai-dk{font-size:11px;color:#666;line-height:1.43;margin-bottom:5px}
+.hai-firma{font-size:11px;font-weight:700;color:#141215;display:flex;align-items:center;gap:6px}
+.hai-firma a{color:#0a5278;font-weight:700}
 
-/* immagine hero */
-.hero-img-wrap{position:relative;overflow:hidden;background:#1a1a2a}
-.hero-img-wrap img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;display:block;transition:.3s}
-.hero-img-wrap img:hover{opacity:.95}
-.hero-title{font-family:'Georgia',serif;font-size:26px;font-weight:700;line-height:1.18;color:#141215;margin:8px 0 6px}
-.hero-title:hover{color:#c1001f}
-.hero-byline{font-size:12px;color:#888;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.hero-byline a{color:#0a5278}
-.hero-deck-bottom{font-size:13px;color:#555;line-height:1.5;padding-top:6px;border-top:1px solid #e8e5e0;margin-top:6px}
-.hero-cosa{display:flex;gap:5px;font-size:12px;color:#555;margin-top:7px}
-.hero-cosa b{color:#141215}
-.hero-cosa a{color:#0a5278;text-decoration:underline}
-.salva-btn{font-size:10px;color:#888;border:1px solid #ddd;padding:2px 7px;display:inline-flex;align-items:center;gap:3px;flex-shrink:0}
-.salva-btn:hover{color:#141215}
+/* COSA CAMBIA bar */
+.cbar{font-size:12px;color:#555;padding:6px 0 10px;border-bottom:1px solid #ddd;display:flex;gap:5px;flex-wrap:wrap}
+.cbar b{color:#141215;white-space:nowrap}
+.cbar a{color:#0a5278;text-decoration:underline}
 
-/* Sidebar articolo (destra dell'hero) */
-.hero-aside{display:flex;flex-direction:column;gap:0}
-.ha-item{padding:0 0 10px 0;border-bottom:1px solid #e0ddd8;margin-bottom:10px}
-.ha-item:last-child{border-bottom:none;margin-bottom:0}
-.ha-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px;position:relative}
-.ha-img img{width:100%;height:100%;object-fit:cover;display:block}
-.ha-author-badge{position:absolute;bottom:4px;right:5px;font-size:9px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.9);line-height:1.2;text-align:right}
-.ha-title{font-family:'Georgia',serif;font-size:15px;font-weight:700;line-height:1.26;color:#141215;margin-bottom:5px}
-.ha-title:hover{color:#c1001f}
-.ha-deck{font-size:11px;color:#666;line-height:1.45;margin-bottom:5px}
-.ha-byline{font-size:11px;color:#888;display:flex;align-items:center;justify-content:space-between}
-.ha-byline a{color:#0a5278}
+/* TRIO VIDEO */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:12px 0 14px;border-bottom:1px solid #ddd}
+.tvi-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;position:relative;margin-bottom:7px}
+.tvi-img img{width:100%;height:100%;object-fit:cover;display:block}
+.tplay{position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,.72);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;display:flex;align-items:center;gap:4px}
+.tplay::before{content:'▶ '}
+.tcat{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.ttit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215;margin-bottom:4px}
+.ttit:hover{color:#c1001f}
+.tfirma{font-size:11px;font-weight:700;color:#141215}
+.tfirma a{color:#0a5278;font-weight:700}
 
-/* ─── SOTTO HERO: 3 VIDEO ───────────────────────────── */
-.under-hero-bar{display:flex;align-items:center;gap:5px;font-size:12px;color:#555;padding:6px 0 10px;border-bottom:1px solid #e0ddd8}
-.under-hero-bar b{color:#141215}
-.under-hero-bar a{color:#0a5278;text-decoration:underline}
+/* SH sezione */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;border-top:3px solid #141215;padding-top:8px;margin:16px 0 11px}
+.sht{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215}
+.shl a{font-size:11px;color:#0a5278;text-decoration:underline}
+.shl a:hover{color:#c1001f}
 
-.trio-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:12px 0 14px;border-bottom:1px solid #e0ddd8}
-.tv-item{}
-.tv-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;position:relative;margin-bottom:7px}
-.tv-img img{width:100%;height:100%;object-fit:cover;display:block}
-.tv-play{position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,.7);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;display:flex;align-items:center;gap:4px}
-.tv-play::before{content:'▶';font-size:9px}
-.tv-cat{font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
-.tv-title{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
-.tv-title:hover{color:#c1001f}
-.tv-byline{font-size:11px;color:#888;margin-top:3px}
-.tv-byline a{color:#0a5278}
+/* BLOCCO grande+lista */
+.bl{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:14px;border-bottom:1px solid #ddd}
+.bl-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:7px}
+.bl-img img{width:100%;height:100%;object-fit:cover;display:block}
+.blcat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.bltit{font-family:'Georgia',serif;font-size:18px;font-weight:700;line-height:1.22;color:#141215;margin-bottom:5px}
+.bltit em{font-style:normal;color:#c1001f}
+.bltit:hover{color:#c1001f}
+.blfirma{font-size:11px;font-weight:700;color:#141215}
+.blfirma a{color:#0a5278;font-weight:700}
+.bll{border-left:1px solid #ddd;padding-left:14px;display:flex;flex-direction:column}
+.blli{padding:8px 0;border-bottom:1px solid #f0ede8}
+.blli:last-child{border-bottom:none}
+.bllic{font-size:9px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.bllit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
+.bllit:hover{color:#c1001f}
 
-/* ─── SEZIONE HEADER ────────────────────────────────── */
-.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;border-top:3px solid #141215;padding-top:8px;margin:16px 0 11px}
-.sec-hdr-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215}
-.sec-hdr-links{display:flex;gap:12px}
-.sec-hdr-link{font-size:11px;color:#0a5278;text-decoration:underline}
-.sec-hdr-link:hover{color:#c1001f}
+/* 3-COL */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-bottom:14px;border-bottom:1px solid #ddd}
+.gci{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:7px}
+.gci img{width:100%;height:100%;object-fit:cover;display:block}
+.gcat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.gtit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215;margin-bottom:3px}
+.gtit em{font-style:normal;color:#c1001f}
+.gtit:hover{color:#c1001f}
+.gfirma{font-size:11px;font-weight:700;color:#141215}
+.gfirma a{color:#0a5278;font-weight:700}
 
-/* ─── 3-COL GRID ────────────────────────────────────── */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-bottom:14px;border-bottom:1px solid #e0ddd8}
-.gc{} 
-.gc-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:7px}
-.gc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
-.gc-img img:hover{opacity:.93}
-.gc-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.gc-title{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
-.gc-title:hover{color:#c1001f}
-.gc-byline{font-size:11px;color:#888;margin-top:3px}
-.gc-byline a{color:#0a5278}
+/* POLITICA grande */
+.pol-wrap{padding-bottom:16px;border-bottom:1px solid #ddd}
+.pol-main{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:14px}
+.pol-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:9px}
+.pol-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pol-cat{font-size:11px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.09em;margin-bottom:4px}
+.pol-tit{font-family:'Georgia',serif;font-size:22px;font-weight:700;line-height:1.18;color:#141215;margin-bottom:6px}
+.pol-tit em{font-style:normal;background:#fff3c0;padding:0 3px}
+.pol-tit:hover{color:#c1001f}
+.pol-dk{font-size:13px;color:#555;line-height:1.5;margin-bottom:7px}
+.pol-firma{font-size:12px;font-weight:700;color:#141215}
+.pol-firma a{color:#0a5278;font-weight:700}
+.pol-side{border-left:1px solid #ddd;padding-left:14px;display:flex;flex-direction:column;gap:10px}
+.pols{padding-bottom:10px;border-bottom:1px solid #f0ede8}
+.pols:last-child{border-bottom:none;padding-bottom:0}
+.pols-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px}
+.pols-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pols-cat{font-size:9px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.pols-tit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
+.pols-tit:hover{color:#c1001f}
+.pols-firma{font-size:11px;font-weight:700;color:#141215;margin-top:3px}
+.pols-firma a{color:#0a5278;font-weight:700}
 
-/* ─── BLOCCO GRANDE + LISTA ─────────────────────────── */
-.bl{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:14px;border-bottom:1px solid #e0ddd8}
-.bl-main-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:7px}
-.bl-main-img img{width:100%;height:100%;object-fit:cover;display:block}
-.bl-main-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.bl-main-title{font-family:'Georgia',serif;font-size:18px;font-weight:700;line-height:1.22;color:#141215}
-.bl-main-title:hover{color:#c1001f}
-.bl-main-by{font-size:11px;color:#888;margin-top:5px}
-.bl-main-by a{color:#0a5278}
-.bl-list{border-left:1px solid #e0ddd8;padding-left:14px;display:flex;flex-direction:column}
-.bll-item{padding:8px 0;border-bottom:1px solid #f0ede8}
-.bll-item:last-child{border-bottom:none}
-.bll-cat{font-size:9px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.bll-title{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
-.bll-title:hover{color:#c1001f}
-
-/* ─── SOPPALCO ──────────────────────────────────────── */
-.soppalco{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #e0ddd8;align-items:flex-start}
-.sop-text{flex:1}
-.sop-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.sop-title{font-family:'Georgia',serif;font-size:16px;font-weight:700;line-height:1.25;color:#141215;margin-bottom:5px}
-.sop-title:hover{color:#c1001f}
-.sop-deck{font-size:12px;color:#666;line-height:1.45;margin-bottom:4px}
-.sop-by{font-size:11px;color:#888}
-.sop-by a{color:#0a5278}
-.sop-img{width:185px;flex-shrink:0;aspect-ratio:3/2;overflow:hidden;background:#1a1a2a}
-.sop-img img{width:100%;height:100%;object-fit:cover;display:block}
-
-/* ─── OPINIONI stile Corriere esatto ────────────────── */
-.opinioni-wrap{margin:16px 0 0;border-top:none}
-.op-header-bar{text-align:center;padding:8px 0;border:1px solid #e0ddd8;border-left:none;border-right:none;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:0}
-.op-header-bar::before,.op-header-bar::after{content:'';flex:1;height:1px;background:#e0ddd8}
-.op-header-txt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#141215;display:flex;align-items:center;gap:6px}
-.op-header-txt svg{width:14px;height:14px}
-.op-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e0ddd8;border-top:none}
-.op-cell{padding:11px 12px;display:flex;gap:10px;align-items:flex-start;border-right:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8}
-.op-cell:nth-child(even){border-right:none}
+/* OPINIONI sfondo colorato */
+.opw{margin-top:16px}
+.op-hdr{display:flex;align-items:center;gap:12px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:8px 0}
+.op-hdr::before,.op-hdr::after{content:'';flex:1;height:1px;background:#ddd}
+.op-hdr-txt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#141215;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.op-grid{display:grid;grid-template-columns:1fr 1fr}
+.op-cell{padding:13px 14px;display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.5)}
+.op-cell:nth-child(odd){background:#edf3fb;border-right:1px solid rgba(255,255,255,.5)}
+.op-cell:nth-child(even){background:#e6eef8}
 .op-cell:nth-last-child(-n+2){border-bottom:none}
-.op-avatar{width:50px;height:50px;border-radius:50%;flex-shrink:0;overflow:hidden;border:2px solid #e8e5e0;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff}
-.op-body{}
-.op-title{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215;margin-bottom:3px}
-.op-title:hover{color:#c1001f}
-.op-author{font-size:11px;color:#0a5278}
-.op-save{font-size:10px;color:#bbb;margin-top:3px}
+.av-circle{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#fff;border:3px solid rgba(255,255,255,.7);box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.c1{background:linear-gradient(135deg,#1a3a6a,#2a5a9a)}
+.c2{background:linear-gradient(135deg,#1a5a2a,#2a8a3a)}
+.c3{background:linear-gradient(135deg,#6a2a0a,#9a4a1a)}
+.c4{background:linear-gradient(135deg,#5a0a0a,#8a2a2a)}
+.c5{background:linear-gradient(135deg,#0a2a5a,#1a4a8a)}
+.c6{background:linear-gradient(135deg,#4a4a0a,#7a7a1a)}
+.opt{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#1a2a4a;margin-bottom:3px}
+.opt:hover{color:#c1001f}
+.opa{font-size:11px;font-weight:700;color:#0a5278}
+.ops{font-size:10px;color:#aaa;margin-top:3px}
 
-/* ─── AD IN-CONTENT ─────────────────────────────────── */
-.ad-inc{background:#f0ede8;padding:8px 0;text-align:center;margin:14px 0;border-top:1px solid #e0ddd8;border-bottom:1px solid #e0ddd8}
+/* AD in-content */
+.adic{background:#e8e4df;padding:8px 0;text-align:center;margin:14px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.adic .adbox{width:100%;height:68px}
 
-/* ─── INFINITE SCROLL FEED ──────────────────────────── */
-.feed-hdr{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;border-top:3px solid #141215;padding-top:8px;margin:16px 0 12px;display:flex;align-items:baseline;justify-content:space-between}
-.feed-hdr a{font-size:11px;color:#0a5278;text-decoration:underline;font-family:Arial}
-.feed-hdr a:hover{color:#c1001f}
-.feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:4px}
-.feed-card{padding-bottom:14px;border-bottom:1px solid #e0ddd8}
-.feed-card-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:8px}
-.feed-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
-.feed-card-img img:hover{opacity:.93}
-.feed-card-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.feed-card-title{font-family:'Georgia',serif;font-size:14px;font-weight:700;line-height:1.3;color:#141215}
-.feed-card-title:hover{color:#c1001f}
-.feed-card-deck{font-size:12px;color:#666;line-height:1.4;margin-top:4px}
-.feed-card-by{font-size:11px;color:#888;margin-top:4px}
-.feed-card-by a{color:#0a5278}
+/* FEED */
+.fhdr{font-family:'Georgia',serif;font-size:18px;font-weight:700;color:#141215;border-top:3px solid #141215;padding-top:8px;margin:16px 0 12px;display:flex;align-items:baseline;justify-content:space-between}
+.fhdr a{font-size:11px;font-family:Arial;color:#0a5278;text-decoration:underline;font-weight:400}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+.fc{padding-bottom:14px;border-bottom:1px solid #ddd}
+.fci{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:8px}
+.fci img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
+.fci img:hover{opacity:.93}
+.fccat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.fctit{font-family:'Georgia',serif;font-size:14px;font-weight:700;line-height:1.3;color:#141215;margin-bottom:3px}
+.fctit:hover{color:#c1001f}
+.fcdk{font-size:12px;color:#666;line-height:1.4;margin-bottom:4px}
+.fcfirma{font-size:11px;font-weight:700;color:#141215}
+.fcfirma a{color:#0a5278;font-weight:700}
 
-/* ─── SIDEBAR (destra del main) ─────────────────────── */
-#sidebar{padding-left:16px;padding-top:12px}
+#scroll-s{height:40px}
+.spin{width:26px;height:26px;border:3px solid #ddd;border-top-color:#141215;border-radius:50%;animation:sp .7s linear infinite;margin:10px auto;display:none}
+@keyframes sp{to{transform:rotate(360deg)}}
+#fend{font-size:12px;color:#aaa;text-align:center;padding:14px;display:none}
 
-/* sidebar article */
-.sb-art{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #e0ddd8}
-.sb-art:last-child{border-bottom:none}
-.sb-art-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:6px;position:relative}
-.sb-art-img img{width:100%;height:100%;object-fit:cover;display:block}
-.sb-art-title{font-family:'Georgia',serif;font-size:14px;font-weight:700;line-height:1.3;color:#141215;margin-bottom:4px}
-.sb-art-title:hover{color:#c1001f}
-.sb-art-deck{font-size:11px;color:#666;line-height:1.45;margin-bottom:4px}
-.sb-art-by{font-size:11px;color:#888;display:flex;align-items:center;justify-content:space-between}
-.sb-art-by a{color:#0a5278}
+/* ──────────────────────────────────────────
+   SIDEBAR 320px — GRANDE E COMPLETA
+   ────────────────────────────────────────── */
+#sb{padding-left:24px;width:320px;flex-shrink:0}
+
+/* Sezione Sicilia Live: cards grandi con immagine */
+.sbh{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:0 0 10px;color:#141215;display:flex;align-items:center;gap:6px}
+.sbh2{font-family:'Georgia',serif;font-size:15px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:14px 0 9px}
+
+/* Card grande in sidebar con immagine full-width */
+.sb-big-card{margin-bottom:14px;border-bottom:1px solid #ddd;padding-bottom:14px}
+.sb-big-card:last-of-type{border-bottom:none;padding-bottom:0}
+.sb-big-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#1a1a2a;margin-bottom:8px}
+.sb-big-img img{width:100%;height:100%;object-fit:cover;display:block}
+.sb-big-cat{font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sb-big-tit{font-family:'Georgia',serif;font-size:15px;font-weight:700;line-height:1.28;color:#141215;margin-bottom:5px}
+.sb-big-tit:hover{color:#c1001f}
+.sb-big-dk{font-size:12px;color:#666;line-height:1.42;margin-bottom:5px}
+.sb-big-firma{font-size:11px;font-weight:700;color:#141215}
+.sb-big-firma a{color:#0a5278;font-weight:700}
+
+/* Card media in sidebar (immagine a sinistra) */
+.sb-med{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f0ede8;align-items:flex-start}
+.sb-med:last-child{border-bottom:none}
+.sb-med-img{width:86px;height:60px;overflow:hidden;flex-shrink:0;background:#1a1a2a}
+.sb-med-img img{width:100%;height:100%;object-fit:cover;display:block}
+.sb-med-cat{font-size:9px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
+.sb-med-tit{font-family:'Georgia',serif;font-size:13px;font-weight:700;line-height:1.28;color:#141215}
+.sb-med-tit:hover{color:#c1001f}
+.sb-med-firma{font-size:10px;font-weight:700;color:#555;margin-top:3px}
 
 /* AD sidebar */
-.ad-sb{width:100%;height:250px;background:#f0ede8;border:1px dashed #c8c4bf;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:14px 0;position:relative}
-.ad-sb .ad-pub{position:static;font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
-.ad-sb span.sz{font-size:14px;color:#d0ccc5;font-weight:700}
-.ad-sb span.note{font-size:9px;color:#c1001f;font-style:italic}
+.adSB{width:100%;height:250px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:14px 0;position:relative}
+.adSB .ap{font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
+.adSB .sz{font-size:14px;color:#ccc;font-weight:700}
+.adSB .nt{font-size:9px;color:#c1001f;font-style:italic}
+.adBIG{width:100%;height:300px;background:#e8e4df;border:1px dashed #c0bcb5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-top:14px}
 
-/* PODCAST sidebar */
-.sb-section-hdr{font-family:'Georgia',serif;font-size:14px;font-weight:700;border-top:3px solid #141215;padding-top:7px;margin:14px 0 9px;color:#141215}
-.pod-card{border:1px solid #e0ddd8;background:#fafaf8;margin-bottom:9px}
-.pod-top{padding:6px 9px 3px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0ede8}
-.badge-sp{background:#1DB954;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
-.badge-yt{background:#FF0000;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
-.pod-title{font-family:'Georgia',serif;font-size:11px;font-weight:700;color:#141215;padding:5px 9px 1px}
-.pod-desc{font-size:9px;color:#888;padding:0 9px 6px;line-height:1.35}
-.pod-card iframe{display:block;border:none;width:100%}
+/* Podcast */
+.pod{border:1px solid #ddd;background:#fafaf8;margin-bottom:10px}
+.pdt{padding:6px 9px 3px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0ede8}
+.bsp{background:#1DB954;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
+.byt{background:#FF0000;color:#fff;font-size:8px;font-weight:700;padding:2px 6px;text-transform:uppercase}
+.ptt{font-family:'Georgia',serif;font-size:12px;font-weight:700;color:#141215;padding:5px 9px 1px}
+.ptd{font-size:10px;color:#888;padding:0 9px 6px;line-height:1.35}
+.pod iframe{display:block;border:none;width:100%}
 
-/* EDICOLA sidebar */
-.edicola-box{background:#f5f3f0;border:1px solid #e0ddd8;padding:9px;margin-bottom:14px;text-align:center}
-.ed-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #ddd;padding-bottom:5px;margin-bottom:7px}
-.ed-cover{width:100%;aspect-ratio:3/4;overflow:hidden;background:#f0ede8;margin-bottom:7px}
-.ed-cover img{width:100%;height:100%;object-fit:contain;display:block}
-.ed-btn{display:block;background:#141215;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:7px}
-.ed-btn:hover{background:#c1001f}
+/* Edicola */
+.edic{background:#f5f3f0;border:1px solid #ddd;padding:10px;margin-bottom:14px;text-align:center}
+.edt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #ddd;padding-bottom:5px;margin-bottom:8px}
+.edc{width:100%;aspect-ratio:3/4;overflow:hidden;background:#f0ede8;margin-bottom:8px}
+.edc img{width:100%;height:100%;object-fit:contain;display:block}
+.edb{display:block;background:#141215;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:8px}
+.edb:hover{background:#c1001f}
 
-/* PIÙ LETTI */
-.pv-item{display:flex;gap:7px;padding:7px 0;border-bottom:1px solid #f0ede8;align-items:baseline}
-.pv-item:last-child{border-bottom:none}
-.pv-num{font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#e0ddd8;min-width:24px;line-height:1}
-.pv-title{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.3;color:#141215}
-.pv-title:hover{color:#c1001f}
+/* Più letti */
+.pvi{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0ede8;align-items:baseline}
+.pvi:last-child{border-bottom:none}
+.pvn{font-family:'Georgia',serif;font-size:22px;font-weight:700;color:#e0ddd8;min-width:24px;line-height:1}
+.pvt{font-family:'Georgia',serif;font-size:12px;font-weight:700;line-height:1.3;color:#141215}
+.pvt:hover{color:#c1001f}
 
-/* AD 300×600 */
-.ad-sb-half{width:100%;height:300px;background:#f0ede8;border:1px dashed #c8c4bf;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-top:14px;position:relative}
-
-/* ─── INFINITE SCROLL SPINNER ───────────────────────── */
-#scroll-trigger{height:40px;margin:10px 0}
-.spinner{width:28px;height:28px;border:3px solid #e0ddd8;border-top-color:#141215;border-radius:50%;animation:spin .7s linear infinite;margin:8px auto;display:none}
-@keyframes spin{to{transform:rotate(360deg)}}
-#feed-end{font-size:12px;color:#999;text-align:center;padding:12px;display:none}
-
-/* ─── SKELETON LOADING ──────────────────────────────── */
-.skel{background:linear-gradient(90deg,#f0ede8 25%,#e8e4df 50%,#f0ede8 75%);background-size:200% 100%;animation:shimmer 1.6s infinite;border-radius:2px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-/* ─── FOOTER ────────────────────────────────────────── */
+/* FOOTER */
 footer{background:#141215;color:#fff;padding:22px 0;margin-top:26px}
-.footer-inner{max-width:1300px;margin:0 auto;padding:0 16px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.f-logo{font-family:'Georgia',serif;font-size:22px;font-weight:900;font-style:italic}
-.f-links{display:flex;gap:16px;flex-wrap:wrap}
-.f-links a{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
-.f-links a:hover{color:#fff}
-.f-copy{width:100%;font-size:10px;color:#555;margin-top:10px;border-top:1px solid #2a2a2a;padding-top:8px}
+.fi{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-start}
+.flogo{font-family:'Georgia',serif;font-size:22px;font-weight:900;font-style:italic}
+.flinks{display:flex;gap:14px;flex-wrap:wrap}
+.flinks a{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.flinks a:hover{color:#fff}
+.fcopy{width:100%;font-size:10px;color:#555;border-top:1px solid #2a2a2a;padding-top:8px;margin-top:6px}
 </style>
 </head>
 <body>
 
-<!-- ① TOPBAR -->
-<div id="topbar">
-  <div class="inner">
-    <div class="tb-left">
-      <span style="font-size:19px;cursor:pointer;color:#666">☰</span>
-      <span style="font-size:11px;color:#aaa">Seguici su</span>
-      <div class="tb-soc">
-        <a href="https://www.facebook.com/GrandangoloAgrigento" target="_blank">f</a>
-        <a href="https://www.instagram.com" target="_blank">ig</a>
-        <a href="https://x.com/GrandangoloAg" target="_blank">𝕏</a>
-        <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">yt</a>
-        <a href="https://www.linkedin.com" target="_blank">in</a>
-      </div>
-      <span class="tb-sep">|</span>
-      <span id="tb-date" style="font-size:11px;color:#666">Giovedì 9 aprile 2026 – Aggiornato alle 10:17</span>
-      <span class="tb-sep">|</span>
-      <span style="font-size:11px;color:#666">⛅ 20°C – Agrigento</span>
+<!-- TOPBAR -->
+<div id="topbar"><div class="tb">
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="font-size:19px;cursor:pointer;color:#666">☰</span>
+    <span style="color:#aaa">Seguici su</span>
+    <div class="soc">
+      <a href="https://www.facebook.com/GrandangoloAgrigento" target="_blank">f</a>
+      <a href="https://www.instagram.com" target="_blank">ig</a>
+      <a href="https://x.com/GrandangoloAg" target="_blank">𝕏</a>
+      <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">yt</a>
     </div>
-    <div class="tb-right">
-      <a href="#" class="tb-accedi">Accedi &nbsp;<span style="font-size:14px">👤</span></a>
-    </div>
+    <span style="color:#ddd">|</span>
+    <span id="tdate" style="color:#666"></span>
+    <span style="color:#ddd">|</span>
+    <span style="color:#666">⛅ 20°C Agrigento</span>
   </div>
+  <a href="#" style="font-size:12px;font-weight:600;color:#141215">Accedi 👤</a>
+</div></div>
+
+<!-- MASTHEAD -->
+<div id="mast">
+  <a href="https://www.grandangoloagrigento.it" target="_blank" class="logo">Grandangolo Regionale</a>
+  <span class="sub">Da 21 anni la voce del territorio · Dir. Franco Castaldo · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907</span>
+  <a href="https://grandangolosettimanale.it" target="_blank" class="abn">Abbonati a €1,50/sett.</a>
 </div>
 
-<!-- ② MASTHEAD -->
-<div id="masthead">
-  <div class="mast-inner">
-    <a href="https://www.grandangoloagrigento.it" target="_blank">
-      <div class="mast-logo">Grandangolo&nbsp;Regionale</div>
-    </a>
-    <div class="mast-tagline">Da 21 anni la voce del territorio · Dir. Franco Castaldo · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907</div>
-    <a href="https://grandangolosettimanale.it" target="_blank" class="mast-abb">Abbonati a €1,50/sett.</a>
-    <a href="#" class="mast-accedi">Accedi &nbsp;👤</a>
-  </div>
-</div>
+<!-- NAVBAR -->
+<nav id="nav"><div class="ni">
+  <span class="na" style="padding:10px 12px;border-right:1px solid #eee;cursor:pointer;color:#666;font-size:15px">🔍</span>
+  <a href="https://www.grandangoloagrigento.it" target="_blank" class="na on">Home</a>
+  <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" class="na">Agrigento <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" class="na">Giudiziaria <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" class="na">Mafia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/politica" target="_blank" class="na">Politica <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" class="na">Inchieste</a>
+  <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" class="na">Cultura <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/sport" target="_blank" class="na">Sport <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/sicilia" target="_blank" class="na">Sicilia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
+  <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" class="na">Podcast</a>
+  <a href="https://www.grandangoloagrigento.it/video" target="_blank" class="na">Video</a>
+  <a href="https://grandangolosettimanale.it" target="_blank" class="ned">Edicola →</a>
+</div></nav>
 
-<!-- ③ NAVBAR sticky -->
-<nav id="navbar">
-  <div class="inner">
-    <div class="nav-menu">
-      <div class="nav-search">🔍</div>
-      <a href="https://www.grandangoloagrigento.it" target="_blank" class="nav-item active">Home</a>
-      <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank" class="nav-item">Agrigento <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" class="nav-item">Giudiziaria <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/mafia" target="_blank" class="nav-item">Mafia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/politica" target="_blank" class="nav-item">Politica <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/inchieste" target="_blank" class="nav-item">Inchieste</a>
-      <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" class="nav-item">Cultura <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/sport" target="_blank" class="nav-item">Sport <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/sicilia" target="_blank" class="nav-item">Sicilia <svg viewBox="0 0 8 5"><path d="M0 0l4 5 4-5z"/></svg></a>
-      <a href="https://www.grandangoloagrigento.it/news-on-radio" target="_blank" class="nav-item">Podcast</a>
-      <a href="https://www.grandangoloagrigento.it/video" target="_blank" class="nav-item">Video</a>
-    </div>
-    <a href="https://grandangolosettimanale.it" target="_blank" class="nav-item nav-edicola">Edicola →</a>
-  </div>
-</nav>
+<!-- AD LEADERBOARD -->
+<div class="adl"><div class="adbox" style="width:728px;height:90px"><span class="adpub">Pubblicità</span>Google AdSense — Leaderboard 728×90</div></div>
 
-<!-- ④ AD LEADERBOARD 728×90 -->
-<div class="ad-leader">
-  <div class="ad-box" style="width:728px;height:90px">
-    <span class="ad-pub">Pubblicità</span>
-    Google AdSense — Leaderboard 728×90
-  </div>
-</div>
-
-<!-- ⑤ SKIN ADS + PAGE CONTENT -->
+<!-- SKIN + PAGE -->
 <div id="skin">
-  <div class="skin-side skin-left">
-    <div class="skin-ad-block"><span>Google Ads 160×600 Skin</span></div>
-  </div>
-  <div class="skin-side skin-right">
-    <div class="skin-ad-block"><span>Google Ads 160×600 Skin</span></div>
-  </div>
-
+  <div class="sl"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
+  <div class="sr"><div class="sslot"><span>Google Ads · Skin 160×600</span></div></div>
   <div id="page">
 
-    <!-- TEMI CALDI -->
-    <div id="temi-bar">
-      <span class="temi-label">Temi caldi</span>
+    <!-- ── TEMI CALDI: solo testo rosso, NO bottoni ── -->
+    <div id="temi">
+      <span class="tlbl">Temi caldi</span>
       <a class="tema" href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank">Femminicidio Naro</a>
       <a class="tema" href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank">Iachino Amico</a>
       <a class="tema" href="https://www.grandangoloagrigento.it/ultime-notizie/amministrative-2026-sbardella-fdi-tutti-i-nomi-sul-tavolo-sono-stati-bocciati-cerchiamo-lunita" target="_blank">Amministrative 2026</a>
       <a class="tema" href="https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio" target="_blank">Strage Monreale</a>
-      <a class="tema" href="https://www.grandangoloagrigento.it/sport/auto-aperte-le-iscrizioni-per-la-110-targa-florio" target="_blank">Targa Florio</a>
-      <a class="tema" href="https://www.grandangoloagrigento.it/politica/regione-assegna-104-milioni-di-euro-al-libero-consorzio-di-agrigento" target="_blank">Fondi Regione</a>
-      <a class="tema" href="https://www.grandangoloagrigento.it" target="_blank">Lampedusa</a>
     </div>
 
-    <!-- MAIN LAYOUT (hero larga + sidebar 210px) -->
-    <div id="main-layout">
+    <!-- MAIN GRID -->
+    <div id="main">
+      <div id="cnt">
 
-      <!-- ════ HERO AREA ════ -->
-      <div id="hero-area">
-
-        <!-- HERO TOP: immagine grande + aside -->
-        <div class="hero-top" id="hero-top">
-          <!-- skeleton -->
+        <!-- ── HERO ── -->
+        <div class="hg">
           <div>
-            <div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:10px"></div>
-            <div class="skel" style="height:28px;width:90%;margin-bottom:8px"></div>
-            <div class="skel" style="height:28px;width:70%;margin-bottom:8px"></div>
-            <div class="skel" style="height:12px;width:40%;margin-bottom:6px"></div>
-            <div class="skel" style="height:12px;width:95%"></div>
+            <a href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank">
+              <div class="himg">
+                <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/01/ice_screenshot_20240110-123133.png"
+                  alt="Femminicidio Naro" onerror="this.outerHTML='<div class=ph>📰</div>'">
+              </div>
+            </a>
+            <div class="hcat">Apertura · Giudiziaria</div>
+            <a href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank">
+              <div class="htit">Duplice femminicidio a Naro: chiesta la conferma dell'ergastolo per il 28enne Omar Nedelcov</div>
+            </a>
+            <!-- FIRMA SINISTRA -->
+            <div class="firma">di <a href="#">Giuseppe Castaldo</a> <span class="sav">SALVA ↗</span></div>
+            <p class="hdk">La Procura generale di Palermo ha chiesto la conferma del <span class="kw">carcere a vita</span>. Maria Rus e Delia Zarnescu furono uccise nella <span class="kw">notte tra il 4 e il 5 gennaio 2024</span> nel centro storico di Naro.</p>
           </div>
-          <div class="hero-aside" id="hero-aside">
-            <div class="ha-item">
-              <div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:6px"></div>
-              <div class="skel" style="height:40px;margin-bottom:5px"></div>
-              <div class="skel" style="height:10px;width:60%"></div>
+          <!-- ASIDE: NO firma sulla foto -->
+          <div class="ha">
+            <div class="hai">
+              <a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank">
+                <div class="hai-img">
+                  <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/IMG-20260407-WA0032-e1775675617363.jpg"
+                    alt="Giusy" onerror="this.outerHTML='<div class=ph>📰</div>'">
+                </div>
+                <div class="hai-tit">«Sono io che devo ammazzare la malattia»: il lascito di Giusy. Calamonaci in lutto</div>
+              </a>
+              <p class="hai-dk">Morta a 34 anni nel giorno del Venerdì Santo. Funerali 10 aprile ore 16:00.</p>
+              <div class="hai-firma">di <a href="#">Gabriele Terranova</a> <span class="sav" style="margin-left:auto">SALVA ↗</span></div>
             </div>
-            <div class="ha-item">
-              <div class="skel" style="height:36px;margin-bottom:5px"></div>
-              <div class="skel" style="height:10px;width:55%"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- COSA CAMBIA bar (sotto hero) -->
-        <div class="under-hero-bar" id="under-hero-bar" style="display:none">
-          <b>■ PRIMO PIANO |</b>&nbsp;
-          <span id="cosa-text">Caricamento...</span>
-        </div>
-
-        <!-- TRIO 3 video -->
-        <div class="trio-videos" id="trio-videos">
-          <div class="tv-item"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:32px"></div></div>
-          <div class="tv-item"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:32px"></div></div>
-          <div class="tv-item"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:32px"></div></div>
-        </div>
-
-        <!-- AD BANNER 468×60 -->
-        <div class="ad-inc">
-          <div class="ad-box" style="width:100%;height:60px"><span class="ad-pub">Pubblicità</span>Google AdSense — Banner 468×60</div>
-        </div>
-
-        <!-- SEZIONE MAFIA: blocco grande + lista -->
-        <div class="sec-hdr">
-          <div class="sec-hdr-title">Mafia &amp; Inchieste</div>
-          <div class="sec-hdr-links"><a href="https://www.grandangoloagrigento.it/mafia" target="_blank" class="sec-hdr-link">Tutte le notizie →</a></div>
-        </div>
-        <div class="bl" id="sec-mafia">
-          <div><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:52px"></div></div>
-          <div class="bl-list"><div class="bll-item"><div class="skel" style="height:34px"></div></div><div class="bll-item"><div class="skel" style="height:34px"></div></div><div class="bll-item"><div class="skel" style="height:34px"></div></div></div>
-        </div>
-
-        <!-- SEZIONE GIUDIZIARIA 3-col -->
-        <div class="sec-hdr">
-          <div class="sec-hdr-title">Giudiziaria</div>
-          <div class="sec-hdr-links"><a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank" class="sec-hdr-link">Tutte →</a></div>
-        </div>
-        <div class="g3" id="sec-giud">
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-        </div>
-
-        <!-- AD CENTRO 300×250 -->
-        <div class="ad-inc">
-          <div class="ad-box" style="width:100%;height:90px"><span class="ad-pub">Pubblicità</span>Google AdSense — Medium Rectangle 300×250</div>
-        </div>
-
-        <!-- SEZIONE POLITICA soppalco -->
-        <div class="sec-hdr">
-          <div class="sec-hdr-title">Politica</div>
-          <div class="sec-hdr-links"><a href="https://www.grandangoloagrigento.it/politica" target="_blank" class="sec-hdr-link">Tutte →</a></div>
-        </div>
-        <div id="sec-politica">
-          <div class="skel" style="height:120px;margin-bottom:14px"></div>
-        </div>
-
-        <!-- SEZIONE CULTURA & SPORT 3-col -->
-        <div class="sec-hdr">
-          <div class="sec-hdr-title">Cultura &amp; Sport</div>
-          <div class="sec-hdr-links"><a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank" class="sec-hdr-link">Tutte →</a></div>
-        </div>
-        <div class="g3" id="sec-cultura">
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-          <div class="gc"><div class="skel" style="width:100%;aspect-ratio:16/9;margin-bottom:7px"></div><div class="skel" style="height:34px"></div></div>
-        </div>
-
-        <!-- OPINIONI & COMMENTI esatto come Corriere -->
-        <div class="opinioni-wrap">
-          <div class="op-header-bar">
-            <div class="op-header-txt">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#141215" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#141215" stroke-width="1.5"/></svg>
-              Opinioni &amp; Commenti
+            <div class="hai">
+              <a href="https://www.grandangoloagrigento.it/caltanisetta/droga-sponsorizzata-sui-social-e-spedita-per-posta-due-arresti" target="_blank">
+                <div class="hai-img">
+                  <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/08042026_114834_Foto4-Napoli.jpg"
+                    alt="Droga" onerror="this.outerHTML='<div class=ph>📰</div>'">
+                </div>
+                <div class="hai-tit">Droga sui social e spedita per posta: 2 arresti, 10 kg sequestrati. Giro da <strong>2 milioni</strong></div>
+              </a>
+              <p class="hai-dk">Operazione polizia nel caltanissettano.</p>
+              <div class="hai-firma"><a href="#">Redazione</a> <span class="sav" style="margin-left:auto">SALVA ↗</span></div>
             </div>
           </div>
+        </div>
+
+        <!-- BARRA -->
+        <div class="cbar">
+          <b>■ PRIMO PIANO |</b>
+          <a href="https://www.grandangoloagrigento.it/agrigento-notizie/amministrative-2026-il-duopolio-tende-la-mano-al-resto-del-centrodestra-sostenete-daniela-catalano" target="_blank">Amministrative 2026: «Sostenete Daniela Catalano»</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.grandangoloagrigento.it/agrigento-notizie/aica-si-riunisce-il-consiglio-di-amministrazione-in-arrivo-8-nuove-assunzioni" target="_blank">AICA: 8 nuove assunzioni</a>
+        </div>
+
+        <!-- TRIO -->
+        <div class="trio">
+          <div>
+            <a href="https://www.grandangoloagrigento.it/ultime-notizie/amministrative-2026-sbardella-fdi-tutti-i-nomi-sul-tavolo-sono-stati-bocciati-cerchiamo-lunita" target="_blank">
+              <div class="tvi-img">
+                <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/Luca-Sbardella.jpg" alt="Sbardella" onerror="this.outerHTML='<div class=ph>📰</div>'">
+                <div class="tplay">00:42</div>
+              </div>
+              <div class="tcat">Politica · Agrigento</div>
+              <div class="ttit">Sbardella (FdI): «Tutti i nomi bocciati, cerchiamo l'unità»</div>
+            </a>
+            <div class="tfirma">di <a href="#">Gioacchino Schicchi</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank">
+              <div class="tvi-img">
+                <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/02/WhatsApp-Image-2024-02-19-at-18.16.05.jpeg" alt="Iachino Amico" onerror="this.outerHTML='<div class=ph>📰</div>'">
+                <div class="tplay">01:18</div>
+              </div>
+              <div class="tcat">Mafia · Canicattì</div>
+              <div class="ttit">«Iachino» Amico: dalle truffe ai clan, il pentito con pass alla Camera</div>
+            </a>
+            <div class="tfirma"><a href="#">Redazione</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank">
+              <div class="tvi-img">
+                <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/IMG-20260407-WA0032-e1775675617363.jpg" alt="Giusy" onerror="this.outerHTML='<div class=ph>📰</div>'">
+                <div class="tplay">02:05</div>
+              </div>
+              <div class="tcat">Cronaca · Calamonaci</div>
+              <div class="ttit">«Sono io che devo ammazzare la malattia»: funerali venerdì 10 aprile</div>
+            </a>
+            <div class="tfirma">di <a href="#">Gabriele Terranova</a></div>
+          </div>
+        </div>
+
+        <!-- AD -->
+        <div class="adic"><div class="adbox"><span class="adpub">Pubblicità</span>Google AdSense — Banner 468×60</div></div>
+
+        <!-- MAFIA -->
+        <div class="sh"><div class="sht">Mafia &amp; Inchieste</div><div class="shl"><a href="https://www.grandangoloagrigento.it/mafia" target="_blank">Tutte →</a></div></div>
+        <div class="bl">
+          <div>
+            <a href="https://www.grandangoloagrigento.it/apertura/il-pentito-gioacchino-amico-e-i-rapporti-con-la-politica-report-rivela-aveva-un-pass-alla-camera" target="_blank">
+              <div class="bl-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2024/02/WhatsApp-Image-2024-02-19-at-18.16.05.jpeg" alt="Iachino" onerror="this.outerHTML='<div class=ph>📰</div>'"></div>
+              <div class="blcat">Mafia · Report Rai 3</div>
+              <div class="bltit">Il pentito Amico e i rapporti con la politica: Report rivela «Aveva un <em>pass alla Camera</em>»</div>
+            </a>
+            <div class="blfirma">di <a href="#">Redazione</a></div>
+          </div>
+          <div class="bll">
+            <a href="https://www.grandangoloagrigento.it/mafia/mafia-34-anni-fa-lomicidio-del-mastino-giuliano-guazzelli" target="_blank"><div class="blli"><div class="bllic">Mafia · Anniversario</div><div class="bllit">34 anni fa l'omicidio del «mastino» Guazzelli: simbolo di questa terra</div></div></a>
+            <a href="https://www.grandangoloagrigento.it/apertura/mafia-procura-impugna-condanna-di-friscia-e-il-nuovo-boss-di-sciacca" target="_blank"><div class="blli"><div class="bllic">Mafia · Sciacca</div><div class="bllit">Procura impugna la condanna di Friscia: «È il nuovo boss di Sciacca»</div></div></a>
+            <a href="https://www.grandangoloagrigento.it/primo-piano/motisi-cubeddru-e-cinquegranella-chi-sono-gli-ultimi-tre-latitanti" target="_blank"><div class="blli"><div class="bllic">Mafia · Latitanti</div><div class="bllit">Motisi, Cubeddru e Cinquegranella: chi sono gli ultimi tre latitanti d'Italia</div></div></a>
+            <a href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank"><div class="blli"><div class="bllic">Mafia · Canicattì</div><div class="bllit">«Iachino» Amico: dalle truffe ai clan fino alla collaborazione con la giustizia</div></div></a>
+          </div>
+        </div>
+
+        <!-- GIUDIZIARIA 3col -->
+        <div class="sh"><div class="sht">Giudiziaria</div><div class="shl"><a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Tutte →</a></div></div>
+        <div class="g3">
+          <div>
+            <a href="https://www.grandangoloagrigento.it/giudiziaria/morta-a-43-anni-dopo-ricovero-per-ischemia-intestinale-chiesto-processo-per-3-medici" target="_blank">
+              <div class="gci" id="ig1"><div class="ph">📰</div></div>
+              <div class="gcat">Giudiziaria · Sanità</div>
+              <div class="gtit">Morta a 43 anni per ischemia: chiesto processo per <em>3 medici</em></div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/agrigento-notizie/muore-in-ospedale-dopo-una-caduta-dalla-barella-chiesto-maxi-risarcimento" target="_blank">
+              <div class="gci" id="ig2"><div class="ph">📰</div></div>
+              <div class="gcat">Agrigento · Sanità</div>
+              <div class="gtit">Muore dopo caduta dalla barella: chiesto <em>maxi risarcimento</em> all'ASP</div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio" target="_blank">
+              <div class="gci" id="ig3"><div class="ph">📰</div></div>
+              <div class="gcat">Palermo · Giudiziaria</div>
+              <div class="gtit">Strage di Monreale: <em>tre giovani</em> imputati rinviati a giudizio</div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+        </div>
+
+        <!-- AD -->
+        <div class="adic"><div class="adbox"><span class="adpub">Pubblicità</span>Google AdSense — Medium Rectangle 300×250</div></div>
+
+        <!-- POLITICA grande -->
+        <div class="sh"><div class="sht">Politica</div><div class="shl"><a href="https://www.grandangoloagrigento.it/politica" target="_blank">Tutte →</a></div></div>
+        <div class="pol-wrap">
+          <div class="pol-main">
+            <div>
+              <a href="https://www.grandangoloagrigento.it/agrigento-notizie/amministrative-2026-il-duopolio-tende-la-mano-al-resto-del-centrodestra-sostenete-daniela-catalano" target="_blank">
+                <div class="pol-img"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/Luca-Sbardella.jpg" alt="Politica" onerror="this.outerHTML='<div class=ph>📰</div>'"></div>
+                <div class="pol-cat">Amministrative 2026 · Agrigento</div>
+                <div class="pol-tit">Il «duopolio» tende la mano: «Sostenete <em>Daniela Catalano</em> come candidata sindaca unitaria»</div>
+              </a>
+              <p class="pol-dk">FI, MpA e UDC propongono l'avvocato. Sbardella (FdI): «Tutti i nomi bocciati, stiamo cercando l'unità». La Lega chiede discontinuità.</p>
+              <div class="pol-firma">di <a href="#">Gioacchino Schicchi</a></div>
+            </div>
+            <div class="pol-side">
+              <div class="pols">
+                <div class="pols-img" id="ip1"><div class="ph">📰</div></div>
+                <div class="pols-cat">Economia · Regione</div>
+                <a href="https://www.grandangoloagrigento.it/politica/regione-assegna-104-milioni-di-euro-al-libero-consorzio-di-agrigento" target="_blank"><div class="pols-tit">Regione assegna <strong>10,4 milioni</strong> al Libero Consorzio di Agrigento</div></a>
+                <div class="pols-firma"><a href="#">Redazione</a></div>
+              </div>
+              <div class="pols">
+                <div class="pols-cat">Canicattì · Politica</div>
+                <a href="https://www.grandangoloagrigento.it/canicatti/canicatti-domani-si-discute-la-mozione-di-sfiducia-del-sindaco-corbo" target="_blank"><div class="pols-tit">Canicattì: mozione di sfiducia al sindaco Corbo. Servono <strong>15 voti su 24</strong></div></a>
+                <div class="pols-firma"><a href="#">Redazione</a></div>
+              </div>
+              <div class="pols">
+                <div class="pols-cat">Regione · Sicilia</div>
+                <a href="https://www.grandangoloagrigento.it/agrigento-notizie/quasi-370-mila-euro-per-asili-e-scuole-dellinfanzia-micciche-e-principato-costruiamo-futuro-dei-nostri-bimbi" target="_blank"><div class="pols-tit">Quasi <strong>370mila euro</strong> per asili e scuole: «Costruiamo il futuro dei bimbi»</div></a>
+                <div class="pols-firma"><a href="#">Miccichè &amp; Principato</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CULTURA -->
+        <div class="sh"><div class="sht">Cultura &amp; Sport</div><div class="shl"><a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank">Tutte →</a></div></div>
+        <div class="g3">
+          <div>
+            <a href="https://www.grandangoloagrigento.it/cultura/al-teatro-pirandello-il-live-di-paolo-buonvino-con-la-musica-oltre-le-storie" target="_blank">
+              <div class="gci"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2025/10/cartellone-teatro-pirandello-2025-2026.jpeg" alt="Teatro Pirandello" onerror="this.outerHTML='<div class=ph>📰</div>'"></div>
+              <div class="gcat">Teatro · Agrigento</div>
+              <div class="gtit">Al Teatro Pirandello il live di <em>Paolo Buonvino</em>: «La musica oltre le storie»</div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/sport/auto-aperte-le-iscrizioni-per-la-110-targa-florio" target="_blank">
+              <div class="gci" id="ic1"><div class="ph">🏁</div></div>
+              <div class="gcat">Automobilismo · Sport</div>
+              <div class="gtit">Aperte le iscrizioni per la <em>110ª Targa Florio</em>. Adesioni entro l'8 maggio</div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+          <div>
+            <a href="https://www.grandangoloagrigento.it/agrigento-notizie/il-team-signifikant-del-liceo-empedocle-vola-alle-finali-nazionali-di-debate-in-lingua-inglese" target="_blank">
+              <div class="gci" id="ic2"><div class="ph">📰</div></div>
+              <div class="gcat">Agrigento · Scuola</div>
+              <div class="gtit">Il team <em>SignifiKant</em> del Liceo Empedocle alle finali nazionali di Debate</div>
+            </a>
+            <div class="gfirma"><a href="#">Redazione</a></div>
+          </div>
+        </div>
+
+        <!-- OPINIONI -->
+        <div class="opw">
+          <div class="op-hdr"><div class="op-hdr-txt"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#141215" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#141215" stroke-width="1.5"/></svg>Opinioni &amp; Commenti</div></div>
           <div class="op-grid">
-            <div class="op-cell"><div class="op-avatar" style="background:#1a2a3a">FC</div><div class="op-body"><a href="https://www.grandangoloagrigento.it" target="_blank"><div class="op-title">Agrigento, una classe dirigente che ha paura di sé stessa</div></a><div class="op-author">di Franco Castaldo</div><div class="op-save">SALVA ↗</div></div></div>
-            <div class="op-cell"><div class="op-avatar" style="background:#1a3a1a">GS</div><div class="op-body"><a href="https://www.grandangoloagrigento.it/ultime-notizie/amministrative-2026-sbardella-fdi-tutti-i-nomi-sul-tavolo-sono-stati-bocciati-cerchiamo-lunita" target="_blank"><div class="op-title">Amministrative 2026: il centrodestra agrigentino è ancora diviso</div></a><div class="op-author">di Gioacchino Schicchi</div><div class="op-save">SALVA ↗</div></div></div>
-            <div class="op-cell"><div class="op-avatar" style="background:#2a1a0a">GT</div><div class="op-body"><a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank"><div class="op-title">Il lascito di Giusy: quando la malattia diventa lotta collettiva</div></a><div class="op-author">di Gabriele Terranova</div><div class="op-save">SALVA ↗</div></div></div>
-            <div class="op-cell"><div class="op-avatar" style="background:#3a0a0a">GC</div><div class="op-body"><a href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank"><div class="op-title">Femminicidio a Naro: la violenza che non smette di sconvolgere</div></a><div class="op-author">di Giuseppe Castaldo</div><div class="op-save">SALVA ↗</div></div></div>
-            <div class="op-cell"><div class="op-avatar" style="background:#0a1a3a">RI</div><div class="op-body"><a href="https://www.grandangoloagrigento.it/agrigento-notizie/erosione-costiera-il-contributo-di-idee-degli-architetti-ai-candidati-a-sindaco-di-agrigento" target="_blank"><div class="op-title">Il litorale di Agrigento può trainare un turismo stanziale di qualità</div></a><div class="op-author">La Mendola, Ordine Architetti AG</div><div class="op-save">SALVA ↗</div></div></div>
-            <div class="op-cell"><div class="op-avatar" style="background:#2a2a0a">MP</div><div class="op-body"><a href="https://www.grandangoloagrigento.it/agrigento-notizie/quasi-370-mila-euro-per-asili-e-scuole-dellinfanzia-micciche-e-principato-costruiamo-futuro-dei-nostri-bimbi" target="_blank"><div class="op-title">370mila euro per asili e scuole: costruire il futuro dei bambini</div></a><div class="op-author">Miccichè &amp; Principato</div><div class="op-save">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c1">FC</div><div><a href="https://www.grandangoloagrigento.it" target="_blank"><div class="opt">Agrigento, una classe dirigente che ha paura di sé stessa</div></a><div class="opa">di Franco Castaldo</div><div class="ops">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c2">GS</div><div><a href="https://www.grandangoloagrigento.it/ultime-notizie/amministrative-2026-sbardella-fdi-tutti-i-nomi-sul-tavolo-sono-stati-bocciati-cerchiamo-lunita" target="_blank"><div class="opt">Amministrative 2026: il centrodestra agrigentino è ancora diviso</div></a><div class="opa">di Gioacchino Schicchi</div><div class="ops">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c3">GT</div><div><a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank"><div class="opt">Il lascito di Giusy: quando la malattia diventa lotta collettiva</div></a><div class="opa">di Gabriele Terranova</div><div class="ops">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c4">GC</div><div><a href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank"><div class="opt">Femminicidio a Naro: la violenza che non smette di sconvolgere la Sicilia</div></a><div class="opa">di Giuseppe Castaldo</div><div class="ops">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c5">RI</div><div><a href="https://www.grandangoloagrigento.it/agrigento-notizie/erosione-costiera-il-contributo-di-idee-degli-architetti-ai-candidati-a-sindaco-di-agrigento" target="_blank"><div class="opt">Il litorale agrigentino può trainare un turismo stanziale di qualità</div></a><div class="opa">La Mendola · Ordine Architetti AG</div><div class="ops">SALVA ↗</div></div></div>
+            <div class="op-cell"><div class="av-circle c6">MP</div><div><a href="https://www.grandangoloagrigento.it/agrigento-notizie/quasi-370-mila-euro-per-asili-e-scuole-dellinfanzia-micciche-e-principato-costruiamo-futuro-dei-nostri-bimbi" target="_blank"><div class="opt">370mila euro per asili e scuole: costruiamo il futuro dei nostri bambini</div></a><div class="opa">Miccichè &amp; Principato</div><div class="ops">SALVA ↗</div></div></div>
           </div>
         </div>
 
-        <!-- INFINITE SCROLL: ULTIME NOTIZIE integrate -->
-        <div class="feed-hdr">
-          Ultime notizie
-          <a href="https://www.grandangoloagrigento.it/ultime-notizie" target="_blank">Archivio completo →</a>
-        </div>
-        <div id="feed-container"></div>
-        <div id="scroll-trigger">
-          <div class="spinner" id="spinner"></div>
-          <div id="feed-end">Hai letto tutte le ultime notizie</div>
-        </div>
+        <!-- ULTIME NOTIZIE con infinite scroll alimentato dal feed RSS -->
+        <div class="fhdr">Ultime notizie <a href="https://www.grandangoloagrigento.it/ultime-notizie" target="_blank">Archivio →</a></div>
+        <!-- Il feed RSS popola questa sezione in 3 colonne esattamente come le altre -->
+        <div id="feed-main"></div>
+        <div id="scroll-s"><div class="spin" id="spin"></div><div id="fend">Tutte le notizie caricate</div></div>
 
-        <!-- AD BOTTOM -->
-        <div class="ad-inc">
-          <div class="ad-box" style="width:100%;height:90px"><span class="ad-pub">Pubblicità</span>Google AdSense — Leaderboard 728×90 bottom</div>
-        </div>
+        <div class="adic" style="margin-top:14px"><div class="adbox"><span class="adpub">Pubblicità</span>Google AdSense — Leaderboard 728×90 bottom</div></div>
 
-      </div><!-- /hero-area -->
+      </div><!-- /cnt -->
 
-      <!-- ════ SIDEBAR ════ -->
-      <div id="sidebar">
+      <!-- ═══════════════════════════════
+           SIDEBAR 320px — GRANDE E COMPLETA
+           ═══════════════════════════════ -->
+      <div id="sb">
 
-        <!-- Sidebar articoli dal feed -->
-        <div id="sb-articles">
-          <div class="sb-art"><div class="skel" style="height:120px;margin-bottom:6px"></div><div class="skel" style="height:42px"></div></div>
-        </div>
+        <!-- SICILIA LIVE: 3 card grandi con immagine full-width -->
+        <div class="sbh">🏙 Sicilia Live</div>
 
-        <!-- AD 300×250 TOP sidebar -->
-        <div class="ad-sb">
-          <span class="ad-pub" style="position:static">Pubblicità</span>
-          <span class="sz">300 × 250</span>
-          <span style="font-size:10px;color:#bbb">Google AdSense</span>
-          <span class="note">sidebar top · RPM max</span>
+        <!-- Card 1 GRANDE: Palermo -->
+        <div class="sb-big-card">
+          <a href="https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio" target="_blank">
+            <div class="sb-big-img" id="sbb1"><div class="ph">📰</div></div>
+            <div class="sb-big-cat">Palermo · Giudiziaria</div>
+            <div class="sb-big-tit">Strage di Monreale: tre giovani imputati rinviati a giudizio dalla corte d'assise</div>
+          </a>
+          <p class="sb-big-dk">Il gup ha accolto la richiesta della Procura. Si andrà a processo davanti alla Corte d'Assise di Palermo.</p>
+          <div class="sb-big-firma"><a href="#">Redazione</a></div>
         </div>
 
-        <!-- PODCAST -->
-        <div class="sb-section-hdr">📻 Podcast</div>
-        <div class="pod-card">
-          <div class="pod-top"><span class="badge-sp">Spotify</span><span style="font-size:10px;color:#888">3 edizioni/giorno</span></div>
-          <div class="pod-title">Grandangolo News on Radio</div>
-          <div class="pod-desc">Le notizie del giorno · FM 104.8</div>
+        <!-- Card 2 GRANDE: Catania -->
+        <div class="sb-big-card">
+          <a href="https://www.grandangoloagrigento.it/catania/inchiesta-pandora-la-corte-costituzionale-intercettazioni-sono-utilizzabili" target="_blank">
+            <div class="sb-big-img" id="sbb2"><div class="ph">📰</div></div>
+            <div class="sb-big-cat">Catania · Giudiziaria</div>
+            <div class="sb-big-tit">Inchiesta «Pandora»: la Corte Costituzionale, le intercettazioni sono utilizzabili</div>
+          </a>
+          <p class="sb-big-dk">La Procura di Catania aveva legittimamente disposto le intercettazioni nei locali in uso a un non parlamentare.</p>
+          <div class="sb-big-firma"><a href="#">Redazione</a></div>
+        </div>
+
+        <!-- Card 3: Caltanissetta con immagine nota -->
+        <div class="sb-big-card">
+          <a href="https://www.grandangoloagrigento.it/caltanisetta/droga-sponsorizzata-sui-social-e-spedita-per-posta-due-arresti" target="_blank">
+            <div class="sb-big-img">
+              <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/04/08042026_114834_Foto4-Napoli.jpg" alt="Droga" onerror="this.outerHTML='<div class=ph>📰</div>'">
+            </div>
+            <div class="sb-big-cat">Caltanissetta · Giudiziaria</div>
+            <div class="sb-big-tit">Droga sui social e spedita per posta: due arresti, 10 kg sequestrati</div>
+          </a>
+          <p class="sb-big-dk">Ricostruito un giro d'affari da oltre 2 milioni di euro.</p>
+          <div class="sb-big-firma"><a href="#">Redazione</a></div>
+        </div>
+
+        <!-- Notizie medie Palermo/Catania con thumbnail -->
+        <div class="sbh" style="margin-top:4px">🗞 In breve da Sicilia</div>
+        <div class="sb-med">
+          <div class="sb-med-img" id="sbm1"><div class="ph" style="font-size:14px">📰</div></div>
+          <div><div class="sb-med-cat">Palermo · Cronaca</div>
+            <a href="https://www.grandangoloagrigento.it/palermo/tentano-di-gettare-la-droga-nel-water-due-arresti" target="_blank"><div class="sb-med-tit">Tentano di gettare la droga nel water: due arresti a Palermo</div></a>
+            <div class="sb-med-firma">Redazione</div>
+          </div>
+        </div>
+        <div class="sb-med">
+          <div class="sb-med-img" id="sbm2"><div class="ph" style="font-size:14px">📰</div></div>
+          <div><div class="sb-med-cat">Catania · Cronaca</div>
+            <a href="https://www.grandangoloagrigento.it/catania/palpeggia-impiegata-e-tenta-di-baciarla-70enne-arrestato-per-violenza-sessuale" target="_blank"><div class="sb-med-tit">Palpeggia impiegata: 70enne arrestato per violenza sessuale a Catania</div></a>
+            <div class="sb-med-firma">Redazione</div>
+          </div>
+        </div>
+        <div class="sb-med">
+          <div class="sb-med-img" id="sbm3"><div class="ph" style="font-size:14px">📰</div></div>
+          <div><div class="sb-med-cat">Palermo · Giudiziaria</div>
+            <a href="https://www.grandangoloagrigento.it/palermo/litigano-sui-social-e-poi-si-affrontano-in-strada-sei-donne-denunciate" target="_blank"><div class="sb-med-tit">Litigano sui social, si affrontano in strada: sei donne denunciate</div></a>
+            <div class="sb-med-firma">Redazione</div>
+          </div>
+        </div>
+
+        <!-- AD 300×250 TOP -->
+        <div class="adSB"><span class="ap">Pubblicità</span><span class="sz">300 × 250</span><span style="font-size:10px;color:#bbb">Google AdSense</span><span class="nt">sidebar top · RPM max</span></div>
+
+        <!-- UN SOLO PODCAST -->
+        <div class="sbh">📻 Podcast</div>
+        <div class="pod">
+          <div class="pdt"><span class="bsp">Spotify</span><span style="font-size:10px;color:#888">3 edizioni/giorno · FM 104.8</span></div>
+          <div class="ptt">Grandangolo News on Radio</div>
+          <div class="ptd">Le notizie del giorno in podcast</div>
           <iframe height="152" src="https://open.spotify.com/embed/show/2XLvo0bhvvv25TulG7ilMk?utm_source=generator&theme=0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
         </div>
-        <div class="pod-card">
-          <div class="pod-top"><span class="badge-sp">Spotify</span><span style="font-size:10px;color:#888">ogni sabato</span></div>
-          <div class="pod-title">A tutto Gaz — podcast</div>
-          <div class="pod-desc">Riccardo Gaz su Radio Vela</div>
-          <iframe height="152" src="https://open.spotify.com/embed/show/0Gd3gjcKhgf05J2d7TMBuI?utm_source=generator&theme=0" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-        </div>
 
-        <!-- VIDEO YouTube -->
-        <div class="sb-section-hdr">📺 Video</div>
-        <div class="pod-card">
-          <div class="pod-top"><span class="badge-yt">YouTube</span><span style="font-size:10px;color:#888">6.800+ video</span></div>
-          <div class="pod-title">Grandangolo TV</div>
-          <div class="pod-desc">News on Video dalla redazione</div>
-          <iframe height="165" src="https://www.youtube.com/embed?listType=user_uploads&list=GrandangoloAgrigento&rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <!-- VIDEO YOUTUBE -->
+        <div class="sbh">📺 Video</div>
+        <div class="pod">
+          <div class="pdt"><span class="byt">YouTube</span><span style="font-size:10px;color:#888">6.800+ video · 4,5M views</span></div>
+          <div class="ptt">Grandangolo TV · News on Video</div>
+          <div class="ptd">I video più recenti dalla redazione</div>
+          <iframe height="168" src="https://www.youtube.com/embed?listType=user_uploads&list=GrandangoloAgrigento&rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
 
         <!-- AD 300×250 MID -->
-        <div class="ad-sb">
-          <span class="ad-pub" style="position:static">Pubblicità</span>
-          <span class="sz">300 × 250</span>
-          <span style="font-size:10px;color:#bbb">Google AdSense · sidebar mid</span>
-        </div>
+        <div class="adSB"><span class="ap">Pubblicità</span><span class="sz">300 × 250</span><span style="font-size:10px;color:#bbb">Google AdSense · sidebar mid</span></div>
 
         <!-- EDICOLA -->
-        <div class="edicola-box">
-          <div class="ed-title">Edicola Digitale · N.12/2026</div>
-          <div class="ed-cover">
-            <img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/1_99f439.jpg" alt="Grandangolo Settimanale" onerror="this.style.display='none'">
-          </div>
-          <a href="https://grandangolosettimanale.it" target="_blank" class="ed-btn">Acquista l'edizione digitale →</a>
+        <div class="edic">
+          <div class="edt">Edicola Digitale · N.12/2026</div>
+          <div class="edc"><img src="https://www.grandangoloagrigento.it/wp-content/uploads/sites/3/2026/03/1_99f439.jpg" alt="Grandangolo Settimanale" onerror="this.style.display='none'"></div>
+          <a href="https://grandangolosettimanale.it" target="_blank" class="edb">Acquista l'edizione digitale →</a>
         </div>
 
         <!-- PIÙ LETTI -->
-        <div class="sb-section-hdr">I più letti</div>
-        <div id="piu-letti"></div>
+        <div class="sbh2">I più letti</div>
+        <a href="https://www.grandangoloagrigento.it/apertura/il-duplice-femminicidio-a-naro-chiesta-la-conferma-dellergastolo-per-28enne" target="_blank"><div class="pvi"><span class="pvn">1</span><div class="pvt">Femminicidio Naro: ergastolo confermato per Omar Nedelcov</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/apertura/sono-io-che-devo-ammazzare-la-malattia-il-lascito-di-giusy-diventa-speranza-calamonaci-in-lutto" target="_blank"><div class="pvi"><span class="pvn">2</span><div class="pvt">«Sono io che devo ammazzare la malattia»: il lascito di Giusy</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/mafia/iachino-amico-da-canicatti-con-furore-dalle-truffe-ai-legami-con-i-clan-e-la-politica" target="_blank"><div class="pvi"><span class="pvn">3</span><div class="pvt">«Iachino» Amico: dai clan alla politica, pentito con pass alla Camera</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/agrigento-notizie/amministrative-2026-il-duopolio-tende-la-mano-al-resto-del-centrodestra-sostenete-daniela-catalano" target="_blank"><div class="pvi"><span class="pvn">4</span><div class="pvt">Amministrative 2026: «Sostenete Daniela Catalano»</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/caltanisetta/droga-sponsorizzata-sui-social-e-spedita-per-posta-due-arresti" target="_blank"><div class="pvi"><span class="pvn">5</span><div class="pvt">Droga sui social e per posta: 2 arresti, 10 kg sequestrati</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio" target="_blank"><div class="pvi"><span class="pvn">6</span><div class="pvt">Strage di Monreale: tre imputati rinviati a giudizio</div></div></a>
+        <a href="https://www.grandangoloagrigento.it/agrigento-notizie/muore-in-ospedale-dopo-una-caduta-dalla-barella-chiesto-maxi-risarcimento" target="_blank"><div class="pvi"><span class="pvn">7</span><div class="pvt">Muore dopo caduta dalla barella: maxi risarcimento ASP</div></div></a>
 
         <!-- AD 300×600 -->
-        <div class="ad-sb-half">
+        <div class="adBIG">
           <span style="font-size:8px;color:#ccc;text-transform:uppercase;letter-spacing:.1em">Pubblicità</span>
-          <span style="font-size:16px;color:#d0ccc5;font-weight:700">300 × 600</span>
-          <span style="font-size:9px;color:#bbb">Google AdSense · Half Page</span>
+          <span style="font-size:18px;color:#ccc;font-weight:700">300 × 600</span>
+          <span style="font-size:10px;color:#bbb">Google AdSense · Half Page</span>
           <span style="font-size:9px;color:#c1001f;font-style:italic">formato premium · CPM alto</span>
         </div>
 
-      </div><!-- /sidebar -->
-
-    </div><!-- /main-layout -->
+      </div><!-- /sb -->
+    </div><!-- /main -->
   </div><!-- /page -->
 </div><!-- /skin -->
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="f-logo"><em>Grandangolo</em> Regionale</div>
-    <div class="f-links">
-      <a href="https://www.grandangoloagrigento.it" target="_blank">Home</a>
-      <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank">Agrigento</a>
-      <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
-      <a href="https://www.grandangoloagrigento.it/mafia" target="_blank">Mafia</a>
-      <a href="https://www.grandangoloagrigento.it/politica" target="_blank">Politica</a>
-      <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank">Cultura</a>
-      <a href="https://www.grandangoloagrigento.it/sport" target="_blank">Sport</a>
-      <a href="https://grandangolosettimanale.it" target="_blank">Edicola</a>
-      <a href="https://open.spotify.com/show/2XLvo0bhvvv25TulG7ilMk" target="_blank">Podcast</a>
-      <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">YouTube</a>
-      <a href="https://www.grandangoloagrigento.it/privacy-policy" target="_blank">Privacy</a>
-    </div>
-    <div class="f-copy">© 2026 Edizioni Grandangolo · Via Mazzini 187 · 92100 Agrigento · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907 · Direttore responsabile Franco Castaldo · P.IVA 02236840847</div>
+<footer><div class="fi">
+  <div class="flogo"><em>Grandangolo</em> Regionale</div>
+  <div class="flinks">
+    <a href="https://www.grandangoloagrigento.it" target="_blank">Home</a>
+    <a href="https://www.grandangoloagrigento.it/agrigento-notizie" target="_blank">Agrigento</a>
+    <a href="https://www.grandangoloagrigento.it/giudiziaria" target="_blank">Giudiziaria</a>
+    <a href="https://www.grandangoloagrigento.it/mafia" target="_blank">Mafia</a>
+    <a href="https://www.grandangoloagrigento.it/politica" target="_blank">Politica</a>
+    <a href="https://www.grandangoloagrigento.it/spettacoli" target="_blank">Cultura</a>
+    <a href="https://www.grandangoloagrigento.it/sport" target="_blank">Sport</a>
+    <a href="https://grandangolosettimanale.it" target="_blank">Edicola</a>
+    <a href="https://open.spotify.com/show/2XLvo0bhvvv25TulG7ilMk" target="_blank">Podcast</a>
+    <a href="https://www.youtube.com/@GrandangoloAgrigento" target="_blank">YouTube</a>
+    <a href="https://www.grandangoloagrigento.it/privacy-policy" target="_blank">Privacy</a>
   </div>
-</footer>
+  <div class="fcopy">© 2026 Edizioni Grandangolo · Via Mazzini 187 · 92100 Agrigento · Reg. Trib. Agrigento n.264/04 · ISSN 2499-8907 · Direttore responsabile Franco Castaldo · P.IVA 02236840847</div>
+</div></footer>
 
-<!-- ════ JAVASCRIPT: FEED RSS + INFINITE SCROLL ════ -->
 <script>
-// ─ Aggiorna data in topbar ────────────────────────────
-const d = new Date();
-const days = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
-const months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-document.getElementById('tb-date').textContent =
-  `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()} – Aggiornato alle ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+// DATA
+const d=new Date();
+const DA=['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+const MO=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+document.getElementById('tdate').textContent=`${DA[d.getDay()]} ${d.getDate()} ${MO[d.getMonth()]} ${d.getFullYear()} – Aggiornato alle ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
 
-// ─ RSS via proxy ──────────────────────────────────────
-const FEED = 'https://www.grandangoloagrigento.it/feed';
-const PROXY = 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED);
+// ── PROXY + OG:IMAGE ──────────────────────────────────
+const PX = u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`;
+const imgCache = {};
 
-let allItems = [];
-let feedPage = 0;
-const PER_PAGE = 6;
-let loading = false;
-let done = false;
+async function getOgImg(url) {
+  if (imgCache[url] !== undefined) return imgCache[url];
+  try {
+    const r = await fetch(PX(url), {cache:'force-cache'});
+    const data = await r.json();
+    const c = data.contents || '';
+    // prova og:image in vari formati
+    let m = c.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i)
+          || c.match(/content=["']([^"']+)["'][^>]*property=["']og:image["']/i)
+          || c.match(/name=["']og:image["'][^>]*content=["']([^"']+)["']/i);
+    imgCache[url] = m ? m[1] : null;
+  } catch(e) { imgCache[url] = null; }
+  return imgCache[url];
+}
 
-// ─ Helper: estrai immagine dal tag RSS ─────────────────
-function img(item) {
+function setImg(elId, src) {
+  const el = document.getElementById(elId);
+  if (!el || !src) return;
+  el.innerHTML = `<img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML='<div class=ph>📰</div>'">`;
+}
+
+// Elenco: [url, elementId]
+const ogQueue = [
+  ['https://www.grandangoloagrigento.it/giudiziaria/morta-a-43-anni-dopo-ricovero-per-ischemia-intestinale-chiesto-processo-per-3-medici','ig1'],
+  ['https://www.grandangoloagrigento.it/agrigento-notizie/muore-in-ospedale-dopo-una-caduta-dalla-barella-chiesto-maxi-risarcimento','ig2'],
+  ['https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio','ig3'],
+  ['https://www.grandangoloagrigento.it/politica/regione-assegna-104-milioni-di-euro-al-libero-consorzio-di-agrigento','ip1'],
+  ['https://www.grandangoloagrigento.it/sport/auto-aperte-le-iscrizioni-per-la-110-targa-florio','ic1'],
+  ['https://www.grandangoloagrigento.it/agrigento-notizie/il-team-signifikant-del-liceo-empedocle-vola-alle-finali-nazionali-di-debate-in-lingua-inglese','ic2'],
+  ['https://www.grandangoloagrigento.it/giudiziaria/strage-di-monreale-tre-giovani-imputati-rinviati-a-giudizio','sbb1'],
+  ['https://www.grandangoloagrigento.it/catania/inchiesta-pandora-la-corte-costituzionale-intercettazioni-sono-utilizzabili','sbb2'],
+  ['https://www.grandangoloagrigento.it/palermo/tentano-di-gettare-la-droga-nel-water-due-arresti','sbm1'],
+  ['https://www.grandangoloagrigento.it/catania/palpeggia-impiegata-e-tenta-di-baciarla-70enne-arrestato-per-violenza-sessuale','sbm2'],
+  ['https://www.grandangoloagrigento.it/palermo/litigano-sui-social-e-poi-si-affrontano-in-strada-sei-donne-denunciate','sbm3'],
+];
+
+(async () => {
+  for (const [url, id] of ogQueue) {
+    const src = await getOgImg(url);
+    if (src) setImg(id, src);
+    await new Promise(r => setTimeout(r, 250));
+  }
+})();
+
+// ── INFINITE SCROLL: tutto dal feed RSS ──────────────
+const FEED_URL = 'https://www.grandangoloagrigento.it/feed';
+const FEED_PX = PX(FEED_URL);
+
+let feedItems = [], page = 0, PER = 6, busy = false, done = false;
+
+function extractImg(item) {
   const mc = item.querySelector('content[url], media\\:content');
   if (mc?.getAttribute('url')) return mc.getAttribute('url');
   const enc = item.querySelector('enclosure');
   if (enc?.getAttribute('url')?.match(/\.(jpg|jpeg|png|gif|webp)/i)) return enc.getAttribute('url');
-  const raw = (item.querySelector('encoded')?.textContent || item.querySelector('description')?.textContent || '');
+  const raw = item.querySelector('encoded')?.textContent || item.querySelector('description')?.textContent || '';
   const m = raw.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return m ? m[1] : '';
+  if (m) return m[1];
+  return '';
+}
+function extractCat(item) {
+  return [...item.querySelectorAll('category')].map(c => c.textContent.trim()).filter(c => c && !c.includes('Senza'))[0] || 'Notizie';
+}
+function extractAuth(item) {
+  return item.querySelector('creator')?.textContent?.trim() || 'Redazione';
+}
+function extractDeck(item, n=130) {
+  const t = (item.querySelector('description')?.textContent||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+  return t.length > n ? t.slice(0, n-1)+'…' : t;
 }
 
-// ─ Helper: estrai categoria ────────────────────────────
-function cat(item) {
-  const cats = [...item.querySelectorAll('category')];
-  const filtered = cats.map(c=>c.textContent.trim()).filter(c=>c && !c.includes('Senza categoria'));
-  return filtered[0] || 'Notizie';
-}
-
-// ─ Helper: estrai autore ───────────────────────────────
-function author(item) {
-  const cr = item.querySelector('creator');
-  if (cr) return cr.textContent.replace(/<[^>]*>/g,'').trim();
-  const au = item.querySelector('author');
-  if (au) return au.textContent.replace(/<[^>]*>/g,'').trim();
-  return 'Redazione';
-}
-
-// ─ Helper: estrai deck ────────────────────────────────
-function deck(item, maxLen=160) {
-  const raw = item.querySelector('description')?.textContent || '';
-  const t = raw.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').replace(/\[…\]/g,'').trim();
-  return t.length > maxLen ? t.slice(0, maxLen-1) + '…' : t;
-}
-
-// ─ Helper: link ───────────────────────────────────────
-function lnk(item) {
-  return item.querySelector('link')?.textContent?.trim() || '#';
-}
-
-// ─ Helper: titolo ─────────────────────────────────────
-function tit(item) {
-  return item.querySelector('title')?.textContent?.trim() || '';
-}
-
-// ─ Crea <img> con fallback icona ──────────────────────
-function imgHtml(src, alt) {
-  const fb = `<div style="width:100%;height:100%;background:#1a1a2a;display:flex;align-items:center;justify-content:center;color:#444;font-size:28px">📰</div>`;
-  if (!src) return fb;
-  return `<img src="${src}" alt="${alt||''}" loading="lazy"
-    style="width:100%;height:100%;object-fit:cover;display:block"
-    onerror="this.outerHTML='${fb.replace(/'/g,"\\'")}'">`;
-}
-
-// ─ RENDER HERO ────────────────────────────────────────
-function renderHero(item) {
-  const t = tit(item), l = lnk(item), i = img(item), c = cat(item), dk = deck(item, 200), a = author(item);
-  document.getElementById('hero-top').innerHTML = `
-    <div>
-      <a href="${l}" target="_blank">
-        <div class="hero-img-wrap" style="aspect-ratio:16/9">${imgHtml(i,t)}</div>
-      </a>
-      <div style="font-size:10px;font-weight:700;color:#c1001f;text-transform:uppercase;letter-spacing:.08em;margin:8px 0 4px">${c}</div>
-      <a href="${l}" target="_blank"><div class="hero-title">${t}</div></a>
-      <div class="hero-byline">
-        <span>di <a href="${l}" target="_blank">${a}</a></span>
-        <span class="salva-btn">SALVA ↗</span>
-      </div>
-      <p class="hero-deck-bottom">${dk}</p>
-    </div>
-    <div class="hero-aside" id="hero-aside-inner"></div>`;
-}
-
-// ─ RENDER HERO ASIDE (2 articoli piccoli destra) ──────
-function renderHeroAside(items) {
-  const el = document.getElementById('hero-aside-inner');
-  if (!el) return;
-  el.innerHTML = items.slice(0,2).map((item,idx) => {
-    const t = tit(item), l = lnk(item), i = img(item), a = author(item), dk = deck(item,120);
-    return `<div class="ha-item">
-      ${idx===0 ? `<a href="${l}" target="_blank"><div class="ha-img" style="aspect-ratio:16/9">${imgHtml(i,t)}<div class="ha-author-badge">di ${a}</div></div></a>` : ''}
-      <a href="${l}" target="_blank"><div class="ha-title">${t}</div></a>
-      <p class="ha-deck">${dk}</p>
-      <div class="ha-byline"><a href="${l}" target="_blank">${a}</a><span class="salva-btn">SALVA ↗</span></div>
-    </div>`;
-  }).join('');
-}
-
-// ─ RENDER COSA CAMBIA bar ─────────────────────────────
-function renderCosa(item) {
-  const t = tit(item), l = lnk(item), a = author(item);
-  const bar = document.getElementById('under-hero-bar');
-  bar.style.display = 'flex';
-  document.getElementById('cosa-text').innerHTML =
-    `<a href="${l}" target="_blank" style="color:#0a5278;text-decoration:underline">${t}</a> &nbsp;di <a href="#" style="color:#0a5278">${a}</a>`;
-}
-
-// ─ RENDER TRIO VIDEOS ────────────────────────────────
-function renderTrio(items) {
-  const times = ['00:42','01:18','02:05'];
-  document.getElementById('trio-videos').innerHTML = items.slice(0,3).map((item,i) => {
-    const t = tit(item), l = lnk(item), im = img(item), c = cat(item), a = author(item);
-    return `<div class="tv-item">
-      <a href="${l}" target="_blank">
-        <div class="tv-img">${imgHtml(im,t)}<div class="tv-play">${times[i]}</div></div>
-        <div class="tv-cat">${c}</div>
-        <div class="tv-title">${t}</div>
-      </a>
-      <div class="tv-byline">di <a href="${l}" target="_blank">${a}</a></div>
-    </div>`;
-  }).join('');
-}
-
-// ─ RENDER BLOCCO GRANDE + LISTA ──────────────────────
-function renderBl(items, elId) {
-  const el = document.getElementById(elId);
-  if (!items.length) return;
-  const [main, ...rest] = items;
-  const t=tit(main), l=lnk(main), im=img(main), c=cat(main), a=author(main);
-  el.innerHTML = `
-    <div>
-      <a href="${l}" target="_blank">
-        <div class="bl-main-img">${imgHtml(im,t)}</div>
-        <div class="bl-main-cat">${c}</div>
-        <div class="bl-main-title">${t}</div>
-      </a>
-      <div class="bl-main-by">di <a href="${l}" target="_blank">${a}</a></div>
-    </div>
-    <div class="bl-list">
-      ${rest.slice(0,4).map(item => {
-        const t2=tit(item), l2=lnk(item), c2=cat(item);
-        return `<a href="${l2}" target="_blank">
-          <div class="bll-item">
-            <div class="bll-cat">${c2}</div>
-            <div class="bll-title">${t2}</div>
-          </div>
-        </a>`;
-      }).join('')}
-    </div>`;
-}
-
-// ─ RENDER 3-COL GRID ─────────────────────────────────
-function renderG3(items, elId) {
-  const el = document.getElementById(elId);
-  el.innerHTML = items.slice(0,3).map(item => {
-    const t=tit(item), l=lnk(item), im=img(item), c=cat(item), a=author(item);
-    return `<div class="gc">
-      <a href="${l}" target="_blank">
-        <div class="gc-img">${imgHtml(im,t)}</div>
-        <div class="gc-cat">${c}</div>
-        <div class="gc-title">${t}</div>
-      </a>
-      <div class="gc-byline">di <a href="${l}" target="_blank">${a}</a></div>
-    </div>`;
-  }).join('');
-}
-
-// ─ RENDER SOPPALCO politica ───────────────────────────
-function renderSoppalco(item) {
-  const t=tit(item), l=lnk(item), im=img(item), c=cat(item), dk=deck(item,160), a=author(item);
-  document.getElementById('sec-politica').innerHTML = `
-    <div class="soppalco">
-      <div class="sop-text">
-        <div class="sop-cat">${c}</div>
-        <a href="${l}" target="_blank"><div class="sop-title">${t}</div></a>
-        <p class="sop-deck">${dk}</p>
-        <div class="sop-by">di <a href="${l}" target="_blank">${a}</a></div>
-      </div>
-      <a href="${l}" target="_blank"><div class="sop-img">${imgHtml(im,t)}</div></a>
-    </div>`;
-}
-
-// ─ RENDER SIDEBAR articles ───────────────────────────
-function renderSbArticles(items) {
-  document.getElementById('sb-articles').innerHTML = items.slice(0,3).map(item => {
-    const t=tit(item), l=lnk(item), im=img(item), a=author(item), dk=deck(item,110);
-    return `<div class="sb-art">
-      <a href="${l}" target="_blank">
-        <div class="sb-art-img">${imgHtml(im,t)}</div>
-        <div class="sb-art-title">${t}</div>
-      </a>
-      <p class="sb-art-deck">${dk}</p>
-      <div class="sb-art-by"><a href="${l}" target="_blank">${a}</a><span class="salva-btn">SALVA ↗</span></div>
-    </div>`;
-  }).join('');
-}
-
-// ─ RENDER PIÙ LETTI sidebar ──────────────────────────
-function renderPiuLetti(items) {
-  document.getElementById('piu-letti').innerHTML = items.slice(0,7).map((item,i) => {
-    const t=tit(item), l=lnk(item);
-    return `<a href="${l}" target="_blank">
-      <div class="pv-item"><span class="pv-num">${i+1}</span><div class="pv-title">${t}</div></div>
-    </a>`;
-  }).join('');
-}
-
-// ─ RENDER FEED batch (infinite scroll) ───────────────
-function renderFeedBatch(items) {
-  const container = document.getElementById('feed-container');
-  const html = `<div class="feed-grid" style="margin-bottom:16px">
-    ${items.map(item => {
-      const t=tit(item), l=lnk(item), im=img(item), c=cat(item), dk=deck(item,130), a=author(item);
-      return `<div class="feed-card">
-        <a href="${l}" target="_blank">
-          <div class="feed-card-img">${imgHtml(im,t)}</div>
-          <div class="feed-card-cat">${c}</div>
-          <div class="feed-card-title">${t}</div>
-        </a>
-        <p class="feed-card-deck">${dk}</p>
-        <div class="feed-card-by">di <a href="${l}" target="_blank">${a}</a></div>
-      </div>`;
-    }).join('')}
+function makeCard(item) {
+  const tit = item.querySelector('title')?.textContent?.trim() || '';
+  const lnk = item.querySelector('link')?.textContent?.trim() || '#';
+  const im  = extractImg(item);
+  const cat = extractCat(item);
+  const dk  = extractDeck(item);
+  const auth= extractAuth(item);
+  const imgH = im
+    ? `<img src="${im}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.outerHTML='<div class=ph>📰</div>'">`
+    : `<div class="ph">📰</div>`;
+  return `<div class="fc">
+    <a href="${lnk}" target="_blank">
+      <div class="fci">${imgH}</div>
+      <div class="fccat">${cat}</div>
+      <div class="fctit">${tit}</div>
+    </a>
+    <p class="fcdk">${dk}</p>
+    <div class="fcfirma">di <a href="${lnk}" target="_blank">${auth}</a></div>
   </div>`;
-  container.insertAdjacentHTML('beforeend', html);
 }
 
-// ─ Load next batch ────────────────────────────────────
-function loadNextBatch() {
-  if (loading || done) return;
-  loading = true;
-  document.getElementById('spinner').style.display = 'block';
+function renderBatch() {
+  if (busy || done) return;
+  busy = true;
+  document.getElementById('spin').style.display = 'block';
   setTimeout(() => {
-    const start = feedPage * PER_PAGE;
-    const batch = allItems.slice(start, start + PER_PAGE);
+    const batch = feedItems.slice(page * PER, (page+1) * PER);
     if (!batch.length) {
       done = true;
-      document.getElementById('spinner').style.display = 'none';
-      document.getElementById('feed-end').style.display = 'block';
+      document.getElementById('spin').style.display = 'none';
+      document.getElementById('fend').style.display = 'block';
       return;
     }
-    renderFeedBatch(batch);
-    feedPage++;
-    loading = false;
-    document.getElementById('spinner').style.display = 'none';
-    if (feedPage * PER_PAGE >= allItems.length) {
+    const grid = document.createElement('div');
+    grid.className = 'fg';
+    grid.style.marginBottom = '16px';
+    grid.innerHTML = batch.map(makeCard).join('');
+    document.getElementById('feed-main').appendChild(grid);
+    page++;
+    busy = false;
+    document.getElementById('spin').style.display = 'none';
+    if (page * PER >= feedItems.length) {
       done = true;
-      document.getElementById('feed-end').style.display = 'block';
+      document.getElementById('fend').style.display = 'block';
     }
   }, 300);
 }
 
-// ─ Intersection Observer per infinite scroll ──────────
-const sentinel = document.getElementById('scroll-trigger');
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) loadNextBatch();
-}, { rootMargin: '300px' });
-observer.observe(sentinel);
+// Intersection observer per scroll
+new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) renderBatch();
+}, { rootMargin: '400px' }).observe(document.getElementById('scroll-s'));
 
-// ─ MAIN: carica feed ─────────────────────────────────
-async function boot() {
-  try {
-    const res = await fetch(PROXY, {cache:'no-cache'});
-    const data = await res.json();
-    if (!data.contents) throw new Error('empty');
+// Carica feed RSS
+fetch(FEED_PX, { cache: 'no-cache' })
+  .then(r => r.json())
+  .then(data => {
+    if (!data.contents) return;
     const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
-    const items = [...xml.querySelectorAll('item')];
-    if (!items.length) throw new Error('no items');
-
-    // Distribuisci per sezione
-    renderHero(items[0]);
-    renderHeroAside(items.slice(1,3));
-    renderCosa(items[3]);
-    renderTrio(items.slice(4,7));
-    renderBl(items.slice(7,12), 'sec-mafia');
-    renderG3(items.slice(12,15), 'sec-giud');
-    renderSoppalco(items[15]);
-    renderG3(items.slice(16,19), 'sec-cultura');
-    renderSbArticles(items.slice(19,22));
-    renderPiuLetti(items.slice(0,7));
-
-    // Feed infinite scroll parte da art. 22
-    allItems = items.slice(22);
-    loadNextBatch();
-
-  } catch(err) {
-    console.warn('Feed non raggiungibile:', err.message);
-    // Fallback: mostra link diretto
-    document.getElementById('hero-top').innerHTML = `
-      <div style="grid-column:1/-1;padding:30px;text-align:center;background:#f5f3f0;border-radius:4px">
-        <p style="font-size:14px;color:#555;margin-bottom:10px">Le notizie vengono caricate in tempo reale da <strong>grandangoloagrigento.it</strong></p>
-        <p style="font-size:12px;color:#888;margin-bottom:16px">Apri il file HTML nel tuo browser per visualizzare il feed live.</p>
-        <a href="https://www.grandangoloagrigento.it" target="_blank" style="background:#141215;color:#fff;font-size:13px;font-weight:700;padding:10px 24px;display:inline-block">Vai al sito →</a>
-      </div>`;
-    document.getElementById('feed-container').innerHTML =
-      `<p style="padding:20px;color:#888;font-size:13px;text-align:center">Feed non disponibile in anteprima — funziona nel browser.</p>`;
-  }
-}
-
-boot();
+    // Prendi tutti gli articoli dal feed
+    feedItems = [...xml.querySelectorAll('item')];
+    // Carica subito il primo batch
+    if (feedItems.length) renderBatch();
+  })
+  .catch(() => {
+    // Se feed non disponibile, mostra notizie statiche di fallback
+    feedItems = []; done = true;
+    document.getElementById('fend').style.display = 'block';
+    document.getElementById('fend').textContent = 'Apri il file nel browser per caricare le notizie in tempo reale da grandangoloagrigento.it';
+  });
 </script>
 </body>
 </html>
